@@ -29,13 +29,13 @@ export function DocumentGrid({ block }: { block: any }) {
                   {cover ? (
                     <Image src={cover} alt={mediaAlt(d.cover, d.title)} fill className="object-cover" />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center text-brand-gold">
+                    <div className="flex h-full w-full items-center justify-center text-themed-accent">
                       <FileDown />
                     </div>
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
-                  {d.category && <span className="text-xs font-semibold uppercase tracking-wider text-brand-gold">{d.category}</span>}
+                  {d.category && <span className="text-xs font-semibold uppercase tracking-wider text-themed-accent">{d.category}</span>}
                   <h4 className="font-serif text-lg text-brand-navy mt-1 leading-snug">{d.title}</h4>
                   {d.description && <p className="text-xs text-brand-muted mt-1 line-clamp-2">{d.description}</p>}
                 </div>

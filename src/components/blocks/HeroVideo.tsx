@@ -28,7 +28,18 @@ export function HeroVideo({ block }: { block: any }) {
         </video>
       ) : posterSrc ? (
         <Image src={posterSrc} alt="" fill priority className="object-cover" />
-      ) : null}
+      ) : (
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-navy via-brand-deep to-black" />
+          <div className="absolute inset-0 opacity-30" style={{
+            backgroundImage: 'radial-gradient(circle at 20% 30%, rgba(59,130,246,0.35), transparent 50%), radial-gradient(circle at 80% 70%, rgba(96,165,250,0.25), transparent 55%)',
+          }} />
+          <div className="absolute inset-0 opacity-[0.07]" style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }} />
+        </div>
+      )}
     </>
   )
 
@@ -113,7 +124,7 @@ export function HeroVideo({ block }: { block: any }) {
             <h1 className="font-sans text-4xl md:text-5xl leading-tight font-light">
               {block.title}
               {block.titleAccent && (
-                <> <span className="font-bold text-brand-gold">{block.titleAccent}</span></>
+                <> <span className="font-bold text-themed-accent">{block.titleAccent}</span></>
               )}
             </h1>
             {block.description && (
@@ -188,13 +199,13 @@ export function HeroVideo({ block }: { block: any }) {
       <div className="relative z-10 container-x flex h-full items-center">
         <div className="max-w-2xl text-white">
           {block.eyebrow && (
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold mb-4">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.18em] text-themed-accent mb-4">
               {block.eyebrow}
             </span>
           )}
           <h1 className="font-serif text-4xl md:text-6xl leading-tight mb-5">
             {block.title}
-            {block.titleAccent && <> <span className="text-brand-gold">{block.titleAccent}</span></>}
+            {block.titleAccent && <> <span className="text-themed-accent">{block.titleAccent}</span></>}
           </h1>
           {block.description && (
             <p className="text-base md:text-lg text-white/85 leading-relaxed max-w-xl">{block.description}</p>

@@ -12,7 +12,7 @@ export function QuoteBand({ block }: { block: any }) {
         </>
       )}
       <div className="relative container-x max-w-3xl text-center">
-        <span className="text-brand-gold text-5xl font-serif leading-none block mb-4">"</span>
+        <span className="text-themed-accent text-5xl font-serif leading-none block mb-4">"</span>
         <p className="font-serif text-2xl md:text-3xl leading-snug">{block.quote}</p>
         {block.author && <p className="mt-6 text-sm uppercase tracking-wider text-white/70">— {block.author}</p>}
       </div>

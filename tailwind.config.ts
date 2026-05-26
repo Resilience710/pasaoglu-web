@@ -8,36 +8,33 @@ const config: Config = {
         brand: {
           navy: '#0E2A47',
           deep: '#081A2D',
-          gold: '#C8A35A',
-          cream: '#F7F7F4',
-          muted: '#6B7280',
-          line: '#E5E7EB',
+          accent: '#3B82F6',       // ana mavi aksan
+          accentLight: '#60A5FA',
+          accentSoft: '#DBEAFE',
+          cream: '#F8FAFC',
+          muted: '#64748B',
+          line: '#E2E8F0',
         },
         sector: {
-          chem: '#1B4F8C',
-          chemLight: '#2F6FB8',
-          build: '#6B4E3D',
-          buildLight: '#8A6A55',
-          food: '#3E7C4A',
-          foodLight: '#5BA068',
+          chem: '#7C3AED',          // mor (Kimya)
+          chemLight: '#A78BFA',
+          chemSoft: '#EDE9FE',
+          build: '#525252',         // gri (Yapı)
+          buildLight: '#737373',
+          buildSoft: '#F5F5F5',
+          food: '#16A34A',          // yeşil (Gıda)
+          foodLight: '#4ADE80',
+          foodSoft: '#DCFCE7',
         },
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
         serif: ['var(--font-playfair)', 'Georgia', 'serif'],
       },
-      maxWidth: {
-        container: '1240px',
-      },
+      maxWidth: { container: '1240px' },
       keyframes: {
-        marquee: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(16px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
+        marquee: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+        fadeUp: { '0%': { opacity: '0', transform: 'translateY(16px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
       },
       animation: {
         marquee: 'marquee 30s linear infinite',
@@ -47,5 +44,4 @@ const config: Config = {
   },
   plugins: [],
 }
-
 export default config

@@ -2,18 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ==== Default theme (main site) — açık mavi aksan ==== */
 :root {
-  --accent: 27 79 140;
-  --accent-light: 47 111 184;
+  --accent: 59 130 246;          /* #3B82F6 */
+  --accent-light: 96 165 250;    /* #60A5FA */
+  --accent-soft: 219 234 254;    /* #DBEAFE */
+  --primary: 14 42 71;           /* navy */
+  --primary-deep: 8 26 45;       /* deep navy */
+  --radius: 1rem;
+  --card-radius: 1rem;
+  --hero-font: var(--font-inter);
+  --section-font: var(--font-inter);
+  --typography-style: 'modern';
 }
 
-[data-theme='chem'] { --accent: 27 79 140; --accent-light: 47 111 184; }
-[data-theme='build'] { --accent: 107 78 61; --accent-light: 138 106 85; }
-[data-theme='food'] { --accent: 62 124 74; --accent-light: 91 160 104; }
+/* === KIMYA — beyaz + mor === */
+[data-theme='chem'] {
+  --accent: 124 58 237;          /* #7C3AED */
+  --accent-light: 167 139 250;
+  --accent-soft: 237 233 254;
+  --primary: 38 19 87;            /* koyu mor-lacivert */
+  --primary-deep: 23 11 54;
+  --radius: 0.75rem;
+  --card-radius: 1.25rem;
+}
+
+/* === YAPI — beyaz + gri (endüstriyel, keskin) === */
+[data-theme='build'] {
+  --accent: 82 82 82;            /* #525252 */
+  --accent-light: 115 115 115;
+  --accent-soft: 245 245 245;
+  --primary: 23 23 23;           /* near black */
+  --primary-deep: 0 0 0;
+  --radius: 0;                   /* keskin köşeler */
+  --card-radius: 0;
+}
+
+/* === GIDA — beyaz + yeşil (organik, soft) === */
+[data-theme='food'] {
+  --accent: 22 163 74;           /* #16A34A */
+  --accent-light: 74 222 128;
+  --accent-soft: 220 252 231;
+  --primary: 20 83 45;
+  --primary-deep: 5 46 22;
+  --radius: 2rem;                /* yumuşak yuvarlama */
+  --card-radius: 1.75rem;
+}
 
 html, body {
   background: #ffffff;
-  color: #111827;
+  color: #0f172a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,42 +60,157 @@ html, body {
   .container-x {
     @apply mx-auto w-full max-w-container px-5 md:px-8;
   }
+
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium transition;
+    border-radius: var(--radius);
   }
   .btn-primary {
-    @apply bg-brand-navy text-white hover:bg-brand-deep;
+    background-color: rgb(var(--primary));
+    color: white;
   }
-  .btn-gold {
-    @apply bg-brand-gold text-brand-navy hover:opacity-90;
+  .btn-primary:hover { background-color: rgb(var(--primary-deep)); }
+
+  .btn-accent {
+    background-color: rgb(var(--accent));
+    color: white;
   }
+  .btn-accent:hover { background-color: rgb(var(--accent-light)); }
+
+  .btn-gold {                    /* legacy ad — accent ile aynı */
+    background-color: rgb(var(--accent));
+    color: white;
+  }
+  .btn-gold:hover { background-color: rgb(var(--accent-light)); }
+
   .btn-ghost {
     @apply border border-white/40 text-white hover:bg-white/10 backdrop-blur;
   }
   .btn-outline {
     @apply border border-brand-line text-brand-navy hover:bg-brand-cream;
+    border-color: rgb(var(--accent) / 0.3);
+    color: rgb(var(--primary));
   }
-  .btn-accent {
-    background-color: rgb(var(--accent));
-    color: white;
+  .btn-outline:hover {
+    background-color: rgb(var(--accent-soft));
   }
-  .btn-accent:hover {
-    background-color: rgb(var(--accent-light));
-  }
+
   .eyebrow {
-    @apply inline-block text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold;
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.22em];
+    color: rgb(var(--accent));
   }
+
   .section-title {
-    @apply font-serif text-3xl md:text-5xl text-brand-navy leading-tight;
+    @apply font-sans text-3xl md:text-5xl leading-tight font-light;
+    color: rgb(var(--primary));
   }
   .body-lead {
-    @apply text-base md:text-lg text-brand-muted leading-relaxed;
+    @apply text-base md:text-lg leading-relaxed;
+    color: #64748B;
   }
+
+  .accent-bar {
+    height: 1px; width: 64px;
+    background-color: rgb(var(--accent));
+  }
+
   .card-shadow {
     box-shadow: 0 1px 2px rgba(15,42,71,0.06), 0 8px 32px rgba(15,42,71,0.08);
   }
+
+  .surface-card {
+    background-color: white;
+    border-radius: var(--card-radius);
+  }
+
+  /* Theme-aware text colour helpers (sektörün primary'sini kullanır) */
+  .text-themed-primary { color: rgb(var(--primary)); }
+  .text-themed-accent { color: rgb(var(--accent)); }
+  .bg-themed-accent { background-color: rgb(var(--accent)); }
+  .bg-themed-soft { background-color: rgb(var(--accent-soft)); }
+  .bg-themed-primary { background-color: rgb(var(--primary)); }
+  .border-themed-accent { border-color: rgb(var(--accent)); }
 }
 
 .scroll-fade {
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
+
+/* ====================================================
+   SECTOR PAGE OVERRIDES — her sektör tasarımsal olarak
+   tamamen ayrı bir site gibi görünür
+   ==================================================== */
+
+/* --- KIMYA: mor, modern Veskim kuzeni --- */
+[data-theme='chem'] .eyebrow,
+[data-theme='chem'] .text-themed-accent {
+  letter-spacing: 0.25em;
+}
+[data-theme='chem'] section { background-color: white; }
+[data-theme='chem'] .section-title {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+[data-theme='chem'] .btn { border-radius: 9999px; padding: 0.85rem 1.6rem; }
+[data-theme='chem'] .surface-card,
+[data-theme='chem'] .rounded-2xl { border-radius: 1.5rem !important; }
+[data-theme='chem'] .accent-bar { background-color: rgb(124 58 237); }
+
+/* --- YAPI: gri, endüstriyel keskin --- */
+[data-theme='build'] section { background-color: white; }
+[data-theme='build'] section:nth-of-type(even) { background-color: #FAFAFA; }
+[data-theme='build'] .section-title {
+  font-family: var(--font-inter);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+[data-theme='build'] .eyebrow {
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  font-size: 10px;
+}
+[data-theme='build'] .btn {
+  border-radius: 0 !important;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+[data-theme='build'] .rounded-2xl,
+[data-theme='build'] .rounded-xl,
+[data-theme='build'] .rounded-lg,
+[data-theme='build'] .rounded-sm {
+  border-radius: 0 !important;
+}
+[data-theme='build'] .card-shadow {
+  box-shadow: 0 0 0 1px #E5E5E5;
+}
+[data-theme='build'] img { filter: grayscale(0.15); }
+
+/* --- GIDA: yeşil, organik soft --- */
+[data-theme='food'] section { background-color: white; }
+[data-theme='food'] .section-title {
+  font-family: var(--font-playfair);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+[data-theme='food'] .eyebrow {
+  letter-spacing: 0.18em;
+  text-transform: none;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: italic;
+}
+[data-theme='food'] .btn {
+  border-radius: 9999px !important;
+  font-weight: 500;
+  padding: 0.95rem 2rem;
+}
+[data-theme='food'] .rounded-2xl { border-radius: 2.25rem !important; }
+[data-theme='food'] .rounded-xl { border-radius: 1.75rem !important; }
+[data-theme='food'] section { padding-top: 7rem; padding-bottom: 7rem; }
+[data-theme='food'] .body-lead { font-size: 1.1rem; line-height: 1.85; }
+

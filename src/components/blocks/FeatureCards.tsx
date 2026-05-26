@@ -22,7 +22,7 @@ export function FeatureCards({ block }: { block: any }) {
             {block.title && (
               <h2 className="font-sans text-4xl md:text-5xl text-brand-navy font-light mt-3">{block.title}</h2>
             )}
-            <div className="mt-6 mx-auto h-px w-16 bg-brand-gold" />
+            <div className="mt-6 mx-auto h-px w-16 bg-themed-accent" />
             {block.description && <p className="body-lead mt-6">{block.description}</p>}
           </div>
         )}
@@ -35,7 +35,7 @@ export function FeatureCards({ block }: { block: any }) {
               <Wrapper
                 key={i}
                 {...wrapperProps}
-                className="group relative block bg-white rounded-2xl overflow-hidden border border-brand-line hover:border-brand-gold transition-all hover:-translate-y-1 hover:card-shadow"
+                className="group relative block bg-white rounded-2xl overflow-hidden border border-brand-line hover:border-themed-accent transition-all hover:-translate-y-1 hover:card-shadow"
               >
                 {imgSrc && (
                   <div className="relative aspect-[4/3] overflow-hidden">
@@ -45,15 +45,15 @@ export function FeatureCards({ block }: { block: any }) {
                 )}
                 <div className="p-7">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="text-xs font-mono text-brand-gold">{String(i + 1).padStart(2, '0')}</span>
-                    <div className="h-px flex-1 bg-brand-line group-hover:bg-brand-gold transition" />
+                    <span className="text-xs font-mono text-themed-accent">{String(i + 1).padStart(2, '0')}</span>
+                    <div className="h-px flex-1 bg-brand-line group-hover:bg-themed-accent transition" />
                   </div>
                   <h3 className="font-sans text-xl md:text-2xl text-brand-navy font-medium leading-snug">{c.title}</h3>
                   {c.description && (
                     <p className="mt-3 text-sm text-brand-muted leading-relaxed">{c.description}</p>
                   )}
                   {c.href && (
-                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-navy group-hover:text-brand-gold transition">
+                    <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-navy group-hover:text-themed-accent transition">
                       İncele <ArrowUpRight size={15} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </span>
                   )}

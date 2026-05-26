@@ -8,7 +8,7 @@ export function CTABand({ block }: { block: any }) {
     <section className={cn('py-20', isDark ? 'bg-brand-deep text-white' : 'bg-brand-cream text-brand-navy')}>
       <div className="container-x text-center max-w-3xl mx-auto">
         {block.eyebrow && (
-          <span className={cn('text-xs uppercase tracking-[0.3em]', isDark ? 'text-brand-gold' : 'text-brand-gold')}>
+          <span className={cn('text-xs uppercase tracking-[0.3em]', isDark ? 'text-themed-accent' : 'text-themed-accent')}>
             {block.eyebrow}
           </span>
         )}

@@ -15,7 +15,7 @@ export function Timeline({ block }: { block: any }) {
           {block.title && (
             <h2 className="font-sans text-4xl md:text-5xl text-brand-navy font-light">{block.title}</h2>
           )}
-          <div className="mt-6 mx-auto h-px w-16 bg-brand-gold" />
+          <div className="mt-6 mx-auto h-px w-16 bg-themed-accent" />
           {block.description && <p className="body-lead mt-6 max-w-2xl mx-auto">{block.description}</p>}
         </div>
 
@@ -38,8 +38,8 @@ export function Timeline({ block }: { block: any }) {
                   <div className={cn(
                     'order-2 h-3 w-3 rounded-full border-2 transition relative z-10',
                     active === i
-                      ? 'bg-brand-gold border-brand-gold scale-125'
-                      : 'bg-white border-brand-muted/40 group-hover:border-brand-gold',
+                      ? 'bg-themed-accent border-themed-accent scale-125'
+                      : 'bg-white border-brand-muted/40 group-hover:border-themed-accent',
                   )} />
                   <span className={cn(
                     'mt-3 font-mono text-xs',
@@ -56,7 +56,7 @@ export function Timeline({ block }: { block: any }) {
 
         {cur && (
           <div className="mt-12 text-center max-w-2xl mx-auto">
-            <span className="text-xs uppercase tracking-[0.2em] text-brand-gold">{cur.year}</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-themed-accent">{cur.year}</span>
             <h3 className="mt-3 font-sans text-2xl md:text-3xl text-brand-navy font-medium">{cur.title}</h3>
             {cur.description && <p className="mt-4 body-lead">{cur.description}</p>}
           </div>

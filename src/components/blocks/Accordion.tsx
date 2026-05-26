@@ -26,7 +26,7 @@ export function Accordion({ block }: { block: any }) {
                 className="w-full flex items-center justify-between gap-4 py-5 text-left"
               >
                 <span className="font-serif text-xl text-brand-navy">{it.title}</span>
-                <ChevronDown className={cn('transition text-brand-gold', open === i && 'rotate-180')} />
+                <ChevronDown className={cn('transition text-themed-accent', open === i && 'rotate-180')} />
               </button>
               <div className={cn('overflow-hidden transition-all', open === i ? 'max-h-[600px] pb-6' : 'max-h-0')}>
                 <RichText content={it.body} />

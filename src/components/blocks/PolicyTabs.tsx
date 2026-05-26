@@ -19,7 +19,7 @@ export function PolicyTabs({ block }: { block: any }) {
           <h2 className="font-sans text-4xl md:text-5xl text-brand-navy font-light mt-3">
             {block.sectionTitle}
           </h2>
-          <div className="mt-6 mx-auto h-px w-16 bg-brand-gold" />
+          <div className="mt-6 mx-auto h-px w-16 bg-themed-accent" />
         </div>
 
         <div className="grid gap-8 md:grid-cols-[280px_1fr]">
@@ -35,7 +35,7 @@ export function PolicyTabs({ block }: { block: any }) {
                     : 'bg-transparent border-transparent text-brand-muted hover:text-brand-navy hover:bg-white/40',
                 )}
               >
-                <span className={cn('text-xs uppercase tracking-wider block mb-1', active === i ? 'text-brand-gold' : 'text-brand-muted/60')}>
+                <span className={cn('text-xs uppercase tracking-wider block mb-1', active === i ? 'text-themed-accent' : 'text-brand-muted/60')}>
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className="font-medium text-sm md:text-base">{t.title}</span>
@@ -46,8 +46,8 @@ export function PolicyTabs({ block }: { block: any }) {
           {cur && (
             <div className="bg-white rounded-2xl card-shadow p-8 md:p-12">
               <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-10 bg-brand-gold" />
-                <span className="text-xs uppercase tracking-[0.2em] text-brand-gold">Politika</span>
+                <div className="h-px w-10 bg-themed-accent" />
+                <span className="text-xs uppercase tracking-[0.2em] text-themed-accent">Politika</span>
               </div>
               <h3 className="font-sans text-3xl text-brand-navy font-light mb-6">{cur.title}</h3>
               <div className="prose prose-sm max-w-none text-brand-muted leading-relaxed">
@@ -56,7 +56,7 @@ export function PolicyTabs({ block }: { block: any }) {
               {cur.detailHref && (
                 <Link
                   href={cur.detailHref}
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-brand-navy hover:text-brand-gold transition"
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-brand-navy hover:text-themed-accent transition"
                 >
                   Detay sayfası <ArrowRight size={14} />
                 </Link>

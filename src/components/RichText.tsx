@@ -25,7 +25,7 @@ function renderNode(node: Node, key: number): React.ReactNode {
     case 'listitem':
       return <li key={key} className="mb-1">{children}</li>
     case 'link':
-      return <a key={key} href={node.fields?.url} className="text-brand-gold hover:underline">{children}</a>
+      return <a key={key} href={node.fields?.url} className="text-themed-accent hover:underline">{children}</a>
     case 'root':
       return <>{children}</>
     default:

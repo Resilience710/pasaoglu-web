@@ -13,7 +13,7 @@ export function Footer({ settings }: { settings: any }) {
           {logoSrc ? (
             <Image src={logoSrc} alt="Paşaoğlu Group" width={180} height={48} className="h-10 w-auto invert brightness-0" />
           ) : (
-            <span className="font-serif text-2xl text-white">Paşaoğlu<span className="text-brand-gold">.</span></span>
+            <span className="font-serif text-2xl text-white">Paşaoğlu<span className="text-themed-accent">.</span></span>
           )}
           <p className="mt-5 text-sm leading-relaxed">
             {settings?.footer?.description || 'Paşaoğlu Group; kimya, yapı ve gıda sektörlerinde kurumsal çözümler sunan bir holding yapılanmasıdır.'}
@@ -26,7 +26,7 @@ export function Footer({ settings }: { settings: any }) {
             <ul className="space-y-2 text-sm">
               {(col.links || []).map((l: any) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="hover:text-brand-gold transition">{l.label}</Link>
+                  <Link href={l.href} className="hover:text-themed-accent transition">{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -38,7 +38,7 @@ export function Footer({ settings }: { settings: any }) {
           <span>{settings?.footer?.copyright || `© ${year} Paşaoğlu Group. Tüm hakları saklıdır.`}</span>
           <div className="flex items-center gap-4">
             {(settings?.social || []).map((s: any) => (
-              <a key={s.url} href={s.url} target="_blank" rel="noopener" className="hover:text-brand-gold capitalize">
+              <a key={s.url} href={s.url} target="_blank" rel="noopener" className="hover:text-themed-accent capitalize">
                 {s.platform}
               </a>
             ))}

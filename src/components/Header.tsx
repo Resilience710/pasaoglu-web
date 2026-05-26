@@ -33,8 +33,8 @@ export function Header({
         <div className="container-x flex items-center justify-between py-2">
           <span>{settings?.tagline || 'Üç sektör, tek güç — Paşaoğlu Group'}</span>
           <div className="flex items-center gap-5">
-            {settings?.phone && <a href={`tel:${settings.phone}`} className="hover:text-brand-gold">{settings.phone}</a>}
-            {settings?.email && <a href={`mailto:${settings.email}`} className="hover:text-brand-gold">{settings.email}</a>}
+            {settings?.phone && <a href={`tel:${settings.phone}`} className="hover:text-themed-accent">{settings.phone}</a>}
+            {settings?.email && <a href={`mailto:${settings.email}`} className="hover:text-themed-accent">{settings.email}</a>}
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ export function Header({
             {logoSrc ? (
               <Image src={logoSrc} alt="Paşaoğlu Group" width={160} height={40} className="h-9 w-auto" />
             ) : (
-              <span className="font-serif text-2xl text-brand-navy">Paşaoğlu<span className="text-brand-gold">.</span></span>
+              <span className="font-serif text-2xl text-brand-navy">Paşaoğlu<span className="text-themed-accent">.</span></span>
             )}
           </Link>
 
@@ -59,7 +59,7 @@ export function Header({
               <div key={item.href} className="group relative">
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-sm font-medium text-brand-navy hover:text-brand-gold transition"
+                  className="flex items-center gap-1 text-sm font-medium text-brand-navy hover:text-themed-accent transition"
                 >
                   {item.label}
                   {item.children?.length ? <ChevronDown size={14} /> : null}
@@ -71,7 +71,7 @@ export function Header({
                         <Link
                           key={c.href}
                           href={c.href}
-                          className="block px-5 py-2 text-sm text-brand-navy hover:bg-brand-cream hover:text-brand-gold transition"
+                          className="block px-5 py-2 text-sm text-brand-navy hover:bg-brand-cream hover:text-themed-accent transition"
                         >
                           {c.label}
                         </Link>

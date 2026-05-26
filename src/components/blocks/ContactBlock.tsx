@@ -12,18 +12,18 @@ export function ContactBlock({ block }: { block: any }) {
               <div className="p-6 space-y-3">
                 <h3 className="font-serif text-2xl text-brand-navy">{o.name}</h3>
                 <p className="flex items-start gap-2 text-brand-muted text-sm">
-                  <MapPin className="shrink-0 text-brand-gold mt-0.5" size={16} />
+                  <MapPin className="shrink-0 text-themed-accent mt-0.5" size={16} />
                   <span className="whitespace-pre-line">{o.address}</span>
                 </p>
                 {o.phone && (
                   <p className="flex items-center gap-2 text-brand-muted text-sm">
-                    <Phone className="text-brand-gold" size={16} />
+                    <Phone className="text-themed-accent" size={16} />
                     <a href={`tel:${o.phone}`} className="hover:text-brand-navy">{o.phone}</a>
                   </p>
                 )}
                 {o.email && (
                   <p className="flex items-center gap-2 text-brand-muted text-sm">
-                    <Mail className="text-brand-gold" size={16} />
+                    <Mail className="text-themed-accent" size={16} />
                     <a href={`mailto:${o.email}`} className="hover:text-brand-navy">{o.email}</a>
                   </p>
                 )}

@@ -34,7 +34,7 @@ export function ProductAccordion({ block }: { block: any }) {
                   className="w-full flex items-center justify-between gap-4 p-6 text-left"
                 >
                   <div className="flex items-center gap-5">
-                    <span className="text-brand-gold font-mono text-sm">
+                    <span className="text-themed-accent font-mono text-sm">
                       {String(idx + 1).padStart(2, '0')}
                     </span>
                     <div>
@@ -44,7 +44,7 @@ export function ProductAccordion({ block }: { block: any }) {
                       )}
                     </div>
                   </div>
-                  <ChevronDown className={cn('transition shrink-0', isOpen && 'rotate-180 text-brand-gold')} />
+                  <ChevronDown className={cn('transition shrink-0', isOpen && 'rotate-180 text-themed-accent')} />
                 </button>
                 <div className={cn('overflow-hidden transition-all', isOpen ? 'max-h-[2000px]' : 'max-h-0')}>
                   <div className="px-6 pb-6 pt-2 border-t border-brand-line">
@@ -55,7 +55,7 @@ export function ProductAccordion({ block }: { block: any }) {
                           <ul className="space-y-1 text-sm text-brand-muted">
                             {(sg.products || []).map((p: any, pi: number) => (
                               <li key={pi} className="flex items-start gap-2">
-                                <span className="text-brand-gold mt-0.5">•</span>
+                                <span className="text-themed-accent mt-0.5">•</span>
                                 <span>{p.name}</span>
                               </li>
                             ))}
