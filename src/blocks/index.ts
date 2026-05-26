@@ -1,65 +1,62 @@
 import type { Block } from 'payload'
 
+const buttonsField = {
+  name: 'buttons',
+  type: 'array' as const,
+  label: 'Butonlar',
+  maxRows: 3,
+  fields: [
+    { name: 'label', type: 'text' as const, required: true, label: 'Buton Yazısı' },
+    { name: 'href', type: 'text' as const, required: true, label: 'Bağlantı (URL veya iç sayfa örn. /iletisim)' },
+    {
+      name: 'variant', type: 'select' as const, defaultValue: 'primary',
+      label: 'Buton Stili',
+      options: [
+        { label: 'Birincil (dolu mavi)', value: 'primary' },
+        { label: 'Aksan (renkli)', value: 'accent' },
+        { label: 'Çerçeveli (şeffaf)', value: 'ghost' },
+      ],
+    },
+  ],
+}
+
 export const HeroVideo: Block = {
   slug: 'heroVideo',
-  labels: { singular: 'Hero (Büyük Üst Alan)', plural: 'Hero (Büyük Üst Alan)' },
+  labels: { singular: '🎬 Hero (Üst Büyük Alan)', plural: 'Hero (Üst Büyük Alan)' },
   fields: [
     {
-      name: 'variant',
-      type: 'select',
-      defaultValue: 'centered',
-      label: 'Görünüm Stili',
+      name: 'variant', type: 'select', defaultValue: 'centered', label: 'Görünüm Stili',
       options: [
-        { label: 'Ortalı Overlay (Veskim tarzı)', value: 'centered' },
-        { label: 'Sağ Panel (Ergun tarzı)', value: 'sidePanel' },
-        { label: 'Sol Hizalı (Klasik)', value: 'leftAligned' },
-        { label: 'Tam Ekran Görsel (Gıda)', value: 'fullImage' },
+        { label: 'Ortalı Overlay (Veskim tarzı) — koyu zemin üzeri merkez yazı', value: 'centered' },
+        { label: 'Sağ Panel (Ergun tarzı) — sol başlık + sağ beyaz panel', value: 'sidePanel' },
+        { label: 'Sol Hizalı — klasik soldan başlık', value: 'leftAligned' },
+        { label: 'Tam Ekran Görsel — alt-sol başlık, açık zemin', value: 'fullImage' },
       ],
     },
-    { name: 'eyebrow', type: 'text', label: 'Üst etiket' },
-    { name: 'title', type: 'text', required: true, label: 'Başlık (* için * etrafı bold olur)' },
-    { name: 'titleAccent', type: 'text', label: 'Vurgu kelimesi (bold)' },
-    { name: 'description', type: 'textarea', label: 'Açıklama' },
-    { name: 'video', type: 'upload', relationTo: 'media', label: 'Arkaplan video' },
-    { name: 'poster', type: 'upload', relationTo: 'media', label: 'Yedek görsel (video yoksa)' },
-    {
-      name: 'buttons',
-      type: 'array',
-      label: 'Butonlar',
-      maxRows: 3,
-      fields: [
-        { name: 'label', type: 'text', required: true },
-        { name: 'href', type: 'text', required: true },
-        {
-          name: 'variant',
-          type: 'select',
-          defaultValue: 'primary',
-          options: [
-            { label: 'Birincil (dolu altın)', value: 'primary' },
-            { label: 'İkincil (çerçeveli)', value: 'ghost' },
-            { label: 'Beyaz/Aksan', value: 'accent' },
-          ],
-        },
-      ],
-    },
+    { name: 'eyebrow', type: 'text', label: 'Üst Etiket (küçük yazı, ör. "1987’den bu yana")' },
+    { name: 'title', type: 'text', required: true, label: 'Ana Başlık' },
+    { name: 'titleAccent', type: 'text', label: 'Vurgu Kelimesi (alt satırda kalın/renkli görünür)' },
+    { name: 'description', type: 'textarea', label: 'Açıklama Paragrafı' },
+    { name: 'video', type: 'upload', relationTo: 'media', label: 'Arkaplan Videosu (otomatik döner)' },
+    { name: 'poster', type: 'upload', relationTo: 'media', label: 'Yedek / Açık Tema Görseli' },
+    buttonsField,
     {
       name: 'certifications',
       type: 'array',
-      label: 'Sertifika rozetleri (Veskim tarzı için)',
+      label: 'Sertifika Rozetleri (Ortalı Stil için — Veskim ekranındaki gibi)',
       fields: [
         { name: 'name', type: 'text', required: true, label: 'Ad (ör. ISO 9001)' },
-        { name: 'description', type: 'text', label: 'Alt etiket (ör. KALİTE YÖNETİM)' },
+        { name: 'description', type: 'text', label: 'Alt Etiket (ör. KALİTE YÖNETİM)' },
       ],
     },
     {
-      name: 'sidePanel',
-      type: 'group',
-      label: 'Sağ Panel (Ergun stili için)',
+      name: 'sidePanel', type: 'group',
+      label: 'Sağ Panel (Sadece "Sağ Panel" stili için)',
       fields: [
-        { name: 'panelTitle', type: 'text' },
-        { name: 'panelText', type: 'textarea' },
-        { name: 'panelCtaLabel', type: 'text' },
-        { name: 'panelCtaHref', type: 'text' },
+        { name: 'panelTitle', type: 'text', label: 'Panel Başlığı' },
+        { name: 'panelText', type: 'textarea', label: 'Panel Metni' },
+        { name: 'panelCtaLabel', type: 'text', label: 'Panel Buton Yazısı' },
+        { name: 'panelCtaHref', type: 'text', label: 'Panel Buton Linki' },
       ],
     },
     { name: 'showScrollIndicator', type: 'checkbox', defaultValue: true, label: 'Aşağı kaydır oku göster' },
@@ -68,36 +65,31 @@ export const HeroVideo: Block = {
 
 export const SplitTextImage: Block = {
   slug: 'splitTextImage',
-  labels: { singular: 'Bölünmüş (Metin+Görsel)', plural: 'Bölünmüş (Metin+Görsel)' },
+  labels: { singular: '🖼️ Görsel + Metin', plural: 'Görsel + Metin Bölümleri' },
   fields: [
     {
-      name: 'mediaSide',
-      type: 'select',
-      defaultValue: 'right',
+      name: 'mediaSide', type: 'select', defaultValue: 'right', label: 'Görselin Pozisyonu',
       options: [
-        { label: 'Görsel sağda', value: 'right' },
-        { label: 'Görsel solda', value: 'left' },
+        { label: 'Sağda', value: 'right' },
+        { label: 'Solda', value: 'left' },
       ],
     },
-    { name: 'eyebrow', type: 'text' },
-    { name: 'title', type: 'text', required: true },
-    { name: 'body', type: 'richText' },
-    { name: 'image', type: 'upload', relationTo: 'media' },
+    { name: 'eyebrow', type: 'text', label: 'Üst Etiket' },
+    { name: 'title', type: 'text', required: true, label: 'Başlık' },
+    { name: 'body', type: 'richText', label: 'Açıklama Metni (zengin format)' },
+    { name: 'image', type: 'upload', relationTo: 'media', label: 'Görsel' },
     {
-      name: 'features',
-      type: 'array',
-      label: 'Alt özellikler (opsiyonel)',
+      name: 'features', type: 'array', label: 'Alt Özellik Kutuları (numaralı liste, opsiyonel)',
       fields: [
-        { name: 'title', type: 'text', required: true },
-        { name: 'description', type: 'textarea' },
+        { name: 'title', type: 'text', required: true, label: 'Başlık' },
+        { name: 'description', type: 'textarea', label: 'Açıklama' },
       ],
     },
     {
-      name: 'button',
-      type: 'group',
+      name: 'button', type: 'group', label: 'Buton (opsiyonel)',
       fields: [
-        { name: 'label', type: 'text' },
-        { name: 'href', type: 'text' },
+        { name: 'label', type: 'text', label: 'Buton Yazısı' },
+        { name: 'href', type: 'text', label: 'Bağlantı' },
       ],
     },
   ],
@@ -105,26 +97,21 @@ export const SplitTextImage: Block = {
 
 export const StatsGrid: Block = {
   slug: 'statsGrid',
-  labels: { singular: 'İstatistik Grid', plural: 'İstatistik Grid' },
+  labels: { singular: '📊 İstatistik Şeridi', plural: 'İstatistik Şeritleri' },
   fields: [
     {
-      name: 'variant',
-      type: 'select',
-      defaultValue: 'dark',
+      name: 'variant', type: 'select', defaultValue: 'dark', label: 'Arkaplan',
       options: [
-        { label: 'Koyu (Navy arkaplan)', value: 'dark' },
-        { label: 'Açık (Krem arkaplan)', value: 'light' },
+        { label: 'Koyu (Navy)', value: 'dark' },
+        { label: 'Açık (Krem)', value: 'light' },
       ],
     },
     {
-      name: 'items',
-      type: 'array',
-      minRows: 2,
-      maxRows: 6,
+      name: 'items', type: 'array', minRows: 2, maxRows: 6, label: 'İstatistikler',
       fields: [
         { name: 'value', type: 'text', required: true, label: 'Değer (ör. 36, 155+, 25.000)' },
         { name: 'label', type: 'text', required: true, label: 'Etiket (ör. YILLIK TECRÜBE)' },
-        { name: 'description', type: 'textarea' },
+        { name: 'description', type: 'textarea', label: 'Açıklama (opsiyonel)' },
       ],
     },
   ],
@@ -132,15 +119,13 @@ export const StatsGrid: Block = {
 
 export const FeatureCards: Block = {
   slug: 'featureCards',
-  labels: { singular: 'Kart Grid', plural: 'Kart Grid' },
+  labels: { singular: '🎴 Kart Grid (Özellikler/Sektörler)', plural: 'Kart Grid Bölümleri' },
   fields: [
-    { name: 'eyebrow', type: 'text' },
-    { name: 'title', type: 'text' },
-    { name: 'description', type: 'textarea' },
+    { name: 'eyebrow', type: 'text', label: 'Üst Etiket' },
+    { name: 'title', type: 'text', label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
     {
-      name: 'columns',
-      type: 'select',
-      defaultValue: '3',
+      name: 'columns', type: 'select', defaultValue: '3', label: 'Sütun Sayısı',
       options: [
         { label: '2 sütun', value: '2' },
         { label: '3 sütun', value: '3' },
@@ -148,14 +133,12 @@ export const FeatureCards: Block = {
       ],
     },
     {
-      name: 'cards',
-      type: 'array',
-      minRows: 1,
+      name: 'cards', type: 'array', minRows: 1, label: 'Kartlar',
       fields: [
-        { name: 'image', type: 'upload', relationTo: 'media' },
-        { name: 'title', type: 'text', required: true },
-        { name: 'description', type: 'textarea' },
-        { name: 'href', type: 'text', label: 'Link (opsiyonel)' },
+        { name: 'image', type: 'upload', relationTo: 'media', label: 'Kart Görseli' },
+        { name: 'title', type: 'text', required: true, label: 'Kart Başlığı' },
+        { name: 'description', type: 'textarea', label: 'Kart Açıklaması' },
+        { name: 'href', type: 'text', label: 'Tıklanınca gidilecek sayfa (opsiyonel, ör. /sektorler/kimya)' },
       ],
     },
   ],
@@ -163,15 +146,14 @@ export const FeatureCards: Block = {
 
 export const PartnerMarquee: Block = {
   slug: 'partnerMarquee',
-  labels: { singular: 'Ortak Logoları (Kayan)', plural: 'Ortak Logoları (Kayan)' },
+  labels: { singular: '🔗 İş Ortakları (Kayan Logolar)', plural: 'İş Ortakları Bandı' },
   fields: [
-    { name: 'title', type: 'text' },
+    { name: 'title', type: 'text', label: 'Başlık (ör. "İş Ortaklarımız")' },
     {
-      name: 'logos',
-      type: 'array',
+      name: 'logos', type: 'array', label: 'Logolar',
       fields: [
-        { name: 'logo', type: 'upload', relationTo: 'media', required: true },
-        { name: 'name', type: 'text' },
+        { name: 'logo', type: 'upload', relationTo: 'media', required: true, label: 'Logo Dosyası' },
+        { name: 'name', type: 'text', label: 'Şirket Adı' },
       ],
     },
   ],
@@ -179,32 +161,28 @@ export const PartnerMarquee: Block = {
 
 export const DocumentGrid: Block = {
   slug: 'documentGrid',
-  labels: { singular: 'Belge Grid', plural: 'Belge Grid' },
+  labels: { singular: '📄 Belge / Sertifika Grid', plural: 'Belge Grid Bölümleri' },
   fields: [
-    { name: 'title', type: 'text' },
-    { name: 'description', type: 'textarea' },
+    { name: 'title', type: 'text', label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
     {
-      name: 'documents',
-      type: 'relationship',
-      relationTo: 'documents',
-      hasMany: true,
+      name: 'documents', type: 'relationship', relationTo: 'documents', hasMany: true,
+      label: 'Belgeler — "Özelleştirme → Belgeler & Sertifikalar"dan ekleyin',
     },
   ],
 }
 
 export const Accordion: Block = {
   slug: 'accordion',
-  labels: { singular: 'Akordeon', plural: 'Akordeon' },
+  labels: { singular: '➕ Akordeon (Aç-Kapa)', plural: 'Akordeon Bölümleri' },
   fields: [
-    { name: 'title', type: 'text' },
-    { name: 'description', type: 'textarea' },
+    { name: 'title', type: 'text', label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
     {
-      name: 'items',
-      type: 'array',
-      minRows: 1,
+      name: 'items', type: 'array', minRows: 1, label: 'Akordeon Öğeleri',
       fields: [
-        { name: 'title', type: 'text', required: true },
-        { name: 'body', type: 'richText' },
+        { name: 'title', type: 'text', required: true, label: 'Öğe Başlığı' },
+        { name: 'body', type: 'richText', label: 'İçerik' },
       ],
     },
   ],
@@ -212,112 +190,59 @@ export const Accordion: Block = {
 
 export const QuoteBand: Block = {
   slug: 'quoteBand',
-  labels: { singular: 'Alıntı Bandı', plural: 'Alıntı Bandı' },
+  labels: { singular: '💬 Alıntı Bandı', plural: 'Alıntı Bantları' },
   fields: [
-    { name: 'quote', type: 'textarea', required: true },
-    { name: 'author', type: 'text' },
-    { name: 'background', type: 'upload', relationTo: 'media' },
+    { name: 'quote', type: 'textarea', required: true, label: 'Alıntı Metni' },
+    { name: 'author', type: 'text', label: 'Söyleyen / Kaynak' },
+    { name: 'background', type: 'upload', relationTo: 'media', label: 'Arkaplan Görseli (opsiyonel)' },
   ],
 }
 
 export const RichTextBlock: Block = {
   slug: 'richText',
-  labels: { singular: 'Zengin Metin', plural: 'Zengin Metin' },
-  fields: [{ name: 'content', type: 'richText', required: true }],
+  labels: { singular: '📝 Serbest Metin', plural: 'Serbest Metin Bölümleri' },
+  fields: [{ name: 'content', type: 'richText', required: true, label: 'İçerik' }],
 }
 
 export const ProductAccordion: Block = {
   slug: 'productAccordion',
-  labels: { singular: 'Ürün Kategorileri (Akordeon)', plural: 'Ürün Kategorileri (Akordeon)' },
+  labels: { singular: '🧪 Ürün Kategorileri (Akordeon)', plural: 'Ürün Akordeon Bölümleri' },
   fields: [
-    { name: 'title', type: 'text' },
-    { name: 'description', type: 'textarea' },
+    { name: 'title', type: 'text', label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
     {
-      name: 'categories',
-      type: 'relationship',
-      relationTo: 'productCategories',
-      hasMany: true,
+      name: 'categories', type: 'relationship', relationTo: 'productCategories', hasMany: true,
+      label: 'Kategoriler — "Özelleştirme → Ürün Kategorileri"nden ekleyin',
     },
   ],
 }
 
 export const PolicyNav: Block = {
   slug: 'policyNav',
-  labels: { singular: 'Politika Nav', plural: 'Politika Nav' },
+  labels: { singular: '🔗 Politika Üst Menü', plural: 'Politika Üst Menüleri' },
   fields: [
     {
-      name: 'links',
-      type: 'array',
-      minRows: 2,
+      name: 'links', type: 'array', minRows: 2, label: 'Bağlantılar',
       fields: [
-        { name: 'label', type: 'text', required: true },
-        { name: 'href', type: 'text', required: true },
+        { name: 'label', type: 'text', required: true, label: 'Etiket' },
+        { name: 'href', type: 'text', required: true, label: 'URL' },
       ],
-    },
-  ],
-}
-
-export const ContactBlock: Block = {
-  slug: 'contactBlock',
-  labels: { singular: 'İletişim Bloğu', plural: 'İletişim Bloğu' },
-  fields: [
-    { name: 'title', type: 'text' },
-    {
-      name: 'offices',
-      type: 'array',
-      maxRows: 4,
-      fields: [
-        { name: 'name', type: 'text', required: true },
-        { name: 'address', type: 'textarea', required: true },
-        { name: 'phone', type: 'text' },
-        { name: 'email', type: 'text' },
-        { name: 'mapEmbed', type: 'textarea', label: 'Google Maps iframe src' },
-      ],
-    },
-  ],
-}
-
-export const CareerFormBlock: Block = {
-  slug: 'careerForm',
-  labels: { singular: 'Kariyer Formu', plural: 'Kariyer Formu' },
-  fields: [
-    { name: 'title', type: 'text' },
-    { name: 'description', type: 'textarea' },
-    {
-      name: 'departments',
-      type: 'array',
-      fields: [{ name: 'name', type: 'text', required: true }],
-    },
-  ],
-}
-
-export const ContactFormBlock: Block = {
-  slug: 'contactForm',
-  labels: { singular: 'İletişim Formu', plural: 'İletişim Formu' },
-  fields: [
-    { name: 'title', type: 'text' },
-    {
-      name: 'subjects',
-      type: 'array',
-      fields: [{ name: 'name', type: 'text', required: true }],
     },
   ],
 }
 
 export const PolicyTabs: Block = {
   slug: 'policyTabs',
-  labels: { singular: 'Politika Tab\'ları', plural: 'Politika Tab\'ları' },
+  labels: { singular: '📋 Politika Tab’ları (Sol-Sağ Panel)', plural: 'Politika Tab Bölümleri' },
   fields: [
-    { name: 'sectionEyebrow', type: 'text', defaultValue: 'Kurumsal' },
-    { name: 'sectionTitle', type: 'text', required: true },
+    { name: 'sectionEyebrow', type: 'text', defaultValue: 'Kurumsal', label: 'Üst Etiket' },
+    { name: 'sectionTitle', type: 'text', required: true, label: 'Bölüm Başlığı' },
     {
-      name: 'tabs',
-      type: 'array',
-      minRows: 2,
+      name: 'tabs', type: 'array', minRows: 2, label: 'Tab’lar (her biri ayrı politika)',
       fields: [
-        { name: 'title', type: 'text', required: true, label: 'Politika başlığı' },
-        { name: 'body', type: 'richText', required: true },
-        { name: 'detailHref', type: 'text', label: 'Detay sayfası linki (opsiyonel)' },
+        { name: 'title', type: 'text', required: true, label: 'Tab Başlığı' },
+        { name: 'body', type: 'richText', required: true, label: 'Politika İçeriği' },
+        { name: 'detailHref', type: 'text', label: 'Detay Sayfası Linki (opsiyonel)' },
       ],
     },
   ],
@@ -325,18 +250,16 @@ export const PolicyTabs: Block = {
 
 export const Timeline: Block = {
   slug: 'timeline',
-  labels: { singular: 'Tarihçe (Timeline)', plural: 'Tarihçe (Timeline)' },
+  labels: { singular: '📅 Tarihçe (Timeline)', plural: 'Tarihçe Bölümleri' },
   fields: [
-    { name: 'title', type: 'text', defaultValue: 'Tarihçemiz' },
-    { name: 'description', type: 'textarea' },
+    { name: 'title', type: 'text', defaultValue: 'Tarihçemiz', label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
     {
-      name: 'milestones',
-      type: 'array',
-      minRows: 2,
+      name: 'milestones', type: 'array', minRows: 2, label: 'Kilometre Taşları',
       fields: [
-        { name: 'year', type: 'text', required: true },
-        { name: 'title', type: 'text', required: true },
-        { name: 'description', type: 'textarea' },
+        { name: 'year', type: 'text', required: true, label: 'Yıl' },
+        { name: 'title', type: 'text', required: true, label: 'Başlık' },
+        { name: 'description', type: 'textarea', label: 'Açıklama' },
       ],
     },
   ],
@@ -344,14 +267,12 @@ export const Timeline: Block = {
 
 export const OfficeGrid: Block = {
   slug: 'officeGrid',
-  labels: { singular: 'Ofis Grid (Adres Kartları)', plural: 'Ofis Grid (Adres Kartları)' },
+  labels: { singular: '📍 Ofis Adres Kartları', plural: 'Ofis Kartı Bölümleri' },
   fields: [
-    { name: 'title', type: 'text' },
-    { name: 'description', type: 'textarea' },
+    { name: 'title', type: 'text', label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
     {
-      name: 'columns',
-      type: 'select',
-      defaultValue: '3',
+      name: 'columns', type: 'select', defaultValue: '3', label: 'Sütun Sayısı',
       options: [
         { label: '2 sütun', value: '2' },
         { label: '3 sütun', value: '3' },
@@ -359,13 +280,12 @@ export const OfficeGrid: Block = {
       ],
     },
     {
-      name: 'offices',
-      type: 'array',
+      name: 'offices', type: 'array', label: 'Ofisler',
       fields: [
-        { name: 'name', type: 'text', required: true },
-        { name: 'address', type: 'textarea', required: true },
-        { name: 'phone', type: 'text' },
-        { name: 'email', type: 'text' },
+        { name: 'name', type: 'text', required: true, label: 'Ofis Adı' },
+        { name: 'address', type: 'textarea', required: true, label: 'Adres' },
+        { name: 'phone', type: 'text', label: 'Telefon' },
+        { name: 'email', type: 'text', label: 'E-posta' },
       ],
     },
   ],
@@ -373,37 +293,74 @@ export const OfficeGrid: Block = {
 
 export const CTABand: Block = {
   slug: 'ctaBand',
-  labels: { singular: 'CTA Bandı', plural: 'CTA Bandları' },
+  labels: { singular: '🎯 CTA (Eylem Çağrısı) Bandı', plural: 'CTA Bantları' },
   fields: [
-    { name: 'eyebrow', type: 'text' },
-    { name: 'title', type: 'text', required: true },
-    { name: 'description', type: 'textarea' },
+    { name: 'eyebrow', type: 'text', label: 'Üst Etiket' },
+    { name: 'title', type: 'text', required: true, label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
     {
-      name: 'buttons',
-      type: 'array',
-      maxRows: 2,
+      name: 'buttons', type: 'array', maxRows: 2, label: 'Butonlar',
       fields: [
-        { name: 'label', type: 'text', required: true },
-        { name: 'href', type: 'text', required: true },
+        { name: 'label', type: 'text', required: true, label: 'Buton Yazısı' },
+        { name: 'href', type: 'text', required: true, label: 'Link' },
         {
-          name: 'variant',
-          type: 'select',
-          defaultValue: 'gold',
+          name: 'variant', type: 'select', defaultValue: 'gold', label: 'Stil',
           options: [
-            { label: 'Altın', value: 'gold' },
+            { label: 'Aksan (Renkli)', value: 'gold' },
             { label: 'Çerçeveli', value: 'ghost' },
           ],
         },
       ],
     },
     {
-      name: 'variant',
-      type: 'select',
-      defaultValue: 'dark',
+      name: 'variant', type: 'select', defaultValue: 'dark', label: 'Arkaplan',
       options: [
         { label: 'Koyu (Navy)', value: 'dark' },
         { label: 'Açık', value: 'light' },
       ],
+    },
+  ],
+}
+
+export const ContactBlock: Block = {
+  slug: 'contactBlock',
+  labels: { singular: '📞 İletişim Adres Kartı (Harita ile)', plural: 'İletişim Adres Bölümleri' },
+  fields: [
+    { name: 'title', type: 'text', label: 'Başlık' },
+    {
+      name: 'offices', type: 'array', maxRows: 4, label: 'Ofisler',
+      fields: [
+        { name: 'name', type: 'text', required: true, label: 'Ofis Adı' },
+        { name: 'address', type: 'textarea', required: true, label: 'Adres' },
+        { name: 'phone', type: 'text', label: 'Telefon' },
+        { name: 'email', type: 'text', label: 'E-posta' },
+        { name: 'mapEmbed', type: 'textarea', label: 'Google Maps iframe src URL’i (opsiyonel)' },
+      ],
+    },
+  ],
+}
+
+export const CareerFormBlock: Block = {
+  slug: 'careerForm',
+  labels: { singular: '💼 Kariyer Formu', plural: 'Kariyer Form Bölümleri' },
+  fields: [
+    { name: 'title', type: 'text', label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
+    {
+      name: 'departments', type: 'array', label: 'Departman Seçenekleri',
+      fields: [{ name: 'name', type: 'text', required: true, label: 'Departman Adı' }],
+    },
+  ],
+}
+
+export const ContactFormBlock: Block = {
+  slug: 'contactForm',
+  labels: { singular: '✉️ İletişim Formu', plural: 'İletişim Form Bölümleri' },
+  fields: [
+    { name: 'title', type: 'text', label: 'Başlık' },
+    {
+      name: 'subjects', type: 'array', label: 'Konu Seçenekleri',
+      fields: [{ name: 'name', type: 'text', required: true, label: 'Konu Adı' }],
     },
   ],
 }

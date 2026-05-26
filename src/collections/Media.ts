@@ -2,7 +2,11 @@ import type { CollectionConfig } from 'payload'
 
 export const Media: CollectionConfig = {
   slug: 'media',
-  admin: { group: 'İçerik' },
+  labels: { singular: 'Medya Dosyası', plural: 'Medya Kütüphanesi' },
+  admin: {
+    group: '🎨 Özelleştirme',
+    description: 'Tüm görseller, videolar ve PDF dosyaları. Buradan yüklediklerinizi sayfa bloklarından seçebilirsiniz.',
+  },
   access: { read: () => true },
   upload: {
     staticDir: 'public/media',

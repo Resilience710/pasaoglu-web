@@ -2,7 +2,12 @@ import type { CollectionConfig } from 'payload'
 
 export const JobOpenings: CollectionConfig = {
   slug: 'jobOpenings',
-  admin: { useAsTitle: 'title', group: 'İçerik' },
+  labels: { singular: 'İş İlanı', plural: 'İş İlanları' },
+  admin: {
+    useAsTitle: 'title',
+    group: '🎨 Özelleştirme',
+    description: 'Kariyer sayfasında listelenecek aktif iş ilanları.',
+  },
   access: { read: () => true },
   fields: [
     { name: 'title', type: 'text', required: true },

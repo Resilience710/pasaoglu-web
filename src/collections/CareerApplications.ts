@@ -2,9 +2,10 @@ import type { CollectionConfig } from 'payload'
 
 export const CareerApplications: CollectionConfig = {
   slug: 'careerApplications',
+  labels: { singular: 'Kariyer Başvurusu', plural: 'Kariyer Başvuruları' },
   admin: {
     useAsTitle: 'fullName',
-    group: 'Form Gönderileri',
+    group: '📥 Form Gönderileri',
     defaultColumns: ['fullName', 'department', 'email', 'createdAt'],
   },
   access: {

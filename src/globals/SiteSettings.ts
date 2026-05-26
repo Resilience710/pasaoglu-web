@@ -2,8 +2,11 @@ import type { GlobalConfig } from 'payload'
 
 export const SiteSettings: GlobalConfig = {
   slug: 'siteSettings',
-  label: 'Site Ayarları',
-  admin: { group: 'Ayarlar' },
+  label: 'Site Ayarları (Logo, Footer, İletişim)',
+  admin: {
+    group: '🎨 Özelleştirme',
+    description: 'Logo, telefon, e-posta, sosyal medya ve footer kolonları — tüm sayfalarda görünür.',
+  },
   access: { read: () => true },
   fields: [
     { name: 'logo', type: 'upload', relationTo: 'media', label: 'Logo' },

@@ -2,8 +2,11 @@ import type { GlobalConfig } from 'payload'
 
 export const MainNav: GlobalConfig = {
   slug: 'mainNav',
-  label: 'Ana Menü',
-  admin: { group: 'Ayarlar' },
+  label: 'Üst Menü (Header Navigasyon)',
+  admin: {
+    group: '🎨 Özelleştirme',
+    description: 'Sitenin üst kısmındaki menü öğeleri ve alt menüleri.',
+  },
   access: { read: () => true },
   fields: [
     {

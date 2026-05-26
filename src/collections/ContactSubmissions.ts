@@ -2,9 +2,10 @@ import type { CollectionConfig } from 'payload'
 
 export const ContactSubmissions: CollectionConfig = {
   slug: 'contactSubmissions',
+  labels: { singular: 'İletişim Mesajı', plural: 'İletişim Form Mesajları' },
   admin: {
     useAsTitle: 'name',
-    group: 'Form Gönderileri',
+    group: '📥 Form Gönderileri',
     defaultColumns: ['name', 'email', 'subject', 'createdAt'],
   },
   access: {

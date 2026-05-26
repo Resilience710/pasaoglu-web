@@ -2,10 +2,12 @@ import type { CollectionConfig } from 'payload'
 
 export const ProductCategories: CollectionConfig = {
   slug: 'productCategories',
+  labels: { singular: 'Ürün Kategorisi', plural: 'Ürün Kategorileri' },
   admin: {
     useAsTitle: 'name',
-    group: 'İçerik',
+    group: '🎨 Özelleştirme',
     defaultColumns: ['name', 'sortOrder', 'updatedAt'],
+    description: 'Kimya sayfasındaki ürün accordion’unda görünen kategoriler ve ürünler.',
   },
   access: { read: () => true },
   fields: [

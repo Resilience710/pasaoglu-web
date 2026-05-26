@@ -26,6 +26,13 @@ export default buildConfig({
     meta: {
       titleSuffix: ' — Paşaoğlu Group Admin',
     },
+    components: {
+      views: {
+        dashboard: {
+          Component: '@/components/admin/AdminDashboard#default',
+        },
+      },
+    },
   },
   collections: [
     Users,

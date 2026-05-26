@@ -163,6 +163,8 @@ export interface User {
   password?: string | null;
 }
 /**
+ * Tüm görseller, videolar ve PDF dosyaları. Buradan yüklediklerinizi sayfa bloklarından seçebilirsiniz.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "media".
  */
@@ -209,14 +211,19 @@ export interface Media {
   };
 }
 /**
+ * Sitedeki tüm sayfaların içeriği. Her sayfa "Sayfa içeriği" altındaki bloklarla yönetilir. Her bloğun metni, görseli, butonu düzenlenebilir.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "pages".
  */
 export interface Page {
   id: number;
+  /**
+   * Admin panelinde gösterilen sayfa adı (ör. "Ana Sayfa", "Hakkımızda"). URL’i etkilemez.
+   */
   title: string;
   /**
-   * URL yolu (ör. "hakkimizda" → /hakkimizda). Ana sayfa için "home" yazın.
+   * Sayfanın adresi. Ana sayfa için "home". Diğerleri için "hakkimizda", "kariyer", "iletisim" gibi. Politika alt sayfaları için "politikalarimiz/kalite" şeklinde.
    */
   slug: string;
   meta?: {
@@ -224,6 +231,9 @@ export interface Page {
     description?: string | null;
     image?: (number | null) | Media;
   };
+  /**
+   * Sayfaya bölümler ekleyin. "+ Bölüm Ekle" diyerek Hero, Görsel+Metin, İstatistik, Kart Grid, Akordeon vb. ekleyebilirsiniz.
+   */
   layout: (
     | {
         variant?: ('centered' | 'sidePanel' | 'leftAligned' | 'fullImage') | null;
@@ -237,7 +247,7 @@ export interface Page {
           | {
               label: string;
               href: string;
-              variant?: ('primary' | 'ghost' | 'accent') | null;
+              variant?: ('primary' | 'accent' | 'ghost') | null;
               id?: string | null;
             }[]
           | null;
@@ -547,6 +557,8 @@ export interface Page {
   createdAt: string;
 }
 /**
+ * ISO sertifikaları, kalite belgeleri, MSDS/TDS gibi dosyalar.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "documents".
  */
@@ -561,6 +573,8 @@ export interface Document {
   createdAt: string;
 }
 /**
+ * Kimya sayfasındaki ürün accordion’unda görünen kategoriler ve ürünler.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "productCategories".
  */
@@ -590,7 +604,7 @@ export interface ProductCategory {
   createdAt: string;
 }
 /**
- * Kimya / Yapı / Gıda sektör sayfaları. Her birine farklı renk teması atayın.
+ * Kimya, Yapı, Gıda sektör sayfaları. Her birinin renk teması ve içeriği bağımsız düzenlenebilir.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "sectors".
@@ -598,6 +612,9 @@ export interface ProductCategory {
 export interface Sector {
   id: number;
   name: string;
+  /**
+   * URL’deki ad (kimya, yapi, gida). Var olanı değiştirmeyin.
+   */
   slug: string;
   shortDescription?: string | null;
   cardImage?: (number | null) | Media;
@@ -619,7 +636,7 @@ export interface Sector {
           | {
               label: string;
               href: string;
-              variant?: ('primary' | 'ghost' | 'accent') | null;
+              variant?: ('primary' | 'accent' | 'ghost') | null;
               id?: string | null;
             }[]
           | null;
@@ -929,6 +946,8 @@ export interface Sector {
   createdAt: string;
 }
 /**
+ * Kariyer sayfasında listelenecek aktif iş ilanları.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "jobOpenings".
  */
@@ -1900,6 +1919,8 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   createdAt?: T;
 }
 /**
+ * Logo, telefon, e-posta, sosyal medya ve footer kolonları — tüm sayfalarda görünür.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "siteSettings".
  */
@@ -1945,6 +1966,8 @@ export interface SiteSetting {
   createdAt?: string | null;
 }
 /**
+ * Sitenin üst kısmındaki menü öğeleri ve alt menüleri.
+ *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "mainNav".
  */
