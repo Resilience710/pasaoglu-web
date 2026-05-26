@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: 27 79 140;
+  --accent-light: 47 111 184;
+}
+
+[data-theme='chem'] { --accent: 27 79 140; --accent-light: 47 111 184; }
+[data-theme='build'] { --accent: 107 78 61; --accent-light: 138 106 85; }
+[data-theme='food'] { --accent: 62 124 74; --accent-light: 91 160 104; }
+
+html, body {
+  background: #ffffff;
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-container px-5 md:px-8;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition;
+  }
+  .btn-primary {
+    @apply bg-brand-navy text-white hover:bg-brand-deep;
+  }
+  .btn-gold {
+    @apply bg-brand-gold text-brand-navy hover:opacity-90;
+  }
+  .btn-ghost {
+    @apply border border-white/40 text-white hover:bg-white/10 backdrop-blur;
+  }
+  .btn-outline {
+    @apply border border-brand-line text-brand-navy hover:bg-brand-cream;
+  }
+  .btn-accent {
+    background-color: rgb(var(--accent));
+    color: white;
+  }
+  .btn-accent:hover {
+    background-color: rgb(var(--accent-light));
+  }
+  .eyebrow {
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.18em] text-brand-gold;
+  }
+  .section-title {
+    @apply font-serif text-3xl md:text-5xl text-brand-navy leading-tight;
+  }
+  .body-lead {
+    @apply text-base md:text-lg text-brand-muted leading-relaxed;
+  }
+  .card-shadow {
+    box-shadow: 0 1px 2px rgba(15,42,71,0.06), 0 8px 32px rgba(15,42,71,0.08);
+  }
+}
+
+.scroll-fade {
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}

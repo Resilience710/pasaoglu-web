@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+build
+*.log
+.env
+.env.local
+pasaoglu.db
+pasaoglu.db-journal
+pasaoglu.db-wal
+pasaoglu.db-shm
+public/media
+.DS_Store
