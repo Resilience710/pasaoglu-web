@@ -9,6 +9,10 @@ import { QuoteBand } from './blocks/QuoteBand'
 import { RichTextBlock } from './blocks/RichTextBlock'
 import { ProductAccordion } from './blocks/ProductAccordion'
 import { PolicyNav } from './blocks/PolicyNav'
+import { PolicyTabs } from './blocks/PolicyTabs'
+import { Timeline } from './blocks/Timeline'
+import { OfficeGrid } from './blocks/OfficeGrid'
+import { CTABand } from './blocks/CTABand'
 import { ContactBlock } from './blocks/ContactBlock'
 import { ContactForm } from './blocks/ContactForm'
 import { CareerForm } from './blocks/CareerForm'
@@ -25,6 +29,10 @@ const MAP: Record<string, React.FC<{ block: any }>> = {
   richText: RichTextBlock,
   productAccordion: ProductAccordion,
   policyNav: PolicyNav,
+  policyTabs: PolicyTabs,
+  timeline: Timeline,
+  officeGrid: OfficeGrid,
+  ctaBand: CTABand,
   contactBlock: ContactBlock,
   contactForm: ContactForm,
   careerForm: CareerForm,

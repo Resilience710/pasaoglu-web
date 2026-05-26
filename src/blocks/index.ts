@@ -304,6 +304,110 @@ export const ContactFormBlock: Block = {
   ],
 }
 
+export const PolicyTabs: Block = {
+  slug: 'policyTabs',
+  labels: { singular: 'Politika Tab\'ları', plural: 'Politika Tab\'ları' },
+  fields: [
+    { name: 'sectionEyebrow', type: 'text', defaultValue: 'Kurumsal' },
+    { name: 'sectionTitle', type: 'text', required: true },
+    {
+      name: 'tabs',
+      type: 'array',
+      minRows: 2,
+      fields: [
+        { name: 'title', type: 'text', required: true, label: 'Politika başlığı' },
+        { name: 'body', type: 'richText', required: true },
+        { name: 'detailHref', type: 'text', label: 'Detay sayfası linki (opsiyonel)' },
+      ],
+    },
+  ],
+}
+
+export const Timeline: Block = {
+  slug: 'timeline',
+  labels: { singular: 'Tarihçe (Timeline)', plural: 'Tarihçe (Timeline)' },
+  fields: [
+    { name: 'title', type: 'text', defaultValue: 'Tarihçemiz' },
+    { name: 'description', type: 'textarea' },
+    {
+      name: 'milestones',
+      type: 'array',
+      minRows: 2,
+      fields: [
+        { name: 'year', type: 'text', required: true },
+        { name: 'title', type: 'text', required: true },
+        { name: 'description', type: 'textarea' },
+      ],
+    },
+  ],
+}
+
+export const OfficeGrid: Block = {
+  slug: 'officeGrid',
+  labels: { singular: 'Ofis Grid (Adres Kartları)', plural: 'Ofis Grid (Adres Kartları)' },
+  fields: [
+    { name: 'title', type: 'text' },
+    { name: 'description', type: 'textarea' },
+    {
+      name: 'columns',
+      type: 'select',
+      defaultValue: '3',
+      options: [
+        { label: '2 sütun', value: '2' },
+        { label: '3 sütun', value: '3' },
+        { label: '4 sütun', value: '4' },
+      ],
+    },
+    {
+      name: 'offices',
+      type: 'array',
+      fields: [
+        { name: 'name', type: 'text', required: true },
+        { name: 'address', type: 'textarea', required: true },
+        { name: 'phone', type: 'text' },
+        { name: 'email', type: 'text' },
+      ],
+    },
+  ],
+}
+
+export const CTABand: Block = {
+  slug: 'ctaBand',
+  labels: { singular: 'CTA Bandı', plural: 'CTA Bandları' },
+  fields: [
+    { name: 'eyebrow', type: 'text' },
+    { name: 'title', type: 'text', required: true },
+    { name: 'description', type: 'textarea' },
+    {
+      name: 'buttons',
+      type: 'array',
+      maxRows: 2,
+      fields: [
+        { name: 'label', type: 'text', required: true },
+        { name: 'href', type: 'text', required: true },
+        {
+          name: 'variant',
+          type: 'select',
+          defaultValue: 'gold',
+          options: [
+            { label: 'Altın', value: 'gold' },
+            { label: 'Çerçeveli', value: 'ghost' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'variant',
+      type: 'select',
+      defaultValue: 'dark',
+      options: [
+        { label: 'Koyu (Navy)', value: 'dark' },
+        { label: 'Açık', value: 'light' },
+      ],
+    },
+  ],
+}
+
 export const allBlocks = [
   HeroVideo,
   SplitTextImage,
@@ -316,6 +420,10 @@ export const allBlocks = [
   RichTextBlock,
   ProductAccordion,
   PolicyNav,
+  PolicyTabs,
+  Timeline,
+  OfficeGrid,
+  CTABand,
   ContactBlock,
   CareerFormBlock,
   ContactFormBlock,

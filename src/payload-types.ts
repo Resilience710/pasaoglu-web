@@ -424,6 +424,84 @@ export interface Page {
         blockType: 'policyNav';
       }
     | {
+        sectionEyebrow?: string | null;
+        sectionTitle: string;
+        tabs?:
+          | {
+              title: string;
+              body: {
+                root: {
+                  type: string;
+                  children: {
+                    type: any;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              detailHref?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'policyTabs';
+      }
+    | {
+        title?: string | null;
+        description?: string | null;
+        milestones?:
+          | {
+              year: string;
+              title: string;
+              description?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'timeline';
+      }
+    | {
+        title?: string | null;
+        description?: string | null;
+        columns?: ('2' | '3' | '4') | null;
+        offices?:
+          | {
+              name: string;
+              address: string;
+              phone?: string | null;
+              email?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'officeGrid';
+      }
+    | {
+        eyebrow?: string | null;
+        title: string;
+        description?: string | null;
+        buttons?:
+          | {
+              label: string;
+              href: string;
+              variant?: ('gold' | 'ghost') | null;
+              id?: string | null;
+            }[]
+          | null;
+        variant?: ('dark' | 'light') | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'ctaBand';
+      }
+    | {
         title?: string | null;
         offices?:
           | {
@@ -726,6 +804,84 @@ export interface Sector {
         id?: string | null;
         blockName?: string | null;
         blockType: 'policyNav';
+      }
+    | {
+        sectionEyebrow?: string | null;
+        sectionTitle: string;
+        tabs?:
+          | {
+              title: string;
+              body: {
+                root: {
+                  type: string;
+                  children: {
+                    type: any;
+                    version: number;
+                    [k: string]: unknown;
+                  }[];
+                  direction: ('ltr' | 'rtl') | null;
+                  format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+                  indent: number;
+                  version: number;
+                };
+                [k: string]: unknown;
+              };
+              detailHref?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'policyTabs';
+      }
+    | {
+        title?: string | null;
+        description?: string | null;
+        milestones?:
+          | {
+              year: string;
+              title: string;
+              description?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'timeline';
+      }
+    | {
+        title?: string | null;
+        description?: string | null;
+        columns?: ('2' | '3' | '4') | null;
+        offices?:
+          | {
+              name: string;
+              address: string;
+              phone?: string | null;
+              email?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'officeGrid';
+      }
+    | {
+        eyebrow?: string | null;
+        title: string;
+        description?: string | null;
+        buttons?:
+          | {
+              label: string;
+              href: string;
+              variant?: ('gold' | 'ghost') | null;
+              id?: string | null;
+            }[]
+          | null;
+        variant?: ('dark' | 'light') | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'ctaBand';
       }
     | {
         title?: string | null;
@@ -1197,6 +1353,74 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+        policyTabs?:
+          | T
+          | {
+              sectionEyebrow?: T;
+              sectionTitle?: T;
+              tabs?:
+                | T
+                | {
+                    title?: T;
+                    body?: T;
+                    detailHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        timeline?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              milestones?:
+                | T
+                | {
+                    year?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        officeGrid?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              columns?: T;
+              offices?:
+                | T
+                | {
+                    name?: T;
+                    address?: T;
+                    phone?: T;
+                    email?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        ctaBand?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              buttons?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    variant?: T;
+                    id?: T;
+                  };
+              variant?: T;
+              id?: T;
+              blockName?: T;
+            };
         contactBlock?:
           | T
           | {
@@ -1432,6 +1656,74 @@ export interface SectorsSelect<T extends boolean = true> {
                     href?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        policyTabs?:
+          | T
+          | {
+              sectionEyebrow?: T;
+              sectionTitle?: T;
+              tabs?:
+                | T
+                | {
+                    title?: T;
+                    body?: T;
+                    detailHref?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        timeline?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              milestones?:
+                | T
+                | {
+                    year?: T;
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        officeGrid?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              columns?: T;
+              offices?:
+                | T
+                | {
+                    name?: T;
+                    address?: T;
+                    phone?: T;
+                    email?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        ctaBand?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              buttons?:
+                | T
+                | {
+                    label?: T;
+                    href?: T;
+                    variant?: T;
+                    id?: T;
+                  };
+              variant?: T;
               id?: T;
               blockName?: T;
             };
