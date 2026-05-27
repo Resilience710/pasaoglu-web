@@ -1,1 +1,149 @@
-/* Payload admin styles are injected by Payload itself */
+/* ====================================================
+   Paşaoğlu Admin — Login sayfası özel tasarım
+   ==================================================== */
+
+/* Sayfa arkaplanı — açık gri */
+body:has(.template-default.login),
+body:has(.template-minimal.login),
+body:has([class*="login"]) {
+  background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 100%) !important;
+}
+
+/* Login kartını ortala ve kartlaştır */
+.template-default.login,
+.template-minimal.login,
+.template-default[class*="login"] {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.template-default.login > *,
+.template-minimal.login > *,
+.template-default[class*="login"] > * {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 36px 32px !important;
+  box-shadow: 0 1px 2px rgba(15,42,71,0.06), 0 20px 60px rgba(15,42,71,0.10);
+  margin: 0 !important;
+}
+
+/* Payload'ın gri arkaplanını sıfırla */
+.template-default.login,
+.template-minimal.login {
+  background: transparent !important;
+}
+
+/* Logo */
+.login__brand,
+.template-minimal__wrap > a:first-child,
+.login a:first-child:has(img),
+.login a:first-child:has(svg) {
+  display: flex !important;
+  justify-content: center;
+  margin-bottom: 8px !important;
+}
+
+/* Form alanları */
+.login form,
+.template-minimal form {
+  display: flex !important;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.login form .field-type,
+.login form .field-type-text,
+.login form .field-type-password,
+.login form .field-type-email {
+  margin: 0 !important;
+}
+
+.login form label {
+  display: none !important;
+}
+
+.login form input,
+.login form input[type="email"],
+.login form input[type="password"],
+.login form input[type="text"] {
+  background: #F1F5F9 !important;
+  border: 1.5px solid transparent !important;
+  border-radius: 9999px !important;
+  padding: 14px 22px !important;
+  font-size: 14px !important;
+  width: 100%;
+  transition: all 0.15s ease;
+  color: #0E2A47 !important;
+}
+
+.login form input::placeholder {
+  color: #64748B !important;
+}
+
+.login form input:focus {
+  background: #ffffff !important;
+  border-color: #3B82F6 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12) !important;
+}
+
+/* Giriş Yap butonu */
+.login form button[type="submit"],
+.login form .form-submit button,
+.login form .btn--style-primary {
+  background: linear-gradient(135deg, #3B82F6, #2563EB) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  padding: 14px 28px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  width: 100% !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  margin-top: 6px;
+  box-shadow: 0 8px 24px rgba(59,130,246,0.25);
+}
+
+.login form button[type="submit"]:hover,
+.login form .btn--style-primary:hover {
+  background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(59,130,246,0.35);
+}
+
+/* "Şifremi unuttum" linki */
+.login a.forgot-password,
+.login form a {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  color: #64748B !important;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.login a:hover {
+  color: #3B82F6 !important;
+}
+
+/* Payload v3 fallback selectors */
+[class*="loginLayout"] {
+  background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 100%) !important;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[class*="login__"] form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

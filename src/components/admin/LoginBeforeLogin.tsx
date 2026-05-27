@@ -1,20 +1,43 @@
 export default function LoginBeforeLogin() {
   return (
     <div style={{
-      marginBottom: 24,
-      padding: '16px 20px',
-      background: 'linear-gradient(135deg, rgba(14,42,71,0.05), rgba(59,130,246,0.08))',
-      borderRadius: 12,
-      borderLeft: '3px solid #3B82F6',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      marginBottom: 4,
     }}>
-      <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.18em', color: '#3B82F6', textTransform: 'uppercase' }}>
-        Paşaoğlu Group
+      <div style={{
+        width: 72,
+        height: 72,
+        background: 'linear-gradient(135deg, #3B82F6, #2563EB)',
+        borderRadius: 18,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontWeight: 800,
+        fontSize: 32,
+        letterSpacing: '-0.04em',
+        boxShadow: '0 12px 28px rgba(59,130,246,0.35)',
+        marginBottom: 18,
+      }}>
+        P
       </div>
-      <h2 style={{ margin: '8px 0 4px', fontSize: 22, fontWeight: 700, color: '#0E2A47' }}>
-        İçerik Yönetim Paneli
-      </h2>
-      <p style={{ margin: 0, fontSize: 13, color: '#64748B', lineHeight: 1.5 }}>
-        Sitenin tüm içeriklerini buradan yönetebilirsiniz.
+      <h1 style={{
+        margin: 0,
+        fontSize: 26,
+        fontWeight: 700,
+        color: '#0E2A47',
+        letterSpacing: '-0.01em',
+      }}>
+        Paşaoğlu Admin
+      </h1>
+      <p style={{
+        margin: '6px 0 0',
+        fontSize: 14,
+        color: '#64748B',
+      }}>
+        İçerik yönetim paneli
       </p>
     </div>
   )
