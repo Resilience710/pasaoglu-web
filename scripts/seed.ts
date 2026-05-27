@@ -193,6 +193,7 @@ async function run() {
           { label: 'Operasyon Gücü', href: '/politikalarimiz/operasyon-gucu' },
           { label: 'Belgeler', href: '/politikalarimiz/belgeler' },
         ] },
+        { label: 'Haberler', href: '/haberler' },
         { label: 'Kariyer', href: '/kariyer' },
         { label: 'İletişim', href: '/iletisim' },
       ],
@@ -405,46 +406,6 @@ async function run() {
       {
         blockType: 'partnerMarquee', title: 'İş Ortaklarımız',
         logos: partnerIds,
-      },
-      {
-        blockType: 'newsGrid',
-        eyebrow: 'Haber Bülteni',
-        title: 'Paşaoğlu’dan Haberler',
-        description: 'Holding faaliyetlerimiz, sektör güncellemeleri ve duyurular.',
-        items: [
-          {
-            date: new Date('2026-05-15').toISOString(),
-            category: 'KURUMSAL',
-            image: kimyaImg1,
-            title: 'Paşaoğlu Group Holding yapılanmasını duyurdu',
-            excerpt: 'Üç sektörde uzun yıllara dayanan faaliyetlerimizi tek çatı altında topluyoruz.',
-            href: '#',
-          },
-          {
-            date: new Date('2026-04-22').toISOString(),
-            category: 'SEKTÖREL',
-            image: kimyaImg2,
-            title: 'Yeni nesil tekstil kimyasalları portföyümüze eklendi',
-            excerpt: 'Sürdürülebilir tekstil üretimine yönelik düşük ekolojik etkili formülasyonlar.',
-            href: '#',
-          },
-          {
-            date: new Date('2026-03-10').toISOString(),
-            category: 'SÜRDÜRÜLEBİLİRLİK',
-            image: gidaImg3,
-            title: 'ISO 14064-1 Karbon Ayak İzi sertifikamızı aldık',
-            excerpt: 'Çevresel etki ölçümü ve azaltma süreçlerimiz uluslararası standartlarda belgelendi.',
-            href: '#',
-          },
-          {
-            date: new Date('2026-02-01').toISOString(),
-            category: 'İHRACAT',
-            image: yapiImg3,
-            title: '30+ ülkeye ihracat ağımız büyümeye devam ediyor',
-            excerpt: 'Orta Doğu ve Kuzey Afrika pazarlarındaki büyümemiz hızlanarak sürüyor.',
-            href: '#',
-          },
-        ],
       },
       {
         blockType: 'ctaBand', variant: 'dark',
@@ -804,6 +765,117 @@ async function run() {
         ],
       },
     ],
+  })
+
+  // ====== NEWS ARTICLES ======
+  console.log('\n— news articles —')
+
+  async function upsertNews(slug: string, data: any) {
+    const existing = await payload.find({ collection: 'newsArticles', where: { slug: { equals: slug } }, limit: 1 })
+    if (existing.docs[0]) {
+      await payload.update({ collection: 'newsArticles', id: existing.docs[0].id, data })
+      console.log('✓ news:', slug)
+    } else {
+      await payload.create({ collection: 'newsArticles', data: { ...data, slug } })
+      console.log('+ news:', slug)
+    }
+  }
+
+  const heading = (text: string) => ({
+    type: 'heading', tag: 'h2', version: 1,
+    children: [{ type: 'text', text, version: 1, format: 0, detail: 0, mode: 'normal', style: '' }],
+  })
+
+  await upsertNews('holding-yapilanmasi-duyuruldu', {
+    title: 'Paşaoğlu Group Holding yapılanmasını duyurdu',
+    date: new Date('2026-05-15').toISOString(),
+    category: 'kurumsal',
+    image: kimyaImg1,
+    excerpt: 'Üç sektörde uzun yıllara dayanan faaliyetlerimizi tek çatı altında topluyoruz. Yeni yapılanma; kimya, yapı ve gıda alanlarında ortak yönetişim, paylaşılan değerler ve kurumsal kimlik birliği sağlayacak.',
+    featured: true,
+    body: rt(
+      p('Paşaoğlu Group, kimya, yapı ve gıda sektörlerinde 1987 yılından bu yana sürdürdüğü ticari faaliyetlerini bir holding çatısı altında toplayarak yeni dönemin temellerini attı.'),
+      heading('Birlikten Doğan Güç'),
+      p('Yeni yapılanma; sektörler arası operasyonel sinerji, paylaşılan tedarik politikaları ve ortak müşteri deneyimi gibi avantajlar sunuyor. Holding bünyesindeki üç şirket, bağımsız operasyonlarını korurken kurumsal yönetişim, finans, insan kaynakları ve sürdürülebilirlik fonksiyonlarını tek merkezden yönetecek.'),
+      heading('Yeni Kurumsal Kimlik'),
+      p('Holding ile birlikte yeni kurumsal kimlik çalışması da tamamlandı. Yeni logo, renk paleti ve görsel dil; üç sektörün özgün karakterini koruyan ancak Paşaoğlu çatısı altında bütünlüklü bir his veren tasarım anlayışı üzerine inşa edildi.'),
+      p('Yeni resmi internet sitemiz, kurumsal kimlik dönüşümünün ilk adımı olarak yayında. Önümüzdeki dönemde holding bünyesindeki tüm operasyonların dijital dönüşüm süreçlerine başlayacağız.'),
+    ),
+  })
+
+  await upsertNews('tekstil-kimyasallari-portfoyu', {
+    title: 'Yeni nesil tekstil kimyasalları portföyümüze eklendi',
+    date: new Date('2026-04-22').toISOString(),
+    category: 'sektorel',
+    image: kimyaImg2,
+    excerpt: 'Sürdürülebilir tekstil üretimine yönelik düşük ekolojik etkili formülasyonları portföyümüze ekledik. Yeni ürün grubu; OEKO-TEX ECO PASSPORT, ZDHC ve BLUESIGN sertifikalarına sahip.',
+    body: rt(
+      p('Kimya sektöründeki Ar-Ge ekibimiz, tekstil müşterilerimizin sürdürülebilirlik hedeflerine yanıt verecek yeni bir ürün grubunu pazara sundu. Yeni nesil tekstil yardımcı kimyasalları; geleneksel formülasyonlara göre %40 daha düşük su tüketimi ve %25 daha az kimyasal yük ile aynı performansı sağlıyor.'),
+      heading('Sertifikasyon ve Uyum'),
+      p('Yeni ürün grubu OEKO-TEX ECO PASSPORT, ZDHC MRSL Level 3 ve BLUESIGN sistem partner sertifikalarına sahip. Bu sayede dünya çapındaki tekstil markaları için sertifikasyon süreci hızlandırılmış oluyor.'),
+      heading('Uygulama Alanları'),
+      p('Ön terbiye, boyama, baskı ve apre süreçleri için 32 yeni formülasyon ile birlikte; teknik tekstil, sportif giyim ve ev tekstili sektörlerine yönelik özel çözümler de portföye eklendi.'),
+    ),
+  })
+
+  await upsertNews('iso-14064-karbon-ayak-izi', {
+    title: 'ISO 14064-1 Karbon Ayak İzi sertifikamızı aldık',
+    date: new Date('2026-03-10').toISOString(),
+    category: 'surdurulebilirlik',
+    image: gidaImg3,
+    excerpt: 'Çevresel etki ölçümü ve azaltma süreçlerimiz uluslararası standartlarda belgelendi. Holding genelinde Scope 1, 2 ve 3 emisyonlarını ölçen kapsamlı bir karbon yönetim sistemine geçtik.',
+    body: rt(
+      p('Paşaoğlu Group, sürdürülebilirlik stratejisinin önemli bir kilometre taşını geride bıraktı. Holding genelinde uygulanan karbon yönetim sistemi, uluslararası bağımsız doğrulama kuruluşu tarafından ISO 14064-1 standardına uygun bulunarak sertifikalandırıldı.'),
+      heading('Kapsamlı Ölçüm Sistemi'),
+      p('Sertifikasyon; Scope 1 (doğrudan emisyonlar), Scope 2 (elektrik tüketimi) ve Scope 3 (değer zinciri emisyonları) kapsamlarının tamamını içeriyor. Tedarik zinciri, lojistik ve atık yönetimi süreçlerinin tümü ölçüme dahil edildi.'),
+      heading('2030 Hedefimiz'),
+      p('Belirlediğimiz yol haritası kapsamında; 2030 yılına kadar Scope 1 ve Scope 2 emisyonlarımızı 2025 baz yılına göre %35 azaltmayı taahhüt ediyoruz. Bu hedef doğrultusunda; enerji verimliliği projeleri, yenilenebilir enerji kaynakları ve süreç optimizasyonları uygulamaya alınacak.'),
+    ),
+  })
+
+  await upsertNews('ihracat-agi-30-ulke', {
+    title: '30+ ülkeye ihracat ağımız büyümeye devam ediyor',
+    date: new Date('2026-02-01').toISOString(),
+    category: 'ihracat',
+    image: yapiImg3,
+    excerpt: 'Orta Doğu ve Kuzey Afrika pazarlarındaki büyümemiz hızlanarak sürüyor. 2026 yılı ilk çeyreğinde 4 yeni ülkeye ilk ihracatımızı gerçekleştirdik.',
+    body: rt(
+      p('Paşaoğlu Group, ihracat ağını 2026 yılı içinde 30+ ülkeye taşıdı. Holding bünyesindeki üç sektörden de ihracat hacmimiz; özellikle Orta Doğu, Kuzey Afrika ve Orta Asya pazarlarındaki güçlü taleple birlikte ciddi bir ivme yakaladı.'),
+      heading('Yeni Pazarlar'),
+      p('İlk çeyrek içinde Senegal, Özbekistan, Tanzanya ve Vietnam pazarlarına ilk ihracatlarımızı gerçekleştirdik. Bu pazarlar; özellikle inşaat kimyasalları ve gıda hammaddeleri kategorilerinde önemli büyüme potansiyeli taşıyor.'),
+      heading('Lojistik Yatırımları'),
+      p('İhracat hacmindeki büyümeyle birlikte, Hadımköy lojistik merkezimizin kapasitesini %30 artırdık. Yeni nesil depo yönetim sistemi entegrasyonu da tamamlandı; bu sayede gönderi süreleri %20 oranında kısaldı.'),
+    ),
+  })
+
+  await upsertNews('arge-laboratuvari-genisleme', {
+    title: 'Ar-Ge laboratuvarımız 2 kat genişledi',
+    date: new Date('2026-01-18').toISOString(),
+    category: 'arge',
+    image: kimyaImg3,
+    excerpt: 'Tekirdağ Çorlu’daki bağımsız Ar-Ge laboratuvarımız; yeni analiz cihazları ve uzman kadrosuyla iki katına çıkarıldı. Yeni laboratuvar, müşterilerimize özel formülasyon geliştirme süreçlerini hızlandıracak.',
+    body: rt(
+      p('Paşaoğlu Group Kimya, Tekirdağ Çorlu’daki Ar-Ge laboratuvarının fiziki kapasitesini ve teknik altyapısını iki katına çıkardı. Yeni laboratuvar; tekstil, kozmetik, gıda ve endüstriyel kimyasal Ar-Ge çalışmalarını tek çatı altında yürütecek.'),
+      heading('Yeni Cihazlar'),
+      p('Genişleme kapsamında HPLC, GC-MS, FT-IR, viskozimetre ve reoloji ölçüm cihazları envantere eklendi. Ayrıca yeni kurulan pilot üretim hattı sayesinde; laboratuvar formülasyonlarının saha şartlarında doğrulanması mümkün hale geldi.'),
+      heading('Uzman Kadro'),
+      p('Laboratuvar bünyesindeki uzman kadromuz da 4 yeni kimya mühendisi ve 2 polimer uzmanıyla güçlendirildi. Müşterilerimizin özel formülasyon taleplerine yanıt verme süremiz ortalama 14 günden 7 güne indi.'),
+    ),
+  })
+
+  await upsertNews('staj-programi-2026', {
+    title: '2026 Yaz Staj Programımız başvuruları başladı',
+    date: new Date('2026-01-05').toISOString(),
+    category: 'kariyer',
+    image: gidaImg1,
+    excerpt: 'Mühendislik, işletme ve kimya bölümü öğrencilerine yönelik 8 haftalık yapılandırılmış yaz staj programımıza başvurular açıldı. Program; mentörlük, proje deneyimi ve sertifikasyon imkanı sunuyor.',
+    body: rt(
+      p('Paşaoğlu Group, 2026 yaz dönemi yapılandırılmış staj programını açtı. Mühendislik, işletme, kimya, gıda mühendisliği ve inşaat mühendisliği bölümlerinde okuyan öğrenciler programa başvurabilir.'),
+      heading('Program İçeriği'),
+      p('8 haftalık program kapsamında stajyerler; gerçek bir kurumsal projenin parçası olarak görev alacak, deneyimli ekip üyelerinden mentörlük alacak ve teknik eğitimlere katılacak. Program sonunda her stajyer kendi projesini üst yönetime sunacak.'),
+      heading('Başvuru'),
+      p('Başvurular 1 Mart 2026 tarihine kadar açık. Detaylı bilgi ve başvuru için Kariyer sayfamızdaki formu kullanabilirsiniz. Programa kabul edilen öğrencilere ulaşım, öğle yemeği ve aylık burs sağlanmaktadır.'),
+    ),
   })
 
   console.log('\n✔ Seed completed.')

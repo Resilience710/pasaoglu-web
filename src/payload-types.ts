@@ -76,6 +76,7 @@ export interface Config {
     jobOpenings: JobOpening;
     contactSubmissions: ContactSubmission;
     careerApplications: CareerApplication;
+    newsArticles: NewsArticle;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -92,6 +93,7 @@ export interface Config {
     jobOpenings: JobOpeningsSelect<false> | JobOpeningsSelect<true>;
     contactSubmissions: ContactSubmissionsSelect<false> | ContactSubmissionsSelect<true>;
     careerApplications: CareerApplicationsSelect<false> | CareerApplicationsSelect<true>;
+    newsArticles: NewsArticlesSelect<false> | NewsArticlesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -1157,6 +1159,79 @@ export interface CareerApplication {
   createdAt: string;
 }
 /**
+ * Sitedeki /haberler sayfasında listelenen kurumsal haberler ve duyurular.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "newsArticles".
+ */
+export interface NewsArticle {
+  id: number;
+  title: string;
+  /**
+   * URL’deki ad — küçük harf, tire ile (ör. "holding-yapilanmasi").
+   */
+  slug: string;
+  date: string;
+  category: 'kurumsal' | 'sektorel' | 'surdurulebilirlik' | 'ihracat' | 'kariyer' | 'arge' | 'etkinlik';
+  image: number | Media;
+  excerpt: string;
+  body: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  featured?: boolean | null;
+  /**
+   * Sayfanın Google ve sosyal medyada nasıl görüneceği. Boş bırakılan alanlar için sayfa başlığı/açıklaması kullanılır.
+   */
+  meta?: {
+    /**
+     * 50-60 karakter ideal. Boş bırakılırsa sayfa adı kullanılır. Site adı otomatik eklenir.
+     */
+    title?: string | null;
+    /**
+     * 150-160 karakter ideal. Google arama sonuçlarında görünür.
+     */
+    description?: string | null;
+    /**
+     * ör. kimya, yapı, gıda, holding, paşaoğlu
+     */
+    keywords?: string | null;
+    /**
+     * WhatsApp/Facebook/Twitter’da link paylaşıldığında görünen kapak. 1200x630 px önerilir.
+     */
+    image?: (number | null) | Media;
+    /**
+     * Sosyal paylaşımlar için ayrı başlık. Boşsa SEO başlığı kullanılır.
+     */
+    ogTitle?: string | null;
+    /**
+     * Sosyal paylaşımlar için ayrı açıklama.
+     */
+    ogDescription?: string | null;
+    /**
+     * Sayfanın resmi tek adresi. Yinelenen içerik problemini önler. ör. https://pasaoglugroup.com.tr/hakkimizda
+     */
+    canonicalUrl?: string | null;
+    /**
+     * İşaretlerseniz bu sayfa Google’da görünmez.
+     */
+    noindex?: boolean | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -1215,6 +1290,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'careerApplications';
         value: number | CareerApplication;
+      } | null)
+    | ({
+        relationTo: 'newsArticles';
+        value: number | NewsArticle;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -2127,6 +2206,34 @@ export interface CareerApplicationsSelect<T extends boolean = true> {
   department?: T;
   coverLetter?: T;
   cv?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "newsArticles_select".
+ */
+export interface NewsArticlesSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  date?: T;
+  category?: T;
+  image?: T;
+  excerpt?: T;
+  body?: T;
+  featured?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        ogTitle?: T;
+        ogDescription?: T;
+        canonicalUrl?: T;
+        noindex?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

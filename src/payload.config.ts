@@ -14,6 +14,7 @@ import { Documents } from './collections/Documents'
 import { JobOpenings } from './collections/JobOpenings'
 import { ContactSubmissions } from './collections/ContactSubmissions'
 import { CareerApplications } from './collections/CareerApplications'
+import { NewsArticles } from './collections/NewsArticles'
 import { SiteSettings } from './globals/SiteSettings'
 import { MainNav } from './globals/MainNav'
 
@@ -44,6 +45,7 @@ export default buildConfig({
     JobOpenings,
     ContactSubmissions,
     CareerApplications,
+    NewsArticles,
   ],
   globals: [SiteSettings, MainNav],
   editor: lexicalEditor(),
