@@ -201,10 +201,13 @@ img, video, iframe { max-width: 100%; }
 /* --- GIDA: yeşil, organik soft --- */
 [data-theme='food'] section { background-color: white; }
 [data-theme='food'] .section-title {
-  font-family: var(--font-playfair);
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 300;
   letter-spacing: -0.01em;
+}
+/* SplitTextImage bloğunda font override etme — modern sans kalsın */
+.split-text-image h2 {
+  font-family: var(--font-inter) !important;
+  font-style: normal !important;
 }
 [data-theme='food'] .eyebrow {
   letter-spacing: 0.18em;

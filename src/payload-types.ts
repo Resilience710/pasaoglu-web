@@ -321,6 +321,7 @@ export interface Page {
           [k: string]: unknown;
         } | null;
         image?: (number | null) | Media;
+        imageCaption?: string | null;
         features?:
           | {
               title: string;
@@ -785,6 +786,7 @@ export interface Sector {
           [k: string]: unknown;
         } | null;
         image?: (number | null) | Media;
+        imageCaption?: string | null;
         features?:
           | {
               title: string;
@@ -1400,6 +1402,7 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               body?: T;
               image?: T;
+              imageCaption?: T;
               features?:
                 | T
                 | {
@@ -1756,6 +1759,7 @@ export interface SectorsSelect<T extends boolean = true> {
               title?: T;
               body?: T;
               image?: T;
+              imageCaption?: T;
               features?:
                 | T
                 | {

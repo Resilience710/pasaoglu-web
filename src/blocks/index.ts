@@ -78,6 +78,7 @@ export const SplitTextImage: Block = {
     { name: 'title', type: 'text', required: true, label: 'Başlık' },
     { name: 'body', type: 'richText', label: 'Açıklama Metni (zengin format)' },
     { name: 'image', type: 'upload', relationTo: 'media', label: 'Görsel' },
+    { name: 'imageCaption', type: 'text', label: 'Görsel Altı Etiket (opsiyonel, ör. "Çorlu Üretim Tesisi · 16.000 m²")' },
     {
       name: 'features', type: 'array', label: 'Alt Özellik Kutuları (numaralı liste, opsiyonel)',
       fields: [
