@@ -28,6 +28,11 @@ export default buildConfig({
       titleSuffix: ' — Paşaoğlu Group Admin',
     },
     components: {
+      graphics: {
+        Logo: '@/components/admin/BrandLogo#default',
+        Icon: '@/components/admin/BrandIcon#default',
+      },
+      beforeLogin: ['@/components/admin/LoginBeforeLogin#default'],
       views: {
         dashboard: {
           Component: '@/components/admin/AdminDashboard#default',

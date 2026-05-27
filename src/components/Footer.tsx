@@ -7,7 +7,7 @@ export function Footer({ settings }: { settings: any }) {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-brand-deep text-white/80 mt-24">
+    <footer className="bg-brand-deep text-white/80">
       <div className="container-x py-16 grid gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           {logoSrc ? (
