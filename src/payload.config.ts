@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 import { buildConfig } from 'payload'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
+import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 
 import { Users } from './collections/Users'
@@ -61,11 +62,22 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  db: sqliteAdapter({
-    client: {
-      url: process.env.DATABASE_URI || 'file:./pasaoglu.db',
-    },
-  }),
+  /**
+   * Dual-driver database — DATABASE_URI prefix'ine göre adapter seçilir.
+   *  - postgres:// veya postgresql:// → PostgreSQL (production / Plesk)
+   *  - file:// veya boş               → SQLite (lokal geliştirme)
+   */
+  db: (() => {
+    const uri = process.env.DATABASE_URI || 'file:./pasaoglu.db'
+    if (uri.startsWith('postgres://') || uri.startsWith('postgresql://')) {
+      return postgresAdapter({
+        pool: { connectionString: uri },
+      })
+    }
+    return sqliteAdapter({
+      client: { url: uri },
+    })
+  })(),
   upload: {
     limits: {
       fileSize: 20 * 1024 * 1024,

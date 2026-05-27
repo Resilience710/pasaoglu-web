@@ -8,12 +8,14 @@
     "dev": "node scripts/dev-with-warmup.mjs",
     "build": "next build",
     "start": "next start",
+    "start:plesk": "node server.js",
     "lint": "next lint",
     "payload": "payload",
     "generate:types": "payload generate:types",
     "seed": "tsx --env-file=.env scripts/seed.ts"
   },
   "dependencies": {
+    "@payloadcms/db-postgres": "^3.66.0",
     "@payloadcms/db-sqlite": "3.66.0",
     "@payloadcms/next": "3.66.0",
     "@payloadcms/richtext-lexical": "3.66.0",

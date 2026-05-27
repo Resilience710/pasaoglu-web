@@ -81,7 +81,63 @@ Sektör sayfası HTML kök elementine `data-theme="chem|build|food"` atanır. CS
 4. Vercel'de proje oluşturun, `.env` değerlerini set edin (`PAYLOAD_SECRET`, `DATABASE_URI`, `NEXT_PUBLIC_SERVER_URL`).
 5. Medya için S3 adapter ekleyin (`@payloadcms/storage-s3`) — Vercel filesystem yazılamaz.
 
-### Alternatif: VPS (Plesk uyumlu)
+### Plesk Panelden Deploy (Detaylı)
+
+**Önkoşullar (Plesk'te yüklü olmalı):** Node.js 20+, PostgreSQL, Git.
+
+1. **Veritabanı oluştur** (Plesk → Domain → Databases → Add Database → PostgreSQL).
+   Bilgileri not al: host (genelde `127.0.0.1`), port (`5432`), db adı, user, şifre.
+
+2. **Domain'i Git'e bağla** (Plesk → Domain → Git → Add Repository):
+   - Repository URL: `https://github.com/Resilience710/pasaoglu-web.git`
+   - Branch: `main`
+   - Server path: `/httpdocs`
+   - Deployment mode: **Automatic**
+   - Repo private ise Plesk'in verdiği SSH key'i GitHub Deploy Keys'e ekle.
+
+3. **Node.js uygulamasını tanımla** (Domain → Node.js → Enable):
+   - Node.js version: **20.x**
+   - Application root: `/httpdocs`
+   - **Application startup file:** `server.js` (depoda mevcut)
+   - Application mode: **production**
+   - "NPM install" butonuna bas (~2-3 dk).
+
+4. **Environment variables** ekle (aynı Node.js ekranında):
+   ```
+   NODE_ENV=production
+   PORT=3000
+   PAYLOAD_SECRET=<openssl rand -hex 32>
+   DATABASE_URI=postgres://USER:PASS@127.0.0.1:5432/DBNAME
+   NEXT_PUBLIC_SERVER_URL=https://pasaoglugroup.com.tr
+   ```
+   (Örnek `.env.production.example` dosyasında var.)
+
+5. **Build & seed** — SSH'tan tek seferlik:
+   ```bash
+   cd ~/httpdocs
+   npm run build
+   npx tsx scripts/seed.ts   # admin + ilk içerik
+   ```
+   Veya Plesk → Node.js → NPM Scripts → `build` çalıştır.
+
+6. **Restart App** butonuna bas. `https://pasaoglugroup.com.tr/admin/login` test et.
+
+7. **SSL** — Plesk → Domain → SSL/TLS Certificates → Let's Encrypt ile tek tık.
+
+8. **Otomatik deploy** — Plesk Git → Deployment Actions:
+   ```bash
+   npm install --production=false
+   npm run build
+   touch tmp/restart.txt
+   ```
+   Her `git push` sonrası site otomatik güncellenir.
+
+**Sık sorunlar:**
+- Build OOM → `NODE_OPTIONS=--max-old-space-size=2048` env ekle
+- Medya 404 → `chmod -R 755 public/media`
+- DB connection refused → `DATABASE_URI`'de `localhost` yerine `127.0.0.1` dene
+
+### Alternatif: VPS (Plesk dışı)
 
 1. Node 20+ kurun.
 2. Postgres veya SQLite kullanın.
