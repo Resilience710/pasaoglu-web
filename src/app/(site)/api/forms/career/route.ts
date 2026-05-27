@@ -18,7 +18,7 @@ export async function POST(req: Request) {
     }
 
     const payload = await getPayloadClient()
-    let cvId: number | string | undefined
+    let cvId: number | undefined
 
     const cvFile = fd.get('cv')
     if (cvFile && cvFile instanceof File && cvFile.size > 0) {
@@ -39,7 +39,10 @@ export async function POST(req: Request) {
           size: cvFile.size,
         },
       })
-      cvId = (created as any).id
+      const uploadedId = Number((created as any).id)
+      if (Number.isFinite(uploadedId)) {
+        cvId = uploadedId
+      }
     }
 
     await payload.create({

@@ -229,43 +229,6 @@ export interface Page {
    */
   slug: string;
   /**
-   * Sayfanın Google ve sosyal medyada nasıl görüneceği. Boş bırakılan alanlar için sayfa başlığı/açıklaması kullanılır.
-   */
-  meta?: {
-    /**
-     * 50-60 karakter ideal. Boş bırakılırsa sayfa adı kullanılır. Site adı otomatik eklenir.
-     */
-    title?: string | null;
-    /**
-     * 150-160 karakter ideal. Google arama sonuçlarında görünür.
-     */
-    description?: string | null;
-    /**
-     * ör. kimya, yapı, gıda, holding, paşaoğlu
-     */
-    keywords?: string | null;
-    /**
-     * WhatsApp/Facebook/Twitter’da link paylaşıldığında görünen kapak. 1200x630 px önerilir.
-     */
-    image?: (number | null) | Media;
-    /**
-     * Sosyal paylaşımlar için ayrı başlık. Boşsa SEO başlığı kullanılır.
-     */
-    ogTitle?: string | null;
-    /**
-     * Sosyal paylaşımlar için ayrı açıklama.
-     */
-    ogDescription?: string | null;
-    /**
-     * Sayfanın resmi tek adresi. Yinelenen içerik problemini önler. ör. https://pasaoglugroup.com.tr/hakkimizda
-     */
-    canonicalUrl?: string | null;
-    /**
-     * İşaretlerseniz bu sayfa Google’da görünmez.
-     */
-    noindex?: boolean | null;
-  };
-  /**
    * Sayfaya bölümler ekleyin. "+ Bölüm Ekle" diyerek Hero, Görsel+Metin, İstatistik, Kart Grid, Akordeon vb. ekleyebilirsiniz.
    */
   layout: (
@@ -630,6 +593,43 @@ export interface Page {
         blockType: 'worldReach';
       }
   )[];
+  /**
+   * Sayfanın Google ve sosyal medyada nasıl görüneceği. Boş bırakılan alanlar için sayfa başlığı/açıklaması kullanılır.
+   */
+  meta?: {
+    /**
+     * 50-60 karakter ideal. Boş bırakılırsa sayfa adı kullanılır. Site adı otomatik eklenir.
+     */
+    title?: string | null;
+    /**
+     * 150-160 karakter ideal. Google arama sonuçlarında görünür.
+     */
+    description?: string | null;
+    /**
+     * ör. kimya, yapı, gıda, holding, paşaoğlu
+     */
+    keywords?: string | null;
+    /**
+     * WhatsApp/Facebook/Twitter’da link paylaşıldığında görünen kapak. 1200x630 px önerilir.
+     */
+    image?: (number | null) | Media;
+    /**
+     * Sosyal paylaşımlar için ayrı başlık. Boşsa SEO başlığı kullanılır.
+     */
+    ogTitle?: string | null;
+    /**
+     * Sosyal paylaşımlar için ayrı açıklama.
+     */
+    ogDescription?: string | null;
+    /**
+     * Sayfanın resmi tek adresi. Yinelenen içerik problemini önler. ör. https://pasaoglugroup.com.tr/hakkimizda
+     */
+    canonicalUrl?: string | null;
+    /**
+     * İşaretlerseniz bu sayfa Google’da görünmez.
+     */
+    noindex?: boolean | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -696,43 +696,6 @@ export interface Sector {
   shortDescription?: string | null;
   cardImage?: (number | null) | Media;
   theme: 'chem' | 'build' | 'food';
-  /**
-   * Sayfanın Google ve sosyal medyada nasıl görüneceği. Boş bırakılan alanlar için sayfa başlığı/açıklaması kullanılır.
-   */
-  meta?: {
-    /**
-     * 50-60 karakter ideal. Boş bırakılırsa sayfa adı kullanılır. Site adı otomatik eklenir.
-     */
-    title?: string | null;
-    /**
-     * 150-160 karakter ideal. Google arama sonuçlarında görünür.
-     */
-    description?: string | null;
-    /**
-     * ör. kimya, yapı, gıda, holding, paşaoğlu
-     */
-    keywords?: string | null;
-    /**
-     * WhatsApp/Facebook/Twitter’da link paylaşıldığında görünen kapak. 1200x630 px önerilir.
-     */
-    image?: (number | null) | Media;
-    /**
-     * Sosyal paylaşımlar için ayrı başlık. Boşsa SEO başlığı kullanılır.
-     */
-    ogTitle?: string | null;
-    /**
-     * Sosyal paylaşımlar için ayrı açıklama.
-     */
-    ogDescription?: string | null;
-    /**
-     * Sayfanın resmi tek adresi. Yinelenen içerik problemini önler. ör. https://pasaoglugroup.com.tr/hakkimizda
-     */
-    canonicalUrl?: string | null;
-    /**
-     * İşaretlerseniz bu sayfa Google’da görünmez.
-     */
-    noindex?: boolean | null;
-  };
   layout: (
     | {
         variant?: ('centered' | 'sidePanel' | 'leftAligned' | 'fullImage') | null;
@@ -1095,6 +1058,43 @@ export interface Sector {
         blockType: 'worldReach';
       }
   )[];
+  /**
+   * Sayfanın Google ve sosyal medyada nasıl görüneceği. Boş bırakılan alanlar için sayfa başlığı/açıklaması kullanılır.
+   */
+  meta?: {
+    /**
+     * 50-60 karakter ideal. Boş bırakılırsa sayfa adı kullanılır. Site adı otomatik eklenir.
+     */
+    title?: string | null;
+    /**
+     * 150-160 karakter ideal. Google arama sonuçlarında görünür.
+     */
+    description?: string | null;
+    /**
+     * ör. kimya, yapı, gıda, holding, paşaoğlu
+     */
+    keywords?: string | null;
+    /**
+     * WhatsApp/Facebook/Twitter’da link paylaşıldığında görünen kapak. 1200x630 px önerilir.
+     */
+    image?: (number | null) | Media;
+    /**
+     * Sosyal paylaşımlar için ayrı başlık. Boşsa SEO başlığı kullanılır.
+     */
+    ogTitle?: string | null;
+    /**
+     * Sosyal paylaşımlar için ayrı açıklama.
+     */
+    ogDescription?: string | null;
+    /**
+     * Sayfanın resmi tek adresi. Yinelenen içerik problemini önler. ör. https://pasaoglugroup.com.tr/hakkimizda
+     */
+    canonicalUrl?: string | null;
+    /**
+     * İşaretlerseniz bu sayfa Google’da görünmez.
+     */
+    noindex?: boolean | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -1171,8 +1171,6 @@ export interface NewsArticle {
    * URL’deki ad — küçük harf, tire ile (ör. "holding-yapilanmasi").
    */
   slug: string;
-  date: string;
-  category: 'kurumsal' | 'sektorel' | 'surdurulebilirlik' | 'ihracat' | 'kariyer' | 'arge' | 'etkinlik';
   image: number | Media;
   excerpt: string;
   body: {
@@ -1190,6 +1188,8 @@ export interface NewsArticle {
     };
     [k: string]: unknown;
   };
+  date: string;
+  category: 'kurumsal' | 'sektorel' | 'surdurulebilirlik' | 'ihracat' | 'kariyer' | 'arge' | 'etkinlik';
   featured?: boolean | null;
   /**
    * Sayfanın Google ve sosyal medyada nasıl görüneceği. Boş bırakılan alanlar için sayfa başlığı/açıklaması kullanılır.
@@ -1421,18 +1421,6 @@ export interface MediaSelect<T extends boolean = true> {
 export interface PagesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  meta?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-        keywords?: T;
-        image?: T;
-        ogTitle?: T;
-        ogDescription?: T;
-        canonicalUrl?: T;
-        noindex?: T;
-      };
   layout?:
     | T
     | {
@@ -1764,6 +1752,18 @@ export interface PagesSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        ogTitle?: T;
+        ogDescription?: T;
+        canonicalUrl?: T;
+        noindex?: T;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -1778,18 +1778,6 @@ export interface SectorsSelect<T extends boolean = true> {
   shortDescription?: T;
   cardImage?: T;
   theme?: T;
-  meta?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-        keywords?: T;
-        image?: T;
-        ogTitle?: T;
-        ogDescription?: T;
-        canonicalUrl?: T;
-        noindex?: T;
-      };
   layout?:
     | T
     | {
@@ -2121,6 +2109,18 @@ export interface SectorsSelect<T extends boolean = true> {
               id?: T;
               blockName?: T;
             };
+      };
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        keywords?: T;
+        image?: T;
+        ogTitle?: T;
+        ogDescription?: T;
+        canonicalUrl?: T;
+        noindex?: T;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -2216,11 +2216,11 @@ export interface CareerApplicationsSelect<T extends boolean = true> {
 export interface NewsArticlesSelect<T extends boolean = true> {
   title?: T;
   slug?: T;
-  date?: T;
-  category?: T;
   image?: T;
   excerpt?: T;
   body?: T;
+  date?: T;
+  category?: T;
   featured?: T;
   meta?:
     | T
@@ -2304,22 +2304,6 @@ export interface SiteSetting {
         id?: string | null;
       }[]
     | null;
-  /**
-   * Sayfaya özel meta verilmediğinde kullanılan varsayılanlar ve analitik entegrasyonları.
-   */
-  seo?: {
-    siteName?: string | null;
-    /**
-     * %s sayfanın başlığıyla değiştirilir.
-     */
-    titleTemplate?: string | null;
-    defaultDescription?: string | null;
-    defaultOgImage?: (number | null) | Media;
-    twitterHandle?: string | null;
-    googleSiteVerification?: string | null;
-    googleAnalyticsId?: string | null;
-    organizationLegalName?: string | null;
-  };
   footer?: {
     description?: string | null;
     columns?:
@@ -2336,6 +2320,22 @@ export interface SiteSetting {
         }[]
       | null;
     copyright?: string | null;
+  };
+  /**
+   * Sayfaya özel meta verilmediğinde kullanılan varsayılanlar ve analitik entegrasyonları.
+   */
+  seo?: {
+    siteName?: string | null;
+    /**
+     * %s sayfanın başlığıyla değiştirilir.
+     */
+    titleTemplate?: string | null;
+    defaultDescription?: string | null;
+    defaultOgImage?: (number | null) | Media;
+    twitterHandle?: string | null;
+    googleSiteVerification?: string | null;
+    googleAnalyticsId?: string | null;
+    organizationLegalName?: string | null;
   };
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -2389,18 +2389,6 @@ export interface SiteSettingsSelect<T extends boolean = true> {
         url?: T;
         id?: T;
       };
-  seo?:
-    | T
-    | {
-        siteName?: T;
-        titleTemplate?: T;
-        defaultDescription?: T;
-        defaultOgImage?: T;
-        twitterHandle?: T;
-        googleSiteVerification?: T;
-        googleAnalyticsId?: T;
-        organizationLegalName?: T;
-      };
   footer?:
     | T
     | {
@@ -2419,6 +2407,18 @@ export interface SiteSettingsSelect<T extends boolean = true> {
               id?: T;
             };
         copyright?: T;
+      };
+  seo?:
+    | T
+    | {
+        siteName?: T;
+        titleTemplate?: T;
+        defaultDescription?: T;
+        defaultOgImage?: T;
+        twitterHandle?: T;
+        googleSiteVerification?: T;
+        googleAnalyticsId?: T;
+        organizationLegalName?: T;
       };
   updatedAt?: T;
   createdAt?: T;

@@ -46,7 +46,7 @@ pasaoglu-web/
 ## Admin Panel — Müşteri Kullanım Rehberi
 
 1. **/admin** adresine giriş yapın.
-2. Sol menüden:
+2. Üstteki yatay admin menüsünden:
    - **İçerik → Sayfalar:** Ana sayfa (slug=home), Hakkımızda, Kariyer, İletişim, Politikalar. Her sayfada **sürükle-bırak bloklar** ile içerik yönetimi.
    - **İçerik → Sektörler:** Kimya, Yapı, Gıda — her birine kendi tema rengi, hero video, içerik blokları.
    - **İçerik → Ürün Kategorileri:** Kimya sayfasındaki accordion'da görünen ürün grupları.

@@ -33,6 +33,7 @@ export default buildConfig({
         Logo: '@/components/admin/BrandLogo#default',
         Icon: '@/components/admin/BrandIcon#default',
       },
+      Nav: '@/components/admin/AdminTopNav#default',
       beforeLogin: ['@/components/admin/LoginBeforeLogin#default'],
       views: {
         dashboard: {
