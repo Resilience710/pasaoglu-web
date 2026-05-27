@@ -24,6 +24,7 @@ const dirname = path.dirname(filename)
 export default buildConfig({
   admin: {
     user: Users.slug,
+    theme: 'light',
     meta: {
       titleSuffix: ' — Paşaoğlu Group Admin',
     },

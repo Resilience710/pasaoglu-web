@@ -1,15 +1,638 @@
 /* ====================================================
-   Paşaoğlu Admin — Login sayfası özel tasarım
+   Paşaoğlu Admin — Komple UI yenileme
    ==================================================== */
 
-/* Sayfa arkaplanı — açık gri */
+/* ====================================================
+   1. TEMA DEĞİŞKENLERİ — Payload tokens override
+   ==================================================== */
+html[data-theme='light'],
+html:not([data-theme='dark']) {
+  --color-base-50: #F8FAFC;
+  --color-base-100: #F1F5F9;
+  --color-base-150: #E2E8F0;
+  --color-base-200: #CBD5E1;
+  --color-base-300: #94A3B8;
+  --color-base-400: #64748B;
+  --color-base-500: #475569;
+  --color-base-600: #334155;
+  --color-base-700: #1E293B;
+  --color-base-800: #0F172A;
+  --color-base-900: #0E2A47;
+  --color-base-1000: #081A2D;
+
+  --theme-bg: #F8FAFC;
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-50: #F8FAFC;
+  --theme-elevation-100: #F1F5F9;
+  --theme-elevation-150: #E2E8F0;
+  --theme-elevation-200: #CBD5E1;
+  --theme-elevation-400: #94A3B8;
+  --theme-elevation-500: #64748B;
+  --theme-elevation-800: #1E293B;
+  --theme-elevation-1000: #0E2A47;
+
+  --theme-success-500: #16A34A;
+  --color-success-500: #16A34A;
+  --theme-warning-500: #F59E0B;
+  --color-warning-500: #F59E0B;
+  --theme-error-500: #DC2626;
+  --color-error-500: #DC2626;
+
+  --style-radius-s: 6px;
+  --style-radius-m: 10px;
+  --style-radius-l: 14px;
+}
+
+/* Brand accent override (mavi) */
+html {
+  --brand-navy: #0E2A47;
+  --brand-deep: #081A2D;
+  --brand-blue: #3B82F6;
+  --brand-blue-dark: #2563EB;
+  --brand-soft: #DBEAFE;
+}
+
+body {
+  background: var(--theme-bg) !important;
+  color: #0F172A;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ====================================================
+   2. SIDEBAR — Dark navy
+   ==================================================== */
+.nav,
+.nav__wrap,
+[class*="nav__wrap"],
+aside[class*="nav"] {
+  background: linear-gradient(180deg, var(--brand-navy) 0%, var(--brand-deep) 100%) !important;
+  border-right: 1px solid rgba(255,255,255,0.05) !important;
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* Sidebar üst boşluk + logo container */
+.nav__header,
+[class*="nav__header"] {
+  padding: 22px 18px 14px !important;
+  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+  margin-bottom: 8px !important;
+}
+
+/* Grup başlıkları (🎨 Özelleştirme, 📥 Form Gönderileri vs.) */
+.nav__label,
+.nav__group-label,
+[class*="nav__group-label"],
+[class*="nav__label"] {
+  color: rgba(255,255,255,0.45) !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  padding: 18px 20px 8px !important;
+  margin: 0 !important;
+}
+
+/* Sidebar linkleri */
+.nav__link,
+.nav-group__link,
+[class*="nav__link"],
+.nav a {
+  color: rgba(255,255,255,0.78) !important;
+  padding: 10px 18px !important;
+  border-radius: 8px !important;
+  margin: 1px 10px !important;
+  font-size: 13.5px !important;
+  font-weight: 500 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  transition: all 0.12s ease !important;
+  position: relative !important;
+  border: none !important;
+}
+
+.nav__link:hover,
+.nav-group__link:hover,
+[class*="nav__link"]:hover,
+.nav a:hover {
+  background: rgba(255,255,255,0.07) !important;
+  color: #ffffff !important;
+}
+
+.nav__link--active,
+.nav__link.active,
+[class*="nav__link"][class*="active"],
+.nav a.active,
+.nav a[aria-current="page"] {
+  background: rgba(59,130,246,0.18) !important;
+  color: #ffffff !important;
+  box-shadow: inset 3px 0 0 var(--brand-blue);
+}
+
+/* Sidebar icons varsa */
+.nav__link svg,
+.nav a svg {
+  width: 16px !important;
+  height: 16px !important;
+  opacity: 0.7;
+}
+
+.nav__link:hover svg,
+.nav__link--active svg {
+  opacity: 1;
+}
+
+/* ====================================================
+   3. TOP HEADER BAR + BREADCRUMBS
+   ==================================================== */
+.app-header,
+.payload-header,
+header[class*="header"]:not(.login *) {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+  padding: 14px 32px !important;
+  box-shadow: 0 1px 2px rgba(15,42,71,0.03) !important;
+}
+
+.step-nav,
+[class*="step-nav"],
+nav[aria-label="breadcrumb"] {
+  font-size: 13px !important;
+  color: var(--theme-elevation-500) !important;
+}
+
+.step-nav a,
+[class*="step-nav"] a {
+  color: var(--theme-elevation-500) !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.15s !important;
+}
+
+.step-nav a:hover,
+[class*="step-nav"] a:hover {
+  color: var(--brand-blue) !important;
+}
+
+.step-nav__last,
+[class*="step-nav__last"] {
+  color: var(--brand-navy) !important;
+  font-weight: 600 !important;
+}
+
+/* Account/user menu top right */
+.account-button,
+[class*="account-button"] {
+  border-radius: 999px !important;
+  padding: 6px 14px 6px 6px !important;
+  background: var(--theme-elevation-100) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+}
+
+/* ====================================================
+   4. LIST VIEW — Koleksiyon listesi
+   ==================================================== */
+.collection-list,
+[class*="collection-list"],
+.template-default__main,
+[class*="template-default__main"] {
+  background: var(--theme-bg) !important;
+  padding: 28px 32px !important;
+}
+
+/* Sayfa başlığı */
+.collection-list__header,
+[class*="collection-list__header"],
+h1[class*="collection-list"] {
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  color: var(--brand-navy) !important;
+  letter-spacing: -0.01em !important;
+  margin-bottom: 6px !important;
+}
+
+/* Filter / kontrol bar */
+.list-controls,
+[class*="list-controls"] {
+  background: #ffffff !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 12px !important;
+  padding: 12px 14px !important;
+  margin-bottom: 18px !important;
+  box-shadow: 0 1px 2px rgba(15,42,71,0.03) !important;
+}
+
+/* Tablo */
+.table,
+[class*="table"],
+table.list-table {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  box-shadow: 0 1px 2px rgba(15,42,71,0.04) !important;
+}
+
+.table thead th,
+table th {
+  background: var(--theme-elevation-50) !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  color: var(--theme-elevation-500) !important;
+  padding: 14px 16px !important;
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+}
+
+.table tbody tr,
+table tbody tr {
+  border-bottom: 1px solid var(--theme-elevation-100) !important;
+  transition: background 0.12s !important;
+}
+
+.table tbody tr:hover,
+table tbody tr:hover {
+  background: var(--brand-soft) !important;
+}
+
+.table tbody td,
+table tbody td {
+  padding: 14px 16px !important;
+  font-size: 13.5px !important;
+  color: #0F172A !important;
+}
+
+.table tbody td a {
+  color: var(--brand-navy) !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+.table tbody td a:hover {
+  color: var(--brand-blue) !important;
+}
+
+/* "Yeni Ekle" düğmesi sağ üst */
+.list-header__actions a.btn,
+.btn[href*="/create"],
+a[class*="create-new"] {
+  background: var(--brand-blue) !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  padding: 10px 18px !important;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.25) !important;
+}
+
+a[class*="create-new"]:hover,
+.btn[href*="/create"]:hover {
+  background: var(--brand-blue-dark) !important;
+  box-shadow: 0 6px 16px rgba(59,130,246,0.35) !important;
+}
+
+/* ====================================================
+   5. EDIT FORM
+   ==================================================== */
+.collection-edit,
+[class*="collection-edit"],
+.document-fields,
+[class*="document-fields"] {
+  background: var(--theme-bg) !important;
+  padding-bottom: 100px !important;
+}
+
+/* Field type wrappers — beyaz kart */
+.field-type:not(.field-type--collapsible-fields):not(.blocks-field__block):not(.field-type--tabs):not(.field-type--row):not(.field-type--group):not(.field-type--array):not(.field-type--blocks) {
+  background: transparent !important;
+  margin-bottom: 18px !important;
+}
+
+.field-type label,
+.field-label,
+[class*="field-label"] {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--brand-navy) !important;
+  margin-bottom: 6px !important;
+  display: block !important;
+}
+
+.field-description,
+[class*="field-description"] {
+  font-size: 12.5px !important;
+  color: var(--theme-elevation-500) !important;
+  margin-top: 4px !important;
+  margin-bottom: 8px !important;
+  line-height: 1.5 !important;
+}
+
+/* Inputs (form içinde) */
+.collection-edit input[type="text"]:not([class*="search"]),
+.collection-edit input[type="email"],
+.collection-edit input[type="number"],
+.collection-edit input[type="date"],
+.collection-edit input[type="url"],
+.collection-edit select,
+.collection-edit textarea,
+.document-fields input[type="text"]:not([class*="search"]),
+.document-fields input[type="email"],
+.document-fields input[type="number"],
+.document-fields input[type="date"],
+.document-fields input[type="url"],
+.document-fields select,
+.document-fields textarea {
+  background: #ffffff !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 8px !important;
+  padding: 11px 14px !important;
+  font-size: 13.5px !important;
+  color: #0F172A !important;
+  transition: all 0.12s !important;
+  width: 100% !important;
+}
+
+.collection-edit input:focus,
+.collection-edit select:focus,
+.collection-edit textarea:focus,
+.document-fields input:focus,
+.document-fields select:focus,
+.document-fields textarea:focus {
+  outline: none !important;
+  border-color: var(--brand-blue) !important;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.12) !important;
+}
+
+/* Group / collapsible — beyaz kart şeklinde */
+.field-type--group,
+.field-type--collapsible,
+[class*="collapsible"] {
+  background: #ffffff !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  margin-bottom: 18px !important;
+  box-shadow: 0 1px 2px rgba(15,42,71,0.03) !important;
+}
+
+.field-type--group > label,
+.collapsible__toggle {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--brand-navy) !important;
+}
+
+/* Tabs */
+.tabs-field__tabs,
+[class*="tabs-field__tabs"],
+.tabs {
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 6px !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  display: inline-flex !important;
+  gap: 4px !important;
+}
+
+.tabs-field__tabs button,
+.tabs button,
+[class*="tab-button"] {
+  border-radius: 8px !important;
+  padding: 8px 14px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: var(--theme-elevation-500) !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.tabs-field__tabs button.active,
+.tabs button.active,
+[class*="tab-button"][class*="active"] {
+  background: var(--brand-soft) !important;
+  color: var(--brand-navy) !important;
+  font-weight: 600 !important;
+}
+
+/* Sticky save button */
+.doc-controls,
+.document-controls,
+[class*="doc-controls"],
+.save-button-wrapper {
+  background: #ffffff !important;
+  border-top: 1px solid var(--theme-elevation-150) !important;
+  padding: 14px 32px !important;
+  box-shadow: 0 -4px 16px rgba(15,42,71,0.06) !important;
+}
+
+/* ====================================================
+   6. BLOCKS FIELD — En önemli (sayfa içeriği yönetimi)
+   ==================================================== */
+.field-type--blocks,
+[class*="field-type--blocks"] {
+  background: transparent !important;
+}
+
+.field-type--blocks > label {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: var(--brand-navy) !important;
+  margin-bottom: 14px !important;
+}
+
+.blocks-field__rows,
+[class*="blocks-field__rows"] {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.blocks-field__row,
+.blocks-field__block,
+[class*="blocks-field__row"] {
+  background: #ffffff !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 3px rgba(15,42,71,0.04) !important;
+  overflow: hidden !important;
+  transition: all 0.15s !important;
+}
+
+.blocks-field__row:hover,
+.blocks-field__block:hover {
+  border-color: var(--brand-blue) !important;
+  box-shadow: 0 4px 12px rgba(15,42,71,0.06) !important;
+}
+
+/* Blok header (drag handle + isim + actions) */
+.blocks-field__row > header,
+.blocks-field__block-header,
+[class*="block-header"] {
+  background: var(--theme-elevation-50) !important;
+  padding: 12px 16px !important;
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+  font-weight: 600 !important;
+  color: var(--brand-navy) !important;
+}
+
+/* "+ Blok Ekle" düğmesi */
+.blocks-field__drawer-toggler,
+.array-field__add-row,
+[class*="add-row"],
+[class*="drawer-toggler"]:not(.drawer-toggler--icon) {
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark)) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 12px 20px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  margin-top: 12px !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 0 4px 12px rgba(59,130,246,0.25) !important;
+  transition: all 0.15s !important;
+}
+
+.blocks-field__drawer-toggler:hover,
+.array-field__add-row:hover,
+[class*="add-row"]:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(59,130,246,0.35) !important;
+}
+
+/* Drag handle */
+.collapsible__drag,
+[class*="drag-handle"],
+.array-actions__drag {
+  color: var(--theme-elevation-400) !important;
+  cursor: grab !important;
+}
+
+/* ====================================================
+   7. BUTTONS (genel)
+   ==================================================== */
+.btn--style-primary,
+button.btn--style-primary,
+button[class*="primary"]:not([class*="ghost"]) {
+  background: var(--brand-navy) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.15s !important;
+}
+
+.btn--style-primary:hover,
+button.btn--style-primary:hover {
+  background: var(--brand-deep) !important;
+}
+
+.btn--style-secondary,
+button.btn--style-secondary {
+  background: #ffffff !important;
+  color: var(--brand-navy) !important;
+  border: 1.5px solid var(--theme-elevation-150) !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+}
+
+.btn--style-secondary:hover {
+  background: var(--theme-elevation-50) !important;
+  border-color: var(--brand-blue) !important;
+}
+
+.btn--style-error,
+button.btn--style-error {
+  background: var(--theme-error-500) !important;
+  color: white !important;
+}
+
+/* ====================================================
+   8. DRAWER / MODAL
+   ==================================================== */
+.drawer,
+[class*="drawer__content"],
+.modal,
+[class*="modal__content"] {
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  box-shadow: 0 24px 60px rgba(15,42,71,0.25) !important;
+}
+
+.drawer__header,
+[class*="drawer__header"],
+.modal__header {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+  padding: 18px 24px !important;
+}
+
+.drawer__header h2,
+.drawer__header h3 {
+  color: var(--brand-navy) !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+}
+
+/* ====================================================
+   9. UPLOAD / MEDIA
+   ==================================================== */
+.upload__dropzone,
+[class*="dropzone"],
+.upload-cell {
+  background: var(--theme-elevation-50) !important;
+  border: 2px dashed var(--theme-elevation-200) !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  transition: all 0.15s !important;
+}
+
+.upload__dropzone:hover,
+[class*="dropzone"]:hover {
+  border-color: var(--brand-blue) !important;
+  background: var(--brand-soft) !important;
+}
+
+/* ====================================================
+   10. EMPTY STATES
+   ==================================================== */
+.collection-list--empty,
+[class*="empty"] {
+  text-align: center;
+  padding: 60px 20px !important;
+}
+
+/* ====================================================
+   11. SCROLLBAR (sidebar için ince)
+   ==================================================== */
+.nav::-webkit-scrollbar,
+[class*="nav__wrap"]::-webkit-scrollbar { width: 4px; }
+.nav::-webkit-scrollbar-thumb,
+[class*="nav__wrap"]::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+}
+
+/* ====================================================
+   ===  LOGIN SAYFASI — Mevcut tasarım korunur     ===
+   ==================================================== */
+
 body:has(.template-default.login),
 body:has(.template-minimal.login),
 body:has([class*="login"]) {
   background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 100%) !important;
 }
 
-/* Login kartını ortala ve kartlaştır */
 .template-default.login,
 .template-minimal.login,
 .template-default[class*="login"] {
@@ -32,23 +655,11 @@ body:has([class*="login"]) {
   margin: 0 !important;
 }
 
-/* Payload'ın gri arkaplanını sıfırla */
 .template-default.login,
 .template-minimal.login {
   background: transparent !important;
 }
 
-/* Logo */
-.login__brand,
-.template-minimal__wrap > a:first-child,
-.login a:first-child:has(img),
-.login a:first-child:has(svg) {
-  display: flex !important;
-  justify-content: center;
-  margin-bottom: 8px !important;
-}
-
-/* Form alanları */
 .login form,
 .template-minimal form {
   display: flex !important;
@@ -57,21 +668,11 @@ body:has([class*="login"]) {
   margin-top: 18px;
 }
 
-.login form .field-type,
-.login form .field-type-text,
-.login form .field-type-password,
-.login form .field-type-email {
-  margin: 0 !important;
-}
-
 .login form label {
   display: none !important;
 }
 
-.login form input,
-.login form input[type="email"],
-.login form input[type="password"],
-.login form input[type="text"] {
+.login form input {
   background: #F1F5F9 !important;
   border: 1.5px solid transparent !important;
   border-radius: 9999px !important;
@@ -82,22 +683,15 @@ body:has([class*="login"]) {
   color: #0E2A47 !important;
 }
 
-.login form input::placeholder {
-  color: #64748B !important;
-}
-
 .login form input:focus {
   background: #ffffff !important;
-  border-color: #3B82F6 !important;
+  border-color: var(--brand-blue) !important;
   outline: none !important;
   box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12) !important;
 }
 
-/* Giriş Yap butonu */
-.login form button[type="submit"],
-.login form .form-submit button,
-.login form .btn--style-primary {
-  background: linear-gradient(135deg, #3B82F6, #2563EB) !important;
+.login form button[type="submit"] {
+  background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark)) !important;
   color: white !important;
   border: none !important;
   border-radius: 9999px !important;
@@ -111,39 +705,20 @@ body:has([class*="login"]) {
   box-shadow: 0 8px 24px rgba(59,130,246,0.25);
 }
 
-.login form button[type="submit"]:hover,
-.login form .btn--style-primary:hover {
-  background: linear-gradient(135deg, #2563EB, #1D4ED8) !important;
+.login form button[type="submit"]:hover {
+  background: linear-gradient(135deg, var(--brand-blue-dark), #1D4ED8) !important;
   transform: translateY(-1px);
-  box-shadow: 0 12px 28px rgba(59,130,246,0.35);
 }
 
-/* "Şifremi unuttum" linki */
-.login a.forgot-password,
-.login form a {
+.login a {
   display: block;
   text-align: center;
   margin-top: 16px;
-  color: #64748B !important;
+  color: var(--theme-elevation-500) !important;
   font-size: 13px;
   text-decoration: none;
 }
 
 .login a:hover {
-  color: #3B82F6 !important;
-}
-
-/* Payload v3 fallback selectors */
-[class*="loginLayout"] {
-  background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 100%) !important;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-[class*="login__"] form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+  color: var(--brand-blue) !important;
 }
