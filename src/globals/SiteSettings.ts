@@ -41,6 +41,22 @@ export const SiteSettings: GlobalConfig = {
       ],
     },
     {
+      name: 'seo',
+      type: 'group',
+      label: '🔍 SEO & Analytics (Site Geneli)',
+      admin: { description: 'Sayfaya özel meta verilmediğinde kullanılan varsayılanlar ve analitik entegrasyonları.' },
+      fields: [
+        { name: 'siteName', type: 'text', label: 'Site Adı (başlık şablonu için)', defaultValue: 'Paşaoğlu Group' },
+        { name: 'titleTemplate', type: 'text', label: 'Başlık Şablonu', defaultValue: '%s | Paşaoğlu Group', admin: { description: '%s sayfanın başlığıyla değiştirilir.' } },
+        { name: 'defaultDescription', type: 'textarea', label: 'Varsayılan Açıklama' },
+        { name: 'defaultOgImage', type: 'upload', relationTo: 'media', label: 'Varsayılan Paylaşım Görseli' },
+        { name: 'twitterHandle', type: 'text', label: 'Twitter / X Kullanıcı Adı (@ olmadan)' },
+        { name: 'googleSiteVerification', type: 'text', label: 'Google Search Console Doğrulama Kodu' },
+        { name: 'googleAnalyticsId', type: 'text', label: 'Google Analytics ID (ör. G-XXXXXXXXXX)' },
+        { name: 'organizationLegalName', type: 'text', label: 'Kurumsal Yasal Ad (Schema.org)' },
+      ],
+    },
+    {
       name: 'footer',
       type: 'group',
       label: 'Footer',

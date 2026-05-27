@@ -365,6 +365,55 @@ export const ContactFormBlock: Block = {
   ],
 }
 
+export const NewsGrid: Block = {
+  slug: 'newsGrid',
+  labels: { singular: '📰 Haberler Grid', plural: 'Haberler Bölümleri' },
+  fields: [
+    { name: 'eyebrow', type: 'text', label: 'Üst Etiket', defaultValue: 'Haber Bülteni' },
+    { name: 'title', type: 'text', required: true, label: 'Başlık' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
+    {
+      name: 'items', type: 'array', minRows: 1, maxRows: 8, label: 'Haberler',
+      fields: [
+        { name: 'date', type: 'date', label: 'Tarih', admin: { date: { pickerAppearance: 'dayOnly', displayFormat: 'dd.MM.yyyy' } } },
+        { name: 'category', type: 'text', label: 'Kategori (ör. KURUMSAL, SEKTÖREL)' },
+        { name: 'image', type: 'upload', relationTo: 'media', label: 'Haber Görseli' },
+        { name: 'title', type: 'text', required: true, label: 'Haber Başlığı' },
+        { name: 'excerpt', type: 'textarea', label: 'Özet' },
+        { name: 'href', type: 'text', label: 'Devamı için link (opsiyonel)' },
+      ],
+    },
+  ],
+}
+
+export const WorldReach: Block = {
+  slug: 'worldReach',
+  labels: { singular: '🌍 Küresel Erişim (Harita)', plural: 'Küresel Erişim Bölümleri' },
+  fields: [
+    { name: 'eyebrow', type: 'text', label: 'Üst Etiket', defaultValue: 'Küresel Erişim' },
+    { name: 'title', type: 'text', required: true, label: 'Başlık', defaultValue: '36 Ülkeye İhracat' },
+    { name: 'description', type: 'textarea', label: 'Açıklama' },
+    {
+      name: 'stats', type: 'array', maxRows: 4, label: 'Alt İstatistikler',
+      fields: [
+        { name: 'value', type: 'text', required: true, label: 'Değer' },
+        { name: 'label', type: 'text', required: true, label: 'Etiket' },
+      ],
+    },
+    {
+      name: 'highlightPoints',
+      type: 'array',
+      label: 'Vurgu Noktaları (harita üzerinde parlayan)',
+      maxRows: 12,
+      fields: [
+        { name: 'name', type: 'text', label: 'Bölge Adı' },
+        { name: 'xPercent', type: 'number', required: true, min: 0, max: 100, label: 'X% (0-100, soldan)' },
+        { name: 'yPercent', type: 'number', required: true, min: 0, max: 100, label: 'Y% (0-100, üstten)' },
+      ],
+    },
+  ],
+}
+
 export const allBlocks = [
   HeroVideo,
   SplitTextImage,
@@ -384,4 +433,6 @@ export const allBlocks = [
   ContactBlock,
   CareerFormBlock,
   ContactFormBlock,
+  NewsGrid,
+  WorldReach,
 ]

@@ -1,6 +1,7 @@
-import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import { getPayloadClient } from '@/lib/payload'
 import { BlockRenderer } from '@/components/BlockRenderer'
+import { buildPageMetadata } from '@/lib/seo'
 
 export const revalidate = 60
 
@@ -13,6 +14,15 @@ async function getHomePage() {
     limit: 1,
   })
   return result.docs[0]
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const payload = await getPayloadClient()
+  const [page, settings] = await Promise.all([
+    getHomePage(),
+    payload.findGlobal({ slug: 'siteSettings', depth: 1 }).catch(() => ({})),
+  ])
+  return buildPageMetadata({ page, settings, pathname: '/' })
 }
 
 export default async function HomePage() {

@@ -56,7 +56,7 @@ export function HeroVideo({ block }: { block: any }) {
               {block.eyebrow}
             </span>
           )}
-          <h1 className="font-sans text-5xl md:text-7xl leading-[1.05] font-light max-w-4xl">
+          <h1 className="font-sans text-[2.4rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] font-light max-w-4xl">
             {block.title}
             {block.titleAccent && (
               <>
@@ -65,22 +65,22 @@ export function HeroVideo({ block }: { block: any }) {
               </>
             )}
           </h1>
-          <div className="mt-8 h-px w-24 bg-white/40" />
+          <div className="mt-6 md:mt-8 h-px w-20 md:w-24 bg-white/40" />
 
           {block.description && (
-            <p className="mt-8 max-w-xl text-white/80 leading-relaxed">{block.description}</p>
+            <p className="mt-6 md:mt-8 max-w-xl text-sm md:text-base text-white/80 leading-relaxed px-2">{block.description}</p>
           )}
 
           {block.certifications?.length ? (
-            <div className="mt-14 w-full max-w-5xl">
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-7 border-t border-white/15 pt-10">
+            <div className="mt-10 md:mt-14 w-full max-w-5xl">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-5 md:gap-x-8 md:gap-y-7 border-t border-white/15 pt-8 md:pt-10">
                 {block.certifications.slice(0, 10).map((c: any, i: number) => (
                   <div key={i} className="text-center">
-                    <div className="text-sm md:text-base font-semibold tracking-wider text-white">
+                    <div className="text-xs sm:text-sm md:text-base font-semibold tracking-wider text-white">
                       {c.name}
                     </div>
                     {c.description && (
-                      <div className="mt-1 text-[10px] uppercase tracking-[0.18em] text-white/55">
+                      <div className="mt-1 text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-white/55 leading-tight">
                         {c.description}
                       </div>
                     )}

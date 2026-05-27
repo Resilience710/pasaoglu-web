@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getPayloadClient } from '@/lib/payload'
 import { BlockRenderer } from '@/components/BlockRenderer'
+import { buildPageMetadata } from '@/lib/seo'
 
 export const revalidate = 60
 
@@ -21,9 +22,13 @@ async function getPage(fullSlug: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
   const full = slug ? `politikalarimiz/${slug.join('/')}` : 'politikalarimiz'
-  const page = await getPage(full)
+  const payload = await getPayloadClient()
+  const [page, settings] = await Promise.all([
+    getPage(full),
+    payload.findGlobal({ slug: 'siteSettings', depth: 1 }).catch(() => ({})),
+  ])
   if (!page) return {}
-  return { title: page.meta?.title || page.title, description: page.meta?.description }
+  return buildPageMetadata({ page, settings, pathname: `/${full}` })
 }
 
 export default async function PolicyPage({ params }: Props) {

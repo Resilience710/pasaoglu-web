@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import { getPayloadClient } from '@/lib/payload'
 import { BlockRenderer } from '@/components/BlockRenderer'
+import { buildPageMetadata } from '@/lib/seo'
 
 export const revalidate = 60
 
@@ -20,9 +21,17 @@ async function getSector(slug: string) {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const s: any = await getSector(slug)
+  const payload = await getPayloadClient()
+  const [s, settings] = await Promise.all([
+    getSector(slug),
+    payload.findGlobal({ slug: 'siteSettings', depth: 1 }).catch(() => ({})),
+  ])
   if (!s) return {}
-  return { title: s.meta?.title || s.name, description: s.meta?.description }
+  return buildPageMetadata({
+    page: { ...s, title: s.name },
+    settings,
+    pathname: `/sektorler/${slug}`,
+  })
 }
 
 export async function generateStaticParams() {

@@ -16,6 +16,8 @@ import { CTABand } from './blocks/CTABand'
 import { ContactBlock } from './blocks/ContactBlock'
 import { ContactForm } from './blocks/ContactForm'
 import { CareerForm } from './blocks/CareerForm'
+import { NewsGrid } from './blocks/NewsGrid'
+import { WorldReach } from './blocks/WorldReach'
 
 const MAP: Record<string, React.FC<{ block: any }>> = {
   heroVideo: HeroVideo,
@@ -36,6 +38,8 @@ const MAP: Record<string, React.FC<{ block: any }>> = {
   contactBlock: ContactBlock,
   contactForm: ContactForm,
   careerForm: CareerForm,
+  newsGrid: NewsGrid,
+  worldReach: WorldReach,
 }
 
 export function BlockRenderer({ layout }: { layout: any[] }) {

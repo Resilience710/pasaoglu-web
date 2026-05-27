@@ -226,10 +226,42 @@ export interface Page {
    * Sayfanın adresi. Ana sayfa için "home". Diğerleri için "hakkimizda", "kariyer", "iletisim" gibi. Politika alt sayfaları için "politikalarimiz/kalite" şeklinde.
    */
   slug: string;
+  /**
+   * Sayfanın Google ve sosyal medyada nasıl görüneceği. Boş bırakılan alanlar için sayfa başlığı/açıklaması kullanılır.
+   */
   meta?: {
+    /**
+     * 50-60 karakter ideal. Boş bırakılırsa sayfa adı kullanılır. Site adı otomatik eklenir.
+     */
     title?: string | null;
+    /**
+     * 150-160 karakter ideal. Google arama sonuçlarında görünür.
+     */
     description?: string | null;
+    /**
+     * ör. kimya, yapı, gıda, holding, paşaoğlu
+     */
+    keywords?: string | null;
+    /**
+     * WhatsApp/Facebook/Twitter’da link paylaşıldığında görünen kapak. 1200x630 px önerilir.
+     */
     image?: (number | null) | Media;
+    /**
+     * Sosyal paylaşımlar için ayrı başlık. Boşsa SEO başlığı kullanılır.
+     */
+    ogTitle?: string | null;
+    /**
+     * Sosyal paylaşımlar için ayrı açıklama.
+     */
+    ogDescription?: string | null;
+    /**
+     * Sayfanın resmi tek adresi. Yinelenen içerik problemini önler. ör. https://pasaoglugroup.com.tr/hakkimizda
+     */
+    canonicalUrl?: string | null;
+    /**
+     * İşaretlerseniz bu sayfa Google’da görünmez.
+     */
+    noindex?: boolean | null;
   };
   /**
    * Sayfaya bölümler ekleyin. "+ Bölüm Ekle" diyerek Hero, Görsel+Metin, İstatistik, Kart Grid, Akordeon vb. ekleyebilirsiniz.
@@ -552,6 +584,48 @@ export interface Page {
         blockName?: string | null;
         blockType: 'contactForm';
       }
+    | {
+        eyebrow?: string | null;
+        title: string;
+        description?: string | null;
+        items?:
+          | {
+              date?: string | null;
+              category?: string | null;
+              image?: (number | null) | Media;
+              title: string;
+              excerpt?: string | null;
+              href?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'newsGrid';
+      }
+    | {
+        eyebrow?: string | null;
+        title: string;
+        description?: string | null;
+        stats?:
+          | {
+              value: string;
+              label: string;
+              id?: string | null;
+            }[]
+          | null;
+        highlightPoints?:
+          | {
+              name?: string | null;
+              xPercent: number;
+              yPercent: number;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'worldReach';
+      }
   )[];
   updatedAt: string;
   createdAt: string;
@@ -619,9 +693,42 @@ export interface Sector {
   shortDescription?: string | null;
   cardImage?: (number | null) | Media;
   theme: 'chem' | 'build' | 'food';
+  /**
+   * Sayfanın Google ve sosyal medyada nasıl görüneceği. Boş bırakılan alanlar için sayfa başlığı/açıklaması kullanılır.
+   */
   meta?: {
+    /**
+     * 50-60 karakter ideal. Boş bırakılırsa sayfa adı kullanılır. Site adı otomatik eklenir.
+     */
     title?: string | null;
+    /**
+     * 150-160 karakter ideal. Google arama sonuçlarında görünür.
+     */
     description?: string | null;
+    /**
+     * ör. kimya, yapı, gıda, holding, paşaoğlu
+     */
+    keywords?: string | null;
+    /**
+     * WhatsApp/Facebook/Twitter’da link paylaşıldığında görünen kapak. 1200x630 px önerilir.
+     */
+    image?: (number | null) | Media;
+    /**
+     * Sosyal paylaşımlar için ayrı başlık. Boşsa SEO başlığı kullanılır.
+     */
+    ogTitle?: string | null;
+    /**
+     * Sosyal paylaşımlar için ayrı açıklama.
+     */
+    ogDescription?: string | null;
+    /**
+     * Sayfanın resmi tek adresi. Yinelenen içerik problemini önler. ör. https://pasaoglugroup.com.tr/hakkimizda
+     */
+    canonicalUrl?: string | null;
+    /**
+     * İşaretlerseniz bu sayfa Google’da görünmez.
+     */
+    noindex?: boolean | null;
   };
   layout: (
     | {
@@ -941,6 +1048,48 @@ export interface Sector {
         blockName?: string | null;
         blockType: 'contactForm';
       }
+    | {
+        eyebrow?: string | null;
+        title: string;
+        description?: string | null;
+        items?:
+          | {
+              date?: string | null;
+              category?: string | null;
+              image?: (number | null) | Media;
+              title: string;
+              excerpt?: string | null;
+              href?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'newsGrid';
+      }
+    | {
+        eyebrow?: string | null;
+        title: string;
+        description?: string | null;
+        stats?:
+          | {
+              value: string;
+              label: string;
+              id?: string | null;
+            }[]
+          | null;
+        highlightPoints?:
+          | {
+              name?: string | null;
+              xPercent: number;
+              yPercent: number;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'worldReach';
+      }
   )[];
   updatedAt: string;
   createdAt: string;
@@ -1196,7 +1345,12 @@ export interface PagesSelect<T extends boolean = true> {
     | {
         title?: T;
         description?: T;
+        keywords?: T;
         image?: T;
+        ogTitle?: T;
+        ogDescription?: T;
+        canonicalUrl?: T;
+        noindex?: T;
       };
   layout?:
     | T
@@ -1479,6 +1633,50 @@ export interface PagesSelect<T extends boolean = true> {
                 | T
                 | {
                     name?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        newsGrid?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    date?: T;
+                    category?: T;
+                    image?: T;
+                    title?: T;
+                    excerpt?: T;
+                    href?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        worldReach?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              highlightPoints?:
+                | T
+                | {
+                    name?: T;
+                    xPercent?: T;
+                    yPercent?: T;
                     id?: T;
                   };
               id?: T;
@@ -1503,6 +1701,12 @@ export interface SectorsSelect<T extends boolean = true> {
     | {
         title?: T;
         description?: T;
+        keywords?: T;
+        image?: T;
+        ogTitle?: T;
+        ogDescription?: T;
+        canonicalUrl?: T;
+        noindex?: T;
       };
   layout?:
     | T
@@ -1785,6 +1989,50 @@ export interface SectorsSelect<T extends boolean = true> {
                 | T
                 | {
                     name?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        newsGrid?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              items?:
+                | T
+                | {
+                    date?: T;
+                    category?: T;
+                    image?: T;
+                    title?: T;
+                    excerpt?: T;
+                    href?: T;
+                    id?: T;
+                  };
+              id?: T;
+              blockName?: T;
+            };
+        worldReach?:
+          | T
+          | {
+              eyebrow?: T;
+              title?: T;
+              description?: T;
+              stats?:
+                | T
+                | {
+                    value?: T;
+                    label?: T;
+                    id?: T;
+                  };
+              highlightPoints?:
+                | T
+                | {
+                    name?: T;
+                    xPercent?: T;
+                    yPercent?: T;
                     id?: T;
                   };
               id?: T;
@@ -1945,6 +2193,22 @@ export interface SiteSetting {
         id?: string | null;
       }[]
     | null;
+  /**
+   * Sayfaya özel meta verilmediğinde kullanılan varsayılanlar ve analitik entegrasyonları.
+   */
+  seo?: {
+    siteName?: string | null;
+    /**
+     * %s sayfanın başlığıyla değiştirilir.
+     */
+    titleTemplate?: string | null;
+    defaultDescription?: string | null;
+    defaultOgImage?: (number | null) | Media;
+    twitterHandle?: string | null;
+    googleSiteVerification?: string | null;
+    googleAnalyticsId?: string | null;
+    organizationLegalName?: string | null;
+  };
   footer?: {
     description?: string | null;
     columns?:
@@ -2013,6 +2277,18 @@ export interface SiteSettingsSelect<T extends boolean = true> {
         platform?: T;
         url?: T;
         id?: T;
+      };
+  seo?:
+    | T
+    | {
+        siteName?: T;
+        titleTemplate?: T;
+        defaultDescription?: T;
+        defaultOgImage?: T;
+        twitterHandle?: T;
+        googleSiteVerification?: T;
+        googleAnalyticsId?: T;
+        organizationLegalName?: T;
       };
   footer?:
     | T

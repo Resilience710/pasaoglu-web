@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { allBlocks } from '../blocks'
+import { seoMetaField } from '../fields/seoMeta'
 
 export const Sectors: CollectionConfig = {
   slug: 'sectors',
@@ -28,13 +29,7 @@ export const Sectors: CollectionConfig = {
         { label: 'Gıda — Yeşil', value: 'food' },
       ],
     },
-    {
-      name: 'meta', type: 'group', label: 'SEO Ayarları',
-      fields: [
-        { name: 'title', type: 'text', label: 'SEO Başlığı' },
-        { name: 'description', type: 'textarea', label: 'SEO Açıklaması' },
-      ],
-    },
+    seoMetaField,
     {
       name: 'layout', type: 'blocks', required: true, blocks: allBlocks,
       label: 'Sayfa İçeriği — Sürükle-bırak Bloklar',
