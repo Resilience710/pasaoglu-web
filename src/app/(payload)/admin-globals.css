@@ -1,104 +1,114 @@
-/* ====================================================
-   Paşaoğlu Admin — Komple UI yenileme
-   ==================================================== */
+/* ============================================================
+   PAŞAOĞLU ADMIN — Payload v3 gerçek class hedefli premium UI
+   ============================================================ */
 
-/* ====================================================
-   1. TEMA DEĞİŞKENLERİ — Payload tokens override
-   ==================================================== */
-html[data-theme='light'],
-html:not([data-theme='dark']) {
-  --color-base-50: #F8FAFC;
-  --color-base-100: #F1F5F9;
-  --color-base-150: #E2E8F0;
-  --color-base-200: #CBD5E1;
-  --color-base-300: #94A3B8;
-  --color-base-400: #64748B;
-  --color-base-500: #475569;
-  --color-base-600: #334155;
-  --color-base-700: #1E293B;
-  --color-base-800: #0F172A;
-  --color-base-900: #0E2A47;
-  --color-base-1000: #081A2D;
-
-  --theme-bg: #F8FAFC;
-  --theme-elevation-0: #ffffff;
-  --theme-elevation-50: #F8FAFC;
-  --theme-elevation-100: #F1F5F9;
-  --theme-elevation-150: #E2E8F0;
-  --theme-elevation-200: #CBD5E1;
-  --theme-elevation-400: #94A3B8;
-  --theme-elevation-500: #64748B;
-  --theme-elevation-800: #1E293B;
-  --theme-elevation-1000: #0E2A47;
-
-  --theme-success-500: #16A34A;
-  --color-success-500: #16A34A;
-  --theme-warning-500: #F59E0B;
-  --color-warning-500: #F59E0B;
-  --theme-error-500: #DC2626;
-  --color-error-500: #DC2626;
-
-  --style-radius-s: 6px;
-  --style-radius-m: 10px;
-  --style-radius-l: 14px;
-}
-
-/* Brand accent override (mavi) */
-html {
+/* ------------------------------------------------------------
+   1) RENK PALETİ — Payload elevation token'larını brand'a çevir
+   ------------------------------------------------------------ */
+html,
+html[data-theme='light'] {
+  /* Brand */
   --brand-navy: #0E2A47;
   --brand-deep: #081A2D;
   --brand-blue: #3B82F6;
   --brand-blue-dark: #2563EB;
   --brand-soft: #DBEAFE;
+
+  /* Payload elevation override — Payload bunları her yerde kullanıyor */
+  --theme-bg: #F8FAFC;
+  --theme-text: #0F172A;
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-50: #F8FAFC;
+  --theme-elevation-100: #F1F5F9;
+  --theme-elevation-150: #E2E8F0;
+  --theme-elevation-200: #CBD5E1;
+  --theme-elevation-300: #94A3B8;
+  --theme-elevation-400: #64748B;
+  --theme-elevation-500: #475569;
+  --theme-elevation-600: #334155;
+  --theme-elevation-700: #1E293B;
+  --theme-elevation-800: #0F172A;
+  --theme-elevation-900: #0E2A47;
+  --theme-elevation-1000: #081A2D;
+
+  --theme-border-color: #E2E8F0;
+  --theme-input-bg: #ffffff;
+  --theme-overlay: rgba(14, 42, 71, 0.5);
+
+  --theme-success-500: #16A34A;
+  --theme-warning-500: #F59E0B;
+  --theme-error-500: #DC2626;
+
+  --style-radius-s: 6px;
+  --style-radius-m: 8px;
+  --style-radius-l: 12px;
+
+  --app-header-height: 60px;
+  --nav-width: 260px;
 }
 
 body {
-  background: var(--theme-bg) !important;
-  color: #0F172A;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--theme-bg);
+  color: var(--theme-text);
 }
 
-/* ====================================================
-   2. SIDEBAR — Dark navy
-   ==================================================== */
-.nav,
-.nav__wrap,
-[class*="nav__wrap"],
-aside[class*="nav"] {
+/* ------------------------------------------------------------
+   2) SIDEBAR — .nav (dark navy)
+   ------------------------------------------------------------ */
+.nav {
   background: linear-gradient(180deg, var(--brand-navy) 0%, var(--brand-deep) 100%) !important;
-  border-right: 1px solid rgba(255,255,255,0.05) !important;
-  color: rgba(255,255,255,0.85) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.04) !important;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-/* Sidebar üst boşluk + logo container */
-.nav__header,
-[class*="nav__header"] {
-  padding: 22px 18px 14px !important;
-  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
-  margin-bottom: 8px !important;
+.nav__header {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* Grup başlıkları (🎨 Özelleştirme, 📥 Form Gönderileri vs.) */
+.nav__header-content {
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  height: var(--app-header-height);
+}
+
+.nav__scroll {
+  padding-top: calc(var(--app-header-height) + 12px) !important;
+}
+
+.nav__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Grup başlıkları */
 .nav__label,
-.nav__group-label,
-[class*="nav__group-label"],
-[class*="nav__label"] {
-  color: rgba(255,255,255,0.45) !important;
+.nav-group__toggle,
+.nav .collapsible__toggle {
+  color: rgba(255, 255, 255, 0.45) !important;
   font-size: 10.5px !important;
   font-weight: 700 !important;
-  letter-spacing: 0.16em !important;
+  letter-spacing: 0.14em !important;
   text-transform: uppercase !important;
-  padding: 18px 20px 8px !important;
-  margin: 0 !important;
+  padding: 16px 18px 6px !important;
+  background: transparent !important;
+  border: none !important;
 }
 
-/* Sidebar linkleri */
-.nav__link,
-.nav-group__link,
-[class*="nav__link"],
-.nav a {
-  color: rgba(255,255,255,0.78) !important;
-  padding: 10px 18px !important;
+.nav-group__toggle:hover {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.nav-group__indicator {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Linkler */
+.nav__link {
+  color: rgba(255, 255, 255, 0.78) !important;
+  padding: 9px 16px !important;
   border-radius: 8px !important;
   margin: 1px 10px !important;
   font-size: 13.5px !important;
@@ -109,134 +119,145 @@ aside[class*="nav"] {
   text-decoration: none !important;
   transition: all 0.12s ease !important;
   position: relative !important;
+  background: transparent !important;
   border: none !important;
 }
 
-.nav__link:hover,
-.nav-group__link:hover,
-[class*="nav__link"]:hover,
-.nav a:hover {
-  background: rgba(255,255,255,0.07) !important;
+.nav__link:hover {
+  background: rgba(255, 255, 255, 0.07) !important;
   color: #ffffff !important;
 }
 
-.nav__link--active,
 .nav__link.active,
-[class*="nav__link"][class*="active"],
-.nav a.active,
-.nav a[aria-current="page"] {
-  background: rgba(59,130,246,0.18) !important;
+.nav__link[aria-current="page"] {
+  background: rgba(59, 130, 246, 0.18) !important;
   color: #ffffff !important;
   box-shadow: inset 3px 0 0 var(--brand-blue);
 }
 
-/* Sidebar icons varsa */
-.nav__link svg,
-.nav a svg {
-  width: 16px !important;
-  height: 16px !important;
-  opacity: 0.7;
+.nav__link-indicator {
+  background: var(--brand-blue) !important;
 }
 
-.nav__link:hover svg,
-.nav__link--active svg {
-  opacity: 1;
+/* Alt controls (logout vs.) */
+.nav__controls {
+  margin-top: auto !important;
+  padding: 14px 16px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* ====================================================
-   3. TOP HEADER BAR + BREADCRUMBS
-   ==================================================== */
-.app-header,
-.payload-header,
-header[class*="header"]:not(.login *) {
+.nav__log-out {
+  color: rgba(255, 255, 255, 0.6) !important;
+  padding: 8px 12px !important;
+  border-radius: 8px !important;
+}
+
+.nav__log-out:hover {
+  background: rgba(220, 38, 38, 0.15) !important;
+  color: #FCA5A5 !important;
+}
+
+/* Nav scrollbar */
+.nav__scroll::-webkit-scrollbar { width: 4px; }
+.nav__scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+}
+
+/* ------------------------------------------------------------
+   3) APP HEADER (üst bar) — .app-header
+   ------------------------------------------------------------ */
+.app-header {
   background: #ffffff !important;
   border-bottom: 1px solid var(--theme-elevation-150) !important;
-  padding: 14px 32px !important;
-  box-shadow: 0 1px 2px rgba(15,42,71,0.03) !important;
+  box-shadow: 0 1px 2px rgba(15, 42, 71, 0.03);
+  z-index: 50;
 }
 
-.step-nav,
-[class*="step-nav"],
-nav[aria-label="breadcrumb"] {
-  font-size: 13px !important;
+.app-header__bg {
+  opacity: 1 !important;
+  background: #ffffff !important;
+}
+
+.app-header__content {
+  padding: 0 28px !important;
+  gap: 18px;
+}
+
+/* Step nav (breadcrumb) */
+.step-nav {
+  font-size: 13px;
+  gap: 8px;
+}
+
+.step-nav a {
   color: var(--theme-elevation-500) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.15s;
 }
 
-.step-nav a,
-[class*="step-nav"] a {
-  color: var(--theme-elevation-500) !important;
-  text-decoration: none !important;
-  font-weight: 500 !important;
-  transition: color 0.15s !important;
-}
-
-.step-nav a:hover,
-[class*="step-nav"] a:hover {
+.step-nav a:hover {
   color: var(--brand-blue) !important;
 }
 
-.step-nav__last,
-[class*="step-nav__last"] {
+.step-nav__home svg {
+  width: 18px;
+  height: 18px;
+  color: var(--theme-elevation-500);
+}
+
+.step-nav__home:hover svg {
+  color: var(--brand-blue);
+}
+
+/* Last breadcrumb item */
+.step-nav span:last-child,
+.step-nav__last {
   color: var(--brand-navy) !important;
-  font-weight: 600 !important;
+  font-weight: 600;
 }
 
-/* Account/user menu top right */
-.account-button,
-[class*="account-button"] {
-  border-radius: 999px !important;
-  padding: 6px 14px 6px 6px !important;
-  background: var(--theme-elevation-100) !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-}
-
-/* ====================================================
-   4. LIST VIEW — Koleksiyon listesi
-   ==================================================== */
-.collection-list,
-[class*="collection-list"],
-.template-default__main,
-[class*="template-default__main"] {
+/* ------------------------------------------------------------
+   4) CONTENT AREA — .template-default
+   ------------------------------------------------------------ */
+.template-default__wrap {
   background: var(--theme-bg) !important;
-  padding: 28px 32px !important;
 }
 
-/* Sayfa başlığı */
-.collection-list__header,
-[class*="collection-list__header"],
-h1[class*="collection-list"] {
+/* List view — koleksiyon tablosu */
+.collection-list {
+  padding: 24px 28px !important;
+}
+
+.collection-list__header h1 {
   font-size: 26px !important;
   font-weight: 700 !important;
   color: var(--brand-navy) !important;
-  letter-spacing: -0.01em !important;
-  margin-bottom: 6px !important;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px 0 !important;
 }
 
-/* Filter / kontrol bar */
-.list-controls,
-[class*="list-controls"] {
+.list-controls {
   background: #ffffff !important;
   border: 1px solid var(--theme-elevation-150) !important;
   border-radius: 12px !important;
   padding: 12px 14px !important;
-  margin-bottom: 18px !important;
-  box-shadow: 0 1px 2px rgba(15,42,71,0.03) !important;
+  box-shadow: 0 1px 2px rgba(15, 42, 71, 0.03);
+  margin-bottom: 16px !important;
 }
 
 /* Tablo */
 .table,
-[class*="table"],
-table.list-table {
+.collection-list .table {
   background: #ffffff !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
   border: 1px solid var(--theme-elevation-150) !important;
-  box-shadow: 0 1px 2px rgba(15,42,71,0.04) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(15, 42, 71, 0.04);
 }
 
-.table thead th,
-table th {
+.table thead th {
   background: var(--theme-elevation-50) !important;
   font-size: 11.5px !important;
   font-weight: 700 !important;
@@ -247,158 +268,203 @@ table th {
   border-bottom: 1px solid var(--theme-elevation-150) !important;
 }
 
-.table tbody tr,
-table tbody tr {
+.table tbody tr {
   border-bottom: 1px solid var(--theme-elevation-100) !important;
-  transition: background 0.12s !important;
+  transition: background 0.12s;
 }
 
-.table tbody tr:hover,
-table tbody tr:hover {
+.table tbody tr:last-child {
+  border-bottom: none !important;
+}
+
+.table tbody tr:hover {
   background: var(--brand-soft) !important;
 }
 
-.table tbody td,
-table tbody td {
-  padding: 14px 16px !important;
+.table tbody td {
+  padding: 13px 16px !important;
   font-size: 13.5px !important;
-  color: #0F172A !important;
 }
 
 .table tbody td a {
   color: var(--brand-navy) !important;
   font-weight: 600 !important;
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .table tbody td a:hover {
   color: var(--brand-blue) !important;
 }
 
-/* "Yeni Ekle" düğmesi sağ üst */
-.list-header__actions a.btn,
-.btn[href*="/create"],
-a[class*="create-new"] {
+/* ------------------------------------------------------------
+   5) BUTTONS — .btn (Payload gerçek class'ları)
+   ------------------------------------------------------------ */
+.btn--style-primary {
+  background: var(--brand-navy) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  transition: all 0.15s;
+}
+
+.btn--style-primary:hover:not(.btn--disabled) {
+  background: var(--brand-deep) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(14, 42, 71, 0.18);
+}
+
+.btn--style-secondary {
+  background: #ffffff !important;
+  color: var(--brand-navy) !important;
+  border: 1.5px solid var(--theme-elevation-150) !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+}
+
+.btn--style-secondary:hover {
+  background: var(--theme-elevation-50) !important;
+  border-color: var(--brand-blue) !important;
+  color: var(--brand-blue) !important;
+}
+
+.btn--style-pill {
+  border-radius: 999px !important;
   background: var(--brand-blue) !important;
   color: white !important;
+  padding: 8px 18px !important;
   font-weight: 600 !important;
+}
+
+.btn--style-subtle {
+  background: var(--theme-elevation-50) !important;
+  color: var(--theme-elevation-700) !important;
+  border-radius: 8px !important;
+}
+
+.btn--style-subtle:hover {
+  background: var(--brand-soft) !important;
+  color: var(--brand-navy) !important;
+}
+
+/* Create new "+" button */
+a[class*="-create"],
+.collection-list__create-new,
+.btn[href$="/create"] {
+  background: var(--brand-blue) !important;
+  color: white !important;
   border-radius: 10px !important;
+  font-weight: 600 !important;
   padding: 10px 18px !important;
-  box-shadow: 0 4px 12px rgba(59,130,246,0.25) !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
 }
 
-a[class*="create-new"]:hover,
-.btn[href*="/create"]:hover {
+a[class*="-create"]:hover,
+.btn[href$="/create"]:hover {
   background: var(--brand-blue-dark) !important;
-  box-shadow: 0 6px 16px rgba(59,130,246,0.35) !important;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35);
 }
 
-/* ====================================================
-   5. EDIT FORM
-   ==================================================== */
-.collection-edit,
-[class*="collection-edit"],
+/* ------------------------------------------------------------
+   6) EDIT FORM — fields, inputs
+   ------------------------------------------------------------ */
 .document-fields,
-[class*="document-fields"] {
-  background: var(--theme-bg) !important;
-  padding-bottom: 100px !important;
+.collection-edit {
+  padding: 24px 28px !important;
 }
 
-/* Field type wrappers — beyaz kart */
-.field-type:not(.field-type--collapsible-fields):not(.blocks-field__block):not(.field-type--tabs):not(.field-type--row):not(.field-type--group):not(.field-type--array):not(.field-type--blocks) {
+.document-fields__edit {
   background: transparent !important;
+}
+
+.field-type {
   margin-bottom: 18px !important;
 }
 
-.field-type label,
 .field-label,
-[class*="field-label"] {
+label.field-label {
   font-size: 13px !important;
   font-weight: 600 !important;
   color: var(--brand-navy) !important;
   margin-bottom: 6px !important;
-  display: block !important;
 }
 
-.field-description,
-[class*="field-description"] {
+.field-description {
   font-size: 12.5px !important;
   color: var(--theme-elevation-500) !important;
-  margin-top: 4px !important;
-  margin-bottom: 8px !important;
-  line-height: 1.5 !important;
+  margin-top: 4px;
+  line-height: 1.5;
 }
 
-/* Inputs (form içinde) */
-.collection-edit input[type="text"]:not([class*="search"]),
-.collection-edit input[type="email"],
-.collection-edit input[type="number"],
-.collection-edit input[type="date"],
-.collection-edit input[type="url"],
-.collection-edit select,
-.collection-edit textarea,
-.document-fields input[type="text"]:not([class*="search"]),
-.document-fields input[type="email"],
-.document-fields input[type="number"],
-.document-fields input[type="date"],
-.document-fields input[type="url"],
-.document-fields select,
-.document-fields textarea {
+/* Inputs */
+.field-type input[type="text"]:not([class*="search"]),
+.field-type input[type="email"],
+.field-type input[type="number"],
+.field-type input[type="url"],
+.field-type input[type="password"]:not(.login *),
+.field-type textarea,
+.field-type select,
+.rs__control {
   background: #ffffff !important;
   border: 1px solid var(--theme-elevation-150) !important;
   border-radius: 8px !important;
-  padding: 11px 14px !important;
+  padding: 10px 14px !important;
   font-size: 13.5px !important;
-  color: #0F172A !important;
-  transition: all 0.12s !important;
-  width: 100% !important;
+  color: var(--theme-text) !important;
+  box-shadow: none !important;
+  min-height: 40px !important;
+  transition: all 0.12s;
 }
 
-.collection-edit input:focus,
-.collection-edit select:focus,
-.collection-edit textarea:focus,
-.document-fields input:focus,
-.document-fields select:focus,
-.document-fields textarea:focus {
+.field-type input:focus,
+.field-type textarea:focus,
+.field-type select:focus,
+.rs__control--is-focused {
   outline: none !important;
   border-color: var(--brand-blue) !important;
-  box-shadow: 0 0 0 3px rgba(59,130,246,0.12) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12) !important;
 }
 
-/* Group / collapsible — beyaz kart şeklinde */
-.field-type--group,
-.field-type--collapsible,
-[class*="collapsible"] {
+/* Collapsible / Group */
+.collapsible,
+.field-type--collapsible-fields > .collapsible,
+.field-type--group {
   background: #ffffff !important;
   border: 1px solid var(--theme-elevation-150) !important;
   border-radius: 12px !important;
-  padding: 20px !important;
-  margin-bottom: 18px !important;
-  box-shadow: 0 1px 2px rgba(15,42,71,0.03) !important;
+  box-shadow: 0 1px 2px rgba(15, 42, 71, 0.03);
+  overflow: hidden;
+  margin-bottom: 16px !important;
 }
 
-.field-type--group > label,
-.collapsible__toggle {
+.collapsible__toggle:not(.nav .collapsible__toggle) {
+  background: var(--theme-elevation-50) !important;
+  padding: 14px 18px !important;
   font-size: 14px !important;
   font-weight: 700 !important;
   color: var(--brand-navy) !important;
+  border-bottom: 1px solid var(--theme-elevation-150);
+}
+
+.collapsible__content {
+  padding: 18px !important;
 }
 
 /* Tabs */
-.tabs-field__tabs,
-[class*="tabs-field__tabs"],
-.tabs {
+.tabs-field__tabs {
   background: #ffffff !important;
   border-radius: 12px !important;
-  padding: 6px !important;
+  padding: 5px !important;
   border: 1px solid var(--theme-elevation-150) !important;
   display: inline-flex !important;
-  gap: 4px !important;
+  gap: 3px !important;
+  margin-bottom: 18px !important;
 }
 
-.tabs-field__tabs button,
-.tabs button,
-[class*="tab-button"] {
+.tabs-field__tab-button {
   border-radius: 8px !important;
   padding: 8px 14px !important;
   font-size: 13px !important;
@@ -406,236 +472,159 @@ a[class*="create-new"]:hover,
   color: var(--theme-elevation-500) !important;
   background: transparent !important;
   border: none !important;
+  cursor: pointer;
 }
 
-.tabs-field__tabs button.active,
-.tabs button.active,
-[class*="tab-button"][class*="active"] {
+.tabs-field__tab-button--active {
   background: var(--brand-soft) !important;
   color: var(--brand-navy) !important;
   font-weight: 600 !important;
 }
 
-/* Sticky save button */
-.doc-controls,
-.document-controls,
-[class*="doc-controls"],
-.save-button-wrapper {
-  background: #ffffff !important;
-  border-top: 1px solid var(--theme-elevation-150) !important;
-  padding: 14px 32px !important;
-  box-shadow: 0 -4px 16px rgba(15,42,71,0.06) !important;
-}
-
-/* ====================================================
-   6. BLOCKS FIELD — En önemli (sayfa içeriği yönetimi)
-   ==================================================== */
-.field-type--blocks,
-[class*="field-type--blocks"] {
-  background: transparent !important;
-}
-
-.field-type--blocks > label {
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  color: var(--brand-navy) !important;
+/* ------------------------------------------------------------
+   7) BLOCKS FIELD — Sayfa içeriği (en kritik)
+   ------------------------------------------------------------ */
+.blocks-field__header {
   margin-bottom: 14px !important;
 }
 
-.blocks-field__rows,
-[class*="blocks-field__rows"] {
+.blocks-field__header h3,
+.blocks-field__header label {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: var(--brand-navy) !important;
+}
+
+.blocks-field__rows {
   display: flex !important;
   flex-direction: column !important;
   gap: 10px !important;
 }
 
 .blocks-field__row,
-.blocks-field__block,
-[class*="blocks-field__row"] {
+.blocks-field__block-pill {
   background: #ffffff !important;
   border: 1px solid var(--theme-elevation-150) !important;
   border-radius: 12px !important;
-  box-shadow: 0 1px 3px rgba(15,42,71,0.04) !important;
-  overflow: hidden !important;
-  transition: all 0.15s !important;
+  box-shadow: 0 1px 3px rgba(15, 42, 71, 0.04);
+  overflow: hidden;
+  transition: all 0.15s;
 }
 
-.blocks-field__row:hover,
-.blocks-field__block:hover {
+.blocks-field__row:hover {
   border-color: var(--brand-blue) !important;
-  box-shadow: 0 4px 12px rgba(15,42,71,0.06) !important;
+  box-shadow: 0 4px 12px rgba(15, 42, 71, 0.08) !important;
 }
 
-/* Blok header (drag handle + isim + actions) */
-.blocks-field__row > header,
-.blocks-field__block-header,
-[class*="block-header"] {
+/* Blok başlığı (collapsible toggle within block) */
+.blocks-field__row .collapsible__toggle {
   background: var(--theme-elevation-50) !important;
-  padding: 12px 16px !important;
   border-bottom: 1px solid var(--theme-elevation-150) !important;
-  font-weight: 600 !important;
-  color: var(--brand-navy) !important;
+  padding: 12px 16px !important;
 }
 
-/* "+ Blok Ekle" düğmesi */
-.blocks-field__drawer-toggler,
+/* Add row buttons */
+.blocks-drawer__add-button,
 .array-field__add-row,
-[class*="add-row"],
-[class*="drawer-toggler"]:not(.drawer-toggler--icon) {
+.blocks-field__drawer-toggler,
+button[class*="add-block"] {
   background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark)) !important;
   color: white !important;
   border: none !important;
   border-radius: 10px !important;
-  padding: 12px 20px !important;
+  padding: 12px 22px !important;
   font-size: 13.5px !important;
   font-weight: 600 !important;
-  margin-top: 12px !important;
-  cursor: pointer !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  box-shadow: 0 4px 12px rgba(59,130,246,0.25) !important;
-  transition: all 0.15s !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  transition: all 0.15s;
+  margin-top: 10px !important;
 }
 
-.blocks-field__drawer-toggler:hover,
+.blocks-drawer__add-button:hover,
 .array-field__add-row:hover,
-[class*="add-row"]:hover {
+.blocks-field__drawer-toggler:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(59,130,246,0.35) !important;
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.35) !important;
 }
 
-/* Drag handle */
-.collapsible__drag,
-[class*="drag-handle"],
-.array-actions__drag {
-  color: var(--theme-elevation-400) !important;
-  cursor: grab !important;
+/* Array actions (drag, delete, duplicate) */
+.array-actions {
+  background: transparent !important;
 }
 
-/* ====================================================
-   7. BUTTONS (genel)
-   ==================================================== */
-.btn--style-primary,
-button.btn--style-primary,
-button[class*="primary"]:not([class*="ghost"]) {
-  background: var(--brand-navy) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 10px !important;
-  padding: 10px 20px !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
-  cursor: pointer !important;
-  transition: all 0.15s !important;
-}
-
-.btn--style-primary:hover,
-button.btn--style-primary:hover {
-  background: var(--brand-deep) !important;
-}
-
-.btn--style-secondary,
-button.btn--style-secondary {
+/* ------------------------------------------------------------
+   8) DOC CONTROLS (Save bar)
+   ------------------------------------------------------------ */
+.doc-controls {
   background: #ffffff !important;
-  color: var(--brand-navy) !important;
-  border: 1.5px solid var(--theme-elevation-150) !important;
-  border-radius: 10px !important;
-  padding: 10px 20px !important;
-  font-size: 13.5px !important;
-  font-weight: 600 !important;
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+  padding: 14px 28px !important;
+  box-shadow: 0 2px 8px rgba(15, 42, 71, 0.04);
 }
 
-.btn--style-secondary:hover {
-  background: var(--theme-elevation-50) !important;
-  border-color: var(--brand-blue) !important;
-}
-
-.btn--style-error,
-button.btn--style-error {
-  background: var(--theme-error-500) !important;
+.doc-controls .btn--style-primary {
+  background: var(--brand-blue) !important;
   color: white !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
-/* ====================================================
-   8. DRAWER / MODAL
-   ==================================================== */
-.drawer,
-[class*="drawer__content"],
-.modal,
-[class*="modal__content"] {
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  box-shadow: 0 24px 60px rgba(15,42,71,0.25) !important;
+.doc-controls .btn--style-primary:hover {
+  background: var(--brand-blue-dark) !important;
 }
 
-.drawer__header,
-[class*="drawer__header"],
-.modal__header {
+/* ------------------------------------------------------------
+   9) DRAWER / MODAL
+   ------------------------------------------------------------ */
+.drawer__content,
+.drawer-overlay > .drawer {
+  border-radius: 16px 0 0 16px !important;
+  box-shadow: -8px 0 32px rgba(15, 42, 71, 0.18) !important;
+}
+
+.drawer__header {
   background: #ffffff !important;
   border-bottom: 1px solid var(--theme-elevation-150) !important;
   padding: 18px 24px !important;
 }
 
-.drawer__header h2,
-.drawer__header h3 {
-  color: var(--brand-navy) !important;
-  font-size: 18px !important;
-  font-weight: 700 !important;
+.modal__content {
+  border-radius: 14px !important;
+  box-shadow: 0 24px 60px rgba(15, 42, 71, 0.25) !important;
 }
 
-/* ====================================================
-   9. UPLOAD / MEDIA
-   ==================================================== */
+/* ------------------------------------------------------------
+   10) UPLOAD / DROPZONE
+   ------------------------------------------------------------ */
 .upload__dropzone,
-[class*="dropzone"],
-.upload-cell {
+.dropzone {
   background: var(--theme-elevation-50) !important;
   border: 2px dashed var(--theme-elevation-200) !important;
   border-radius: 12px !important;
-  padding: 24px !important;
-  transition: all 0.15s !important;
+  padding: 28px !important;
+  transition: all 0.15s;
 }
 
 .upload__dropzone:hover,
-[class*="dropzone"]:hover {
+.dropzone:hover,
+.dropzone--drag-active {
   border-color: var(--brand-blue) !important;
   background: var(--brand-soft) !important;
 }
 
-/* ====================================================
-   10. EMPTY STATES
-   ==================================================== */
-.collection-list--empty,
-[class*="empty"] {
-  text-align: center;
-  padding: 60px 20px !important;
-}
-
-/* ====================================================
-   11. SCROLLBAR (sidebar için ince)
-   ==================================================== */
-.nav::-webkit-scrollbar,
-[class*="nav__wrap"]::-webkit-scrollbar { width: 4px; }
-.nav::-webkit-scrollbar-thumb,
-[class*="nav__wrap"]::-webkit-scrollbar-thumb {
-  background: rgba(255,255,255,0.12);
-  border-radius: 999px;
-}
-
-/* ====================================================
-   ===  LOGIN SAYFASI — Mevcut tasarım korunur     ===
-   ==================================================== */
-
-body:has(.template-default.login),
-body:has(.template-minimal.login),
+/* ============================================================
+   LOGIN SAYFASI — Mevcut korunur
+   ============================================================ */
+body:has(.login),
 body:has([class*="login"]) {
   background: linear-gradient(180deg, #F1F5F9 0%, #E2E8F0 100%) !important;
 }
 
 .template-default.login,
-.template-minimal.login,
-.template-default[class*="login"] {
+[class*="login"]:not([class*="login__form-field"]):not(.login form *) {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -643,25 +632,21 @@ body:has([class*="login"]) {
   padding: 24px;
 }
 
-.template-default.login > *,
-.template-minimal.login > *,
-.template-default[class*="login"] > * {
+.template-default.login > * {
   width: 100%;
   max-width: 460px;
   background: #ffffff;
   border-radius: 18px;
   padding: 36px 32px !important;
-  box-shadow: 0 1px 2px rgba(15,42,71,0.06), 0 20px 60px rgba(15,42,71,0.10);
+  box-shadow: 0 1px 2px rgba(15, 42, 71, 0.06), 0 20px 60px rgba(15, 42, 71, 0.10);
   margin: 0 !important;
 }
 
-.template-default.login,
-.template-minimal.login {
+.template-default.login {
   background: transparent !important;
 }
 
-.login form,
-.template-minimal form {
+.login form {
   display: flex !important;
   flex-direction: column;
   gap: 14px;
@@ -680,7 +665,7 @@ body:has([class*="login"]) {
   font-size: 14px !important;
   width: 100%;
   transition: all 0.15s ease;
-  color: #0E2A47 !important;
+  color: var(--brand-navy) !important;
 }
 
 .login form input:focus {
@@ -702,7 +687,7 @@ body:has([class*="login"]) {
   cursor: pointer;
   transition: all 0.15s ease;
   margin-top: 6px;
-  box-shadow: 0 8px 24px rgba(59,130,246,0.25);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
 }
 
 .login form button[type="submit"]:hover {
