@@ -5,6 +5,8 @@ import { buildConfig } from 'payload'
 import { sqliteAdapter } from '@payloadcms/db-sqlite'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
+import { tr } from '@payloadcms/translations/languages/tr'
+import { en } from '@payloadcms/translations/languages/en'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -58,6 +60,10 @@ export default buildConfig({
   globals: [SiteSettings, MainNav],
   editor: lexicalEditor(),
   sharp,
+  i18n: {
+    fallbackLanguage: 'tr',
+    supportedLanguages: { tr, en },
+  },
   secret: process.env.PAYLOAD_SECRET || 'dev-secret',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

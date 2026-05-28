@@ -7,7 +7,6 @@ import {
   FileStack,
   FileText,
   ImageIcon,
-  LayoutTemplate,
   Mail,
   Newspaper,
   PanelsTopLeft,

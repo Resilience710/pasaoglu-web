@@ -5,15 +5,14 @@ import { usePathname } from 'next/navigation'
 import {
   BarChart3,
   BriefcaseBusiness,
-  FileText,
   Files,
   FolderOpen,
   House,
   Images,
   LayoutDashboard,
   LayoutGrid,
+  LogOut,
   Mail,
-  MenuSquare,
   Newspaper,
   PanelsTopLeft,
   Send,
@@ -77,18 +76,18 @@ export default function AdminTopNavClient({
           prefetch={false}
         >
           <strong>Paşaoğlu Group</strong>
-          <span>Admin Panel</span>
+          <span>Yönetim Paneli</span>
         </Link>
       </div>
 
-      <nav aria-label="Admin menüsü" className="admin-sidebar__nav">
+      <nav aria-label="Yönetim menüsü" className="admin-sidebar__nav">
         <Link
           className={['admin-sidebar__link', pathname === dashboardHref && 'is-active'].filter(Boolean).join(' ')}
           href={dashboardHref}
           prefetch={false}
         >
           <LayoutDashboard className="admin-sidebar__icon" />
-          <span>Dashboard</span>
+          <span>Anasayfa</span>
         </Link>
 
         {visibleItems.map((item) => {
@@ -117,16 +116,16 @@ export default function AdminTopNavClient({
 
         <div className="admin-sidebar__profile">
           <div className="admin-sidebar__avatar">
-            {(userName || 'A').slice(0, 1).toUpperCase()}
+            {(userName || 'Y').slice(0, 1).toUpperCase()}
           </div>
 
           <div className="admin-sidebar__profile-copy">
-            <strong>{userName || 'Admin'}</strong>
-            <span>{userEmail || 'admin'}</span>
+            <strong>{userName || 'Yönetici'}</strong>
+            <span>{userEmail || 'yönetici'}</span>
           </div>
 
           <Link className="admin-sidebar__logout" href="/admin/logout" prefetch={false} title="Çıkış Yap">
-            <MenuSquare className="admin-sidebar__footer-icon" />
+            <LogOut className="admin-sidebar__footer-icon" />
           </Link>
         </div>
       </div>

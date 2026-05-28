@@ -71,7 +71,7 @@ export default function AdminTopNav(props: Props) {
       homeHref="/"
       items={items}
       userEmail={user?.email}
-      userName={user?.email || 'Admin'}
+      userName={user?.email || 'Yönetici'}
     />
   )
 }

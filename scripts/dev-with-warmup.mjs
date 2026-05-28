@@ -21,6 +21,8 @@ const parsePort = (args) => {
   return 3000
 }
 
+const devDistDir = path.join(root, '.next-dev')
+
 const warmRoute = async (url) => {
   for (let attempt = 0; attempt < 30; attempt += 1) {
     try {
@@ -41,8 +43,8 @@ const warmAdmin = async (port) => {
   await warmRoute(`http://127.0.0.1:${port}/admin`)
 }
 
-await rm(path.join(root, '.next'), { force: true, recursive: true })
-console.log('[clean-next-cache] removed .next')
+await rm(devDistDir, { force: true, recursive: true })
+console.log('[clean-next-cache] removed .next-dev')
 
 const child = spawn(process.execPath, [nextBin, 'dev', ...extraArgs], {
   cwd: root,

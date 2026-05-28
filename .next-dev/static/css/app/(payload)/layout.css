@@ -1,0 +1,3596 @@
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./node_modules/react-image-crop/dist/ReactCrop.css ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
+.ReactCrop{position:relative;display:inline-block;cursor:crosshair;overflow:hidden;max-width:100%}.ReactCrop *,.ReactCrop *:before,.ReactCrop *:after{-webkit-box-sizing:border-box;box-sizing:border-box}.ReactCrop--disabled,.ReactCrop--locked{cursor:inherit}.ReactCrop__child-wrapper{max-height:inherit}.ReactCrop__child-wrapper>img,.ReactCrop__child-wrapper>video{display:block;max-width:100%;max-height:inherit}.ReactCrop:not(.ReactCrop--disabled) .ReactCrop__child-wrapper>img,.ReactCrop:not(.ReactCrop--disabled) .ReactCrop__child-wrapper>video{-ms-touch-action:none;touch-action:none}.ReactCrop:not(.ReactCrop--disabled) .ReactCrop__crop-selection{-ms-touch-action:none;touch-action:none}.ReactCrop__crop-selection{position:absolute;top:0;left:0;-webkit-transform:translateZ(0);transform:translateZ(0);cursor:move;-webkit-box-shadow:0 0 0 9999em #00000080;box-shadow:0 0 0 9999em #00000080}.ReactCrop--disabled .ReactCrop__crop-selection{cursor:inherit}.ReactCrop--circular-crop .ReactCrop__crop-selection{border-radius:50%}.ReactCrop--no-animate .ReactCrop__crop-selection{outline:1px dashed white}.ReactCrop__crop-selection:not(.ReactCrop--no-animate .ReactCrop__crop-selection){-webkit-animation:marching-ants 1s;animation:marching-ants 1s;background-image:-webkit-gradient(linear,left top, right top,color-stop(50%, #fff),color-stop(50%, #444)),-webkit-gradient(linear,left top, right top,color-stop(50%, #fff),color-stop(50%, #444)),-webkit-gradient(linear,left top, left bottom,color-stop(50%, #fff),color-stop(50%, #444)),-webkit-gradient(linear,left top, left bottom,color-stop(50%, #fff),color-stop(50%, #444));background-image:linear-gradient(to right,#fff 50%,#444 50%),linear-gradient(to right,#fff 50%,#444 50%),linear-gradient(to bottom,#fff 50%,#444 50%),linear-gradient(to bottom,#fff 50%,#444 50%);background-size:10px 1px,10px 1px,1px 10px,1px 10px;background-position:0 0,0 100%,0 0,100% 0;background-repeat:repeat-x,repeat-x,repeat-y,repeat-y;color:#fff;-webkit-animation-play-state:running;animation-play-state:running;-webkit-animation-timing-function:linear;animation-timing-function:linear;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}@-webkit-keyframes marching-ants{0%{background-position:0 0,0 100%,0 0,100% 0}to{background-position:20px 0,-20px 100%,0 -20px,100% 20px}}@keyframes marching-ants{0%{background-position:0 0,0 100%,0 0,100% 0}to{background-position:20px 0,-20px 100%,0 -20px,100% 20px}}.ReactCrop__crop-selection:focus{outline:none;border-color:#00f;border-style:solid}.ReactCrop--invisible-crop .ReactCrop__crop-selection{display:none}.ReactCrop__rule-of-thirds-vt:before,.ReactCrop__rule-of-thirds-vt:after,.ReactCrop__rule-of-thirds-hz:before,.ReactCrop__rule-of-thirds-hz:after{content:"";display:block;position:absolute;background-color:#fff6}.ReactCrop__rule-of-thirds-vt:before,.ReactCrop__rule-of-thirds-vt:after{width:1px;height:100%}.ReactCrop__rule-of-thirds-vt:before{left:33.3333333333%}.ReactCrop__rule-of-thirds-vt:after{left:66.6666666667%}.ReactCrop__rule-of-thirds-hz:before,.ReactCrop__rule-of-thirds-hz:after{width:100%;height:1px}.ReactCrop__rule-of-thirds-hz:before{top:33.3333333333%}.ReactCrop__rule-of-thirds-hz:after{top:66.6666666667%}.ReactCrop__drag-handle{position:absolute}.ReactCrop__drag-handle:after{position:absolute;content:"";display:block;width:10px;height:10px;background-color:#0003;border:1px solid rgba(255,255,255,.7);outline:1px solid transparent}.ReactCrop__drag-handle:focus:after{border-color:#00f;background:#2dbfff}.ReactCrop .ord-nw{top:0;left:0;margin-top:-5px;margin-left:-5px;cursor:nw-resize}.ReactCrop .ord-nw:after{top:0;left:0}.ReactCrop .ord-n{top:0;left:50%;margin-top:-5px;margin-left:-5px;cursor:n-resize}.ReactCrop .ord-n:after{top:0}.ReactCrop .ord-ne{top:0;right:0;margin-top:-5px;margin-right:-5px;cursor:ne-resize}.ReactCrop .ord-ne:after{top:0;right:0}.ReactCrop .ord-e{top:50%;right:0;margin-top:-5px;margin-right:-5px;cursor:e-resize}.ReactCrop .ord-e:after{right:0}.ReactCrop .ord-se{bottom:0;right:0;margin-bottom:-5px;margin-right:-5px;cursor:se-resize}.ReactCrop .ord-se:after{bottom:0;right:0}.ReactCrop .ord-s{bottom:0;left:50%;margin-bottom:-5px;margin-left:-5px;cursor:s-resize}.ReactCrop .ord-s:after{bottom:0}.ReactCrop .ord-sw{bottom:0;left:0;margin-bottom:-5px;margin-left:-5px;cursor:sw-resize}.ReactCrop .ord-sw:after{bottom:0;left:0}.ReactCrop .ord-w{top:50%;left:0;margin-top:-5px;margin-left:-5px;cursor:w-resize}.ReactCrop .ord-w:after{left:0}.ReactCrop__disabled .ReactCrop__drag-handle{cursor:inherit}.ReactCrop__drag-bar{position:absolute}.ReactCrop__drag-bar.ord-n{top:0;left:0;width:100%;height:6px;margin-top:-3px}.ReactCrop__drag-bar.ord-e{right:0;top:0;width:6px;height:100%;margin-right:-3px}.ReactCrop__drag-bar.ord-s{bottom:0;left:0;width:100%;height:6px;margin-bottom:-3px}.ReactCrop__drag-bar.ord-w{top:0;left:0;width:6px;height:100%;margin-left:-3px}.ReactCrop--new-crop .ReactCrop__drag-bar,.ReactCrop--new-crop .ReactCrop__drag-handle,.ReactCrop--fixed-aspect .ReactCrop__drag-bar,.ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-n,.ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-e,.ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-s,.ReactCrop--fixed-aspect .ReactCrop__drag-handle.ord-w{display:none}@media (pointer: coarse){.ReactCrop .ord-n,.ReactCrop .ord-e,.ReactCrop .ord-s,.ReactCrop .ord-w{display:none}.ReactCrop__drag-handle{width:24px;height:24px}}
+
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Banner/index.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .banner {
+    font-size: 1rem;
+    line-height: 20px;
+    border: 0;
+    vertical-align: middle;
+    background: var(--theme-elevation-100);
+    color: var(--theme-elevation-800);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 1.5384615385rem;
+  }
+  .banner--has-action {
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .banner--has-icon {
+    display: flex;
+  }
+  .banner--has-icon svg {
+    display: block;
+  }
+  .banner--type-default.button--has-action:hover {
+    background: var(--theme-elevation-900);
+  }
+  .banner--type-default.button--has-action:active {
+    background: var(--theme-elevation-950);
+  }
+  .banner--type-error {
+    background: var(--theme-error-100);
+    color: var(--theme-error-600);
+  }
+  .banner--type-error svg .stroke {
+    stroke: var(--theme-error-600);
+    fill: none;
+  }
+  .banner--type-error svg .fill {
+    fill: var(--theme-error-600);
+  }
+  .banner--type-error.button--has-action:hover {
+    background: var(--theme-error-200);
+  }
+  .banner--type-error.button--has-action:active {
+    background: var(--theme-error-300);
+  }
+  .banner--type-success {
+    background: var(--theme-success-100);
+    color: var(--theme-success-600);
+  }
+  .banner--type-success.button--has-action:hover {
+    background: var(--theme-success-200);
+  }
+  .banner--type-success.button--has-action:active {
+    background: var(--theme-success-200);
+  }}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/FieldDiffContainer/index.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .field-diff__locale-label {
+    background: var(--theme-elevation-100);
+    border-radius: var(--style-radius-s);
+    padding: calc(var(--base) * 0.2);
+  }
+  [dir=ltr] .field-diff__locale-label {
+    margin-right: calc(var(--base) * 0.25);
+  }
+  [dir=rtl] .field-diff__locale-label {
+    margin-left: calc(var(--base) * 0.25);
+  }
+  .field-diff-container {
+    position: relative;
+    /*
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--left-offset);
+      width: 1px;
+      background-color: var(--theme-elevation-100);
+      transform: translateX(-50%); // Center the line
+    }*/
+  }
+  .field-diff-content {
+    display: grid;
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px);
+    gap: 20px;
+    background: var(--theme-elevation-50);
+    padding: 10px;
+  }}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/FieldDiffLabel/index.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .field-diff-label {
+    margin-bottom: calc(var(--base) * 0.35);
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    align-items: center;
+    line-height: normal;
+  }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/FolderView/FolderField/index.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .folder-edit-field {
+    display: none;
+  }
+  .edit-many-bulk-uploads__main .folder-edit-field,
+  .edit-many__main .folder-edit-field {
+    display: initial;
+  }
+}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/HTMLDiff/index.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  :root {
+    --diff-delete-pill-bg: var(--theme-error-200);
+    --diff-delete-pill-color: var(--theme-error-600);
+    --diff-delete-pill-border: var(--theme-error-400);
+    --diff-delete-parent-bg: var(--theme-error-100);
+    --diff-delete-parent-color: var(--theme-error-800);
+    --diff-delete-link-color: var(--theme-error-600);
+    --diff-create-pill-bg: var(--theme-success-200);
+    --diff-create-pill-color: var(--theme-success-600);
+    --diff-create-pill-border: var(--theme-success-400);
+    --diff-create-parent-bg: var(--theme-success-100);
+    --diff-create-parent-color: var(--theme-success-800);
+    --diff-create-link-color: var(--theme-success-600);
+  }
+  html[data-theme=dark] {
+    --diff-delete-pill-bg: var(--theme-error-200);
+    --diff-delete-pill-color: var(--theme-error-650);
+    --diff-delete-pill-border: var(--theme-error-400);
+    --diff-delete-parent-bg: var(--theme-error-100);
+    --diff-delete-parent-color: var(--theme-error-900);
+    --diff-delete-link-color: var(--theme-error-750);
+    --diff-create-pill-bg: var(--theme-success-200);
+    --diff-create-pill-color: var(--theme-success-650);
+    --diff-create-pill-border: var(--theme-success-400);
+    --diff-create-parent-bg: var(--theme-success-100);
+    --diff-create-parent-color: var(--theme-success-900);
+    --diff-create-link-color: var(--theme-success-750);
+  }
+  .html-diff {
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .html-diff-no-value {
+    color: var(--theme-elevation-400);
+  }
+  .html-diff pre {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .html-diff p:not([data-enable-match=false]):has([data-match-type=create]),
+  .html-diff h1:not([data-enable-match=false]):has([data-match-type=create]),
+  .html-diff h2:not([data-enable-match=false]):has([data-match-type=create]),
+  .html-diff h3:not([data-enable-match=false]):has([data-match-type=create]),
+  .html-diff h4:not([data-enable-match=false]):has([data-match-type=create]),
+  .html-diff h5:not([data-enable-match=false]):has([data-match-type=create]),
+  .html-diff blockquote:not([data-enable-match=false]):has([data-match-type=create]),
+  .html-diff pre:not([data-enable-match=false]):has([data-match-type=create]),
+  .html-diff h6:not([data-enable-match=false]):has([data-match-type=create]) {
+    position: relative;
+    z-index: 1;
+  }
+  .html-diff p:not([data-enable-match=false]):has([data-match-type=create])::before,
+  .html-diff h1:not([data-enable-match=false]):has([data-match-type=create])::before,
+  .html-diff h2:not([data-enable-match=false]):has([data-match-type=create])::before,
+  .html-diff h3:not([data-enable-match=false]):has([data-match-type=create])::before,
+  .html-diff h4:not([data-enable-match=false]):has([data-match-type=create])::before,
+  .html-diff h5:not([data-enable-match=false]):has([data-match-type=create])::before,
+  .html-diff blockquote:not([data-enable-match=false]):has([data-match-type=create])::before,
+  .html-diff pre:not([data-enable-match=false]):has([data-match-type=create])::before,
+  .html-diff h6:not([data-enable-match=false]):has([data-match-type=create])::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    display: block;
+    background-color: var(--diff-create-parent-bg);
+    color: var(--diff-create-parent-color);
+    z-index: -1; /* Place behind the text */
+  }
+  .html-diff p:not([data-enable-match=false]):has([data-match-type=delete]),
+  .html-diff h1:not([data-enable-match=false]):has([data-match-type=delete]),
+  .html-diff h2:not([data-enable-match=false]):has([data-match-type=delete]),
+  .html-diff h3:not([data-enable-match=false]):has([data-match-type=delete]),
+  .html-diff h4:not([data-enable-match=false]):has([data-match-type=delete]),
+  .html-diff h5:not([data-enable-match=false]):has([data-match-type=delete]),
+  .html-diff blockquote:not([data-enable-match=false]):has([data-match-type=delete]),
+  .html-diff pre:not([data-enable-match=false]):has([data-match-type=delete]),
+  .html-diff h6:not([data-enable-match=false]):has([data-match-type=delete]) {
+    position: relative;
+    z-index: 1;
+  }
+  .html-diff p:not([data-enable-match=false]):has([data-match-type=delete])::before,
+  .html-diff h1:not([data-enable-match=false]):has([data-match-type=delete])::before,
+  .html-diff h2:not([data-enable-match=false]):has([data-match-type=delete])::before,
+  .html-diff h3:not([data-enable-match=false]):has([data-match-type=delete])::before,
+  .html-diff h4:not([data-enable-match=false]):has([data-match-type=delete])::before,
+  .html-diff h5:not([data-enable-match=false]):has([data-match-type=delete])::before,
+  .html-diff blockquote:not([data-enable-match=false]):has([data-match-type=delete])::before,
+  .html-diff pre:not([data-enable-match=false]):has([data-match-type=delete])::before,
+  .html-diff h6:not([data-enable-match=false]):has([data-match-type=delete])::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    display: block;
+    background-color: var(--diff-delete-parent-bg);
+    color: var(--diff-delete-parent-color);
+    z-index: -1; /* Place behind the text */
+  }
+  .html-diff li:not([data-enable-match=false]):has([data-match-type=create]) {
+    position: relative;
+    z-index: 1;
+  }
+  .html-diff li:not([data-enable-match=false]):has([data-match-type=create])::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    right: -10px;
+    display: block;
+    background-color: var(--diff-create-parent-bg);
+    color: var(--diff-create-parent-color);
+    z-index: -1; /* Place behind the text */
+  }
+  .html-diff li:not([data-enable-match=false]):has([data-match-type=delete]) {
+    position: relative;
+    z-index: 1;
+  }
+  .html-diff li:not([data-enable-match=false]):has([data-match-type=delete])::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -10px;
+    right: -10px;
+    display: block;
+    background-color: var(--diff-delete-parent-bg);
+    color: var(--diff-delete-parent-color);
+    z-index: -1; /* Place behind the text */
+  }
+  .html-diff li::marker {
+    color: var(--theme-text);
+  }
+  .html-diff [data-match-type=delete]:not([data-enable-match=false]):not(:is([data-enable-match=false] *)) {
+    color: var(--diff-delete-pill-color);
+    text-decoration-color: var(--diff-delete-pill-color);
+    text-decoration-line: line-through;
+    background-color: var(--diff-delete-pill-bg);
+    border-radius: 4px;
+    text-decoration-thickness: 1px;
+  }
+  .html-diff a[data-match-type=delete] :not([data-enable-match=false]) :not(:is([data-enable-match=false] *)) {
+    color: var(--diff-delete-link-color);
+  }
+  .html-diff a[data-match-type=create]:not(img) :not([data-enable-match=false]) :not(:is([data-enable-match=false] *)) {
+    color: var(--diff-create-link-color);
+  }
+  .html-diff [data-match-type=create]:not(img):not([data-enable-match=false]):not(:is([data-enable-match=false] *)) {
+    background-color: var(--diff-create-pill-bg);
+    color: var(--diff-create-pill-color);
+    border-radius: 4px;
+  }
+  .html-diff .html-diff-create-inline-wrapper, .html-diff .html-diff-delete-inline-wrapper {
+    display: inline-flex;
+  }
+  .html-diff .html-diff-create-block-wrapper, .html-diff .html-diff-delete-block-wrapper {
+    display: flex;
+  }
+  .html-diff .html-diff-create-inline-wrapper, .html-diff .html-diff-delete-inline-wrapper, .html-diff .html-diff-create-block-wrapper, .html-diff .html-diff-delete-block-wrapper {
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+  }
+  .html-diff .html-diff-create-inline-wrapper::after, .html-diff .html-diff-delete-inline-wrapper::after, .html-diff .html-diff-create-block-wrapper::after, .html-diff .html-diff-delete-block-wrapper::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+  }}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/icons/Chevron/index.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .icon--chevron {
+    height: var(--base);
+    width: var(--base);
+  }
+  .icon--chevron .stroke {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+  }
+  .icon--chevron.icon--size-large {
+    height: var(--base);
+    width: var(--base);
+  }
+  .icon--chevron.icon--size-small {
+    height: 12px;
+    width: 12px;
+  }}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/icons/Edit/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .icon--edit {
+    height: 1.5384615385rem;
+    width: 1.5384615385rem;
+    shape-rendering: auto;
+  }
+  .icon--edit .stroke {
+    fill: none;
+    stroke: currentColor;
+  }}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/icons/Link/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .icon--link {
+    width: 1.5384615385rem;
+    height: 1.5384615385rem;
+  }
+  .icon--link .stroke {
+    stroke: currentColor;
+    stroke-width: 1px;
+  }}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/icons/Plus/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .icon--plus .stroke {
+    stroke: currentColor;
+    stroke-width: 1px;
+  }}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/icons/Swap/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .icon--swap {
+    height: 1.5384615385rem;
+    width: 1.5384615385rem;
+  }
+  .icon--swap .stroke {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1px;
+  }}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/icons/X/index.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .icon--x .stroke {
+    stroke: currentColor;
+    stroke-width: 1px;
+  }}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Popup/PopupButtonList/index.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .popup-button-list__button button, .popup-button-list__button {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    color: currentColor;
+    font-family: var(--font-body);
+  }
+  .popup-button-list {
+    --list-button-padding: calc(var(--base) * 0.5);
+    --popup-button-list-gap: 3px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  [dir=rtl] .popup-button-list__text-align--left {
+    text-align: right;
+  }
+  .popup-button-list__text-align--left {
+    text-align: left;
+  }
+  .popup-button-list__text-align--center {
+    text-align: center;
+  }
+  [dir=rtl] .popup-button-list__text-align--right {
+    text-align: left;
+  }
+  .popup-button-list__text-align--right {
+    text-align: right;
+  }
+  .popup-button-list__button {
+    padding-left: var(--list-button-padding);
+    padding-right: var(--list-button-padding);
+    padding-top: calc(2px + var(--popup-button-list-gap) / 2);
+    padding-bottom: calc(2px + var(--popup-button-list-gap) / 2);
+    cursor: pointer;
+    text-align: inherit;
+    line-height: var(--base);
+    text-decoration: none;
+    border-radius: 3px;
+    width: 100%;
+  }
+  .popup-button-list__button button:focus-visible {
+    outline: none;
+  }
+  .popup-button-list__button:hover, .popup-button-list__button:focus-visible, .popup-button-list__button:focus-within {
+    background-color: var(--popup-button-highlight);
+  }
+  .popup-button-list__button--selected {
+    background-color: var(--theme-elevation-150);
+  }
+  .popup-button-list__disabled {
+    cursor: not-allowed;
+    --popup-button-highlight: transparent;
+    background-color: var(--popup-button-highlight);
+    color: var(--theme-elevation-350);
+  }
+  .popup-button-list__disabled:hover {
+    --popup-button-highlight: var(--theme-elevation-50);
+  }}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Popup/PopupDivider/index.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .popup-divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--theme-elevation-150);
+    border: none;
+    margin: calc(var(--base) * 0.75) 0;
+  }}
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Popup/PopupGroupLabel/index.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .popup-list-group-label {
+    color: var(--theme-elevation-500);
+    font-weight: 500;
+    line-height: 1;
+    margin-top: calc(var(--base) * 0.25);
+    margin-bottom: calc(var(--base) * 0.5);
+  }}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Popup/PopupTrigger/index.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .popup-button {
+    height: 100%;
+    color: currentColor;
+    padding: 0;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+  }
+  .popup-button--background {
+    background: transparent;
+  }
+  .popup-button--size-xsmall {
+    padding: 2px;
+  }
+  .popup-button--size-small {
+    padding: 4px;
+  }
+  .popup-button--size-medium {
+    padding: 6px;
+  }
+  .popup-button--size-large {
+    padding: 8px;
+  }
+  .popup-button--disabled {
+    cursor: not-allowed;
+  }}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Popup/index.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .popup {
+    --popup-button-highlight: var(--theme-elevation-200);
+    --popup-bg: var(--theme-input-bg);
+    --popup-text: var(--theme-text);
+    --popup-caret-size: 10px;
+    --popup-x-padding: calc(var(--base) * 0.33);
+    --popup-padding: calc(var(--base) * 0.5);
+    --button-size-offset: -8px;
+    position: relative;
+  }
+  .popup__trigger-wrap {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    cursor: pointer;
+  }
+  .popup__content {
+    position: absolute;
+    background: var(--popup-bg);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: var(--z-popup);
+    max-width: calc(100vw - 1.5384615385rem);
+    color: var(--popup-text);
+    border-radius: 4px;
+    padding-left: var(--popup-padding);
+    padding-right: var(--popup-padding);
+    min-width: var(--popup-width, auto);
+  }
+  .popup__hide-scrollbar {
+    overflow: hidden;
+  }
+  .popup__scroll-container {
+    white-space: nowrap;
+    width: calc(100% + var(--scrollbar-width));
+    padding-top: var(--popup-padding);
+    padding-bottom: var(--popup-padding);
+    max-height: calc(var(--base) * 10);
+    overflow-y: auto;
+  }
+  .popup__scroll-content {
+    width: calc(100% - var(--scrollbar-width));
+  }
+  .popup--show-scrollbar .popup__scroll-container,
+  .popup--show-scrollbar .popup__scroll-content {
+    width: 100%;
+  }
+  .popup:focus, .popup:active {
+    outline: none;
+  }
+  .popup--size-xsmall {
+    --popup-width: 80px;
+  }
+  .popup--size-xsmall .popup__content {
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+  }
+  .popup--size-small {
+    --popup-width: 100px;
+  }
+  .popup--size-small .popup__content {
+    box-shadow: 0 4px 8px -3px rgba(0, 0, 0, 0.1);
+  }
+  .popup--size-medium {
+    --popup-width: 150px;
+  }
+  .popup--size-medium .popup__content {
+    box-shadow: 0 -2px 16px -2px rgba(0, 0, 0, 0.2);
+  }
+  .popup--size-large {
+    --popup-width: 200px;
+  }
+  .popup--size-large .popup__content {
+    box-shadow: 0 -2px 16px -2px rgba(0, 0, 0, 0.2);
+  }
+  .popup--button-size-xsmall {
+    --button-size-offset: -12px;
+  }
+  .popup--button-size-small {
+    --button-size-offset: -8px;
+  }
+  .popup--button-size-medium {
+    --button-size-offset: -4px;
+  }
+  .popup--button-size-large {
+    --button-size-offset: 0px;
+  }
+  [dir=rtl] .popup--h-align-left .popup__caret {
+    right: var(--popup-padding);
+    left: unset;
+  }
+  .popup--h-align-left .popup__caret {
+    left: var(--popup-padding);
+  }
+  .popup--h-align-center .popup__content {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .popup--h-align-center .popup__caret {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  [dir=rtl] .popup--h-align-right .popup__content {
+    right: unset;
+    left: 0;
+  }
+  [dir=rtl] .popup--h-align-right .popup__caret {
+    right: unset;
+    left: var(--popup-padding);
+  }
+  .popup--h-align-right .popup__content {
+    right: var(--button-size-offset);
+  }
+  .popup--h-align-right .popup__caret {
+    right: var(--popup-padding);
+  }
+  .popup__caret {
+    position: absolute;
+    border: var(--popup-caret-size) solid transparent;
+  }
+  .popup--v-align-top .popup__content {
+    box-shadow: 0 -2px 16px -2px rgba(0, 0, 0, 0.2);
+    bottom: calc(100% + var(--popup-caret-size));
+  }
+  .popup--v-align-top .popup__caret {
+    top: calc(100% - 1px);
+    border-top-color: var(--popup-bg);
+  }
+  .popup--v-align-bottom .popup__content {
+    box-shadow: 0 2px 16px -2px rgba(0, 0, 0, 0.2);
+    top: calc(100% + var(--popup-caret-size));
+  }
+  .popup--v-align-bottom .popup__caret {
+    bottom: calc(100% - 1px);
+    border-bottom-color: var(--popup-bg);
+  }
+  .popup--active .popup__content {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+  }
+  @media (max-width: 1024px) {
+    .popup {
+      --popup-padding: calc(var(--base) * 0.25);
+    }
+    .popup--h-align-center .popup__content {
+      left: 50%;
+      transform: translateX(0%);
+    }
+    .popup--h-align-center .popup__caret {
+      left: 50%;
+      transform: translateX(0%);
+    }
+    .popup--h-align-right .popup__content {
+      right: 0;
+    }
+    .popup--h-align-right .popup__caret {
+      right: var(--popup-padding);
+    }
+    .popup--force-h-align-left .popup__content {
+      left: 0;
+      right: unset;
+      transform: unset;
+    }
+    .popup--force-h-align-left .popup__caret {
+      left: var(--popup-padding);
+      right: unset;
+      transform: unset;
+    }
+    .popup--force-h-align-right .popup__content {
+      right: 0;
+      left: unset;
+      transform: unset;
+    }
+    .popup--force-h-align-right .popup__caret {
+      right: var(--popup-padding);
+      left: unset;
+      transform: unset;
+    }
+  }}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Button/index.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  a.btn {
+    display: inline-block;
+  }
+  .btn--withPopup {
+    margin-block: 4px;
+  }
+  .btn--withPopup .btn {
+    margin: 0;
+  }
+  .btn {
+    --btn-font-weight: normal;
+  }
+  .btn * {
+    pointer-events: none;
+  }
+  .btn--style-primary {
+    --color: var(--theme-elevation-0);
+    --bg-color: var(--theme-elevation-800);
+    --box-shadow: none;
+    --hover-bg: var(--theme-elevation-600);
+    --hover-color: var(--color);
+  }
+  .btn--style-primary.btn--disabled {
+    --bg-color: var(--theme-elevation-200);
+    --color: var(--theme-elevation-800);
+    --hover-bg: var(--bg-color);
+    --hover-color: var(--color);
+  }
+  .btn--style-secondary {
+    --color: var(--theme-text);
+    --bg-color: transparent;
+    --box-shadow: inset 0 0 0 1px var(--theme-elevation-800);
+    --hover-color: var(--theme-elevation-600);
+    --hover-box-shadow: inset 0 0 0 1px var(--theme-elevation-400);
+  }
+  .btn--style-secondary.btn--disabled {
+    --color: var(--theme-elevation-200);
+    --box-shadow: inset 0 0 0 1px var(--theme-elevation-200);
+    --hover-box-shadow: inset 0 0 0 1px var(--theme-elevation-200);
+    --hover-color: var(--color);
+  }
+  .btn--style-pill {
+    --bg-color: var(--theme-elevation-150);
+    --color: var(--theme-elevation-800);
+    --hover-color: var(--theme-elevation-800);
+    --hover-bg: var(--theme-elevation-100);
+  }
+  .btn--style-pill.btn--disabled {
+    --color: var(--theme-elevation-600);
+    --hover-bg: var(--bg-color);
+    --hover-color: var(--color);
+  }
+  .btn--style-icon-label, .btn--style-icon-label.btn--icon-position-left, .btn--style-icon-label.btn--icon-position-right {
+    padding: 0;
+    font-weight: 600;
+    --color: var(--theme-text);
+    --bg-color: transparent;
+    --hover-color: var(--theme-elevation-600);
+  }
+  .btn--style-icon-label.btn--disabled, .btn--style-icon-label.btn--icon-position-left.btn--disabled, .btn--style-icon-label.btn--icon-position-right.btn--disabled {
+    --color: var(--theme-elevation-200);
+    --hover-color: var(--color);
+  }
+  .btn--style-icon-label .btn__content, .btn--style-icon-label.btn--icon-position-left .btn__content, .btn--style-icon-label.btn--icon-position-right .btn__content {
+    --btn-icon-content-gap: calc(var(--base) * 0.4);
+  }
+  .btn--style-subtle {
+    --color: var(--theme-text);
+    --bg-color: var(--theme-elevation-100);
+    --hover-bg: var(--theme-elevation-150);
+    --box-shadow: inset 0 0 0 1px var(--theme-elevation-200);
+    --hover-box-shadow: inset 0 0 0 1px var(--theme-elevation-250);
+  }
+  .btn--style-subtle.btn--disabled {
+    --color: var(--theme-elevation-450);
+    --hover-box-shadow: var(--box-shadow);
+    --hover-bg: var(--bg-color);
+    --hover-color: var(--color);
+  }
+  .btn--style-tab {
+    --bg-color: transparent;
+    --hover-bg: var(--theme-elevation-50);
+    --color: var(--theme-text);
+    --btn-font-weight: 500;
+  }
+  .btn--style-tab.btn--disabled {
+    --btn-font-weight: 600;
+    --hover-box-shadow: var(--box-shadow);
+    --bg-color: var(--theme-elevation-100);
+    --hover-bg: var(--bg-color);
+    --hover-color: var(--color);
+  }
+  .popup--active .btn {
+    background-color: var(--hover-bg);
+  }
+  .btn--withPopup .popup-button {
+    color: var(--color, inherit);
+    background-color: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 4px;
+    align-items: center;
+  }
+  html:not([dir=RTL]) .btn--withPopup .popup-button {
+    border-left: 1px solid var(--theme-bg);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  html[dir=RTL] .btn--withPopup .popup-button {
+    border-right: 1px solid var(--theme-bg);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .btn--withPopup .popup-button:hover, .btn--withPopup .popup-button:focus-visible, .btn--withPopup .popup-button:focus, .btn--withPopup .popup-button:active {
+    background-color: var(--hover-bg);
+    color: var(--hover-color);
+    box-shadow: var(--hover-box-shadow);
+  }
+  .btn:hover, .btn:focus-visible, .btn:focus, .btn:active,
+  .btn--withPopup .btn:hover,
+  .btn--withPopup .btn:focus-visible,
+  .btn--withPopup .btn:focus,
+  .btn--withPopup .btn:active {
+    color: var(--hover-color);
+    box-shadow: var(--hover-box-shadow);
+    background-color: var(--hover-bg);
+  }
+  .btn--disabled,
+  .btn--disabled .btn {
+    cursor: not-allowed;
+  }
+  .btn {
+    --btn-padding-block-start: 0;
+    --btn-padding-inline-end: 0;
+    --btn-padding-block-end: 0;
+    --btn-padding-inline-start: 0;
+    --btn-icon-size: calc(var(--base) * 1.2);
+    --btn-icon-border-color: currentColor;
+    --btn-icon-padding: 0px;
+    --btn-icon-content-gap: calc(var(--base) * 0.4);
+    --margin-block: calc(var(--base) * 1.2);
+    --btn-line-height: calc(var(--base) * 1.2);
+    border-radius: var(--style-radius-s);
+    font-size: var(--base-body-size);
+    font-family: var(--font-body);
+    font-weight: var(--btn-font-weight, normal);
+    margin-block: var(--margin-block);
+    line-height: var(--btn-line-height);
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    transition-property: border, color, box-shadow, background;
+    transition-duration: 100ms;
+    transition-timing-function: cubic-bezier(0, 0.2, 0.2, 1);
+    padding: var(--btn-padding-block-start) var(--btn-padding-inline-end) var(--btn-padding-block-end) var(--btn-padding-inline-start);
+    color: var(--color, inherit);
+    background-color: var(--bg-color, transparent);
+    box-shadow: var(--box-shadow, none);
+  }
+  .btn__icon {
+    width: 100%;
+    height: 100%;
+  }
+  .btn__icon .stroke {
+    stroke: var(--color, currentColor);
+    fill: none;
+  }
+  .btn__icon .fill {
+    fill: var(--color, currentColor);
+  }
+  .btn__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn__icon {
+    width: var(--btn-icon-size);
+    height: var(--btn-icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--btn-icon-border-color);
+    border-radius: 100%;
+    padding: var(--btn-icon-padding);
+    color: inherit;
+  }
+  .btn__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  .btn__icon.btn--size-small {
+    padding: calc(var(--base) * 0.2);
+  }
+  .btn--withPopup {
+    display: flex;
+  }
+  .btn--has-tooltip {
+    position: relative;
+  }
+  .btn--icon .btn__content {
+    gap: var(--btn-icon-content-gap);
+  }
+  .btn--icon-style-without-border, .btn--icon-style-none {
+    --btn-icon-border-color: transparent;
+  }
+  .btn--icon-position-left .btn__content {
+    flex-direction: row-reverse;
+  }
+  .btn--size-small {
+    --btn-icon-size: calc(var(--base) * 0.9);
+    --btn-icon-content-gap: calc(var(--base) * 0.2);
+    --btn-padding-block-start: 0;
+    --btn-padding-inline-end: calc(var(--base) * 0.4);
+    --btn-padding-inline-start: calc(var(--base) * 0.4);
+    --btn-padding-block-end: 0;
+  }
+  .btn--size-small.btn--icon-position-left {
+    --btn-padding-inline-start: calc(var(--base) * 0.3);
+  }
+  .btn--size-small.btn--icon-position-right {
+    --btn-padding-inline-end: calc(var(--base) * 0.3);
+  }
+  .btn--size-xsmall {
+    --btn-icon-size: calc(var(--base) * 0.8);
+    --btn-icon-content-gap: calc(var(--base) * 0.2);
+    --btn-padding-block-start: 0;
+    --btn-padding-inline-end: calc(var(--base) * 0.3);
+    --btn-padding-inline-start: calc(var(--base) * 0.3);
+    --btn-padding-block-end: 0;
+  }
+  .btn--size-xsmall.btn--icon-position-left {
+    --btn-padding-inline-start: calc(var(--base) * 0.2);
+  }
+  .btn--size-xsmall.btn--icon-position-right {
+    --btn-padding-inline-end: calc(var(--base) * 0.2);
+  }
+  .btn--size-medium {
+    --btn-icon-size: calc(var(--base) * 1.2);
+    --btn-icon-content-gap: calc(var(--base) * 0.2);
+    --btn-padding-block-start: calc(var(--base) * 0.2);
+    --btn-padding-inline-end: calc(var(--base) * 0.6);
+    --btn-padding-block-end: calc(var(--base) * 0.2);
+    --btn-padding-inline-start: calc(var(--base) * 0.6);
+  }
+  .btn--size-medium.btn--icon-position-left {
+    --btn-padding-inline-start: calc(var(--base) * 0.4);
+  }
+  .btn--size-medium.btn--icon-position-right {
+    --btn-padding-inline-end: calc(var(--base) * 0.4);
+  }
+  .btn--size-large {
+    --btn-icon-size: calc(var(--base) * 1.2);
+    --btn-icon-content-gap: calc(var(--base) * 0.4);
+    --btn-padding-block-start: calc(var(--base) * 0.4);
+    --btn-padding-inline-end: calc(var(--base) * 0.8);
+    --btn-padding-inline-start: calc(var(--base) * 0.8);
+    --btn-padding-block-end: calc(var(--base) * 0.4);
+  }
+  .btn--size-large.btn--icon-position-left {
+    --btn-padding-inline-start: calc(var(--base) * 0.6);
+  }
+  .btn--size-large.btn--icon-position-right {
+    --btn-padding-inline-end: calc(var(--base) * 0.6);
+  }
+  html:not([dir=RTL]) .btn--withPopup .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  html[dir=RTL] .btn--withPopup .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .btn:focus-visible {
+    outline: var(--accessibility-outline);
+    outline-offset: var(--accessibility-outline-offset);
+  }
+  .btn.btn--disabled {
+    cursor: not-allowed;
+  }
+  .btn--style-none {
+    padding: 0;
+  }
+  .btn--no-margin {
+    --margin-block: 0;
+  }}
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Tooltip/index.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .tooltip {
+    --caret-size: 6px;
+    opacity: 0;
+    background-color: var(--theme-elevation-800);
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    padding: 4px 8px;
+    color: var(--theme-elevation-0);
+    line-height: 15px;
+    font-weight: normal;
+    white-space: nowrap;
+    border-radius: 2px;
+    visibility: hidden;
+  }
+  .tooltip::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    transform: translate3d(-50%, 100%, 0);
+    width: 0;
+    height: 0;
+    border-left: var(--caret-size) solid transparent;
+    border-right: var(--caret-size) solid transparent;
+  }
+  .tooltip--show {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+    cursor: default;
+  }
+  .tooltip--caret-center::after {
+    left: 50%;
+  }
+  .tooltip--caret-left::after {
+    left: calc(var(--base) * 0.5);
+  }
+  .tooltip--caret-right::after {
+    right: calc(var(--base) * 0.5);
+  }
+  .tooltip--position-top {
+    top: calc(var(--base) * -1.25);
+    transform: translate3d(-50%, calc(var(--caret-size) * -1), 0);
+  }
+  .tooltip--position-top::after {
+    bottom: 1px;
+    border-top: var(--caret-size) solid var(--theme-elevation-800);
+  }
+  .tooltip--position-bottom {
+    bottom: calc(var(--base) * -1.25);
+    transform: translate3d(-50%, var(--caret-size), 0);
+  }
+  .tooltip--position-bottom::after {
+    bottom: calc(100% + var(--caret-size) - 1px);
+    border-bottom: var(--caret-size) solid var(--theme-elevation-800);
+  }
+  .tooltip .tooltip-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
+  @media (max-width: 1024px) {
+    .tooltip {
+      display: none;
+    }
+  }
+  html[data-theme=light] .tooltip:not(.field-error) {
+    background-color: var(--theme-elevation-100);
+    color: var(--theme-elevation-1000);
+  }
+  html[data-theme=light] .tooltip--position-top:not(.field-error):after {
+    border-top-color: var(--theme-elevation-100);
+  }
+  html[data-theme=light] .tooltip--position-bottom:not(.field-error):after {
+    border-bottom-color: var(--theme-elevation-100);
+  }}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Gutter/index.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .gutter--left {
+    padding-left: var(--gutter-h);
+  }
+  .gutter--right {
+    padding-right: var(--gutter-h);
+  }
+  .gutter--negative-left {
+    margin-left: calc(-1 * var(--gutter-h));
+  }
+  .gutter--negative-right {
+    margin-right: calc(-1 * var(--gutter-h));
+  }}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/Drawer/index.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .drawer__close {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    color: currentColor;
+    font-family: var(--font-body);
+  }
+  .drawer {
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    height: 100vh;
+  }
+  .drawer__blur-bg {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 200ms linear;
+  }
+  .drawer__blur-bg:before, .drawer__blur-bg:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .drawer__blur-bg:before {
+    background: var(--theme-bg);
+    opacity: 0.75;
+  }
+  .drawer__blur-bg:after {
+    backdrop-filter: blur(8px);
+  }
+  .drawer__content {
+    opacity: 0;
+    transform: translateX(calc(var(--base) * 4));
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    transition: all 200ms linear;
+    background-color: var(--theme-bg);
+  }
+  .drawer__content-children {
+    position: relative;
+    z-index: 1;
+    overflow: auto;
+    height: 100%;
+  }
+  .drawer--is-open .drawer__content, .drawer--is-open .drawer__blur-bg {
+    opacity: 1;
+  }
+  .drawer--is-open .drawer__close {
+    opacity: 0.1;
+    transition: opacity 200ms linear;
+    transition-delay: 100ms;
+  }
+  .drawer--is-open .drawer__content {
+    transform: translateX(0);
+  }
+  .drawer__close {
+    position: relative;
+    z-index: 2;
+    flex-shrink: 0;
+    text-indent: -9999px;
+    cursor: pointer;
+    opacity: 0;
+    will-change: opacity;
+    transition: none;
+    transition-delay: 0ms;
+    flex-grow: 1;
+    background: var(--theme-elevation-800);
+  }
+  .drawer__close:active, .drawer__close:focus {
+    outline: 0;
+  }
+  .drawer__header {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .drawer__header__title {
+    margin: 0;
+    flex-grow: 1;
+  }
+  .drawer__header__close {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+    direction: ltr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+  }
+  .drawer__header__close svg {
+    margin: -24px;
+    width: 48px;
+    height: 48px;
+    position: relative;
+  }
+  .drawer__header__close svg .stroke {
+    stroke-width: 1px;
+    vector-effect: non-scaling-stroke;
+  }
+  @media (max-width: 1024px) {
+    .drawer__header {
+      margin-top: 30px;
+    }
+  }
+  html[data-theme=dark] .drawer__close {
+    background: var(--color-base-1000);
+  }
+  html[data-theme=dark] .drawer--is-open .drawer__close {
+    opacity: 0.25;
+  }}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ConfirmationModal/index.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .confirmation-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .confirmation-modal:before, .confirmation-modal:after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .confirmation-modal:before {
+    background: var(--theme-bg);
+    opacity: 0.75;
+  }
+  .confirmation-modal:after {
+    backdrop-filter: blur(8px);
+  }
+  .confirmation-modal__wrapper {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 40px;
+    max-width: 720px;
+  }
+  .confirmation-modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .confirmation-modal__content > * {
+    margin: 0;
+  }
+  .confirmation-modal__controls {
+    display: flex;
+    gap: 8px;
+  }
+  .confirmation-modal__controls .btn {
+    margin: 0;
+  }}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/fields/FieldLabel/index.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .localized, label.field-label:not(.unstyled) {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: normal;
+    font-family: var(--font-body);
+  }
+  label.field-label {
+    display: flex;
+    align-items: center;
+  }
+  label.field-label:not(.unstyled) {
+    display: flex;
+    padding-bottom: 5px;
+    color: var(--theme-elevation-800);
+    font-family: var(--font-body);
+  }
+  [dir=ltr] label.field-label:not(.unstyled) {
+    margin-right: auto;
+  }
+  [dir=rtl] label.field-label:not(.unstyled) {
+    margin-left: auto;
+  }
+  label.field-label:not(.unstyled) .required {
+    color: var(--theme-error-500);
+  }
+  [dir=ltr] label.field-label:not(.unstyled) .required {
+    margin-left: 5px;
+  }
+  [dir=rtl] label.field-label:not(.unstyled) .required {
+    margin-right: 5px;
+  }
+  [dir=ltr] .localized {
+    margin-left: 5px;
+  }
+  [dir=rtl] .localized {
+    margin-right: 5px;
+  }
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/fields/Slug/index.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .slug-field-component {
+    width: 100%;
+  }
+  .slug-field-component .label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: calc(var(--base) / 2);
+  }
+  .slug-field-component .lock-button {
+    margin: 0;
+    padding-bottom: 0.3125rem;
+  }
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ShimmerEffect/index.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .shimmer-effect {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--theme-elevation-50);
+  }
+  .shimmer-effect__shine {
+    position: absolute;
+    scale: 1.5;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    animation: shimmer 1.75s infinite;
+    opacity: 0.75;
+    background: linear-gradient(100deg, var(--theme-elevation-50) 0%, var(--theme-elevation-50) 15%, var(--theme-elevation-150) 50%, var(--theme-elevation-50) 85%, var(--theme-elevation-50) 100%);
+  }
+  @keyframes shimmer {
+    100% {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ReactSelect/ClearIndicator/index.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .clear-indicator {
+    cursor: pointer;
+    display: flex;
+  }
+  .clear-indicator:focus-visible {
+    outline: var(--accessibility-outline);
+  }}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ReactSelect/DropdownIndicator/index.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .dropdown-indicator {
+    cursor: pointer;
+    display: flex;
+    border: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    color: currentColor;
+    font-family: var(--font-body);
+  }
+  .dropdown-indicator:focus-visible {
+    outline: var(--accessibility-outline);
+  }
+  .dropdown-indicator__icon .stroke {
+    stroke-width: 1px;
+  }}
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ReactSelect/index.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .react-select-container {
+    width: 100%;
+  }
+  .react-select .rs__control {
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-body);
+    width: 100%;
+    border: 1px solid var(--theme-elevation-150);
+    border-radius: var(--style-radius-s);
+    background: var(--theme-input-bg);
+    color: var(--theme-elevation-800);
+    font-size: 1rem;
+    height: 40px;
+    line-height: 20px;
+    padding: 8px 15px;
+    -webkit-appearance: none;
+    transition-property: border, box-shadow, background-color;
+    transition-duration: 100ms, 100ms, 500ms;
+    transition-timing-function: cubic-bezier(0, 0.2, 0.2, 1);
+    height: auto;
+    padding: 7px 12px;
+    flex-wrap: nowrap;
+  }
+  .react-select .rs__control:not(:disabled):hover {
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2);
+  }
+  .react-select .rs__control[data-rtl=true] {
+    direction: rtl;
+  }
+  .react-select .rs__control::-webkit-input-placeholder {
+    color: var(--theme-elevation-400);
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  .react-select .rs__control::-moz-placeholder {
+    color: var(--theme-elevation-400);
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  .react-select .rs__control:hover {
+    border-color: var(--theme-elevation-250);
+  }
+  .react-select .rs__control:focus, .react-select .rs__control:focus-within, .react-select .rs__control:active {
+    border-color: var(--theme-elevation-400);
+    outline: 0;
+  }
+  .react-select .rs__control:disabled {
+    background: var(--theme-elevation-100);
+    color: var(--theme-elevation-400);
+    box-shadow: none;
+  }
+  .react-select .rs__control:disabled:hover {
+    border-color: var(--theme-elevation-150);
+    box-shadow: none;
+  }
+  .react-select .rs__menu-notice {
+    padding: 10px 12px;
+  }
+  .react-select .rs__indicator {
+    padding: 0px 4px;
+    cursor: pointer;
+  }
+  .react-select .rs__indicator-separator {
+    display: none;
+  }
+  .react-select .rs__input-container {
+    color: var(--theme-elevation-1000);
+  }
+  .react-select .rs__input {
+    font-family: var(--font-body);
+    width: 10px;
+  }
+  .react-select .rs__menu {
+    z-index: 4;
+    border-radius: 0;
+    box-shadow: 0 -2px 16px -2px rgba(0, 0, 0, 0.2);
+    background: var(--theme-input-bg);
+  }
+  .react-select .rs__group-heading {
+    color: var(--theme-elevation-800);
+    padding-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .react-select .rs__option {
+    font-family: var(--font-body);
+    font-size: 13px;
+    padding: 7.5px 15px;
+    color: var(--theme-elevation-800);
+  }
+  .react-select .rs__option--is-focused {
+    background-color: var(--theme-elevation-100);
+  }
+  .react-select .rs__option--is-selected {
+    background-color: var(--theme-elevation-300);
+  }
+  .react-select--error div.rs__control, .react-select--error:hover div.rs__control, .react-select--error:focus-within div.rs__control {
+    background-color: var(--theme-error-50);
+    border: 1px solid var(--theme-error-500);
+  }
+  .react-select--error div.rs__control > div.rs__indicator > button.dropdown-indicator[type=button], .react-select--error:hover div.rs__control > div.rs__indicator > button.dropdown-indicator[type=button], .react-select--error:focus-within div.rs__control > div.rs__indicator > button.dropdown-indicator[type=button] {
+    border: none;
+  }
+  .react-select.rs--is-disabled .rs__control {
+    background: var(--theme-elevation-100);
+    color: var(--theme-elevation-400);
+    box-shadow: none;
+  }
+  .react-select.rs--is-disabled .rs__control:hover {
+    border-color: var(--theme-elevation-150);
+    box-shadow: none;
+  }}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ReactSelect/MultiValue/index.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .multi-value.rs__multi-value {
+    display: flex;
+    padding: 0;
+    border: 1px solid var(--theme-border-color);
+    border-radius: var(--style-radius-s);
+    line-height: calc(1.5384615385rem - 2px);
+    margin: 5px 10px 5px 0;
+    transition: border 0.2s cubic-bezier(0.2, 0, 0, 1);
+  }
+  .multi-value.rs__multi-value:hover {
+    border: 1px solid var(--theme-elevation-250);
+  }
+  .multi-value--is-dragging {
+    z-index: 2;
+  }
+  html[data-theme=light] .multi-value.rs__multi-value {
+    background: var(--theme-elevation-50);
+  }
+  html[data-theme=dark] .multi-value.rs__multi-value {
+    background: var(--theme-elevation-50);
+  }}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ReactSelect/MultiValueLabel/index.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .multi-value-label {
+    margin: 0;
+    font-size: 12px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    color: currentColor;
+    padding: 0 8px;
+  }
+  .multi-value-label__text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .multi-value-label__text--editable {
+    cursor: text;
+    outline: var(--accessibility-outline);
+  }
+  .multi-value-label:focus-visible {
+    outline: var(--accessibility-outline);
+  }
+}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ReactSelect/MultiValueRemove/index.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .multi-value-remove {
+    cursor: pointer;
+    width: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+  }
+  .multi-value-remove:hover {
+    color: var(--theme-elevation-800);
+    background: var(--theme-elevation-150);
+  }
+  .multi-value-remove__icon {
+    width: 100%;
+    height: 100%;
+  }}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/elements/ReactSelect/ValueContainer/index.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .value-container {
+    flex-grow: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: calc(var(--base) / 2);
+  }
+  .value-container__label {
+    color: var(--theme-elevation-550);
+  }
+  .value-container .rs__value-container {
+    overflow: visible;
+    padding: 2px;
+    gap: 2px;
+  }
+  .value-container .rs__value-container > * {
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: currentColor;
+  }
+  .value-container .rs__value-container > * .field-label {
+    padding-bottom: 0;
+  }
+  .value-container .rs__value-container--is-multi {
+    width: calc(100% + 5px);
+  }
+  .value-container .rs__value-container--is-multi.rs__value-container--has-value {
+    padding: 0;
+    margin-inline-start: -4px;
+  }}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/fields/FieldDescription/index.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .field-description {
+    display: flex;
+    color: var(--theme-elevation-400);
+    margin-top: calc(var(--base) / 4);
+  }
+  .field-description--margin-bottom {
+    margin-top: 0;
+    margin-bottom: calc(var(--base) / 2);
+  }}
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/fields/FieldError/index.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .field-error.tooltip {
+    font-family: var(--font-body);
+    left: auto;
+    max-width: 75%;
+    right: 0;
+    transform: translateY(calc(var(--caret-size) * -1));
+    color: var(--theme-error-950);
+    background-color: var(--theme-error-300);
+  }
+  .field-error.tooltip::after {
+    border-top-color: var(--theme-error-300);
+    border-bottom-color: var(--theme-error-300);
+  }}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/fields/Text/index.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .field-type.text {
+    position: relative;
+  }
+  .field-type.text:not(.has-many) input {
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-body);
+    width: 100%;
+    border: 1px solid var(--theme-elevation-150);
+    border-radius: var(--style-radius-s);
+    background: var(--theme-input-bg);
+    color: var(--theme-elevation-800);
+    font-size: 1rem;
+    height: 40px;
+    line-height: 20px;
+    padding: 8px 15px;
+    -webkit-appearance: none;
+    transition-property: border, box-shadow, background-color;
+    transition-duration: 100ms, 100ms, 500ms;
+    transition-timing-function: cubic-bezier(0, 0.2, 0.2, 1);
+  }
+  .field-type.text:not(.has-many) input:not(:disabled):hover {
+    box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.2);
+  }
+  .field-type.text:not(.has-many) input[data-rtl=true] {
+    direction: rtl;
+  }
+  .field-type.text:not(.has-many) input::-webkit-input-placeholder {
+    color: var(--theme-elevation-400);
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  .field-type.text:not(.has-many) input::-moz-placeholder {
+    color: var(--theme-elevation-400);
+    font-weight: normal;
+    font-size: 1rem;
+  }
+  .field-type.text:not(.has-many) input:hover {
+    border-color: var(--theme-elevation-250);
+  }
+  .field-type.text:not(.has-many) input:focus, .field-type.text:not(.has-many) input:focus-within, .field-type.text:not(.has-many) input:active {
+    border-color: var(--theme-elevation-400);
+    outline: 0;
+  }
+  .field-type.text:not(.has-many) input:disabled {
+    background: var(--theme-elevation-100);
+    color: var(--theme-elevation-400);
+    box-shadow: none;
+  }
+  .field-type.text:not(.has-many) input:disabled:hover {
+    border-color: var(--theme-elevation-150);
+    box-shadow: none;
+  }
+  .has-many .rs__input-container {
+    overflow: hidden;
+  }
+  html[data-theme=light] .field-type.text.error input {
+    background-color: var(--theme-error-50);
+    border: 1px solid var(--theme-error-500);
+  }
+  html[data-theme=dark] .field-type.text.error input {
+    background-color: var(--theme-error-100);
+    border: 1px solid var(--theme-error-400);
+  }
+  html[data-theme=dark] .field-type.text.error input:hover {
+    border-color: var(--theme-error-500);
+  }}
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[11].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[11].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[11].use[5]!./node_modules/@payloadcms/ui/dist/icons/Check/index.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@layer payload-default {
+  .icon--check {
+    height: 1.5384615385rem;
+    width: 1.5384615385rem;
+  }
+  .icon--check .stroke {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2px;
+  }}
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/(payload)/admin-globals.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+html,
+html[data-theme='light'] {
+  --brand-navy: #1c1c1a;
+  --brand-ink: #11110f;
+  --brand-gold: #c4a45a;
+  --brand-gold-light: #d4b36d;
+  --brand-soft: #f5f0e8;
+  --brand-soft-strong: #ebe3d7;
+
+  --theme-bg: #fafaf8;
+  --theme-text: #1c1c1a;
+  --theme-elevation-0: #ffffff;
+  --theme-elevation-50: #fcfbf9;
+  --theme-elevation-100: #f5f0e8;
+  --theme-elevation-150: #ebe3d7;
+  --theme-elevation-200: #ddd3c2;
+  --theme-elevation-300: #c7b8a1;
+  --theme-elevation-400: #9f8f7a;
+  --theme-elevation-500: #7c6d5b;
+  --theme-elevation-600: #5a4e40;
+  --theme-elevation-700: #3a332c;
+  --theme-elevation-800: #241f1a;
+  --theme-elevation-900: #1c1c1a;
+  --theme-elevation-1000: #11110f;
+  --theme-border-color: #e7dfd3;
+  --theme-input-bg: #ffffff;
+  --theme-overlay: rgba(17, 17, 15, 0.42);
+
+  --theme-success-500: #1f9d62;
+  --theme-warning-500: #d48618;
+  --theme-error-500: #d13f4f;
+
+  --style-radius-s: 8px;
+  --style-radius-m: 12px;
+  --style-radius-l: 18px;
+
+  --app-header-height: 0px;
+  --admin-topnav-height: 0px;
+  --admin-sidebar-width: 256px;
+  --admin-shell-width: 1440px;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(196, 164, 90, 0.12), transparent 24%),
+    linear-gradient(180deg, #fdfcf9 0%, #faf7f2 100%);
+  color: var(--theme-text);
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+.template-default {
+  display: flex !important;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.template-default__nav-toggler-wrapper,
+.template-default__nav-toggler-container,
+.nav,
+.nav-toggler {
+  display: none !important;
+}
+
+.template-default__wrap {
+  min-width: 0;
+  margin-left: var(--admin-sidebar-width);
+  width: calc(100% - var(--admin-sidebar-width));
+  max-width: calc(100% - var(--admin-sidebar-width));
+  box-sizing: border-box;
+}
+
+.admin-sidebar {
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 80;
+  width: var(--admin-sidebar-width);
+  display: flex;
+  flex-direction: column;
+  background: #1d1c18;
+  color: #ffffff;
+  box-shadow: 18px 0 36px rgba(0, 0, 0, 0.08);
+}
+
+.admin-sidebar__header {
+  padding: 28px 28px 22px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.admin-sidebar__brand strong {
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.admin-sidebar__brand span {
+  color: rgba(207, 199, 180, 0.78);
+  font-size: 12px;
+}
+
+.admin-sidebar__nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: rgba(246, 241, 233, 0.82) !important;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.admin-sidebar__link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff !important;
+}
+
+.admin-sidebar__link.is-active {
+  background: #c9aa5b;
+  color: #1d1c18 !important;
+}
+
+.admin-sidebar__icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.admin-sidebar__footer {
+  padding: 16px 18px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar__back {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 14px;
+  color: rgba(207, 199, 180, 0.8) !important;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.admin-sidebar__back:hover {
+  color: #ffffff !important;
+}
+
+.admin-sidebar__profile {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr) 38px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 0;
+}
+
+.admin-sidebar__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201, 170, 91, 0.16);
+  color: #d7b66a;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.admin-sidebar__profile-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-sidebar__profile-copy strong {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-sidebar__profile-copy span {
+  color: rgba(207, 199, 180, 0.6);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-sidebar__logout {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.72) !important;
+  text-decoration: none;
+}
+
+.admin-sidebar__logout:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff !important;
+}
+
+.admin-sidebar__footer-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.admin-topnav {
+  position: sticky;
+  top: 0;
+  z-index: 70;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, rgba(253, 252, 249, 0.96) 0%, rgba(249, 246, 240, 0.92) 100%);
+  color: var(--brand-navy);
+  box-shadow: 0 14px 34px rgba(28, 28, 26, 0.06);
+}
+
+.admin-topnav::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: rgba(196, 164, 90, 0.18);
+}
+
+.admin-topnav__inner,
+.admin-topnav__surface {
+  width: min(calc(100% - 32px), var(--admin-shell-width));
+  margin: 0 auto;
+}
+
+.admin-topnav__inner {
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-topnav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--brand-navy);
+  text-decoration: none;
+}
+
+.admin-topnav__brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--brand-navy) 0%, #302a23 100%);
+  color: #f8f2e7;
+  box-shadow: 0 12px 24px rgba(28, 28, 26, 0.12);
+}
+
+.admin-topnav__brand-copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.08;
+}
+
+.admin-topnav__brand-copy strong {
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.admin-topnav__brand-copy span {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(124, 109, 91, 0.9);
+}
+
+.admin-topnav__headline {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(124, 109, 91, 0.95);
+  justify-self: center;
+}
+
+.admin-topnav__utility {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.admin-topnav__utility .nav__log-out {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  color: var(--brand-navy) !important;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(196, 164, 90, 0.16);
+  transition: all 0.15s ease;
+}
+
+.admin-topnav__utility .nav__log-out:hover {
+  background: rgba(196, 164, 90, 0.12);
+  color: var(--brand-navy) !important;
+  transform: translateY(-1px);
+}
+
+.admin-topnav__surface {
+  min-height: 62px;
+  padding: 0 0 10px;
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.admin-topnav__dashboard-link {
+  height: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--brand-navy) !important;
+  background: #ffffff;
+  border: 1px solid rgba(196, 164, 90, 0.16);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.15s ease;
+  box-shadow: 0 10px 24px rgba(28, 28, 26, 0.05);
+}
+
+.admin-topnav__dashboard-link:hover,
+.admin-topnav__dashboard-link.is-active {
+  color: var(--brand-navy) !important;
+  background: var(--brand-soft);
+  box-shadow: inset 0 0 0 1px rgba(196, 164, 90, 0.18);
+}
+
+.admin-topnav__groups {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.admin-topnav__groups::-webkit-scrollbar {
+  height: 6px;
+}
+
+.admin-topnav__groups::-webkit-scrollbar-thumb {
+  background: rgba(196, 164, 90, 0.45);
+  border-radius: 999px;
+}
+
+.admin-topnav__group {
+  min-height: 54px;
+  padding: 10px 14px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(196, 164, 90, 0.12);
+  box-shadow: 0 10px 24px rgba(28, 28, 26, 0.04);
+}
+
+.admin-topnav__group-label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(124, 109, 91, 0.95);
+}
+
+.admin-topnav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.admin-topnav__link {
+  min-width: 0;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 7px 10px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: rgba(58, 51, 44, 0.88) !important;
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+.admin-topnav__link:hover,
+.admin-topnav__link.is-active {
+  color: var(--brand-navy) !important;
+  background: var(--brand-soft);
+}
+
+.admin-topnav__link-title {
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.admin-topnav__link-meta {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(124, 109, 91, 0.82);
+}
+
+.app-header {
+  display: none !important;
+}
+
+.app-header__bg {
+  opacity: 1 !important;
+  background: transparent !important;
+}
+
+.app-header__content {
+  width: min(calc(100% - 32px), var(--admin-shell-width)) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  gap: 14px;
+}
+
+.step-nav {
+  font-size: 13px;
+  gap: 10px;
+}
+
+.step-nav a {
+  color: var(--theme-elevation-500) !important;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.step-nav a:hover,
+.step-nav__home:hover svg {
+  color: var(--brand-gold) !important;
+}
+
+.step-nav__last,
+.step-nav span:last-child {
+  color: var(--brand-navy) !important;
+  font-weight: 700;
+}
+
+.template-default__wrap {
+  background: transparent !important;
+}
+
+.collection-list,
+.collection-edit,
+.document-fields {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  padding: 28px 32px 34px !important;
+  box-sizing: border-box !important;
+}
+
+.collection-list__header h1,
+.collection-edit h1,
+.doc-header h1 {
+  font-size: 30px !important;
+  font-weight: 600 !important;
+  color: var(--brand-navy) !important;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px !important;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.list-controls {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 18px !important;
+  padding: 14px 16px !important;
+  box-shadow: 0 10px 28px rgba(28, 28, 26, 0.04);
+  margin-bottom: 16px !important;
+}
+
+.table,
+.collection-list .table {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 20px !important;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(28, 28, 26, 0.05);
+}
+
+.table thead th {
+  background: var(--theme-elevation-50) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  color: var(--theme-elevation-500) !important;
+  padding: 15px 18px !important;
+  border-bottom: 1px solid var(--theme-elevation-150) !important;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid var(--theme-elevation-100) !important;
+  transition: background 0.12s ease;
+}
+
+.table tbody tr:hover {
+  background: var(--brand-soft) !important;
+}
+
+.table tbody td {
+  padding: 14px 18px !important;
+  font-size: 13.5px !important;
+}
+
+.table tbody td a {
+  color: var(--brand-navy) !important;
+  font-weight: 650 !important;
+  text-decoration: none;
+}
+
+.btn--style-primary {
+  background: var(--brand-navy) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 11px 20px !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 12px 24px rgba(28, 28, 26, 0.12);
+}
+
+.btn--style-primary:hover:not(.btn--disabled) {
+  background: var(--brand-gold) !important;
+  color: var(--brand-ink) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(196, 164, 90, 0.2);
+}
+
+.btn--style-secondary {
+  background: #ffffff !important;
+  color: var(--brand-navy) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 14px !important;
+  padding: 11px 18px !important;
+  font-weight: 700 !important;
+}
+
+.btn--style-secondary:hover,
+.btn--style-subtle:hover {
+  background: var(--brand-soft) !important;
+  color: var(--brand-navy) !important;
+}
+
+.btn--style-subtle {
+  background: var(--theme-elevation-50) !important;
+  color: var(--theme-elevation-700) !important;
+  border-radius: 12px !important;
+}
+
+.collection-edit__form,
+.document-fields__edit {
+  background: transparent !important;
+}
+
+.collection-edit,
+.collection-edit__form,
+.collection-edit__main-wrapper,
+.document-fields,
+.document-fields__edit {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.collection-edit .form-header,
+.collection-edit .doc-header,
+.collection-edit .doc-header__title,
+.collection-edit .doc-header__tabs,
+.collection-edit .doc-tabs__tabs,
+.collection-edit .doc-tabs__tabs-container,
+.collection-edit .doc-tabs,
+.collection-edit .doc-tab,
+.collection-edit .custom-view-description {
+  display: none !important;
+}
+
+.doc-header__tabs,
+.doc-tabs,
+.doc-tabs__tabs,
+.doc-tabs__tabs-container,
+.doc-header__after-header,
+.custom-view-description {
+  display: none !important;
+}
+
+.doc-header {
+  margin-bottom: 0 !important;
+}
+
+.form-header {
+  margin-bottom: 12px;
+}
+
+.field-type {
+  margin-bottom: 18px !important;
+}
+
+.field-label,
+label.field-label {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  color: var(--brand-navy) !important;
+  margin-bottom: 6px !important;
+}
+
+.field-description {
+  font-size: 12.5px !important;
+  color: var(--theme-elevation-500) !important;
+  line-height: 1.55;
+}
+
+.field-type input[type='text']:not([class*='search']),
+.field-type input[type='email'],
+.field-type input[type='number'],
+.field-type input[type='url'],
+.field-type input[type='password']:not(.login *),
+.field-type textarea,
+.field-type select,
+.rs__control {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 14px !important;
+  padding: 11px 14px !important;
+  font-size: 13.5px !important;
+  color: var(--theme-text) !important;
+  min-height: 44px !important;
+  box-shadow: 0 4px 14px rgba(28, 28, 26, 0.03);
+}
+
+.field-type input:focus,
+.field-type textarea:focus,
+.field-type select:focus,
+.rs__control--is-focused {
+  border-color: var(--brand-gold) !important;
+  box-shadow: 0 0 0 4px rgba(196, 164, 90, 0.14) !important;
+}
+
+.tabs-field {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0 !important;
+}
+
+.tabs-field__tabs-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+.tabs-field__tabs {
+  display: inline-flex !important;
+  align-self: flex-start;
+  flex-wrap: nowrap !important;
+  gap: 6px !important;
+  padding: 7px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 24px rgba(16, 35, 61, 0.05);
+  margin-bottom: 0 !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.tabs-field__tab-button {
+  flex: 0 0 auto !important;
+  border-radius: 12px !important;
+  padding: 10px 16px !important;
+  font-size: 13px !important;
+  font-weight: 650 !important;
+  color: var(--theme-elevation-500) !important;
+}
+
+.tabs-field__tab-button--active {
+  background: linear-gradient(135deg, #ffffff 0%, var(--brand-soft) 100%) !important;
+  color: var(--brand-navy) !important;
+  box-shadow: 0 8px 18px rgba(28, 28, 26, 0.05);
+}
+
+.tabs-field__tab-content,
+.tabs-field__content,
+.tab {
+  background: transparent !important;
+}
+
+.collapsible,
+.field-type--collapsible-fields > .collapsible,
+.field-type--group,
+.field-type--array,
+.field-type--blocks,
+.render-fields > .field-type--tabs {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 18px 34px rgba(28, 28, 26, 0.04);
+  overflow: hidden;
+}
+
+.field-type--tabs {
+  padding: 20px !important;
+}
+
+.collapsible__toggle:not(.nav .collapsible__toggle) {
+  background: linear-gradient(180deg, rgba(248, 251, 255, 0.95) 0%, rgba(241, 246, 252, 0.95) 100%) !important;
+  padding: 16px 20px !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  color: var(--brand-navy) !important;
+  border-bottom: 1px solid var(--theme-elevation-150);
+}
+
+.collapsible__content,
+.group-field > .field-type__wrap,
+.array-field__rows,
+.field-type--group > .field-type__wrap {
+  padding: 20px !important;
+}
+
+.blocks-field__header {
+  margin-bottom: 14px !important;
+}
+
+.blocks-field__header h3,
+.blocks-field__header label {
+  font-size: 16px !important;
+  font-weight: 750 !important;
+  color: var(--brand-navy) !important;
+}
+
+.blocks-field__rows {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+}
+
+.blocks-field__row,
+.blocks-field__block-pill,
+.array-field__row {
+  background: #ffffff !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 24px rgba(28, 28, 26, 0.04);
+  overflow: hidden;
+}
+
+.blocks-field__row:hover {
+  border-color: rgba(196, 164, 90, 0.35) !important;
+}
+
+.blocks-field__row .collapsible__toggle {
+  background: var(--theme-elevation-50) !important;
+  padding: 14px 18px !important;
+}
+
+.blocks-drawer__add-button,
+.array-field__add-row,
+.blocks-field__drawer-toggler,
+button[class*='add-block'] {
+  background: linear-gradient(135deg, var(--brand-gold), var(--brand-gold-light)) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 14px !important;
+  padding: 12px 20px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 12px 24px rgba(196, 164, 90, 0.18);
+}
+
+.doc-controls {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 45 !important;
+  background: transparent !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: calc(100% - 44px) !important;
+  max-width: calc(100% - 44px) !important;
+  margin: 0 22px 14px !important;
+  padding: 0 !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  overflow-x: clip !important;
+  box-sizing: border-box !important;
+}
+
+.doc-controls::before,
+.doc-controls::after {
+  display: none !important;
+}
+
+.doc-controls.gutter,
+.doc-controls.gutter--left,
+.doc-controls.gutter--right {
+  left: 0 !important;
+  right: 0 !important;
+  width: calc(100% - 44px) !important;
+  max-width: calc(100% - 44px) !important;
+}
+
+.doc-controls__divider {
+  display: none !important;
+}
+
+.doc-controls__wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0;
+  padding: 0 12px !important;
+  min-height: 58px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--theme-elevation-150);
+  border-radius: 18px;
+  box-shadow: 0 18px 34px rgba(28, 28, 26, 0.05);
+}
+
+.doc-controls__content {
+  padding: 10px 0 !important;
+}
+
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+.drawer__content,
+.drawer-overlay > .drawer {
+  border-radius: 24px 0 0 24px !important;
+  box-shadow: -12px 0 38px rgba(16, 35, 61, 0.18) !important;
+}
+
+.drawer__header,
+.modal__content {
+  border-radius: 20px !important;
+}
+
+.admin-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.admin-dashboard__hero,
+.admin-dashboard__panel,
+.admin-dashboard__stat-card {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--theme-elevation-150);
+  box-shadow: 0 18px 34px rgba(28, 28, 26, 0.05);
+}
+
+.admin-dashboard__hero {
+  display: block;
+  padding: 32px 36px;
+  border-radius: 28px;
+}
+
+.admin-dashboard__hero-copy {
+  max-width: 900px;
+}
+
+.admin-dashboard__eyebrow,
+.admin-dashboard__section-label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--theme-elevation-500);
+}
+
+.admin-dashboard__hero h1,
+.admin-dashboard__panel h2 {
+  margin: 10px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--brand-navy);
+  letter-spacing: -0.03em;
+}
+
+.admin-dashboard__hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.04;
+  max-width: 11ch;
+}
+
+.admin-dashboard__hero-text {
+  max-width: 64ch;
+  margin: 14px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--theme-elevation-600);
+}
+
+.admin-dashboard__hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.admin-dashboard__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: 1px solid var(--theme-elevation-150);
+  background: #ffffff;
+  color: var(--brand-navy);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.15s ease;
+}
+
+.admin-dashboard__button:hover {
+  background: var(--brand-soft);
+}
+
+.admin-dashboard__button.is-primary {
+  background: var(--brand-navy);
+  color: #ffffff;
+  border-color: var(--brand-navy);
+}
+
+.admin-dashboard__button.is-primary:hover {
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: var(--brand-ink);
+}
+
+.admin-dashboard__hero-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-dashboard__hero-panel-card {
+  min-height: 120px;
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, var(--theme-elevation-50) 0%, var(--brand-soft) 100%);
+  border: 1px solid rgba(196, 164, 90, 0.14);
+}
+
+.admin-dashboard__hero-panel-label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--theme-elevation-500);
+}
+
+.admin-dashboard__hero-panel-card strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--brand-navy);
+  font-size: 18px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+}
+
+.admin-dashboard__hero-panel-card p {
+  margin: 0;
+  color: var(--theme-elevation-600);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-dashboard__stats,
+.admin-dashboard__grid,
+.admin-dashboard__quick-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.admin-dashboard__stats {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.admin-dashboard__stat-card {
+  display: block;
+  padding: 22px 20px;
+  border-radius: 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.admin-dashboard__stat-card:hover,
+.admin-dashboard__list-card:hover,
+.admin-dashboard__quick-card:hover,
+.admin-dashboard__news-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(196, 164, 90, 0.28);
+  box-shadow: 0 20px 34px rgba(28, 28, 26, 0.06);
+}
+
+.admin-dashboard__stat-icon,
+.admin-dashboard__quick-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: var(--brand-soft);
+  color: var(--brand-gold);
+}
+
+.admin-dashboard__stat-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 20px;
+}
+
+.admin-dashboard__stat-value {
+  font-size: 31px;
+  line-height: 1;
+  color: var(--brand-navy);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.admin-dashboard__stat-label {
+  margin-top: 8px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--theme-elevation-500);
+}
+
+.admin-dashboard__grid {
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+}
+
+.admin-dashboard__grid--secondary {
+  align-items: start;
+}
+
+.admin-dashboard__panel {
+  padding: 22px;
+  border-radius: 28px;
+}
+
+.admin-dashboard__panel-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.admin-dashboard__panel h2 {
+  font-size: 26px;
+  line-height: 1.05;
+}
+
+.admin-dashboard__text-link {
+  color: var(--theme-elevation-500);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-dashboard__text-link:hover {
+  color: var(--brand-navy);
+}
+
+.admin-dashboard__list,
+.admin-dashboard__news-list {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-dashboard__list--compact {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.admin-dashboard__list-card,
+.admin-dashboard__quick-card,
+.admin-dashboard__news-card {
+  display: block;
+  padding: 16px 18px;
+  border-radius: 20px;
+  border: 1px solid var(--theme-elevation-150);
+  background: #ffffff;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.admin-dashboard__list-card strong,
+.admin-dashboard__quick-card strong,
+.admin-dashboard__news-card strong,
+.admin-dashboard__focus-copy strong {
+  display: block;
+  color: var(--brand-navy);
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.admin-dashboard__list-card span:not(.admin-dashboard__list-path),
+.admin-dashboard__quick-card p,
+.admin-dashboard__news-card span,
+.admin-dashboard__focus-copy p {
+  display: block;
+  margin-top: 8px;
+  color: var(--theme-elevation-500);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-dashboard__list-path {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+.admin-dashboard__news-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.admin-dashboard__quick-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-dashboard__quick-card {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.admin-dashboard__quick-icon {
+  width: 46px;
+  height: 46px;
+}
+
+.admin-dashboard__focus-card {
+  margin-top: 14px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(196, 164, 90, 0.16);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(245, 240, 232, 0.96) 100%);
+  color: var(--brand-gold);
+}
+
+@media (max-width: 1180px) {
+  .admin-dashboard__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-dashboard__hero h1 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-dashboard__quick-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard__hero,
+  .admin-dashboard__panel,
+  .admin-dashboard__stat-card {
+    border-radius: 22px;
+  }
+
+  .admin-dashboard__hero,
+  .admin-dashboard__panel {
+    padding: 22px;
+  }
+
+  .admin-dashboard__panel-head {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .admin-dashboard__stats {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .admin-dashboard__stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.upload__dropzone,
+.dropzone {
+  background: var(--theme-elevation-50) !important;
+  border: 2px dashed var(--theme-elevation-200) !important;
+  border-radius: 18px !important;
+  padding: 14px 16px !important;
+}
+
+.upload__dropzone:hover,
+.dropzone:hover,
+.dropzone--drag-active {
+  border-color: var(--brand-gold) !important;
+  background: var(--brand-soft) !important;
+}
+
+.field-type.upload .upload__wrap,
+.field-type.upload .upload__dropzoneAndUpload,
+.field-type.upload .upload__dropzone,
+.field-type.upload .dropzone {
+  min-height: 88px !important;
+}
+
+.field-type.upload .upload__dropzoneAndUpload {
+  display: flex;
+  align-items: center;
+}
+
+.field-type.upload .shimmer-effect {
+  height: 48px !important;
+}
+
+.field-type.upload [class*='thumbnail'],
+.field-type.upload img {
+  max-height: 84px !important;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.field-type.upload .btn__icon,
+.field-type.upload .icon--edit,
+.field-type.upload .icon--swap,
+.field-type.upload .icon--link {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.field-type.upload .btn {
+  margin-block: 0 !important;
+}
+
+.collection-edit__main,
+.document-fields__main,
+.document-fields__edit,
+.document-fields__fields,
+.tabs-field__content-wrap,
+.tabs-field__tab,
+.tabs-field__tab > .render-fields {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.collection-edit__main,
+.document-fields__main {
+  width: 100% !important;
+}
+
+.document-fields__main,
+.document-fields__edit {
+  overflow: visible !important;
+}
+
+.document-fields__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.field-type.tabs-field {
+  margin-bottom: 0 !important;
+  padding: 26px !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 18px 34px rgba(28, 28, 26, 0.05);
+}
+
+.tabs-field__content-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.tabs-field__tab {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.tabs-field__tab > .render-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tabs-field__tab > .render-fields:has(> .field-type.read-only) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.field-type.read-only {
+  margin-bottom: 0 !important;
+  padding: 18px 18px 16px !important;
+  background: linear-gradient(180deg, rgba(250, 248, 244, 0.96) 0%, rgba(245, 240, 232, 0.92) 100%) !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 22px !important;
+  box-shadow: 0 10px 24px rgba(28, 28, 26, 0.04);
+}
+
+.field-type.read-only .field-type__wrap,
+.field-type__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.field-type.read-only input[disabled] {
+  background: rgba(255, 255, 255, 0.96) !important;
+  color: var(--brand-navy) !important;
+  font-weight: 700 !important;
+  opacity: 1 !important;
+}
+
+.field-type.read-only .field-description {
+  margin: 0 !important;
+  max-width: 62ch;
+}
+
+.field-type textarea {
+  min-height: 140px !important;
+  line-height: 1.65 !important;
+  resize: vertical;
+}
+
+.doc-controls__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 14px !important;
+}
+
+.doc-controls__content,
+.doc-controls__controls-wrapper {
+  min-width: 0;
+}
+
+.doc-controls__content {
+  flex: 1 1 auto;
+}
+
+.doc-controls__controls-wrapper {
+  flex: 0 0 auto;
+}
+
+.doc-controls__meta {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.doc-controls__list-item.doc-controls__value-wrap {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  margin: 0 !important;
+  padding: 10px 14px !important;
+  border-radius: 14px;
+  background: var(--theme-elevation-50);
+  border: 1px solid var(--theme-elevation-150);
+}
+
+.doc-controls__label,
+.doc-controls__value {
+  margin: 0 !important;
+  font-size: 12px !important;
+}
+
+.doc-controls__label {
+  color: var(--theme-elevation-500) !important;
+  font-weight: 700 !important;
+}
+
+.doc-controls__value {
+  color: var(--brand-navy) !important;
+  font-weight: 700 !important;
+}
+
+.doc-controls__controls,
+.doc-controls__controls-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.popup-button-list__button {
+  border-radius: 12px !important;
+}
+
+.group-field > .field-type__wrap,
+.array-field__rows,
+.field-type--group > .field-type__wrap,
+.collapsible__content,
+.render-fields .render-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.collapsible__toggle:not(.nav .collapsible__toggle),
+.blocks-field__row .collapsible__toggle,
+.array-field__row .collapsible__toggle {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px 16px !important;
+}
+
+.collapsible__toggle > :first-child {
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.collapsible__toggle > * {
+  min-width: 0;
+}
+
+.collapsible__toggle .section-title,
+.collapsible__toggle h3,
+.collapsible__toggle label,
+.collapsible__toggle .field-label {
+  margin: 0 !important;
+  line-height: 1.35 !important;
+  overflow-wrap: anywhere;
+}
+
+.blocks-field__header,
+.array-field__header {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 12px 16px !important;
+  margin-bottom: 16px !important;
+}
+
+.blocks-field__header > *,
+.array-field__header > * {
+  min-width: 0;
+}
+
+.blocks-field__header .field-description,
+.array-field__header .field-description {
+  flex-basis: 100%;
+  margin-top: -2px !important;
+}
+
+.blocks-field__row,
+.array-field__row {
+  padding: 0 !important;
+}
+
+.blocks-field__row .collapsible__content,
+.array-field__row .collapsible__content {
+  padding-top: 18px !important;
+}
+
+.field-type.upload .upload__wrap {
+  gap: 14px;
+}
+
+.field-type.upload .upload__dropzoneAndUpload {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.field-type.upload .upload__dropzone,
+.field-type.upload .dropzone {
+  min-height: 76px !important;
+  padding: 12px 14px !important;
+}
+
+.field-type.upload [class*='thumbnail'],
+.field-type.upload img {
+  max-width: 104px !important;
+  max-height: 72px !important;
+  border-radius: 14px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.field-type.upload .btn {
+  min-height: 40px !important;
+  border-radius: 12px !important;
+  padding: 10px 14px !important;
+}
+
+.field-type.upload svg {
+  max-width: 18px;
+  max-height: 18px;
+}
+
+.field-type .rich-text-lexical,
+.field-type [class*='lexical'],
+.field-type [class*='LexicalEditorTheme__'] {
+  max-width: 100% !important;
+}
+
+.LexicalEditorTheme__paragraph,
+.LexicalEditorTheme__quote,
+.LexicalEditorTheme__h1,
+.LexicalEditorTheme__h2,
+.LexicalEditorTheme__h3,
+.LexicalEditorTheme__h4 {
+  line-height: 1.65;
+}
+
+body:has(.login),
+body:has([class*='login']) {
+  background:
+    radial-gradient(circle at top left, rgba(196, 164, 90, 0.16), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(28, 28, 26, 0.08), transparent 30%),
+    linear-gradient(180deg, #faf7f2 0%, #f2ece3 100%) !important;
+}
+
+.login.template-minimal {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+}
+
+.login.template-minimal .template-minimal__wrap {
+  width: 100%;
+  max-width: 420px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0 !important;
+  box-shadow: none;
+}
+
+.login.template-minimal .login__brand {
+  display: none !important;
+}
+
+.login.template-minimal .template-minimal__wrap > * + * {
+  margin-top: 0 !important;
+}
+
+.login.template-minimal form,
+.login form {
+  display: flex !important;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 0;
+}
+
+.login.template-minimal .login__form,
+.login.template-minimal .login__form__inputWrap {
+  margin: 0 !important;
+}
+
+.login.template-minimal .login__form__inputWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login .field-type {
+  margin-bottom: 0 !important;
+}
+
+.login.template-minimal form label,
+.login form label,
+.login .field-label {
+  display: block !important;
+  margin-bottom: 8px !important;
+  color: var(--brand-navy) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.login form input[type='email'],
+.login form input[type='password'],
+.login form input[type='text'] {
+  background: rgba(245, 240, 232, 0.62) !important;
+  border: 1px solid rgba(199, 184, 161, 0.55) !important;
+  border-radius: 16px !important;
+  padding: 14px 16px !important;
+  font-size: 14px !important;
+  color: var(--brand-navy) !important;
+  min-height: 52px !important;
+  box-shadow: none !important;
+}
+
+.login form input[type='email']::-moz-placeholder, .login form input[type='password']::-moz-placeholder, .login form input[type='text']::-moz-placeholder {
+  color: rgba(124, 109, 91, 0.5) !important;
+}
+
+.login form input[type='email']::placeholder,
+.login form input[type='password']::placeholder,
+.login form input[type='text']::placeholder {
+  color: rgba(124, 109, 91, 0.5) !important;
+}
+
+.login form input[type='email']:focus,
+.login form input[type='password']:focus,
+.login form input[type='text']:focus {
+  background: #ffffff !important;
+  border-color: rgba(196, 164, 90, 0.9) !important;
+  box-shadow: 0 0 0 4px rgba(196, 164, 90, 0.14) !important;
+}
+
+.login form button[type='submit'] {
+  width: 100%;
+  margin-top: 2px;
+  background: var(--brand-navy) !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 16px !important;
+  padding: 15px 24px !important;
+  min-height: 54px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em;
+  box-shadow: 0 18px 34px rgba(28, 28, 26, 0.16);
+}
+
+.login form button[type='submit']:hover {
+  background: #2b261f !important;
+}
+
+.login.template-minimal a[href*='forgot'],
+.login a[href*='forgot'] {
+  display: none !important;
+}
+
+.login.template-minimal .form-submit,
+.login .form-submit {
+  margin-top: 4px;
+}
+
+@media (max-width: 1280px) {
+  html,
+  html[data-theme='light'] {
+    --admin-topnav-height: 0px;
+  }
+
+  .admin-topnav__inner,
+  .admin-topnav__surface,
+  .collection-list,
+  .collection-edit,
+  .document-fields,
+  .app-header__content,
+  .doc-controls__wrapper {
+    width: min(calc(100% - 24px), var(--admin-shell-width)) !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  html,
+  html[data-theme='light'] {
+    --admin-topnav-height: 0px;
+  }
+
+  .admin-sidebar {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  .template-default__wrap {
+    margin-left: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .collection-list,
+  .collection-edit,
+  .document-fields {
+    padding: 20px 20px 26px !important;
+  }
+
+  .doc-controls {
+    width: calc(100% - 40px) !important;
+    max-width: calc(100% - 40px) !important;
+    margin: 0 20px 12px !important;
+  }
+
+  .admin-topnav__inner {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'brand utility'
+      'headline headline';
+    padding-top: 12px;
+  }
+
+  .admin-topnav__brand {
+    grid-area: brand;
+  }
+
+  .admin-topnav__headline {
+    grid-area: headline;
+    justify-self: start;
+    margin-bottom: 6px;
+  }
+
+  .admin-topnav__utility {
+    grid-area: utility;
+  }
+
+  .admin-topnav__surface {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .admin-topnav__dashboard-link {
+    min-height: 54px;
+  }
+
+  .tabs-field__tabs {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .tabs-field__tab > .render-fields:has(> .field-type.read-only) {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-controls__wrapper {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .doc-controls__controls-wrapper {
+    justify-content: flex-end;
+  }
+
+  .field-type.upload .upload__dropzoneAndUpload {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  html,
+  html[data-theme='light'] {
+    --admin-topnav-height: 0px;
+  }
+
+  .admin-topnav__headline {
+    font-size: 12px;
+  }
+
+  .collection-list,
+  .collection-edit,
+  .document-fields {
+    width: 100%;
+    padding: 18px 14px 24px !important;
+  }
+
+  .template-default__wrap {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .app-header__content,
+  .doc-controls__wrapper {
+    width: 100% !important;
+  }
+
+  .doc-controls {
+    width: calc(100% - 28px) !important;
+    max-width: calc(100% - 28px) !important;
+    margin: 0 14px 12px !important;
+  }
+
+  .doc-controls__wrapper {
+    padding: 0 14px !important;
+  }
+
+  .field-type.tabs-field {
+    padding: 18px !important;
+    border-radius: 22px !important;
+  }
+
+  .tabs-field__tab > .render-fields {
+    gap: 16px;
+  }
+
+  .field-type.read-only {
+    padding: 16px 16px 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .doc-controls__meta {
+    gap: 8px;
+  }
+
+  .doc-controls__list-item.doc-controls__value-wrap {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .login.template-minimal .template-minimal__wrap {
+    max-width: 100%;
+    padding: 0 !important;
+    border-radius: 0;
+  }
+}
+
