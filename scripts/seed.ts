@@ -6,7 +6,7 @@
  * (production'da push devre dışı kalır, ilk deploy için tablolar oluşturulamaz).
  * Bu sadece bu script'in process'i için geçerli — runtime production kalır.
  */
-process.env.NODE_ENV = 'development'
+;(process.env as any).NODE_ENV = 'development'
 
 import path from 'node:path'
 import fs from 'node:fs'
