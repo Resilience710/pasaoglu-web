@@ -804,6 +804,66 @@ label.field-label {
   padding: 14px 18px !important;
 }
 
+/* "Toggle block" / "Bloğu aç/kapat" yazısını gizle — sadece chevron ikon kalsın */
+.collapsible__toggle .btn--icon-style-without-border > .btn__content,
+.collapsible__toggle button[aria-label*="oggle"] > span:not(.icon),
+.collapsible__toggle button[aria-label*="oğu"] > span:not(.icon),
+.collapsible__toggle .toggle-collapsible,
+.array-actions button > span:not([class*="icon"]),
+.blocks-field__row button[aria-label*="oggle"] > span:not([class*="icon"]),
+.blocks-field__row button[aria-label*="loğ"] > span:not([class*="icon"]) {
+  display: none !important;
+}
+
+/* Genel: collapsible toggle başlığındaki düz metin "Toggle block" gibi UI yazılarını gizle.
+   Block başlığı (h3, .field-label, blok adı) ETKİLENMEZ — onlar farklı elementler. */
+.blocks-field__row .collapsible__toggle > button[type="button"][aria-label]:not([aria-label*="Sürükle"]):not([aria-label*="Sil"]):not([aria-label*="Çoğalt"]) {
+  font-size: 0 !important;
+}
+.blocks-field__row .collapsible__toggle > button[type="button"][aria-label] > svg {
+  font-size: 18px !important;
+  width: 18px;
+  height: 18px;
+}
+
+/* === Select dropdown (react-select) içindeki seçili değer kontrastı === */
+.rs__single-value,
+.rs__placeholder {
+  color: var(--brand-navy) !important;
+  font-weight: 500 !important;
+}
+
+.rs__option {
+  color: var(--brand-navy) !important;
+  background: #ffffff !important;
+}
+
+.rs__option:hover,
+.rs__option--is-focused {
+  background: var(--brand-soft) !important;
+  color: var(--brand-navy) !important;
+}
+
+.rs__option--is-selected {
+  background: var(--brand-gold) !important;
+  color: var(--brand-ink) !important;
+  font-weight: 600 !important;
+}
+
+.rs__menu {
+  background: #ffffff !important;
+  border: 1px solid var(--theme-elevation-150) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 28px rgba(28, 28, 26, 0.12) !important;
+  overflow: hidden;
+}
+
+/* Native HTML select için */
+.field-type select option {
+  color: var(--brand-navy) !important;
+  background: #ffffff !important;
+}
+
 .blocks-drawer__add-button,
 .array-field__add-row,
 .blocks-field__drawer-toggler,
