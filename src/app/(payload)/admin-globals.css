@@ -804,33 +804,105 @@ label.field-label {
   padding: 14px 18px !important;
 }
 
-/* "Toggle block" / "Bloğu aç/kapat" yazısını gizle — sadece chevron ikon kalsın */
-.collapsible__toggle .btn--icon-style-without-border > .btn__content,
-.collapsible__toggle button[aria-label*="oggle"] > span:not(.icon),
-.collapsible__toggle button[aria-label*="oğu"] > span:not(.icon),
-.collapsible__toggle .toggle-collapsible,
-.array-actions button > span:not([class*="icon"]),
-.blocks-field__row button[aria-label*="oggle"] > span:not([class*="icon"]),
-.blocks-field__row button[aria-label*="loğ"] > span:not([class*="icon"]) {
+/* === "Toggle block" YAZISI ===
+   Payload'ın .section-title elementi blok için MANUEL AD girme input'udur.
+   Empty olduğunda "Toggle block" / "Bloğu aç/kapat" gösterir. Bu input'u komple gizliyoruz —
+   blok başlığı zaten labels.singular'dan otomatik gelir (örn. "Hero (Üst Büyük Alan)"). */
+.section-title,
+.blocks-field__row .section-title,
+.blocks-field__block-header .section-title,
+input[class*="section-title__input"],
+.section-title__input {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Blok header'da SectionTitle yokken block-pill (blok adı) genişlesin */
+.blocks-field__block-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.blocks-field__block-pill {
+  display: inline-flex !important;
+  align-items: center;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  background: var(--brand-soft) !important;
+  color: var(--brand-navy) !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.01em !important;
+  border: 1px solid rgba(196, 164, 90, 0.18);
+  box-shadow: none !important;
+}
+
+.blocks-field__block-number {
+  font-family: 'Inter', system-ui, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  color: var(--theme-elevation-500) !important;
+  min-width: 26px !important;
+  text-align: center !important;
+}
+
+/* === Select dropdown (react-select) — sol başta boş kutu temizliği + kontrast === */
+.rs__control {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+}
+
+.rs__value-container {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  padding: 4px 14px !important;
+  gap: 0 !important;
+  min-width: 0;
+}
+
+.rs__indicators {
+  flex: 0 0 auto !important;
+  padding-right: 6px;
+}
+
+/* Boş leading element varsa kaldır (sol başta beyaz kutu sorunu) */
+.rs__control > *:empty,
+.rs__value-container > *:empty,
+.rs__single-value > *:empty {
   display: none !important;
 }
 
-/* Genel: collapsible toggle başlığındaki düz metin "Toggle block" gibi UI yazılarını gizle.
-   Block başlığı (h3, .field-label, blok adı) ETKİLENMEZ — onlar farklı elementler. */
-.blocks-field__row .collapsible__toggle > button[type="button"][aria-label]:not([aria-label*="Sürükle"]):not([aria-label*="Sil"]):not([aria-label*="Çoğalt"]) {
-  font-size: 0 !important;
-}
-.blocks-field__row .collapsible__toggle > button[type="button"][aria-label] > svg {
-  font-size: 18px !important;
-  width: 18px;
-  height: 18px;
-}
-
-/* === Select dropdown (react-select) içindeki seçili değer kontrastı === */
 .rs__single-value,
-.rs__placeholder {
+.rs__placeholder,
+.rs__input-container {
   color: var(--brand-navy) !important;
   font-weight: 500 !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.rs__placeholder {
+  color: var(--theme-elevation-400) !important;
+  font-weight: 400 !important;
+}
+
+.rs__input {
+  color: var(--brand-navy) !important;
+  background: transparent !important;
 }
 
 .rs__option {
