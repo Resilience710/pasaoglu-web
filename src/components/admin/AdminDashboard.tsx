@@ -6,7 +6,6 @@ import {
   Factory,
   FileStack,
   FileText,
-  Globe,
   ImageIcon,
   LayoutTemplate,
   Mail,
@@ -84,44 +83,6 @@ export default async function AdminDashboard() {
 
   return (
     <div className="admin-dashboard">
-      <section className="admin-dashboard__hero">
-        <div className="admin-dashboard__hero-copy">
-          <p className="admin-dashboard__eyebrow">Paşaoğlu Group Yönetim Alanı</p>
-          <h1>Kurumsal içerik akışını daha temiz bir panelden yönetin.</h1>
-          <p className="admin-dashboard__hero-text">
-            Sayfalar, sektörler, haberler ve site geneli ayarlar tek bir akış içinde.
-            Düzenleme öncelikleri üstte, ikincil ayarlar daha aşağıda kalacak şekilde
-            düzenlendi.
-          </p>
-
-          <div className="admin-dashboard__hero-actions">
-            <Link className="admin-dashboard__button is-primary" href="/admin/collections/newsArticles/create">
-              Yeni Haber
-              <ArrowRight size={16} />
-            </Link>
-            <Link className="admin-dashboard__button" href="/admin/collections/pages">
-              Sayfaları Düzenle
-            </Link>
-            <Link className="admin-dashboard__button" href="/admin/globals/siteSettings">
-              Site Ayarları
-            </Link>
-          </div>
-        </div>
-
-        <div className="admin-dashboard__hero-panel">
-          <div className="admin-dashboard__hero-panel-card">
-            <span className="admin-dashboard__hero-panel-label">Öne çıkan iş</span>
-            <strong>İçerik düzenleme</strong>
-            <p>Sayfa içerikleri ve haber akışı şimdi daha doğrudan erişilebilir.</p>
-          </div>
-          <div className="admin-dashboard__hero-panel-card">
-            <span className="admin-dashboard__hero-panel-label">Panel mantığı</span>
-            <strong>Önce içerik, sonra SEO</strong>
-            <p>Form sekmeleri ana iş akışını öne çıkaracak şekilde yeniden sıralandı.</p>
-          </div>
-        </div>
-      </section>
-
       <section className="admin-dashboard__stats">
         {kpis.map(({ href, label, value, Icon }) => (
           <Link className="admin-dashboard__stat-card" href={href} key={label}>
@@ -227,17 +188,6 @@ export default async function AdminDashboard() {
             ))}
           </div>
 
-          <div className="admin-dashboard__focus-card">
-            <div className="admin-dashboard__focus-copy">
-              <span className="admin-dashboard__section-label">Yeni düzen mantığı</span>
-              <strong>Özelleştirme üstte, SEO altta</strong>
-              <p>
-                Site ayarları ve içerik formları sekmelendi. Kullanıcı önce içerik ve görünür
-                alanları düzenliyor, SEO ve teknik alanlar daha sonra geliyor.
-              </p>
-            </div>
-            <Globe size={18} />
-          </div>
         </section>
       </div>
     </div>

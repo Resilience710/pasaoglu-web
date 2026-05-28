@@ -1,22 +1,41 @@
 'use client'
 
-import { Link } from '@payloadcms/ui'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import {
+  BarChart3,
+  BriefcaseBusiness,
+  FileText,
+  Files,
+  FolderOpen,
+  House,
+  Images,
+  LayoutDashboard,
+  LayoutGrid,
+  Mail,
+  MenuSquare,
+  Newspaper,
+  PanelsTopLeft,
+  Send,
+  Settings,
+  Shapes,
+  User,
+} from 'lucide-react'
 
 type NavItem = {
+  groupLabel: string
   href: string
   label: string
-  typeLabel: string
-}
-
-type NavGroup = {
-  label: string
-  items: NavItem[]
+  slug: string
+  type: 'collection' | 'global'
 }
 
 type Props = {
   dashboardHref: string
-  groups: NavGroup[]
+  homeHref: string
+  items: NavItem[]
+  userEmail?: string
+  userName?: string
 }
 
 function isActivePath(pathname: string, href: string) {
@@ -24,48 +43,93 @@ function isActivePath(pathname: string, href: string) {
   return pathname.startsWith(`${href}/`)
 }
 
-export default function AdminTopNavClient({ dashboardHref, groups }: Props) {
+const iconMap: Record<string, any> = {
+  users: User,
+  media: Images,
+  pages: Files,
+  sectors: Shapes,
+  productCategories: LayoutGrid,
+  documents: FolderOpen,
+  jobOpenings: BriefcaseBusiness,
+  newsArticles: Newspaper,
+  siteSettings: Settings,
+  mainNav: PanelsTopLeft,
+  contactSubmissions: Mail,
+  careerApplications: Send,
+}
+
+export default function AdminTopNavClient({
+  dashboardHref,
+  homeHref,
+  items,
+  userEmail,
+  userName,
+}: Props) {
   const pathname = usePathname()
+  const visibleItems = items.filter((item) => item.label !== 'Yönetici Kullanıcılar')
 
   return (
-    <div className="admin-topnav__surface">
-      <div className="admin-topnav__dashboard">
+    <aside className="admin-sidebar">
+      <div className="admin-sidebar__header">
         <Link
-          className={['admin-topnav__dashboard-link', pathname === dashboardHref && 'is-active']
-            .filter(Boolean)
-            .join(' ')}
+          className="admin-sidebar__brand"
           href={dashboardHref}
           prefetch={false}
         >
-          Kontrol Merkezi
+          <strong>Paşaoğlu Group</strong>
+          <span>Admin Panel</span>
         </Link>
       </div>
 
-      <div aria-label="Admin menüsü" className="admin-topnav__groups" role="navigation">
-        {groups.map((group) => (
-          <section className="admin-topnav__group" key={group.label}>
-            <p className="admin-topnav__group-label">{group.label}</p>
+      <nav aria-label="Admin menüsü" className="admin-sidebar__nav">
+        <Link
+          className={['admin-sidebar__link', pathname === dashboardHref && 'is-active'].filter(Boolean).join(' ')}
+          href={dashboardHref}
+          prefetch={false}
+        >
+          <LayoutDashboard className="admin-sidebar__icon" />
+          <span>Dashboard</span>
+        </Link>
 
-            <div className="admin-topnav__links">
-              {group.items.map((item) => {
-                const isActive = isActivePath(pathname, item.href)
+        {visibleItems.map((item) => {
+          const Icon = iconMap[item.slug] || BarChart3
+          const isActive = isActivePath(pathname, item.href)
 
-                return (
-                  <Link
-                    className={['admin-topnav__link', isActive && 'is-active'].filter(Boolean).join(' ')}
-                    href={item.href}
-                    key={item.href}
-                    prefetch={false}
-                  >
-                    <span className="admin-topnav__link-title">{item.label}</span>
-                    <span className="admin-topnav__link-meta">{item.typeLabel}</span>
-                  </Link>
-                )
-              })}
-            </div>
-          </section>
-        ))}
+          return (
+            <Link
+              className={['admin-sidebar__link', isActive && 'is-active'].filter(Boolean).join(' ')}
+              href={item.href}
+              key={item.href}
+              prefetch={false}
+            >
+              <Icon className="admin-sidebar__icon" />
+              <span>{item.label}</span>
+            </Link>
+          )
+        })}
+      </nav>
+
+      <div className="admin-sidebar__footer">
+        <Link className="admin-sidebar__back" href={homeHref} prefetch={false}>
+          <House className="admin-sidebar__footer-icon" />
+          <span>Siteye Dön</span>
+        </Link>
+
+        <div className="admin-sidebar__profile">
+          <div className="admin-sidebar__avatar">
+            {(userName || 'A').slice(0, 1).toUpperCase()}
+          </div>
+
+          <div className="admin-sidebar__profile-copy">
+            <strong>{userName || 'Admin'}</strong>
+            <span>{userEmail || 'admin'}</span>
+          </div>
+
+          <Link className="admin-sidebar__logout" href="/admin/logout" prefetch={false} title="Çıkış Yap">
+            <MenuSquare className="admin-sidebar__footer-icon" />
+          </Link>
+        </div>
       </div>
-    </div>
+    </aside>
   )
 }

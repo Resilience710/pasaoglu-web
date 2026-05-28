@@ -1,21 +1,13 @@
-import Link from 'next/link'
-import { Logout } from '@payloadcms/ui'
-import { RenderServerComponent } from '@payloadcms/ui/elements/RenderServerComponent'
 import { EntityType, groupNavItems } from '@payloadcms/ui/shared'
 import { formatAdminURL } from 'payload/shared'
 
 import AdminTopNavClient from './AdminTopNavClient'
 
 type Props = {
-  documentSubViewType?: string
   i18n: any
-  locale?: string
-  params?: any
   payload: any
   permissions: any
-  searchParams?: any
   user?: any
-  viewType?: string
   visibleEntities: {
     collections: string[]
     globals: string[]
@@ -26,15 +18,10 @@ const stripLeadingDecorators = (value: string) => value.replace(/^[^\p{L}\p{N}]+
 
 export default function AdminTopNav(props: Props) {
   const {
-    documentSubViewType,
     i18n,
-    locale,
-    params,
     payload,
     permissions,
-    searchParams,
     user,
-    viewType,
     visibleEntities,
   } = props
 
@@ -43,15 +30,12 @@ export default function AdminTopNav(props: Props) {
   }
 
   const {
-    admin: {
-      components: { logout },
-    },
     collections,
     globals,
     routes: { admin: adminRoute },
   } = payload.config
 
-  const groups = groupNavItems(
+  const items = groupNavItems(
     [
       ...collections
         .filter(({ slug }: { slug: string }) => visibleEntities.collections.includes(slug))
@@ -63,9 +47,9 @@ export default function AdminTopNav(props: Props) {
     permissions,
     i18n,
   )
-    .map((group: any) => ({
-      label: stripLeadingDecorators(group.label),
-      items: group.entities.map((item: any) => ({
+    .flatMap((group: any) =>
+      group.entities.map((item: any) => ({
+        groupLabel: stripLeadingDecorators(group.label),
         href: formatAdminURL({
           adminRoute,
           path:
@@ -73,55 +57,21 @@ export default function AdminTopNav(props: Props) {
               ? `/collections/${item.slug}`
               : `/globals/${item.slug}`,
         }),
-        label: item.label,
-        typeLabel: item.type === EntityType.collection ? 'İçerik alanı' : 'Genel ayar',
+        label: stripLeadingDecorators(item.label),
+        slug: item.slug,
+        type: item.type === EntityType.collection ? 'collection' : 'global',
       })),
-    }))
-    .filter((group: { items: unknown[] }) => group.items.length > 0)
+    )
 
   const dashboardHref = formatAdminURL({ adminRoute, path: '' })
 
-  const LogoutComponent = RenderServerComponent({
-    clientProps: {
-      documentSubViewType,
-      viewType,
-    },
-    Component: logout?.Button,
-    Fallback: Logout,
-    importMap: payload.importMap,
-    serverProps: {
-      i18n,
-      locale,
-      params,
-      payload,
-      permissions,
-      searchParams,
-      user,
-    },
-  })
-
   return (
-    <div className="admin-topnav">
-      <div className="admin-topnav__inner">
-        <Link className="admin-topnav__brand" href={dashboardHref} prefetch={false}>
-          <span aria-hidden className="admin-topnav__brand-mark">
-            P
-          </span>
-
-          <span className="admin-topnav__brand-copy">
-            <strong>Paşaoğlu Group</strong>
-            <span>Kurumsal içerik yönetimi</span>
-          </span>
-        </Link>
-
-        <p className="admin-topnav__headline">
-          Menü, içerik ve site ayarları aynı çizgide; daha hızlı düzenleme, daha net akış.
-        </p>
-
-        <div className="admin-topnav__utility">{LogoutComponent}</div>
-      </div>
-
-      <AdminTopNavClient dashboardHref={dashboardHref} groups={groups} />
-    </div>
+    <AdminTopNavClient
+      dashboardHref={dashboardHref}
+      homeHref="/"
+      items={items}
+      userEmail={user?.email}
+      userName={user?.email || 'Admin'}
+    />
   )
 }
