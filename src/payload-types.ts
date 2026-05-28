@@ -1174,7 +1174,7 @@ export interface NewsArticle {
    * URL’deki ad — küçük harf, tire ile (ör. "holding-yapilanmasi").
    */
   slug: string;
-  image: number | Media;
+  image?: (number | null) | Media;
   excerpt: string;
   body: {
     root: {

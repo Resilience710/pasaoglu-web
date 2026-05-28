@@ -23,7 +23,7 @@ export const NewsArticles: CollectionConfig = {
               name: 'slug', type: 'text', required: true, unique: true, label: 'URL slug',
               admin: { description: 'URL’deki ad — küçük harf, tire ile (ör. "holding-yapilanmasi").' },
             },
-            { name: 'image', type: 'upload', relationTo: 'media', required: true, label: 'Kapak Görseli' },
+            { name: 'image', type: 'upload', relationTo: 'media', label: 'Kapak Görseli (opsiyonel)' },
             { name: 'excerpt', type: 'textarea', required: true, label: 'Özet (liste kartında görünür)' },
             { name: 'body', type: 'richText', required: true, label: 'Haber İçeriği (tam metin)' },
           ],
