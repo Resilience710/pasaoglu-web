@@ -1,7 +1,13 @@
 /**
  * Seed script — idempotent.
  * Run with: npm run seed
+ *
+ * NODE_ENV=development zorlanır ki Postgres adapter'da push: true tetiklensin
+ * (production'da push devre dışı kalır, ilk deploy için tablolar oluşturulamaz).
+ * Bu sadece bu script'in process'i için geçerli — runtime production kalır.
  */
+process.env.NODE_ENV = 'development'
+
 import path from 'node:path'
 import fs from 'node:fs'
 import { fileURLToPath } from 'node:url'
