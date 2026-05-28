@@ -12,3 +12,4 @@ pasaoglu.db-wal
 pasaoglu.db-shm
 public/media
 .DS_Store
+.codex-*.html
