@@ -78,6 +78,9 @@ export default buildConfig({
     if (uri.startsWith('postgres://') || uri.startsWith('postgresql://')) {
       return postgresAdapter({
         pool: { connectionString: uri },
+        // İlk deploy + ongoing schema sync için push mode.
+        // Migrationsız tek geliştirici deployment'ı için uygundur.
+        push: true,
       })
     }
     return sqliteAdapter({
