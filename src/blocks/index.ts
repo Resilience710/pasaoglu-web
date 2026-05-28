@@ -22,6 +22,7 @@ const buttonsField = {
 
 export const HeroVideo: Block = {
   slug: 'heroVideo',
+  admin: { disableBlockName: true },
   labels: { singular: '🎬 Hero (Üst Büyük Alan)', plural: 'Hero (Üst Büyük Alan)' },
   fields: [
     {
@@ -65,6 +66,7 @@ export const HeroVideo: Block = {
 
 export const SplitTextImage: Block = {
   slug: 'splitTextImage',
+  admin: { disableBlockName: true },
   labels: { singular: '🖼️ Görsel + Metin', plural: 'Görsel + Metin Bölümleri' },
   fields: [
     {
@@ -98,6 +100,7 @@ export const SplitTextImage: Block = {
 
 export const StatsGrid: Block = {
   slug: 'statsGrid',
+  admin: { disableBlockName: true },
   labels: { singular: '📊 İstatistik Şeridi', plural: 'İstatistik Şeritleri' },
   fields: [
     {
@@ -120,6 +123,7 @@ export const StatsGrid: Block = {
 
 export const FeatureCards: Block = {
   slug: 'featureCards',
+  admin: { disableBlockName: true },
   labels: { singular: '🎴 Kart Grid (Özellikler/Sektörler)', plural: 'Kart Grid Bölümleri' },
   fields: [
     { name: 'eyebrow', type: 'text', label: 'Üst Etiket' },
@@ -147,6 +151,7 @@ export const FeatureCards: Block = {
 
 export const PartnerMarquee: Block = {
   slug: 'partnerMarquee',
+  admin: { disableBlockName: true },
   labels: { singular: '🔗 İş Ortakları (Kayan Logolar)', plural: 'İş Ortakları Bandı' },
   fields: [
     { name: 'title', type: 'text', label: 'Başlık (ör. "İş Ortaklarımız")' },
@@ -162,6 +167,7 @@ export const PartnerMarquee: Block = {
 
 export const DocumentGrid: Block = {
   slug: 'documentGrid',
+  admin: { disableBlockName: true },
   labels: { singular: '📄 Belge / Sertifika Grid', plural: 'Belge Grid Bölümleri' },
   fields: [
     { name: 'title', type: 'text', label: 'Başlık' },
@@ -175,6 +181,7 @@ export const DocumentGrid: Block = {
 
 export const Accordion: Block = {
   slug: 'accordion',
+  admin: { disableBlockName: true },
   labels: { singular: '➕ Akordeon (Aç-Kapa)', plural: 'Akordeon Bölümleri' },
   fields: [
     { name: 'title', type: 'text', label: 'Başlık' },
@@ -191,6 +198,7 @@ export const Accordion: Block = {
 
 export const QuoteBand: Block = {
   slug: 'quoteBand',
+  admin: { disableBlockName: true },
   labels: { singular: '💬 Alıntı Bandı', plural: 'Alıntı Bantları' },
   fields: [
     { name: 'quote', type: 'textarea', required: true, label: 'Alıntı Metni' },
@@ -201,12 +209,14 @@ export const QuoteBand: Block = {
 
 export const RichTextBlock: Block = {
   slug: 'richText',
+  admin: { disableBlockName: true },
   labels: { singular: '📝 Serbest Metin', plural: 'Serbest Metin Bölümleri' },
   fields: [{ name: 'content', type: 'richText', required: true, label: 'İçerik' }],
 }
 
 export const ProductAccordion: Block = {
   slug: 'productAccordion',
+  admin: { disableBlockName: true },
   labels: { singular: '🧪 Ürün Kategorileri (Akordeon)', plural: 'Ürün Akordeon Bölümleri' },
   fields: [
     { name: 'title', type: 'text', label: 'Başlık' },
@@ -220,6 +230,7 @@ export const ProductAccordion: Block = {
 
 export const PolicyNav: Block = {
   slug: 'policyNav',
+  admin: { disableBlockName: true },
   labels: { singular: '🔗 Politika Üst Menü', plural: 'Politika Üst Menüleri' },
   fields: [
     {
@@ -234,6 +245,7 @@ export const PolicyNav: Block = {
 
 export const PolicyTabs: Block = {
   slug: 'policyTabs',
+  admin: { disableBlockName: true },
   labels: { singular: '📋 Politika Tab’ları (Sol-Sağ Panel)', plural: 'Politika Tab Bölümleri' },
   fields: [
     { name: 'sectionEyebrow', type: 'text', defaultValue: 'Kurumsal', label: 'Üst Etiket' },
@@ -251,6 +263,7 @@ export const PolicyTabs: Block = {
 
 export const Timeline: Block = {
   slug: 'timeline',
+  admin: { disableBlockName: true },
   labels: { singular: '📅 Tarihçe (Timeline)', plural: 'Tarihçe Bölümleri' },
   fields: [
     { name: 'title', type: 'text', defaultValue: 'Tarihçemiz', label: 'Başlık' },
@@ -268,6 +281,7 @@ export const Timeline: Block = {
 
 export const OfficeGrid: Block = {
   slug: 'officeGrid',
+  admin: { disableBlockName: true },
   labels: { singular: '📍 Ofis Adres Kartları', plural: 'Ofis Kartı Bölümleri' },
   fields: [
     { name: 'title', type: 'text', label: 'Başlık' },
@@ -294,6 +308,7 @@ export const OfficeGrid: Block = {
 
 export const CTABand: Block = {
   slug: 'ctaBand',
+  admin: { disableBlockName: true },
   labels: { singular: '🎯 CTA (Eylem Çağrısı) Bandı', plural: 'CTA Bantları' },
   fields: [
     { name: 'eyebrow', type: 'text', label: 'Üst Etiket' },
@@ -325,6 +340,7 @@ export const CTABand: Block = {
 
 export const ContactBlock: Block = {
   slug: 'contactBlock',
+  admin: { disableBlockName: true },
   labels: { singular: '📞 İletişim Adres Kartı (Harita ile)', plural: 'İletişim Adres Bölümleri' },
   fields: [
     { name: 'title', type: 'text', label: 'Başlık' },
@@ -343,6 +359,7 @@ export const ContactBlock: Block = {
 
 export const CareerFormBlock: Block = {
   slug: 'careerForm',
+  admin: { disableBlockName: true },
   labels: { singular: '💼 Kariyer Formu', plural: 'Kariyer Form Bölümleri' },
   fields: [
     { name: 'title', type: 'text', label: 'Başlık' },
@@ -356,6 +373,7 @@ export const CareerFormBlock: Block = {
 
 export const ContactFormBlock: Block = {
   slug: 'contactForm',
+  admin: { disableBlockName: true },
   labels: { singular: '✉️ İletişim Formu', plural: 'İletişim Form Bölümleri' },
   fields: [
     { name: 'title', type: 'text', label: 'Başlık' },
@@ -368,6 +386,7 @@ export const ContactFormBlock: Block = {
 
 export const NewsGrid: Block = {
   slug: 'newsGrid',
+  admin: { disableBlockName: true },
   labels: { singular: '📰 Haberler Grid', plural: 'Haberler Bölümleri' },
   fields: [
     { name: 'eyebrow', type: 'text', label: 'Üst Etiket', defaultValue: 'Haber Bülteni' },
@@ -389,6 +408,7 @@ export const NewsGrid: Block = {
 
 export const WorldReach: Block = {
   slug: 'worldReach',
+  admin: { disableBlockName: true },
   labels: { singular: '🌍 Küresel Erişim (Harita)', plural: 'Küresel Erişim Bölümleri' },
   fields: [
     { name: 'eyebrow', type: 'text', label: 'Üst Etiket', defaultValue: 'Küresel Erişim' },
