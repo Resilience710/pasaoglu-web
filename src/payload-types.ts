@@ -229,7 +229,7 @@ export interface Page {
    */
   slug: string;
   /**
-   * Sayfaya bölümler ekleyin. "+ Bölüm Ekle" diyerek Hero, Görsel+Metin, İstatistik, Kart Grid, Akordeon vb. ekleyebilirsiniz.
+   * Bölümler varsayılan olarak kapalı gelir, düzenlemek için tıklayın. "+ Bölüm Ekle" ile yeni içerik ekleyin.
    */
   layout: (
     | {
@@ -696,6 +696,9 @@ export interface Sector {
   shortDescription?: string | null;
   cardImage?: (number | null) | Media;
   theme: 'chem' | 'build' | 'food';
+  /**
+   * Bölümler varsayılan olarak kapalı gelir, düzenlemek için tıklayın.
+   */
   layout: (
     | {
         variant?: ('centered' | 'sidePanel' | 'leftAligned' | 'fullImage') | null;

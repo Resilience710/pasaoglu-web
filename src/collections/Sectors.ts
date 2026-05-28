@@ -42,8 +42,12 @@ export const Sectors: CollectionConfig = {
           fields: [
             {
               name: 'layout', type: 'blocks', required: true, blocks: allBlocks,
-              label: 'Sayfa İçeriği — Sürükle-bırak Bloklar',
-              labels: { singular: 'Blok', plural: 'Bloklar' },
+              label: 'Sayfa İçeriği — Sürükle-bırak Bölümler',
+              labels: { singular: 'Bölüm', plural: 'Bölümler' },
+              admin: {
+                initCollapsed: true,
+                description: 'Bölümler varsayılan olarak kapalı gelir, düzenlemek için tıklayın.',
+              },
             },
           ],
         },
