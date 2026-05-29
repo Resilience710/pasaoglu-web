@@ -43,56 +43,64 @@ export function HeroVideo({ block }: { block: any }) {
     </>
   )
 
-  // === VARIANT: CENTERED (Veskim style) ===
+  // === VARIANT: CENTERED — kurumsal ortalı (özgün düzen) ===
   if (variant === 'centered') {
     return (
       <section className="relative min-h-[100vh] w-full overflow-hidden bg-brand-deep">
         {bgMedia}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/70 via-brand-deep/60 to-brand-deep/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/72 via-brand-deep/58 to-brand-deep/88" />
+        {/* yan vurgu çizgileri — kurumsal çerçeve hissi */}
+        <div className="absolute inset-y-0 left-[6%] w-px bg-white/10 hidden lg:block" />
+        <div className="absolute inset-y-0 right-[6%] w-px bg-white/10 hidden lg:block" />
 
         <div className="relative z-10 container-x flex min-h-[100vh] flex-col items-center justify-center text-center text-white py-32">
           {block.eyebrow && (
-            <span className="text-[11px] font-light uppercase tracking-[0.4em] text-white/70 mb-8">
+            <span className="inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em] text-themed-accent mb-7">
+              <span className="h-px w-6 bg-themed-accent/70" />
               {block.eyebrow}
+              <span className="h-px w-6 bg-themed-accent/70" />
             </span>
           )}
-          <h1 className="font-sans text-[2.4rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] font-light max-w-4xl">
+          <h1 className="font-sans text-[2.4rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1.04] font-light max-w-4xl">
             {block.title}
             {block.titleAccent && (
               <>
-                <br />
-                <span className="font-bold">{block.titleAccent}</span>
+                {' '}
+                <span className="font-semibold text-themed-accent">{block.titleAccent}</span>
               </>
             )}
           </h1>
-          <div className="mt-6 md:mt-8 h-px w-20 md:w-24 bg-white/40" />
 
           {block.description && (
-            <p className="mt-6 md:mt-8 max-w-xl text-sm md:text-base text-white/80 leading-relaxed px-2">{block.description}</p>
+            <p className="mt-7 max-w-xl text-sm md:text-base text-white/75 leading-relaxed px-2">{block.description}</p>
           )}
 
+          {block.buttons?.length ? (
+            <div className="mt-9 flex flex-wrap gap-3 justify-center">
+              {block.buttons.map((b: any, i: number) => <HeroButton key={i} b={b} />)}
+            </div>
+          ) : null}
+
           {block.certifications?.length ? (
-            <div className="mt-10 md:mt-14 w-full max-w-5xl">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-5 md:gap-x-8 md:gap-y-7 border-t border-white/15 pt-8 md:pt-10">
+            <div className="mt-12 md:mt-16 w-full max-w-5xl">
+              <div className="flex flex-wrap justify-center gap-2.5 md:gap-3">
                 {block.certifications.slice(0, 10).map((c: any, i: number) => (
-                  <div key={i} className="text-center">
-                    <div className="text-xs sm:text-sm md:text-base font-semibold tracking-wider text-white">
+                  <div
+                    key={i}
+                    className="flex items-center gap-2.5 rounded-full border border-white/15 bg-white/[0.04] backdrop-blur-sm px-4 py-2"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-themed-accent shrink-0" />
+                    <span className="text-xs md:text-sm font-semibold tracking-wide text-white whitespace-nowrap">
                       {c.name}
-                    </div>
+                    </span>
                     {c.description && (
-                      <div className="mt-1 text-[9px] sm:text-[10px] uppercase tracking-[0.18em] text-white/55 leading-tight">
+                      <span className="hidden md:inline text-[10px] uppercase tracking-[0.14em] text-white/45 border-l border-white/15 pl-2.5 whitespace-nowrap">
                         {c.description}
-                      </div>
+                      </span>
                     )}
                   </div>
                 ))}
               </div>
-            </div>
-          ) : null}
-
-          {block.buttons?.length ? (
-            <div className="mt-10 flex flex-wrap gap-3 justify-center">
-              {block.buttons.map((b: any, i: number) => <HeroButton key={i} b={b} />)}
             </div>
           ) : null}
         </div>

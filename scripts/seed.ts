@@ -145,7 +145,7 @@ async function run() {
     slug: 'siteSettings',
     data: {
       logo, logoDark: logoWhite || logo,
-      tagline: '1987’den bu yana — Üç sektör, tek güç',
+      tagline: 'Üç sektör, tek kurumsal güç — Paşaoğlu Group',
       phone: '+90 212 000 00 00',
       email: 'info@pasaoglugroup.com.tr',
       addresses: [{ name: 'Genel Müdürlük', address: 'İstanbul, Türkiye' }],
@@ -217,7 +217,7 @@ async function run() {
     layout: [
       {
         blockType: 'heroVideo', variant: 'centered',
-        eyebrow: '1987’den bu yana', title: 'Farkı Yaratan', titleAccent: 'Kimyamız',
+        eyebrow: 'Kimya Sektörü', title: 'Endüstriyel kimyada güvenilir', titleAccent: 'tedarik',
         description: 'Kimya sektörünün ihtiyaç duyduğu tüm kategorilerde yüksek kaliteli çözümler.',
         video: kimyaVid, certifications: CERTS_VESKIM_TOP, showScrollIndicator: true,
       },
@@ -366,7 +366,7 @@ async function run() {
     layout: [
       {
         blockType: 'heroVideo', variant: 'centered',
-        eyebrow: '1987’den bu yana', title: 'Farkı Yaratan', titleAccent: 'Holding',
+        eyebrow: 'Paşaoğlu Group', title: 'Üç sektörde tek kurumsal', titleAccent: 'güç',
         description: 'Kimya, Yapı ve Gıda sektörlerinde holding yapılanmasıyla katma değer üreten kurumsal grup.',
         video: heroVid1, certifications: CERTS_VESKIM_TOP, showScrollIndicator: true,
       },
