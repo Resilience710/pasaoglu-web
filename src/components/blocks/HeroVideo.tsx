@@ -48,14 +48,19 @@ export function HeroVideo({ block }: { block: any }) {
     return (
       <section className="relative min-h-[100vh] w-full overflow-hidden bg-brand-deep">
         {bgMedia}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/72 via-brand-deep/58 to-brand-deep/88" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-deep/80 via-brand-deep/65 to-brand-deep/92" />
+        {/* merkez karartma scrim — yazıların okunması için */}
+        <div
+          className="absolute inset-0"
+          style={{ background: 'radial-gradient(ellipse 70% 55% at 50% 45%, rgba(8,26,45,0.62), transparent 75%)' }}
+        />
         {/* yan vurgu çizgileri — kurumsal çerçeve hissi */}
         <div className="absolute inset-y-0 left-[6%] w-px bg-white/10 hidden lg:block" />
         <div className="absolute inset-y-0 right-[6%] w-px bg-white/10 hidden lg:block" />
 
-        <div className="relative z-10 container-x flex min-h-[100vh] flex-col items-center justify-center text-center text-white py-32">
+        <div className="relative z-10 container-x flex min-h-[100vh] flex-col items-center justify-center text-center text-white py-32 [text-shadow:0_2px_18px_rgba(8,26,45,0.55)]">
           {block.eyebrow && (
-            <span className="inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.32em] text-themed-accent mb-7">
+            <span className="inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.32em] text-themed-accent mb-7 [text-shadow:0_1px_10px_rgba(0,0,0,0.6)]">
               <span className="h-px w-6 bg-themed-accent/70" />
               {block.eyebrow}
               <span className="h-px w-6 bg-themed-accent/70" />
@@ -66,7 +71,7 @@ export function HeroVideo({ block }: { block: any }) {
             {block.titleAccent && (
               <>
                 {' '}
-                <span className="font-semibold text-themed-accent">{block.titleAccent}</span>
+                <span className="font-semibold text-themed-accent [text-shadow:0_2px_16px_rgba(0,0,0,0.7)]">{block.titleAccent}</span>
               </>
             )}
           </h1>
@@ -120,19 +125,19 @@ export function HeroVideo({ block }: { block: any }) {
     return (
       <section className="relative min-h-[88vh] w-full overflow-hidden bg-brand-deep">
         {bgMedia}
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-deep/20 to-brand-deep/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-deep/90 via-brand-deep/65 to-brand-deep/40" />
 
         <div className="relative z-10 container-x grid min-h-[88vh] grid-cols-1 lg:grid-cols-2 items-center gap-10 py-20">
-          <div className="text-white max-w-xl">
+          <div className="text-white max-w-xl [text-shadow:0_2px_16px_rgba(8,26,45,0.6)]">
             {block.eyebrow && (
-              <span className="text-[11px] font-light uppercase tracking-[0.35em] text-white/80 mb-5 block">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.35em] text-white/85 mb-5 block">
                 {block.eyebrow}
               </span>
             )}
             <h1 className="font-sans text-4xl md:text-5xl leading-tight font-light">
               {block.title}
               {block.titleAccent && (
-                <> <span className="font-bold text-themed-accent">{block.titleAccent}</span></>
+                <> <span className="font-bold text-themed-accent [text-shadow:0_2px_16px_rgba(0,0,0,0.7)]">{block.titleAccent}</span></>
               )}
             </h1>
             {block.description && (
