@@ -13,3 +13,5 @@ pasaoglu.db-shm
 public/media
 .DS_Store
 .codex-*.html
+tsconfig.tsbuildinfo
+*.tsbuildinfo
