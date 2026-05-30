@@ -155,7 +155,7 @@ img, video, iframe { max-width: 100%; }
 [data-theme='chem'] .text-themed-accent {
   letter-spacing: 0.25em;
 }
-[data-theme='chem'] section { background-color: white; }
+[data-theme='chem'] section:not([data-dark]) { background-color: white; }
 [data-theme='chem'] .section-title {
   font-weight: 300;
   letter-spacing: -0.02em;
@@ -166,8 +166,8 @@ img, video, iframe { max-width: 100%; }
 [data-theme='chem'] .accent-bar { background-color: rgb(124 58 237); }
 
 /* --- YAPI: gri, endüstriyel keskin --- */
-[data-theme='build'] section { background-color: white; }
-[data-theme='build'] section:nth-of-type(even) { background-color: #FAFAFA; }
+[data-theme='build'] section:not([data-dark]) { background-color: white; }
+[data-theme='build'] section:not([data-dark]):nth-of-type(even) { background-color: #FAFAFA; }
 [data-theme='build'] .section-title {
   font-family: var(--font-inter);
   font-weight: 800;
@@ -199,7 +199,7 @@ img, video, iframe { max-width: 100%; }
 [data-theme='build'] img { filter: grayscale(0.15); }
 
 /* --- GIDA: yeşil, organik soft --- */
-[data-theme='food'] section { background-color: white; }
+[data-theme='food'] section:not([data-dark]) { background-color: white; }
 [data-theme='food'] .section-title {
   font-weight: 300;
   letter-spacing: -0.01em;

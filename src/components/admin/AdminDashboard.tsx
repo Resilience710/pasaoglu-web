@@ -68,13 +68,12 @@ export default async function AdminDashboard() {
   if (!phone || /0{3,}/.test(String(phone))) {
     health.push({ text: 'Site ayarlarındaki telefon numarası eksik veya placeholder.', href: '/admin/globals/siteSettings', cta: 'Ayarları aç' })
   }
-  const noDescPages = ((pages as any).docs as any[]).filter((p) => !p?.meta?.description).slice(0, 1)
-  if (noDescPages.length) {
-    health.push({ text: `"${noDescPages[0].title}" sayfasında SEO açıklaması (meta description) boş.`, href: `/admin/collections/pages/${noDescPages[0].id}`, cta: 'Düzenle' })
+  if (home && !home?.meta?.description) {
+    health.push({ text: 'Ana sayfada SEO açıklaması (meta description) boş.', href: `/admin/collections/pages/${home.id}`, cta: 'Düzenle' })
   }
   const noImgCat = catDocs.filter((c) => !c.image).slice(0, 1)
   if (noImgCat.length) {
-    health.push({ text: `"${noImgCat[0].title}" kategorisinde kapak görseli yok.`, href: `/admin/collections/productCategories/${noImgCat[0].id}`, cta: 'Düzenle' })
+    health.push({ text: `"${noImgCat[0].name}" kategorisinde kapak görseli yok.`, href: `/admin/collections/productCategories/${noImgCat[0].id}`, cta: 'Düzenle' })
   }
 
   return (

@@ -155,6 +155,17 @@ async function run() {
     'Deri Kimyasalları': { slug: 'deri-kimyasallari', accent: '#B45309', design: 'table', tagline: 'Deri İşleme' },
     'Deterjan Kimyasalları': { slug: 'deterjan-kimyasallari', accent: '#0891B2', design: 'accordion', tagline: 'Deterjan & Temizlik' },
   }
+  // Kategori kapak görselleri (mevcut sektör medyalarından eşleştirme)
+  const CAT_IMG: Record<string, any> = {
+    'gida-kimyasallari': gidaImg1,
+    'kozmetik-kimyasallari': gidaImg2,
+    'yapi-kimyasallari': yapiImg1,
+    'tarim-kimyasallari': gidaImg3,
+    'tekstil-kimyasallari': kimyaImg2,
+    'endustriyel-kimyasallari': kimyaImg1,
+    'deri-kimyasallari': yapiImg2,
+    'deterjan-kimyasallari': kimyaImg2,
+  }
   if (fs.existsSync(productsPath)) {
     const cats = JSON.parse(fs.readFileSync(productsPath, 'utf-8')) as Array<{
       name: string; description: string; subGroups: Array<{ title: string; products: string[] }>
@@ -169,6 +180,7 @@ async function run() {
         designVariant: meta.design,
         tagline: meta.tagline,
         description: c.description,
+        image: CAT_IMG[meta.slug] || kimyaImg1,
         sortOrder: i,
         subGroups: c.subGroups.map((s) => ({
           title: s.title,
@@ -419,13 +431,25 @@ async function run() {
 
   await upsertPage(payload, 'home', {
     title: 'Ana Sayfa',
-    meta: { title: 'Paşaoğlu Group — Holding' },
+    meta: {
+      title: 'Paşaoğlu Group — Holding',
+      description: 'Paşaoğlu Group; Kimya, Yapı ve Gıda sektörlerinde holding yapılanmasıyla kurumsal müşterilere uçtan uca tedarik, teknik destek ve sürdürülebilir çözümler sunar.',
+    },
     layout: [
       {
         blockType: 'heroVideo', variant: 'centered',
         eyebrow: 'Paşaoğlu Group', title: 'Üç sektörde tek kurumsal', titleAccent: 'güç',
         description: 'Kimya, Yapı ve Gıda sektörlerinde holding yapılanmasıyla katma değer üreten kurumsal grup.',
-        video: heroVid1, certifications: CERTS_VESKIM_TOP, showScrollIndicator: true,
+        video: heroVid1, showScrollIndicator: true,
+      },
+      {
+        blockType: 'statsGrid', variant: 'light',
+        items: [
+          { value: '3', label: 'Ana Sektör', description: 'Kimya, yapı ve gıda alanlarında faaliyet' },
+          { value: 'Planlı', label: 'Kurumsal Tedarik', description: 'Operasyon, stok ve teslimat takibi' },
+          { value: 'B2B', label: 'Firmalara Özel Hizmet', description: 'İş ortaklığı ve tedarik çözümleri' },
+          { value: 'Kalite', label: 'Standart Odaklı Süreç', description: 'Belge, kontrol ve sürdürülebilirlik altyapısı' },
+        ],
       },
       {
         blockType: 'splitTextImage', mediaSide: 'right',
@@ -443,13 +467,6 @@ async function run() {
           { image: yapiImg1, title: 'Yapı', description: 'İnşaat kimyasalları ve yapı malzemeleri.', href: '/sektorler/yapi' },
           { image: gidaImg1, title: 'Gıda', description: 'Gıda hammaddeleri ve katkı çözümleri.', href: '/sektorler/gida' },
         ],
-      },
-      {
-        blockType: 'worldReach',
-        eyebrow: 'Küresel Erişim',
-        title: 'Küresel Tedarik Ağı',
-        description: 'Global üretici ağı, teknik ürün bilgisi ve planlı lojistik yaklaşımıyla; Avrupa, Orta Doğu ve Asya pazarlarında kurumsal müşterilerimize sürdürülebilir çözüm sunuyoruz.',
-        stats: [],
       },
       {
         blockType: 'partnerMarquee', title: 'İş Ortaklarımız',
