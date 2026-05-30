@@ -16,7 +16,10 @@ import config from '../src/payload.config'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const OLD_ASSETS = path.resolve(__dirname, '..', '..', 'Eski_Site', 'httpdocs', 'assets')
+// Kaynak medya repo içinde (seed-assets) — prod'da da bulunur. Yoksa eski harici klasöre düşer.
+const REPO_ASSETS = path.resolve(__dirname, '..', 'seed-assets')
+const EXTERNAL_ASSETS = path.resolve(__dirname, '..', '..', 'Eski_Site', 'httpdocs', 'assets')
+const OLD_ASSETS = fs.existsSync(REPO_ASSETS) ? REPO_ASSETS : EXTERNAL_ASSETS
 
 async function uploadAsset(payload: any, filePath: string, alt: string) {
   if (!fs.existsSync(filePath)) return undefined
