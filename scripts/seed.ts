@@ -397,7 +397,8 @@ async function run() {
     meta: { title: 'Gıda' },
     layout: [
       {
-        blockType: 'heroVideo', variant: 'fullImage',
+        blockType: 'heroVideo', variant: 'centered',
+        video: heroVid1,
         eyebrow: 'Gıda Sektörü', title: 'Güvenilir gıda için doğru', titleAccent: 'hammadde',
         description: 'Gıda güvenliği standartlarına uygun asitler, emülgatörler, koruyucular ve tatlandırıcılar.',
         poster: gidaImg1,
@@ -495,7 +496,7 @@ async function run() {
         blockType: 'heroVideo', variant: 'centered',
         eyebrow: 'Hakkımızda', title: 'Köklü bir', titleAccent: 'Holding',
         description: 'Üç sektörde ortak değerlerle çalışan bir grup şirketi.',
-        video: yapiVid, poster: yapiImg3, showScrollIndicator: false,
+        poster: yapiImg3, showScrollIndicator: false,
       },
       {
         blockType: 'splitTextImage', mediaSide: 'right',
@@ -528,7 +529,7 @@ async function run() {
         blockType: 'heroVideo', variant: 'centered',
         eyebrow: 'Kurumsal', title: 'Holding', titleAccent: 'Politikalarımız',
         description: 'Kalite, sürdürülebilirlik, etik yönetim ve operasyon ilkelerimiz.',
-        video: kimyaVid, poster: yapiImg2, showScrollIndicator: false,
+        poster: yapiImg2, showScrollIndicator: false,
       },
       {
         blockType: 'policyTabs',
@@ -707,7 +708,7 @@ async function run() {
           blockType: 'heroVideo', variant: 'centered',
           eyebrow: pg.eyebrow, title: pg.titleMain, titleAccent: pg.titleAccent,
           description: pg.intro,
-          video: heroVid1, poster: pg.image, showScrollIndicator: false,
+          poster: pg.image, showScrollIndicator: false,
         },
         {
           blockType: 'policyNav',
@@ -743,7 +744,7 @@ async function run() {
         blockType: 'heroVideo', variant: 'centered',
         eyebrow: 'Kariyer', title: 'Birlikte', titleAccent: 'Büyüyelim',
         description: 'Üç sektörde uzmanlaşmış ekiplerimize katılarak kariyerinizi geliştirin.',
-        video: heroVid1, poster: gidaImg1, showScrollIndicator: false,
+        poster: gidaImg1, showScrollIndicator: false,
       },
       {
         blockType: 'featureCards', eyebrow: 'Bizimle Çalışmak', title: 'Paşaoğlu’nda kariyer', columns: '3',
@@ -774,7 +775,7 @@ async function run() {
         blockType: 'heroVideo', variant: 'centered',
         eyebrow: 'Bize Ulaşın', title: 'İletişime', titleAccent: 'Geçin',
         description: 'Sorularınız, teklif talepleriniz ve iş ortaklıkları için.',
-        video: yapiVid, poster: yapiImg1, showScrollIndicator: false,
+        poster: yapiImg1, showScrollIndicator: false,
       },
       {
         blockType: 'officeGrid',
