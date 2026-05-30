@@ -10,6 +10,9 @@ import { buildPageMetadata } from '@/lib/seo'
 
 export const revalidate = 60
 
+// ⛔ Haberler bölümü şu an PASİF (bkz. /haberler/page.tsx)
+const NEWS_ENABLED = false
+
 type Props = { params: Promise<{ slug: string }> }
 
 const CATEGORY_LABELS: Record<string, string> = {
@@ -61,6 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
+  if (!NEWS_ENABLED) return []
   try {
     const payload = await getPayloadClient()
     const result = await payload.find({ collection: 'newsArticles', limit: 100 })
@@ -71,6 +75,7 @@ export async function generateStaticParams() {
 }
 
 export default async function ArticlePage({ params }: Props) {
+  if (!NEWS_ENABLED) notFound()
   const { slug } = await params
   const article = await getArticle(slug)
   if (!article) notFound()

@@ -9,6 +9,9 @@ export const NewsArticles: CollectionConfig = {
     group: '🎨 Özelleştirme',
     defaultColumns: ['title', 'category', 'date', 'featured', 'updatedAt'],
     description: 'Sitedeki /haberler sayfasında listelenen kurumsal haberler ve duyurular.',
+    components: {
+      views: { edit: { root: { Component: '@/components/admin/NewsArticlesEditor#default' } } },
+    },
   },
   access: { read: () => true },
   fields: [

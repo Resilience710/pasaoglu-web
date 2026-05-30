@@ -42,6 +42,10 @@ export default buildConfig({
         dashboard: {
           Component: '@/components/admin/AdminDashboard#default',
         },
+        homeEditor: {
+          Component: '@/components/admin/HomeEditorRedirect#default',
+          path: '/duzenle/ana-sayfa',
+        },
       },
     },
   },

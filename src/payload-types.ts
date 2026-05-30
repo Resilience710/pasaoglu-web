@@ -650,7 +650,7 @@ export interface Document {
   createdAt: string;
 }
 /**
- * Kimya sayfasındaki ürün accordion’unda görünen kategoriler ve ürünler.
+ * Her kategori /urunler/[slug] adresinde kendi sayfasına sahiptir. Tasarım ve renk kategoriye özeldir.
  *
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "productCategories".
@@ -658,8 +658,19 @@ export interface Document {
 export interface ProductCategory {
   id: number;
   name: string;
-  icon?: string | null;
+  /**
+   * URL’deki ad (ör. gida-kimyasallari). /urunler/[slug] adresinde açılır.
+   */
+  slug: string;
+  tagline?: string | null;
   description?: string | null;
+  image?: (number | null) | Media;
+  /**
+   * Kategoriye özel renk, ör. #16A34A. Sayfa vurguları bu renkten gelir.
+   */
+  accent?: string | null;
+  designVariant?: ('accordion' | 'grid' | 'columns' | 'table') | null;
+  icon?: string | null;
   sortOrder?: number | null;
   subGroups?:
     | {
@@ -2134,8 +2145,13 @@ export interface SectorsSelect<T extends boolean = true> {
  */
 export interface ProductCategoriesSelect<T extends boolean = true> {
   name?: T;
-  icon?: T;
+  slug?: T;
+  tagline?: T;
   description?: T;
+  image?: T;
+  accent?: T;
+  designVariant?: T;
+  icon?: T;
   sortOrder?: T;
   subGroups?:
     | T

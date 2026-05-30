@@ -7,6 +7,9 @@ export const JobOpenings: CollectionConfig = {
     useAsTitle: 'title',
     group: '🎨 Özelleştirme',
     description: 'Kariyer sayfasında listelenecek aktif iş ilanları.',
+    components: {
+      views: { edit: { root: { Component: '@/components/admin/JobOpeningsEditor#default' } } },
+    },
   },
   access: { read: () => true },
   fields: [

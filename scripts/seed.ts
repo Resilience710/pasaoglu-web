@@ -140,23 +140,83 @@ async function run() {
     }
   }
 
+  // ====== ÜRÜN KATEGORİLERİ (pasaoglukimya.com'dan çekildi) ======
+  console.log('\n— product categories —')
+  const productsPath = path.join(__dirname, '_products.json')
+  const productCatIds: (string | number)[] = []
+  // kategori → slug, accent renk, sayfa tasarımı, slogan
+  const CAT_META: Record<string, { slug: string; accent: string; design: string; tagline: string }> = {
+    'Gıda Kimyasalları': { slug: 'gida-kimyasallari', accent: '#16A34A', design: 'accordion', tagline: 'Gıda Sektörü' },
+    'Kozmetik Kimyasalları': { slug: 'kozmetik-kimyasallari', accent: '#DB2777', design: 'grid', tagline: 'Kozmetik & Kişisel Bakım' },
+    'Yapı Kimyasalları': { slug: 'yapi-kimyasallari', accent: '#525252', design: 'columns', tagline: 'İnşaat & Yapı' },
+    'Tarım Kimyasalları': { slug: 'tarim-kimyasallari', accent: '#65A30D', design: 'table', tagline: 'Tarım & Bitki Besleme' },
+    'Tekstil Kimyasalları': { slug: 'tekstil-kimyasallari', accent: '#7C3AED', design: 'columns', tagline: 'Tekstil Yardımcı Kimyasalları' },
+    'Endüstriyel Kimyasallar': { slug: 'endustriyel-kimyasallari', accent: '#2563EB', design: 'columns', tagline: 'Endüstriyel Hammadde' },
+    'Deri Kimyasalları': { slug: 'deri-kimyasallari', accent: '#B45309', design: 'table', tagline: 'Deri İşleme' },
+    'Deterjan Kimyasalları': { slug: 'deterjan-kimyasallari', accent: '#0891B2', design: 'accordion', tagline: 'Deterjan & Temizlik' },
+  }
+  if (fs.existsSync(productsPath)) {
+    const cats = JSON.parse(fs.readFileSync(productsPath, 'utf-8')) as Array<{
+      name: string; description: string; subGroups: Array<{ title: string; products: string[] }>
+    }>
+    for (let i = 0; i < cats.length; i++) {
+      const c = cats[i]
+      const meta = CAT_META[c.name] || { slug: c.name.toLowerCase().replace(/[^a-z0-9]+/g, '-'), accent: '#3B82F6', design: 'accordion', tagline: '' }
+      const data = {
+        name: c.name,
+        slug: meta.slug,
+        accent: meta.accent,
+        designVariant: meta.design,
+        tagline: meta.tagline,
+        description: c.description,
+        sortOrder: i,
+        subGroups: c.subGroups.map((s) => ({
+          title: s.title,
+          products: s.products.map((name) => ({ name })),
+        })),
+        cta: { quoteHref: '/iletisim', msdsHref: '/iletisim' },
+      } as any
+      const existing = await payload.find({
+        collection: 'productCategories',
+        where: { slug: { equals: meta.slug } },
+        limit: 1,
+      })
+      let id: string | number
+      if (existing.docs[0]) {
+        await payload.update({ collection: 'productCategories', id: existing.docs[0].id, data })
+        id = existing.docs[0].id
+        console.log(`✓ kategori: ${c.name} (${data.subGroups.reduce((s: number, g: any) => s + g.products.length, 0)} ürün)`)
+      } else {
+        const doc = await payload.create({ collection: 'productCategories', data })
+        id = doc.id
+        console.log(`+ kategori: ${c.name} (${data.subGroups.reduce((s: number, g: any) => s + g.products.length, 0)} ürün)`)
+      }
+      productCatIds.push(id)
+    }
+  } else {
+    console.warn('⚠ _products.json bulunamadı — ürün kategorileri atlandı')
+  }
+
   console.log('\n— site settings & nav —')
   await payload.updateGlobal({
     slug: 'siteSettings',
     data: {
       logo, logoDark: logoWhite || logo,
       tagline: 'Üç sektör, tek kurumsal güç — Paşaoğlu Group',
-      phone: '+90 212 000 00 00',
+      phone: '+90 212 823 07 03',
       email: 'info@pasaoglugroup.com.tr',
-      addresses: [{ name: 'Genel Müdürlük', address: 'İstanbul, Türkiye' }],
+      addresses: [
+        { name: 'Merkez Ofis', address: 'Halkalı Merkez Mah. Dereboyu Cad. İç Kapı No:129, Küçükçekmece / İstanbul' },
+        { name: 'Depo', address: 'Kızılcaali Mah. Başkomutan Atatürk Cad. No:48, Çatalca / İstanbul' },
+      ],
       social: [{ platform: 'linkedin', url: 'https://linkedin.com/company/pasaoglu-group' }],
       seo: {
         siteName: 'Paşaoğlu Group',
         titleTemplate: '%s | Paşaoğlu Group',
-        defaultDescription: 'Paşaoğlu Group — Kimya, Yapı ve Gıda sektörlerinde holding yapılanmasıyla katma değer üreten kurumsal grup. 36 yıllık tecrübe, 30+ ülkeye ihracat.',
+        defaultDescription: 'Paşaoğlu Group — Kimya, Yapı ve Gıda sektörlerinde kalite odaklı üretim, güçlü tedarik ağı ve disiplinli operasyon yönetimiyle faaliyet gösteren çok sektörlü kurumsal grup.',
         defaultOgImage: logo,
         twitterHandle: 'pasaoglugroup',
-        organizationLegalName: 'Paşaoğlu Group Holding A.Ş.',
+        organizationLegalName: 'Paşaoğlu Group',
       },
       footer: {
         description: 'Paşaoğlu Group; kimya, yapı ve gıda sektörlerinde holding yapılanmasıyla katma değer üreten kurumsal bir gruptur.',
@@ -192,6 +252,16 @@ async function run() {
           { label: 'Yapı', href: '/sektorler/yapi' },
           { label: 'Gıda', href: '/sektorler/gida' },
         ] },
+        { label: 'Ürünler', href: '/urunler', children: [
+          { label: 'Gıda Kimyasalları', href: '/urunler/gida-kimyasallari' },
+          { label: 'Kozmetik Kimyasalları', href: '/urunler/kozmetik-kimyasallari' },
+          { label: 'Yapı Kimyasalları', href: '/urunler/yapi-kimyasallari' },
+          { label: 'Tarım Kimyasalları', href: '/urunler/tarim-kimyasallari' },
+          { label: 'Tekstil Kimyasalları', href: '/urunler/tekstil-kimyasallari' },
+          { label: 'Endüstriyel Kimyasallar', href: '/urunler/endustriyel-kimyasallari' },
+          { label: 'Deri Kimyasalları', href: '/urunler/deri-kimyasallari' },
+          { label: 'Deterjan Kimyasalları', href: '/urunler/deterjan-kimyasallari' },
+        ] },
         { label: 'Politikalarımız', href: '/politikalarimiz', children: [
           { label: 'Kalite Politikası', href: '/politikalarimiz/kalite' },
           { label: 'Sürdürülebilirlik', href: '/politikalarimiz/surdurulebilirlik' },
@@ -199,7 +269,6 @@ async function run() {
           { label: 'Operasyon Gücü', href: '/politikalarimiz/operasyon-gucu' },
           { label: 'Belgeler', href: '/politikalarimiz/belgeler' },
         ] },
-        { label: 'Haberler', href: '/haberler' },
         { label: 'Kariyer', href: '/kariyer' },
         { label: 'İletişim', href: '/iletisim' },
       ],
@@ -222,33 +291,30 @@ async function run() {
         video: kimyaVid, certifications: CERTS_VESKIM_TOP, showScrollIndicator: true,
       },
       {
-        blockType: 'statsGrid', variant: 'dark',
-        items: [
-          { value: '36', label: 'Yıllık Tecrübe' },
-          { value: '155+', label: 'Çalışan' },
-          { value: '30+', label: 'Ülkeye İhracat' },
-          { value: '25.000', label: 'Ton/Yıl Kapasite' },
-          { value: '45.500', label: 'M² Alan' },
-        ],
-      },
-      {
         blockType: 'splitTextImage', mediaSide: 'right',
         eyebrow: 'Ürün Yaklaşımımız', title: 'Geniş ürün yelpazesi, teknik destek',
-        body: rtP('Onaylı tedarikçi ağımızla; tekstil, gıda, kozmetik ve endüstriyel kimyasal kategorilerinde sürekliliği yüksek tedarik sağlıyoruz. Ar-Ge ekibimiz, müşterilerimize teknik dokümantasyon ve uygulama desteği sunar.'),
+        body: rtP('Onaylı tedarikçi ağımızla; tekstil, gıda, kozmetik, deri, tarım, deterjan, yapı ve endüstriyel kimyasal kategorilerinde sürekliliği yüksek tedarik sağlıyoruz. Teknik ekibimiz MSDS / TDS dokümantasyonu ve uygulama desteği sunar.'),
         image: kimyaImg2,
         features: [
-          { title: 'Sertifikalı Tedarik', description: 'ISO 9001, REACH uyumlu hammaddeler.' },
+          { title: 'Geniş Portföy', description: 'Üretim, temizlik, kozmetik, gıda, tekstil, tarım ve yapı için ürün grupları.' },
           { title: 'Teknik Destek', description: 'MSDS, TDS ve uygulama danışmanlığı.' },
         ],
       },
       {
-        blockType: 'featureCards', eyebrow: 'Ürün Grupları', title: 'Kategorilerimiz',
+        blockType: 'featureCards',
+        eyebrow: 'Ürün Kataloğu',
+        title: 'Ürün Gruplarımız',
+        description: 'Her kategori kendi sayfasında detaylı ürün listesiyle yer alır. İncelemek için kategoriye tıklayın.',
         columns: '4',
         cards: [
-          { title: 'Tekstil Kimyasalları', description: 'Ön terbiye, boyama, baskı ve apre süreçleri için.' },
-          { title: 'Kozmetik Hammaddeleri', description: 'Yüzey aktifleri, emülgatörler, koruyucular.' },
-          { title: 'Gıda Kimyasalları', description: 'Asitler, emülgatörler, koruyucular, tatlandırıcılar.' },
-          { title: 'Endüstriyel', description: 'Solventler, asitler, alkali ürünler.' },
+          { title: 'Gıda Kimyasalları', description: 'Asitler, koruyucular, emülgatörler, tatlandırıcılar.', href: '/urunler/gida-kimyasallari' },
+          { title: 'Kozmetik Kimyasalları', description: 'Yüzey aktifler, emülgatörler, betainler.', href: '/urunler/kozmetik-kimyasallari' },
+          { title: 'Yapı Kimyasalları', description: 'Beton/çimento katkıları, seramik hammaddeleri.', href: '/urunler/yapi-kimyasallari' },
+          { title: 'Tarım Kimyasalları', description: 'Gübre ve bitki besleme hammaddeleri.', href: '/urunler/tarim-kimyasallari' },
+          { title: 'Tekstil Kimyasalları', description: 'Ön terbiye, boya ve apre yardımcıları.', href: '/urunler/tekstil-kimyasallari' },
+          { title: 'Endüstriyel Kimyasallar', description: 'Asitler, alkaliler, solventler, tuzlar.', href: '/urunler/endustriyel-kimyasallari' },
+          { title: 'Deri Kimyasalları', description: 'Tabaklama, boyama ve terbiye kimyasalları.', href: '/urunler/deri-kimyasallari' },
+          { title: 'Deterjan Kimyasalları', description: 'Yüzey aktifler ve formülasyon hammaddeleri.', href: '/urunler/deterjan-kimyasallari' },
         ],
       },
       {
@@ -318,20 +384,11 @@ async function run() {
       {
         blockType: 'heroVideo', variant: 'fullImage',
         eyebrow: 'Gıda Sektörü', title: 'Güvenilir gıda için doğru', titleAccent: 'hammadde',
-        description: 'Asitler, emülgatörler, koruyucular ve tatlandırıcılar — HACCP ve ISO 22000 uyumlu.',
+        description: 'Gıda güvenliği standartlarına uygun asitler, emülgatörler, koruyucular ve tatlandırıcılar.',
         poster: gidaImg1,
         buttons: [
           { label: 'Ürünler', href: '#urunler', variant: 'accent' },
           { label: 'Teklif Al', href: '/iletisim', variant: 'ghost' },
-        ],
-      },
-      {
-        blockType: 'statsGrid', variant: 'light',
-        items: [
-          { value: 'ISO 22000', label: 'Gıda Güvenliği' },
-          { value: 'HACCP', label: 'Kontrol Sistemi' },
-          { value: '30+', label: 'Ürün Kategorisi' },
-          { value: 'Helal', label: 'Sertifikasyon' },
         ],
       },
       {
@@ -371,16 +428,6 @@ async function run() {
         video: heroVid1, certifications: CERTS_VESKIM_TOP, showScrollIndicator: true,
       },
       {
-        blockType: 'statsGrid', variant: 'dark',
-        items: [
-          { value: '36', label: 'Yıllık Tecrübe' },
-          { value: '155+', label: 'Çalışan' },
-          { value: '30+', label: 'Ülkeye İhracat' },
-          { value: '25.000', label: 'Ton/Yıl Kapasite' },
-          { value: '45.500', label: 'M² Alan' },
-        ],
-      },
-      {
         blockType: 'splitTextImage', mediaSide: 'right',
         eyebrow: 'Operasyonel Güç', title: 'Sahada güçlü, tedarik zincirinde dirençli',
         body: rtP('Paşaoğlu Group; uzun yıllara dayanan deneyimi ve global iş ortaklıklarıyla, üç farklı sektörde uçtan uca operasyon yönetir. Müşterilerimize sürdürülebilir tedarik ve teknik destek sağlıyoruz.'),
@@ -400,14 +447,9 @@ async function run() {
       {
         blockType: 'worldReach',
         eyebrow: 'Küresel Erişim',
-        title: '30+ Ülkeye İhracat',
-        description: 'Avrupa, Orta Doğu, Asya ve Amerika kıtalarına yayılan iş ortaklığı ağıyla, küresel ölçekte güvenilir bir tedarikçi olarak konumlanıyoruz.',
-        stats: [
-          { value: '30+', label: 'Ülke' },
-          { value: '5', label: 'Kıta' },
-          { value: '155+', label: 'İş Ortağı' },
-          { value: '25.000', label: 'Ton/Yıl' },
-        ],
+        title: 'Küresel Tedarik Ağı',
+        description: 'Global üretici ağı, teknik ürün bilgisi ve planlı lojistik yaklaşımıyla; Avrupa, Orta Doğu ve Asya pazarlarında kurumsal müşterilerimize sürdürülebilir çözüm sunuyoruz.',
+        stats: [],
       },
       {
         blockType: 'partnerMarquee', title: 'İş Ortaklarımız',
@@ -436,19 +478,9 @@ async function run() {
         video: yapiVid, poster: yapiImg3, showScrollIndicator: false,
       },
       {
-        blockType: 'statsGrid', variant: 'dark',
-        items: [
-          { value: '36', label: 'Yıllık Tecrübe' },
-          { value: '155+', label: 'Çalışan' },
-          { value: '30+', label: 'Ülkeye İhracat' },
-          { value: '25.000', label: 'Ton/Yıl Kapasite' },
-          { value: '45.500', label: 'M² Alan' },
-        ],
-      },
-      {
         blockType: 'splitTextImage', mediaSide: 'right',
-        eyebrow: '1987’den bugüne', title: 'Paşaoğlu Group hakkında',
-        body: rtP('Onlarca yıllık ticari birikim ve global iş ortaklıklarıyla, kimya, yapı ve gıda sektörlerinde uçtan uca hizmet sunan bir holding yapılanmasıyız. Tedarik zincirimizdeki şeffaflık ve teknik destek anlayışımız, uzun vadeli iş ortaklıkları oluşturmamızı sağladı.'),
+        eyebrow: 'Kurumsal Kimliğimiz', title: 'Paşaoğlu Group hakkında',
+        body: rtP('Kimya, yapı ve gıda sektörlerinde; doğru tedarik, doğru kalite standardı, doğru operasyon ve doğru iletişim anlayışıyla faaliyet gösteren çok sektörlü bir kurumsal yapıyız. Güçlü tedarik ağımız ve teknik destek anlayışımız, uzun vadeli iş ortaklıkları oluşturmamızı sağlıyor.'),
         image: kimyaImg3,
       },
       {
@@ -457,18 +489,6 @@ async function run() {
           { title: 'Vizyon', description: 'Üç sektörde de referans gösterilen bir holding olmak.' },
           { title: 'Misyon', description: 'Müşterilerimize sürdürülebilir, sertifikalı ve teknik destekli çözümler sunmak.' },
           { title: 'Değerler', description: 'Şeffaflık, kalite, sürdürülebilirlik ve uzun vadeli iş ortaklığı.' },
-        ],
-      },
-      {
-        blockType: 'timeline', title: 'Tarihçemiz',
-        milestones: [
-          { year: '1987', title: 'Kuruluş', description: 'İstanbul’da kimya sektörüne yönelik ticari faaliyetlerle yola çıktık.' },
-          { year: '1994', title: 'İlk Depo', description: 'Tekirdağ Çorlu’da depolama alanımız hizmete girdi.' },
-          { year: '1999', title: 'Üretim', description: '16.000 m² alanda tekstil kimyasalları üretimi.' },
-          { year: '2010', title: 'Ar-Ge', description: 'Bağımsız Ar-Ge laboratuvarımız kuruldu.' },
-          { year: '2015', title: 'Sertifikasyon', description: 'ISO 9001 ve 27001 sertifikalarımızı aldık.' },
-          { year: '2022', title: 'Global', description: '30+ ülkeye ihracat kapasitesine ulaştık.' },
-          { year: '2026', title: 'Holding', description: 'Üç sektörde holding yapılanması.' },
         ],
       },
       {

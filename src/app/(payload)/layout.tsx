@@ -5,6 +5,7 @@ import type { ServerFunctionClient } from 'payload'
 
 import { importMap } from './admin/importMap'
 import './admin-globals.css'
+import './admin-editor.css'
 
 type Args = { children: React.ReactNode }
 

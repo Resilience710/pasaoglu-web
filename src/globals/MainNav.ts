@@ -6,6 +6,13 @@ export const MainNav: GlobalConfig = {
   admin: {
     group: '🎨 Özelleştirme',
     description: 'Sitenin üst kısmındaki menü öğeleri ve alt menüleri.',
+    components: {
+      views: {
+        edit: {
+          root: { Component: '@/components/admin/MainNavEditor#default' },
+        },
+      },
+    },
   },
   access: { read: () => true },
   fields: [

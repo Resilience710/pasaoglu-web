@@ -6,6 +6,13 @@ export const SiteSettings: GlobalConfig = {
   admin: {
     group: '🎨 Özelleştirme',
     description: 'Logo, telefon, e-posta, sosyal medya ve footer kolonları — tüm sayfalarda görünür.',
+    components: {
+      views: {
+        edit: {
+          root: { Component: '@/components/admin/SiteSettingsEditor#default' },
+        },
+      },
+    },
   },
   access: { read: () => true },
   fields: [

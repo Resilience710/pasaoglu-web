@@ -3,7 +3,13 @@ import type { CollectionConfig } from 'payload'
 export const Users: CollectionConfig = {
   slug: 'users',
   labels: { singular: 'Kullanıcı', plural: '👤 Yönetici Kullanıcılar' },
-  admin: { useAsTitle: 'email', group: '⚙️ Sistem' },
+  admin: {
+    useAsTitle: 'email',
+    group: '⚙️ Sistem',
+    components: {
+      views: { edit: { root: { Component: '@/components/admin/UsersEditor#default' } } },
+    },
+  },
   auth: true,
   access: {
     read: () => true,

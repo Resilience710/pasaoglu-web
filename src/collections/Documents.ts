@@ -7,6 +7,9 @@ export const Documents: CollectionConfig = {
     useAsTitle: 'title',
     group: '🎨 Özelleştirme',
     description: 'ISO sertifikaları, kalite belgeleri, MSDS/TDS gibi dosyalar.',
+    components: {
+      views: { edit: { root: { Component: '@/components/admin/DocumentsEditor#default' } } },
+    },
   },
   access: { read: () => true },
   fields: [

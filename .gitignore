@@ -15,3 +15,4 @@ public/media
 .codex-*.html
 tsconfig.tsbuildinfo
 *.tsbuildinfo
+.claude/

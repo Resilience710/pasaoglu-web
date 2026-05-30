@@ -1,10 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 import { getPayloadClient } from '@/lib/payload'
 import { mediaUrl, mediaAlt } from '@/lib/cn'
 
 export const revalidate = 60
+
+// ⛔ Haberler bölümü şu an PASİF. Kod korunuyor; tekrar açmak için
+// aşağıdaki satırı silin ve mainNav'a "Haberler" linkini geri ekleyin.
+const NEWS_ENABLED = false
 
 export const metadata: Metadata = {
   title: 'Haberler & Duyurular',
@@ -26,6 +31,7 @@ function formatDate(d: string | Date) {
 }
 
 export default async function NewsListPage() {
+  if (!NEWS_ENABLED) notFound()
   const payload = await getPayloadClient()
   const result = await payload.find({
     collection: 'newsArticles',

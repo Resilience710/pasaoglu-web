@@ -1,0 +1,1014 @@
+[
+  {
+    "name": "Gıda Kimyasalları",
+    "description": "Gıda üretimi, raf ömrü, kalite standardizasyonu ve proses güvenliği için kullanılan hammaddeler.",
+    "subGroups": [
+      {
+        "title": "Antimikrobialer",
+        "products": [
+          "Potasyum Sorbat",
+          "Sodyum Benzoat"
+        ]
+      },
+      {
+        "title": "Antioksidanlar",
+        "products": [
+          "Askorbik Asit (Vitamin C)"
+        ]
+      },
+      {
+        "title": "Asitlik Düzenleyiciler",
+        "products": [
+          "Sitrik Asit Anh",
+          "Sitrik Asit Mono",
+          "Tartarik Asit Anh",
+          "Trisodyum Sitrat"
+        ]
+      },
+      {
+        "title": "Emülgatör",
+        "products": [
+          "Soya Lesitin Non Gmo",
+          "Ayçiçek Lesitin",
+          "Gliserin Mono Stearat 40%",
+          "Gliserin Mono Stearat 90%"
+        ]
+      },
+      {
+        "title": "Fosfatlar",
+        "products": [
+          "Trikalsiyum Fosfat",
+          "Sodyum Tripolifosfat",
+          "Tetrasodyum Pirofosfat",
+          "Sodyum Asit Pirofosfat"
+        ]
+      },
+      {
+        "title": "Gıda Boyaları",
+        "products": [
+          "Allura Red",
+          "Brillant Blue",
+          "Carmoisine",
+          "Chocolate Brown",
+          "Dark Chocolate Brown",
+          "Erythrosine",
+          "Pea Green",
+          "Ponceau 4r",
+          "Quinoline Yellow",
+          "Sunset Yellow",
+          "Tartrasine"
+        ]
+      },
+      {
+        "title": "Jelleştirici Kıvam Vericiler",
+        "products": [
+          "Xantan Gum"
+        ]
+      },
+      {
+        "title": "Taşıyıcı ve Çözücüler",
+        "products": [
+          "Gliserin Bitkisel Pharma",
+          "Monopropilen Glikol",
+          "Sorbitol %70"
+        ]
+      },
+      {
+        "title": "Tatlandırıcılar ve Lezzet Vericiler",
+        "products": [
+          "Sucralose",
+          "Aspartam",
+          "Acesülfam K",
+          "Sodyum Sakarin",
+          "Sodyum Siklamat",
+          "Monosodyum Glutamat"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kozmetik Kimyasalları",
+    "description": "Kozmetik ve kişisel bakım ürünlerinin formülasyonunda kullanılan yüzey aktifler, emülgatörler ve yardımcı hammaddeler.",
+    "subGroups": [
+      {
+        "title": "Anyonik Yüzey Aktifler",
+        "products": [
+          "Sodyum Lauril Eter Sülfat %70",
+          "Lineer Alkil Benzen Sülfonik Asit",
+          "Sodyum Alkan Sülfonat %60"
+        ]
+      },
+      {
+        "title": "Noniyonik Yüzey Aktifler",
+        "products": [
+          "Noniyonik Np 4",
+          "Noniyonik Np 6",
+          "Noniyonik Np 10",
+          "Noniyonik Np 30",
+          "Noniyonik Np 40",
+          "Düşük Köpüklü Yüzey Aktif, C12-C14 (5 Mol Eo +4 Mol Po)",
+          "Düşük Köpüklü Yüzey Aktif, C12-C14 (4 Mol Eo +5 Mol Po)",
+          "Miristil Amin Oksit",
+          "Oleil Amin Oksit 2 Eo",
+          "Laurilamin Oksit",
+          "Cocoamide Dea 85%"
+        ]
+      },
+      {
+        "title": "Amfoterik Yüzey Aktifler",
+        "products": [
+          "Kokoamidopropil Betain %45",
+          "Kokoamidopropil Betain % 35"
+        ]
+      },
+      {
+        "title": "Stabilizatörler",
+        "products": [
+          "Edta 4NA"
+        ]
+      },
+      {
+        "title": "Tasıyıcı ve Çözücüler",
+        "products": [
+          "Gliserin, Pharma Grade",
+          "Monopropilen Glikol",
+          "İsopropil Alcohol"
+        ]
+      },
+      {
+        "title": "Asitlik Düzenleyici",
+        "products": [
+          "Sitrik Asit Mono",
+          "Triethanolamine"
+        ]
+      },
+      {
+        "title": "Kıvam Vericiler",
+        "products": [
+          "Xanthan Gum"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yapı Kimyasalları",
+    "description": "Beton, çimento, seramik ve yapı uygulamaları için katkı ve hammaddeler.",
+    "subGroups": [
+      {
+        "title": "Priz Geciktirici Asitler",
+        "products": [
+          "Sitrik Asit Anhidrat",
+          "Sitrik Asit Monohidrat",
+          "L(+) Doğal Tartarik Asit"
+        ]
+      },
+      {
+        "title": "Köpük Kesiciler",
+        "products": [
+          "Toz Köpük Kesiciler",
+          "Sıvı Köpük Kesiciler"
+        ]
+      },
+      {
+        "title": "Pigment ve Dolgu Hammaddeleri",
+        "products": [
+          "Anatase Titan",
+          "Rutil Titan"
+        ]
+      },
+      {
+        "title": "Beton ve Çimento Katkıları",
+        "products": [
+          "Sodyum Glukonat",
+          "Ti̇pa",
+          "Trietanolamin (Tea)",
+          "Naftalen Sülfonat",
+          "Monoetilenglikol",
+          "Sodyum Ligno Sülfonat",
+          "Amonyum Ligno Sülfonat",
+          "Potasyum Ligno Sülfonat"
+        ]
+      },
+      {
+        "title": "Boya Hammaddeleri",
+        "products": [
+          "Sodyum Hegzametafosfat",
+          "Hint Yağı",
+          "Destile Koko Yağı Asidi",
+          "Soya Lesitini",
+          "Kolofon Reçine",
+          "Potasyum Karbonat",
+          "Amonyum Persülfat",
+          "Potasyum Persülfat",
+          "Sodyum Persülfat",
+          "Dimetilformamid",
+          "Polivinil Alkol (Pva)",
+          "Aseton",
+          "İ̇pa",
+          "Nitrik Asit",
+          "Butil Glikol",
+          "Butil Diglikol",
+          "Dipropilenglikol"
+        ]
+      },
+      {
+        "title": "Seramik ve Cam Hammaddeleri",
+        "products": [
+          "Baryum Karbonat",
+          "Potasyum Karbonat",
+          "Sodyum Karbonat",
+          "Ağır Soda",
+          "Sodyum Nitrat",
+          "Sodyum Tripolifosfat (Stpp – Toz)",
+          "Sodyum Tripolifosfat (Stpp – Granül)"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tarım Kimyasalları",
+    "description": "Bitki besleme, gübre ve tarımsal uygulamalar için kimyasal hammaddeler.",
+    "subGroups": [
+      {
+        "title": "Genel Tarım Kimyasalları",
+        "products": [
+          "Bakır Sülfat",
+          "Borik Asit",
+          "Çinko Sülfat",
+          "Demir Sülfat",
+          "Di Amonyum Fosfat",
+          "Di Etilen Glikol",
+          "Edta",
+          "Gliserin",
+          "Fosforik Asit 85%",
+          "Kalsiyum Dodesil Benzen Sülfonat / Stero Cabs",
+          "Kalsiyum Klorür",
+          "Kalsiyum Nitrat",
+          "Kalsiyum Ligno Sülfonat",
+          "Mangan Sülfat",
+          "Mono Amonyum Fosfat",
+          "Mono Etanol Amin",
+          "Mono Potasyum Fosfat",
+          "Potas Kostik",
+          "Potasyum Karbonat",
+          "Potasyum Nitrat",
+          "Potasyum Sülfat",
+          "Üre Fosfat"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tekstil Kimyasalları",
+    "description": "Ön terbiye, boyama, baskı ve apre süreçleri için tekstil yardımcı kimyasalları.",
+    "subGroups": [
+      {
+        "title": "Alkol Etoksilatlar",
+        "products": [
+          "C10 Alkol 3 Eo",
+          "C10 Alkol 5 Eo",
+          "C10 Alkol 6 Eo",
+          "C10 Alkol 8 Eo",
+          "C12 C14 2 Eo",
+          "C12 C14 6 Eo",
+          "C12 C14 7 Eo",
+          "C13 3 Eo",
+          "C13 5 Eo",
+          "C13 6 Eo",
+          "C13 8 Eo",
+          "C13 12 Eo",
+          "C13 20 Eo",
+          "C16 C18 6 Eo",
+          "C16 C18 11 Eo",
+          "C16 C18 18 Eo",
+          "C16 C18 25 Eo",
+          "C16 C18 50 Eo",
+          "C16 C18 80 Eo"
+        ]
+      },
+      {
+        "title": "Amin Etoksilatlar",
+        "products": [
+          "Tallow Amin 10 Eo",
+          "Tallow Amin 15 Eo",
+          "Tallow Amin 25 Eo"
+        ]
+      },
+      {
+        "title": "Noniyonik Yuzey Aktifler",
+        "products": [
+          "Noniyonik Np 4",
+          "Noniyonik Np 6",
+          "Noniyonik Np 10",
+          "Noniyonik Np 30",
+          "Noniyonik Np 40",
+          "Düşük Köpüklü Yüzey Aktif, C12-C14 (5 Mol Eo +4 Mol Po)",
+          "Düşük Köpüklü Yüzey Aktif, C12-C14 (4 Mol Eo +5 Mol Po)",
+          "Miristil Amin Oksit",
+          "Oleil Amin Oksit 2 Eo",
+          "Laurilamin Oksit"
+        ]
+      },
+      {
+        "title": "Anyonik Yuzey Aktifler",
+        "products": [
+          "Sodyum Lauril Eter Sülfat %70",
+          "Lineer Alkil Benzen Sülfonik Asit",
+          "Sodyum Alkan Sülfonat %60"
+        ]
+      },
+      {
+        "title": "Katyonik Yüzey Aktifler",
+        "products": [
+          "Quartamin %75",
+          "Esterquart %90",
+          "Polyquartenium-7",
+          "Amfoterik Yüzey Aktifler",
+          "Kokoamidopropil Betain %45",
+          "Kokoamidopropil Betain % 35"
+        ]
+      },
+      {
+        "title": "Yağlar - Yağ Asitleri",
+        "products": [
+          "Hidrojene Don Yağı",
+          "Hidrojene Palm Stearin",
+          "Oleik Asit",
+          "Coco Yağı Asidi",
+          "Ayçiçek Yağı Asidi",
+          "Laurik Asit"
+        ]
+      },
+      {
+        "title": "Emülgatörler",
+        "products": [
+          "Setil Stearil Alkol 11 Eo",
+          "Setil Stearil Alkol 20 Eo",
+          "Setil Stearil Alkol 25 Eo",
+          "Setil Stearil Alkol 50 Eo",
+          "Setil Stearil Alkol 80 Eo",
+          "Gliseril Monostearat %40",
+          "Gliseril Monostearat %90",
+          "Hint Yağı 40 Eo",
+          "Soya Lesitin"
+        ]
+      },
+      {
+        "title": "Fosfonatlar / Fosfatlar",
+        "products": [
+          "Atmp",
+          "Hedp",
+          "Dtpmp",
+          "Pbtc",
+          "Mono Sodyum Fosfat",
+          "Di Sodyum Fosfat",
+          "Tri Sodyum Fosfat",
+          "Stpp"
+        ]
+      },
+      {
+        "title": "Alkali",
+        "products": [
+          "Boncuk Kostik",
+          "Potas Kostik",
+          "Payet Kostik",
+          "Sıvı Kostik",
+          "Sodyum Bi Karbonat",
+          "Sodyum Hidrosülfit",
+          "Hafif Soda",
+          "Ağır Soda",
+          "Sodyum Perkarbonat",
+          "Tiyo Üre Dioksit"
+        ]
+      },
+      {
+        "title": "Asit",
+        "products": [
+          "Sitrik Asit Mono Hidrat",
+          "Sitrik Asit Anhidrus",
+          "Akrilik Asit",
+          "Asetik Asit",
+          "Sülfamik Asit",
+          "Stearik Asit 18:39",
+          "Stearik Asit 18:43",
+          "Stearik Asit 18:52",
+          "Stearik Asit 18:65",
+          "Oleik Asit",
+          "Tartarik Asit",
+          "Edta",
+          "Formik Asit"
+        ]
+      },
+      {
+        "title": "Endüstriyel Kimyasallar",
+        "products": [
+          "Hidrojen Peroksit",
+          "Sodyum Meta Silikat",
+          "Sodyum Bikarbonat",
+          "Cmc",
+          "Üre"
+        ]
+      },
+      {
+        "title": "Aminler / Amidler",
+        "products": [
+          "Mea",
+          "Dea",
+          "Tea",
+          "Aeea",
+          "Deta",
+          "Disiyandiamid",
+          "Formaldehit",
+          "Akrilamid"
+        ]
+      },
+      {
+        "title": "Glikoller / Solventler",
+        "products": [
+          "Butil Glikol",
+          "Butil Di Glikol",
+          "Mono Etilen Glikol",
+          "Di Etilen Glikol",
+          "Mono Propilen Glikol",
+          "Di Propilen Glikol",
+          "Mono Etilen Glikol",
+          "Peg 200",
+          "Peg 300",
+          "Peg 400",
+          "Peg 600",
+          "Peg 1500",
+          "Peg 4000",
+          "Peg 6000",
+          "İpa",
+          "Likit Parafin",
+          "Gliserin Farma",
+          "Gliserin Teknik",
+          "Sorbitol % 70"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Endüstriyel Kimyasallar",
+    "description": "Asitler, alkaliler, solventler, tuzlar ve çeşitli sektörlere yönelik endüstriyel hammaddeler.",
+    "subGroups": [
+      {
+        "title": "Alkaliler",
+        "products": [
+          "Amonyum Bikarbonat",
+          "Boncuk Kostik",
+          "Boraks",
+          "Çinko Oksit",
+          "Çinko Sülfat Heptahidrat",
+          "Kalsiyum Sülfat",
+          "Kalsiyum Hipoklorit",
+          "Kalsiyum Karbonat",
+          "Magnezyum Oksit",
+          "Sodyum Meta Nitro Benzen",
+          "Sodyum Metabisülfit",
+          "Payet Kostik",
+          "Hidrojen Peroksit",
+          "Tio Üre Dioksit",
+          "Potasyum Hidroksit",
+          "Potasyum Permanganat",
+          "Sivi Kostik",
+          "Sodyum Meta Nitro Benzen",
+          "Sodyum Metabisülfit Sivi",
+          "Ağir Soda",
+          "Hafif Soda",
+          "Sodyum Bi Karbonat",
+          "Sodyum Bi Kromat",
+          "Sodyum Bi Sülfat",
+          "Sodyum Di Kromat",
+          "Sodyum Formiyat",
+          "Sodyum Hidro Sülfit",
+          "Sodyum Hypo Klorit",
+          "Sodyum Klorat",
+          "Sodyum Meta Silikat Anhydrous",
+          "Sodyum Meta Silikat Pentahydrate",
+          "Sodyum Molibdat",
+          "Sodyum Metilat",
+          "Sodyum Perkarbonat",
+          "Sodyum Silikat",
+          "Sodyum Sülfat",
+          "Sodyum Sülf Hidrat",
+          "Sodyum Sülfit",
+          "Sodyum Tio Sülfat",
+          "Bazik Krom Sülfat",
+          "Tioüre Dioksit",
+          "Tri Sodyum Sitrat",
+          "Zirnik"
+        ]
+      },
+      {
+        "title": "Asitler",
+        "products": [
+          "Akrilik Asit",
+          "Asetik Asit",
+          "Borik Asit",
+          "Distile Koko Yaği Asidi",
+          "Edta",
+          "Fitalik Asit",
+          "Formik Asit",
+          "Fosforik Asit",
+          "Glukonik Asit",
+          "Hidroflorik Asit",
+          "Kromik Asit",
+          "Laktik Asit",
+          "Maleik Asit Anhidrit",
+          "Metakrilik Asit",
+          "Mono Kloro Asetik Asit",
+          "Nitrik Asit",
+          "Oksalik Asit",
+          "Oleik Asit",
+          "Para Toluen Sülfonik Asit",
+          "Fosforus Asit",
+          "Salisilik Asit",
+          "Sitrik Asit Anhydrous",
+          "Sitrik Asit Monohydrate",
+          "Stearik Asit 18:39",
+          "Stearik Asit 18:43",
+          "Stearik Asit 18:65",
+          "Stearik Asit 18:52",
+          "Stearik Asit Rubber Grade",
+          "Sülfamik Asit",
+          "Sülfirik Asit",
+          "Tartarik Asit",
+          "Hidroklorik Asit"
+        ]
+      },
+      {
+        "title": "Alkoller",
+        "products": [
+          "Pva 5/88",
+          "Pva 47/88",
+          "İso Propil Alkol",
+          "İso Tridesil Alkol",
+          "İso Butyl Alkol",
+          "Etil Alkol",
+          "Pva 17/88",
+          "Pva 24/88",
+          "Pvp K-30"
+        ]
+      },
+      {
+        "title": "Fosfat",
+        "products": [
+          "Tibp (Tri İso Butil Fosfat)",
+          "Di Amonyum Fosfat",
+          "Di Potasyum Fosfat",
+          "Fosfor Penta Oksit",
+          "Mono Amonyum Fosfat",
+          "Mono Sodyum Fosfat",
+          "Mono Potasyum Fosfat",
+          "Potasyum Fosfat",
+          "Sodyum Asit Pyro Fosfat",
+          "Sodyum Hegza Meta Fosfat",
+          "Sodyum Hypo Fosfit",
+          "Sodyum Tri Poli Fosfat",
+          "Tetra Potasyum Pyro Fosfat",
+          "Tri Kalsiyum Fosfat",
+          "Tri Sodyum Fosfat",
+          "Tetra Sodyum Pyro Fosfat"
+        ]
+      },
+      {
+        "title": "Fosfanatlar",
+        "products": [
+          "Atmp",
+          "Dtpmp",
+          "Pbtc",
+          "Hedp"
+        ]
+      },
+      {
+        "title": "Glikoller",
+        "products": [
+          "Peg 300",
+          "Peg 400",
+          "Peg 600",
+          "Peg 1500",
+          "Peg 4000",
+          "Butyl Glycol",
+          "Butyl Di Glycol",
+          "Ppg 1000",
+          "Ppg 2000"
+        ]
+      },
+      {
+        "title": "Nitrit ve Nitratlar",
+        "products": [
+          "Amonyum Nitrat",
+          "Kalsi̇yum Nitrat",
+          "Magnezyum Nitrat",
+          "Potasyum Nitrat",
+          "Sodyum Nitrat"
+        ]
+      },
+      {
+        "title": "Yüzey Aktifler",
+        "products": [
+          "Betain",
+          "C10 Alkol 3 Eo",
+          "C10 Alkol 5 Eo",
+          "C10 Alkol 6 Eo",
+          "C10 Alkol 8 Eo",
+          "Koko Dietanolamin",
+          "Sodyum Kümen Sülfonat",
+          "Esterquad",
+          "Hint Yaği 40 Eo",
+          "Alkan Sülfonat 60%",
+          "Labsa",
+          "Hint Yaği 40 Eo",
+          "Nonyl Phenol 10 Eo",
+          "Nonyl Phenol 6 Eo",
+          "Quartamin",
+          "Poliquartonium 7",
+          "Di Octyl Sulphosuccinate",
+          "Sedef",
+          "Sodyum Ksilen Sülfonat",
+          "C12 C14 5eo 4po",
+          "C12 C14 4eo 5po",
+          "Kalsiyum Dodesil Benzen Sülfonat",
+          "Nonyl Phenol 10 Eo",
+          "Oleyl Amine 2 Eo",
+          "Oleyl Cetyl Amine 2 Eo",
+          "Di Octyl Sulphosuccinate",
+          "Sodyum Kümen Sülfonat",
+          "Betain",
+          "Gliserin Mono Stearat 90%",
+          "Lauryl Amino Oksit",
+          "Sles 28%",
+          "Sles 70%",
+          "Polysorbate 20",
+          "Polysorbate 60",
+          "Polysorbate 80",
+          "C12 C14 2 Eo",
+          "C12 C14 6 Eo",
+          "C12 C14 7 Eo",
+          "C13 3 Eo",
+          "C13 5 Eo",
+          "C13 6 Eo",
+          "C13 8 Eo",
+          "C13 12 Eo",
+          "C13 20 Eo",
+          "C16 C18 6 Eo",
+          "C16 C18 11 Eo",
+          "C16 C18 18 Eo",
+          "C16 C18 25 Eo",
+          "C16 C18 50 Eo",
+          "C16 C18 80 Eo",
+          "Benzalkoni̇um Chloride 50%",
+          "Poliquartoni̇um 7",
+          "Tallow Amine 10 Eo",
+          "Tallow Amine 15 Eo",
+          "Tallow Amine 25 Eo",
+          "Tallow Amine 6 Eo"
+        ]
+      },
+      {
+        "title": "Amidler Aminler",
+        "products": [
+          "Akrilamid Toz",
+          "Akrilamid Sivi",
+          "Dimetil Formamid",
+          "Disiyandiamid",
+          "Formaldehid",
+          "Aeea",
+          "Deta",
+          "Di Etanol Amin",
+          "Mono Etanol Amin",
+          "Tri Etanol Amin"
+        ]
+      },
+      {
+        "title": "Solventler",
+        "products": [
+          "Amonyak",
+          "Aseton",
+          "Butil Akrilat",
+          "Butil Asetat",
+          "Metanol",
+          "Tiner",
+          "Etil Akrilat",
+          "Etil Asetat",
+          "İki Etil Hegzanol",
+          "Metil Alkol",
+          "Metil Akrilat",
+          "Metil Asetat",
+          "Metil Etil Keton",
+          "Metilen Klorür",
+          "Ofset Alkolu",
+          "Per Klor Etilen",
+          "Sodyum Asetat",
+          "Tri Klor Etilen"
+        ]
+      },
+      {
+        "title": "Tuzlar",
+        "products": [
+          "Alumi̇nyum Sülfat",
+          "Aluminyum Oksit",
+          "Amonyum Klorür",
+          "Amonyum Per Sülfat",
+          "Amonyum Sülfat",
+          "Bakir Oksit",
+          "Bakir Sülfat",
+          "Baryum Klorür",
+          "Demir 3 Klorür",
+          "Demir Oksit",
+          "Demir Sülfat Monohidrat",
+          "Demir Sülfat Heptahidrat",
+          "Di Metil Üre",
+          "Hidroksil Amin Sülfat",
+          "Kalsiyum Klorür",
+          "Kalsiyum Ligno Sülfonat",
+          "Magnezyum Klorür",
+          "Magnezyum Sülfat",
+          "Mangan Sülfat",
+          "Naftalen Sülfonat",
+          "Nikel Karbonat",
+          "Nikel Klorür",
+          "Nikel Sülfat",
+          "Poli Aluminium Klorür",
+          "Potasyum Karbonat",
+          "Potasyum Klorat",
+          "Potasyum Klorür",
+          "Potasyum Ligno Sülfonat",
+          "Potasyum Persülfat",
+          "Potasyum Sülfat",
+          "Naftalen Sülfonat",
+          "Sodyum Formaldehit Sülfoksilat",
+          "Sodyum Sülfonate",
+          "Sodyum Vinil Sülfonat",
+          "Sodyum Florür",
+          "Sodyum Glukonat",
+          "Sodyum Ligno Sülfonat",
+          "Sodyum Persülfat",
+          "Üre"
+        ]
+      },
+      {
+        "title": "Yağlar",
+        "products": [
+          "D – Limonene",
+          "Gliserin",
+          "Glyoksal",
+          "Hidrojene Palm Stearin",
+          "Hint Yağı",
+          "Ayçiçek Lesitin",
+          "Soya Lesitin",
+          "Parafi̇n",
+          "Pine Oil",
+          "Soya Yaği"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deri Kimyasalları",
+    "description": "Tabaklama, boyama ve terbiye işlemlerinde kullanılan deri kimyasalları.",
+    "subGroups": [
+      {
+        "title": "Genel Deri Kimyasalları",
+        "products": [
+          "Amonyum Bikarbonat",
+          "Amonyum Klorür",
+          "Amonyum Sülfat",
+          "Asetik Asit",
+          "Butil Asetat",
+          "Demir Sülfat",
+          "Edta 4 Na",
+          "Emetik Tartar",
+          "Formaldehit Formik Asit 85%",
+          "Hidrojen Peroksit",
+          "İ̇so Propil Alkol",
+          "Kaolin",
+          "Kebroka",
+          "Kestane (Aci- Tatli)",
+          "Kromik Asit",
+          "Kurşun Asetat",
+          "Mimoza Me",
+          "Nonyl Phenol 10 Eo",
+          "Oksalik Asit",
+          "Perklor Etilen",
+          "Sitrik Asit Mono.",
+          "Soda Ağır",
+          "Soda Hafif",
+          "Sodyum Asetat",
+          "Sodyum Bikarbonat",
+          "Sodyum Formiat",
+          "Sodyum Hidrosülfit (74% – 88% – 90%)",
+          "Sodyum Hipoklorit",
+          "Sodyum Metabisülfit",
+          "Sodyum Naftalen Sülfonat",
+          "Sodyum Sülfhidrat",
+          "Sodyum Tiosülfat",
+          "Sodyum Tripolifosfat (Sttp)",
+          "Sülfürik Asit",
+          "Tank Krom Ab",
+          "Tank Krom Fs",
+          "Tara",
+          "Titan Dioksit",
+          "Üre",
+          "Walex",
+          "Zırnık"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deterjan Kimyasalları",
+    "description": "Yüzey aktifler, alkaliler, asitler ve formülasyon hammaddeleriyle deterjan ve temizlik çözümleri.",
+    "subGroups": [
+      {
+        "title": "Alkol Etoksilat",
+        "products": [
+          "C10 Alkol 3 Eo",
+          "C10 Alkol 5 Eo",
+          "C10 Alkol 6 Eo",
+          "C10 Alkol 8 Eo",
+          "C12 C14 2 Eo",
+          "C12 C14 6 Eo",
+          "C12 C14 7 Eo",
+          "C13 3 Eo",
+          "C13 5 Eo",
+          "C13 6 Eo",
+          "C13 8 Eo",
+          "C13 12 Eo",
+          "C13 20 Eo",
+          "C16 C18 6 Eo",
+          "C16 C18 11 Eo",
+          "C16 C18 18 Eo",
+          "C16 C18 25 Eo",
+          "C16 C18 50 Eo",
+          "C16 C18 80 Eo"
+        ]
+      },
+      {
+        "title": "Amin Etoksilat",
+        "products": [
+          "Tallow Amin 10 Eo",
+          "Tallow Amin 15 Eo",
+          "Tallow Amin 25 Eo"
+        ]
+      },
+      {
+        "title": "Noniyonik Yüzey Aktif",
+        "products": [
+          "Noniyonik Np 4",
+          "Noniyonik Np 6",
+          "Noniyonik Np 10",
+          "Noniyonik Np 30",
+          "Noniyonik Np 40",
+          "Düşük Köpüklü Yüzey Aktif, C12-C14 (5 Mol Eo +4 Mol Po)",
+          "Düşük Köpüklü Yüzey Aktif, C12-C14 (4 Mol Eo +5 Mol Po)",
+          "Miristil Amin Oksit",
+          "Oleil Amin Oksit 2 Eo",
+          "Laurilamin Oksit"
+        ]
+      },
+      {
+        "title": "Anyonik Yüzey Aktif",
+        "products": [
+          "Sodyum Lauril Eter Sülfat %70",
+          "Lineer Alkil Benzen Sülfonik Asit",
+          "Sodyum Alkan Sülfonat %60"
+        ]
+      },
+      {
+        "title": "Katyonik Yüzey Aktif",
+        "products": [
+          "Quartamin %75",
+          "Esterquart %90",
+          "Polyquartenium-7"
+        ]
+      },
+      {
+        "title": "Amfoterik Yüzey Aktif",
+        "products": [
+          "Kokoamidopropil Betain %45",
+          "Kokoamidopropil Betain % 35"
+        ]
+      },
+      {
+        "title": "Yağlar ve Yağ Asitleri",
+        "products": [
+          "Hidrojene Don Yağı",
+          "Hidrojene Palm Stearin",
+          "Oleik Asit",
+          "Coco Yağı Asidi",
+          "Ayçiçek Yağı Asidi",
+          "Laurik Asit"
+        ]
+      },
+      {
+        "title": "Emülgatörs",
+        "products": [
+          "Setil Stearil Alkol 11 Eo",
+          "Setil Stearil Alkol 20 Eo",
+          "Setil Stearil Alkol 25 Eo",
+          "Setil Stearil Alkol 50 Eo",
+          "Setil Stearil Alkol 80 Eo",
+          "Gliseril Monostearat %40",
+          "Gliseril Monostearat %90",
+          "Hint Yağı 40 Eo",
+          "Soya Lesitin"
+        ]
+      },
+      {
+        "title": "Fosfonatlar - Fosfatlar",
+        "products": [
+          "Atmp",
+          "Hedp",
+          "Dtpmp",
+          "Pbtc",
+          "Mono Sodyum Fosfat",
+          "Di Sodyum Fosfat",
+          "Tri Sodyum Fosfat",
+          "Stpp"
+        ]
+      },
+      {
+        "title": "Alkalis",
+        "products": [
+          "Boncuk Kostik",
+          "Potas Kostik",
+          "Payet Kostik",
+          "Sıvı Kostik",
+          "Sodyum Bi Karbonat",
+          "Sodyum Hidrosülfit",
+          "Hafif Soda",
+          "Ağır Soda",
+          "Sodyum Perkarbonat",
+          "Tiyo Üre Dioksit"
+        ]
+      },
+      {
+        "title": "Asits",
+        "products": [
+          "Sitrik Asit Mono Hidrat",
+          "Sitrik Asit Anhidrus",
+          "Akrilik Asit",
+          "Asetik Asit",
+          "Sülfamik Asit",
+          "Stearik Asit 18:39",
+          "Stearik Asit 18:43",
+          "Stearik Asit 18:52",
+          "Stearik Asit 18:65",
+          "Oleik Asit",
+          "Tartarik Asit",
+          "Edta",
+          "Formik Asit"
+        ]
+      },
+      {
+        "title": "Endüstriyel Kimyasal",
+        "products": [
+          "Hidrojen Peroksit",
+          "Sodyum Meta Silikat",
+          "Sodyum Bikarbonat",
+          "Cmc",
+          "Üre"
+        ]
+      },
+      {
+        "title": "Amin - Amid",
+        "products": [
+          "Mea",
+          "Dea",
+          "Tea",
+          "Aeea",
+          "Deta",
+          "Disiyandiamid",
+          "Formaldehit",
+          "Akrilamid"
+        ]
+      },
+      {
+        "title": "Glikol - Solvent",
+        "products": [
+          "Butil Glikol",
+          "Butil Di Glikol",
+          "Mono Etilen Glikol",
+          "Di Etilen Glikol",
+          "Mono Propilen Glikol",
+          "Di Propilen Glikol",
+          "Mono Etilen Glikol",
+          "Peg 200",
+          "Peg 300",
+          "Peg 400",
+          "Peg 600",
+          "Peg 1500",
+          "Peg 4000",
+          "Peg 6000",
+          "İpa",
+          "Likit Parafin",
+          "Gliserin Farma",
+          "Gliserin Teknik",
+          "Sorbitol % 70"
+        ]
+      }
+    ]
+  }
+]

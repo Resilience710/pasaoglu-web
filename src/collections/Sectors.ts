@@ -10,6 +10,13 @@ export const Sectors: CollectionConfig = {
     group: '🎨 Özelleştirme',
     description: 'Kimya, Yapı, Gıda sektör sayfaları. Her birinin renk teması ve içeriği bağımsız düzenlenebilir.',
     defaultColumns: ['name', 'slug', 'theme', 'updatedAt'],
+    components: {
+      views: {
+        edit: {
+          root: { Component: '@/components/admin/SectorEditor#default' },
+        },
+      },
+    },
   },
   access: { read: () => true },
   fields: [

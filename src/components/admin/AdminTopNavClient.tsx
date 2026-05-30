@@ -11,6 +11,7 @@ import {
   Images,
   LayoutDashboard,
   LayoutGrid,
+  LayoutTemplate,
   LogOut,
   Mail,
   Newspaper,
@@ -88,6 +89,15 @@ export default function AdminTopNavClient({
         >
           <LayoutDashboard className="admin-sidebar__icon" />
           <span>Anasayfa</span>
+        </Link>
+
+        <Link
+          className={['admin-sidebar__link', isActivePath(pathname, '/admin/duzenle/ana-sayfa') && 'is-active'].filter(Boolean).join(' ')}
+          href="/admin/duzenle/ana-sayfa"
+          prefetch={false}
+        >
+          <LayoutTemplate className="admin-sidebar__icon" />
+          <span>Ana Sayfayı Düzenle</span>
         </Link>
 
         {visibleItems.map((item) => {

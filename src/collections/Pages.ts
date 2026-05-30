@@ -11,6 +11,13 @@ export const Pages: CollectionConfig = {
     defaultColumns: ['title', 'slug', 'updatedAt'],
     description: 'Sitedeki tüm sayfaların içeriği. Her sayfa "Sayfa içeriği" altındaki bloklarla yönetilir. Her bloğun metni, görseli, butonu düzenlenebilir.',
     listSearchableFields: ['title', 'slug'],
+    components: {
+      views: {
+        edit: {
+          root: { Component: '@/components/admin/PageEditor#default' },
+        },
+      },
+    },
   },
   access: { read: () => true },
   fields: [
