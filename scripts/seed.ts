@@ -267,16 +267,6 @@ async function run() {
           { label: 'Yapı', href: '/sektorler/yapi' },
           { label: 'Gıda', href: '/sektorler/gida' },
         ] },
-        { label: 'Ürünler', href: '/urunler', children: [
-          { label: 'Gıda Kimyasalları', href: '/urunler/gida-kimyasallari' },
-          { label: 'Kozmetik Kimyasalları', href: '/urunler/kozmetik-kimyasallari' },
-          { label: 'Yapı Kimyasalları', href: '/urunler/yapi-kimyasallari' },
-          { label: 'Tarım Kimyasalları', href: '/urunler/tarim-kimyasallari' },
-          { label: 'Tekstil Kimyasalları', href: '/urunler/tekstil-kimyasallari' },
-          { label: 'Endüstriyel Kimyasallar', href: '/urunler/endustriyel-kimyasallari' },
-          { label: 'Deri Kimyasalları', href: '/urunler/deri-kimyasallari' },
-          { label: 'Deterjan Kimyasalları', href: '/urunler/deterjan-kimyasallari' },
-        ] },
         { label: 'Politikalarımız', href: '/politikalarimiz', children: [
           { label: 'Kalite Politikası', href: '/politikalarimiz/kalite' },
           { label: 'Sürdürülebilirlik', href: '/politikalarimiz/surdurulebilirlik' },
