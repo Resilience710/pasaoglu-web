@@ -13,14 +13,21 @@ export const metadata: Metadata = {
 }
 
 export default async function ProductsHubPage() {
-  const payload = await getPayloadClient()
-  const result = await payload.find({
-    collection: 'productCategories',
-    depth: 2,
-    limit: 50,
-    sort: 'sortOrder',
-  })
-  const cats = result.docs as any[]
+  let cats: any[] = []
+  try {
+    const payload = await getPayloadClient()
+    const result = await payload.find({
+      collection: 'productCategories',
+      depth: 2,
+      limit: 50,
+      sort: 'sortOrder',
+    })
+    cats = result.docs as any[]
+  } catch (e) {
+    // Veritabanı şeması henüz hazır değilse (seed çalışmadan build) sayfa boş gelir;
+    // seed sonrası ISR ile dolar. Build'i çökertmemek için yutuluyor.
+    cats = []
+  }
   const totalProducts = cats.reduce(
     (sum, c) => sum + (c.subGroups || []).reduce((s: number, g: any) => s + (g.products?.length || 0), 0),
     0,

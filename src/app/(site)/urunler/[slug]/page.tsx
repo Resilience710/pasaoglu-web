@@ -12,14 +12,18 @@ export const revalidate = 60
 type Props = { params: Promise<{ slug: string }> }
 
 async function getCategory(slug: string) {
-  const payload = await getPayloadClient()
-  const result = await payload.find({
-    collection: 'productCategories',
-    where: { slug: { equals: slug } },
-    depth: 2,
-    limit: 1,
-  })
-  return result.docs[0] as any
+  try {
+    const payload = await getPayloadClient()
+    const result = await payload.find({
+      collection: 'productCategories',
+      where: { slug: { equals: slug } },
+      depth: 2,
+      limit: 1,
+    })
+    return result.docs[0] as any
+  } catch {
+    return null
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
