@@ -1,8 +1,10 @@
 import type { GlobalConfig } from 'payload'
+import { revalidateGlobalAfterChange } from '../hooks/revalidate'
 
 export const MainNav: GlobalConfig = {
   slug: 'mainNav',
   label: 'Üst Menü (Header Navigasyon)',
+  hooks: { afterChange: [revalidateGlobalAfterChange] },
   admin: {
     group: '🎨 Özelleştirme',
     description: 'Sitenin üst kısmındaki menü öğeleri ve alt menüleri.',

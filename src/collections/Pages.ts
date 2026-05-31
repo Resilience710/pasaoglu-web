@@ -1,10 +1,12 @@
 import type { CollectionConfig } from 'payload'
 import { allBlocks } from '../blocks'
 import { seoMetaField } from '../fields/seoMeta'
+import { revalidateAfterChange, revalidateAfterDelete } from '../hooks/revalidate'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
   labels: { singular: 'Sayfa', plural: 'Sayfalar' },
+  hooks: { afterChange: [revalidateAfterChange], afterDelete: [revalidateAfterDelete] },
   admin: {
     useAsTitle: 'title',
     group: '🎨 Özelleştirme',

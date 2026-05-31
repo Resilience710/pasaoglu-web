@@ -1,8 +1,10 @@
 import type { GlobalConfig } from 'payload'
+import { revalidateGlobalAfterChange } from '../hooks/revalidate'
 
 export const SiteSettings: GlobalConfig = {
   slug: 'siteSettings',
   label: 'Site Ayarları (Logo, Footer, İletişim)',
+  hooks: { afterChange: [revalidateGlobalAfterChange] },
   admin: {
     group: '🎨 Özelleştirme',
     description: 'Logo, telefon, e-posta, sosyal medya ve footer kolonları — tüm sayfalarda görünür.',

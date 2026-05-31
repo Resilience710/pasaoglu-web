@@ -1,8 +1,10 @@
 import type { CollectionConfig } from 'payload'
+import { revalidateAfterChange, revalidateAfterDelete } from '../hooks/revalidate'
 
 export const ProductCategories: CollectionConfig = {
   slug: 'productCategories',
   labels: { singular: 'Ürün Kategorisi', plural: 'Ürün Kategorileri' },
+  hooks: { afterChange: [revalidateAfterChange], afterDelete: [revalidateAfterDelete] },
   admin: {
     useAsTitle: 'name',
     group: '🎨 Özelleştirme',

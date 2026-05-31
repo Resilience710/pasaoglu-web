@@ -1,9 +1,11 @@
 import type { CollectionConfig } from 'payload'
 import { seoMetaField } from '../fields/seoMeta'
+import { revalidateAfterChange, revalidateAfterDelete } from '../hooks/revalidate'
 
 export const NewsArticles: CollectionConfig = {
   slug: 'newsArticles',
   labels: { singular: 'Haber', plural: 'Haberler & Duyurular' },
+  hooks: { afterChange: [revalidateAfterChange], afterDelete: [revalidateAfterDelete] },
   admin: {
     useAsTitle: 'title',
     group: '🎨 Özelleştirme',

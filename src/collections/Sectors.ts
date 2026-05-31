@@ -1,10 +1,12 @@
 import type { CollectionConfig } from 'payload'
 import { allBlocks } from '../blocks'
 import { seoMetaField } from '../fields/seoMeta'
+import { revalidateAfterChange, revalidateAfterDelete } from '../hooks/revalidate'
 
 export const Sectors: CollectionConfig = {
   slug: 'sectors',
   labels: { singular: 'Sektör Sayfası', plural: 'Sektör Sayfaları' },
+  hooks: { afterChange: [revalidateAfterChange], afterDelete: [revalidateAfterDelete] },
   admin: {
     useAsTitle: 'name',
     group: '🎨 Özelleştirme',
