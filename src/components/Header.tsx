@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { Menu, X, ChevronDown, Globe } from 'lucide-react'
-import { cn, mediaUrl } from '@/lib/cn'
+import { cn } from '@/lib/cn'
 
 type NavItem = { label: string; href: string; children?: { label: string; href: string }[] }
 
@@ -62,7 +62,8 @@ export function Header({
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const logoSrc = mediaUrl(settings?.logo)
+  // Resmi marka logosu — repo'ya gömülü statik dosya (admin/cache'ten bağımsız, kesin görünür)
+  const logoSrc = '/brand/logo-header.png'
   const items = localizeNav(nav?.items || [], isEn)
   const contactHref = isEn ? '/en/iletisim' : '/iletisim'
   const contactLabel = isEn ? 'Contact' : 'İletişim'
@@ -105,7 +106,7 @@ export function Header({
         <div className="container-x flex items-center justify-between h-24">
           <Link href={isEn ? '/en' : '/'} className="flex items-center gap-3">
             {logoSrc ? (
-              <Image src={logoSrc} alt="Paşaoğlu Group" width={220} height={56} className="h-12 w-auto" />
+              <Image src={logoSrc} alt="Paşaoğlu Group" width={260} height={100} priority className="h-12 w-auto" />
             ) : (
               <span className="font-serif text-3xl text-brand-navy">Paşaoğlu<span className="text-themed-accent">.</span></span>
             )}

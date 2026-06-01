@@ -1,22 +1,16 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { mediaUrl } from '@/lib/cn'
 
 export function Footer({ settings }: { settings: any }) {
-  // Koyu arkaplan logosu varsa olduğu gibi kullan; yoksa normal logoyu beyaza çevir
-  const hasDarkLogo = !!settings?.logoDark
-  const logoSrc = mediaUrl(settings?.logoDark || settings?.logo)
+  // Footer koyu arkaplan — beyaz marka logosu (repo'ya gömülü statik dosya)
+  const logoSrc = '/brand/logo-footer.png'
   const year = new Date().getFullYear()
 
   return (
     <footer className="bg-brand-deep text-white/80">
       <div className="container-x py-16 grid gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
-          {logoSrc ? (
-            <Image src={logoSrc} alt="Paşaoğlu Group" width={200} height={56} className={`h-12 w-auto ${hasDarkLogo ? '' : 'invert brightness-0'}`} />
-          ) : (
-            <span className="font-serif text-2xl text-white">Paşaoğlu<span className="text-themed-accent">.</span></span>
-          )}
+          <Image src={logoSrc} alt="Paşaoğlu Group" width={260} height={100} className="h-12 w-auto" />
           <p className="mt-5 text-sm leading-relaxed">
             {settings?.footer?.description || 'Paşaoğlu Group; kimya, yapı ve gıda sektörlerinde kurumsal çözümler sunan bir holding yapılanmasıdır.'}
           </p>
