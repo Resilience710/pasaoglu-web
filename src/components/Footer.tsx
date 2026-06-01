@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { mediaUrl } from '@/lib/cn'
 
 export function Footer({ settings }: { settings: any }) {
+  // Koyu arkaplan logosu varsa olduğu gibi kullan; yoksa normal logoyu beyaza çevir
+  const hasDarkLogo = !!settings?.logoDark
   const logoSrc = mediaUrl(settings?.logoDark || settings?.logo)
   const year = new Date().getFullYear()
 
@@ -11,7 +13,7 @@ export function Footer({ settings }: { settings: any }) {
       <div className="container-x py-16 grid gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div>
           {logoSrc ? (
-            <Image src={logoSrc} alt="Paşaoğlu Group" width={180} height={48} className="h-10 w-auto invert brightness-0" />
+            <Image src={logoSrc} alt="Paşaoğlu Group" width={200} height={56} className={`h-12 w-auto ${hasDarkLogo ? '' : 'invert brightness-0'}`} />
           ) : (
             <span className="font-serif text-2xl text-white">Paşaoğlu<span className="text-themed-accent">.</span></span>
           )}
