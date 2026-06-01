@@ -102,33 +102,33 @@ export function Header({
           scrolled ? 'bg-white/95 backdrop-blur shadow-sm' : 'bg-white',
         )}
       >
-        <div className="container-x flex items-center justify-between h-20">
+        <div className="container-x flex items-center justify-between h-24">
           <Link href={isEn ? '/en' : '/'} className="flex items-center gap-3">
             {logoSrc ? (
-              <Image src={logoSrc} alt="Paşaoğlu Group" width={160} height={40} className="h-9 w-auto" />
+              <Image src={logoSrc} alt="Paşaoğlu Group" width={220} height={56} className="h-12 w-auto" />
             ) : (
-              <span className="font-serif text-2xl text-brand-navy">Paşaoğlu<span className="text-themed-accent">.</span></span>
+              <span className="font-serif text-3xl text-brand-navy">Paşaoğlu<span className="text-themed-accent">.</span></span>
             )}
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-9">
             {items.map((item) => (
               <div key={item.href} className="group relative">
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-sm font-medium text-brand-navy hover:text-themed-accent transition"
+                  className="flex items-center gap-1 text-[15px] font-semibold text-brand-navy hover:text-themed-accent transition"
                 >
                   {item.label}
-                  {item.children?.length ? <ChevronDown size={14} /> : null}
+                  {item.children?.length ? <ChevronDown size={16} /> : null}
                 </Link>
                 {item.children?.length ? (
                   <div className="absolute left-0 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
-                    <div className="bg-white rounded-lg card-shadow min-w-[220px] py-2">
+                    <div className="bg-white rounded-lg card-shadow min-w-[240px] py-2">
                       {item.children.map((c) => (
                         <Link
                           key={c.href}
                           href={c.href}
-                          className="block px-5 py-2 text-sm text-brand-navy hover:bg-brand-cream hover:text-themed-accent transition"
+                          className="block px-5 py-2.5 text-[15px] text-brand-navy hover:bg-brand-cream hover:text-themed-accent transition"
                         >
                           {c.label}
                         </Link>
@@ -141,8 +141,8 @@ export function Header({
           </nav>
 
           <div className="hidden lg:flex items-center gap-5">
-            <LangSwitch />
-            <Link href={contactHref} className="btn btn-primary">{contactLabel}</Link>
+            <LangSwitch className="text-[15px]" />
+            <Link href={contactHref} className="btn btn-primary text-[15px]">{contactLabel}</Link>
           </div>
 
           <button
