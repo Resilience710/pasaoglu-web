@@ -37,7 +37,6 @@ export async function generateMetadata(): Promise<Metadata> {
       template: seo.titleTemplate || '%s | Paşaoğlu Group',
     },
     description: seo.defaultDescription || 'Kimya, Yapı ve Gıda sektörlerinde holding yapılanmasıyla katma değer üreten kurumsal grup.',
-    icons: { icon: '/favicon.ico' },
     verification: seo.googleSiteVerification ? { google: seo.googleSiteVerification } : undefined,
   }
 }
