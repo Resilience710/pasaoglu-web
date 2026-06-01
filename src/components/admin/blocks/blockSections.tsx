@@ -16,25 +16,55 @@ import {
 /* ===========================================================
    Lexical <-> düz metin
 =========================================================== */
+// Lexical düğümlerinden düz metin çıkar. Madde listeleri "- madde" satırı olur.
+function nodeText(node: any): string {
+  return (node?.children || [])
+    .map((c: any) => (typeof c?.text === 'string' ? c.text : nodeText(c)))
+    .join('')
+}
 export function lexicalToText(rt: any): string {
   try {
     const children = rt?.root?.children || []
-    return children
-      .map((node: any) => (node?.children || []).map((c: any) => c?.text || '').join(''))
-      .filter((s: string) => s.length > 0)
-      .join('\n\n')
+    const blocks: string[] = []
+    for (const node of children) {
+      if (node?.type === 'list') {
+        const items = (node.children || []).map((li: any) => '- ' + nodeText(li).trim())
+        if (items.length) blocks.push(items.join('\n'))
+      } else {
+        const t = nodeText(node)
+        if (t.trim()) blocks.push(t)
+      }
+    }
+    return blocks.join('\n\n')
   } catch {
     return ''
   }
 }
+
+const textNode = (text: string) => ({ type: 'text', text, version: 1, format: 0, detail: 0, mode: 'normal', style: '' })
+const paragraphNode = (text: string) => ({ type: 'paragraph', version: 1, children: [textNode(text)] })
+const listNode = (items: string[]) => ({
+  type: 'list', version: 1, tag: 'ul', listType: 'bullet', start: 1, direction: 'ltr', format: '', indent: 0,
+  children: items.map((t, i) => ({ type: 'listitem', version: 1, value: i + 1, direction: 'ltr', format: '', indent: 0, children: [textNode(t)] })),
+})
+
+// Düz metni Lexical'e çevir. "- " / "• " / "* " ile başlayan satırlar madde listesi olur.
 export function textToLexical(text: string): any {
-  const paras = (text || '').split('\n\n').map((t) => t.trim()).filter(Boolean)
-  const children = (paras.length ? paras : ['']).map((t) => ({
-    type: 'paragraph',
-    version: 1,
-    children: [{ type: 'text', text: t, version: 1, format: 0, detail: 0, mode: 'normal', style: '' }],
-  }))
-  return { root: { type: 'root', format: '', indent: 0, version: 1, direction: 'ltr', children } }
+  const lines = (text || '').replace(/\r/g, '').split('\n')
+  const nodes: any[] = []
+  let para: string[] = []
+  let bullets: string[] = []
+  const isBullet = (l: string) => /^\s*[-•*]\s+/.test(l)
+  const flushPara = () => { if (para.length) { nodes.push(paragraphNode(para.join(' ').trim())); para = [] } }
+  const flushBullets = () => { if (bullets.length) { nodes.push(listNode(bullets)); bullets = [] } }
+  for (const line of lines) {
+    if (isBullet(line)) { flushPara(); bullets.push(line.replace(/^\s*[-•*]\s+/, '').trim()) }
+    else if (line.trim() === '') { flushPara(); flushBullets() }
+    else { flushBullets(); para.push(line.trim()) }
+  }
+  flushPara(); flushBullets()
+  if (!nodes.length) nodes.push(paragraphNode(''))
+  return { root: { type: 'root', format: '', indent: 0, version: 1, direction: 'ltr', children: nodes } }
 }
 
 /* ===========================================================

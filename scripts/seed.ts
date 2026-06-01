@@ -426,7 +426,7 @@ async function run() {
   await upsertPage(payload, 'home', {
     title: 'Ana Sayfa',
     meta: {
-      title: 'Paşaoğlu Group — Holding',
+      title: 'Paşaoğlu Group',
       description: 'Paşaoğlu Group; Kimya, Yapı ve Gıda sektörlerinde holding yapılanmasıyla kurumsal müşterilere uçtan uca tedarik, teknik destek ve sürdürülebilir çözümler sunar.',
     },
     layout: [
