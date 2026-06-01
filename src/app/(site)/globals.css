@@ -151,15 +151,7 @@ img, video, iframe { max-width: 100%; }
    ==================================================== */
 
 /* --- KIMYA: mor, modern Veskim kuzeni --- */
-[data-theme='chem'] .eyebrow,
-[data-theme='chem'] .text-themed-accent {
-  letter-spacing: 0.25em;
-}
 [data-theme='chem'] section:not([data-dark]) { background-color: white; }
-[data-theme='chem'] .section-title {
-  font-weight: 300;
-  letter-spacing: -0.02em;
-}
 [data-theme='chem'] .btn { border-radius: 9999px; padding: 0.85rem 1.6rem; }
 [data-theme='chem'] .surface-card,
 [data-theme='chem'] .rounded-2xl { border-radius: 1.5rem !important; }
@@ -168,18 +160,7 @@ img, video, iframe { max-width: 100%; }
 /* --- YAPI: gri, endüstriyel keskin --- */
 [data-theme='build'] section:not([data-dark]) { background-color: white; }
 [data-theme='build'] section:not([data-dark]):nth-of-type(even) { background-color: #FAFAFA; }
-[data-theme='build'] .section-title {
-  font-family: var(--font-inter);
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  line-height: 1;
-}
-[data-theme='build'] .eyebrow {
-  font-weight: 700;
-  letter-spacing: 0.35em;
-  font-size: 10px;
-}
+/* Sektör başlık fontu ana sayfa ile aynı (Inter, normal) */
 [data-theme='build'] .btn {
   border-radius: 0 !important;
   font-weight: 600;
@@ -200,22 +181,12 @@ img, video, iframe { max-width: 100%; }
 
 /* --- GIDA: yeşil, organik soft --- */
 [data-theme='food'] section:not([data-dark]) { background-color: white; }
-[data-theme='food'] .section-title {
-  font-weight: 300;
-  letter-spacing: -0.01em;
-}
 /* SplitTextImage bloğunda font override etme — modern sans kalsın */
 .split-text-image h2 {
   font-family: var(--font-inter) !important;
   font-style: normal !important;
 }
-[data-theme='food'] .eyebrow {
-  letter-spacing: 0.18em;
-  text-transform: none;
-  font-weight: 500;
-  font-size: 14px;
-  font-style: italic;
-}
+/* Sektör tipografisi ana sayfa ile aynı — eyebrow override kaldırıldı */
 [data-theme='food'] .btn {
   border-radius: 9999px !important;
   font-weight: 500;

@@ -29,7 +29,7 @@ export default async function SectorsPage() {
       <section className="bg-brand-deep text-white py-24">
         <div className="container-x text-center max-w-3xl mx-auto">
           <span className="eyebrow">Faaliyet Alanlarımız</span>
-          <h1 className="font-serif text-4xl md:text-6xl mt-3">Üç Sektör, Tek Kurumsal Güç</h1>
+          <h1 className="font-sans text-4xl md:text-6xl mt-3">Üç Sektör, Tek Kurumsal Güç</h1>
           <p className="mt-5 text-white/80 leading-relaxed">
             Kimya, Yapı ve Gıda sektörlerinde uzman ekiplerimizle son kullanıcıya değer üreten çözümler geliştiriyoruz.
           </p>
@@ -57,7 +57,7 @@ export default async function SectorsPage() {
                 )}
                 <div className={`absolute inset-0 bg-gradient-to-t ${themeAccent[s.theme] || themeAccent.chem}`} />
                 <div className="absolute inset-x-0 bottom-0 p-7 text-white">
-                  <h2 className="font-serif text-3xl">{s.name}</h2>
+                  <h2 className="font-sans text-3xl">{s.name}</h2>
                   {s.shortDescription && (
                     <p className="text-sm text-white/85 mt-2 line-clamp-3">{s.shortDescription}</p>
                   )}
