@@ -9,9 +9,14 @@ export const revalidate = 60
 export const metadata = { title: 'Sektörlerimiz' }
 
 export default async function SectorsPage() {
-  const payload = await getPayloadClient()
-  const result = await payload.find({ collection: 'sectors', depth: 2, limit: 10 })
-  const sectors = result.docs as any[]
+  let sectors: any[] = []
+  try {
+    const payload = await getPayloadClient()
+    const result = await payload.find({ collection: 'sectors', depth: 2, limit: 10 })
+    sectors = result.docs as any[]
+  } catch {
+    sectors = []
+  }
 
   const themeAccent: Record<string, string> = {
     chem: 'from-sector-chem/80 to-sector-chemLight/30',

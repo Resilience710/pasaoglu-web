@@ -9,14 +9,18 @@ export const revalidate = 60
 type Props = { params: Promise<{ slug?: string[] }> }
 
 async function getPage(fullSlug: string) {
-  const payload = await getPayloadClient()
-  const result = await payload.find({
-    collection: 'pages',
-    where: { slug: { equals: fullSlug } },
-    depth: 3,
-    limit: 1,
-  })
-  return result.docs[0]
+  try {
+    const payload = await getPayloadClient()
+    const result = await payload.find({
+      collection: 'pages',
+      where: { slug: { equals: fullSlug } },
+      depth: 3,
+      limit: 1,
+    })
+    return result.docs[0]
+  } catch {
+    return null
+  }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

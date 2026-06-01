@@ -6,14 +6,18 @@ import { buildPageMetadata } from '@/lib/seo'
 export const revalidate = 60
 
 async function getHomePage() {
-  const payload = await getPayloadClient()
-  const result = await payload.find({
-    collection: 'pages',
-    where: { slug: { equals: 'home' } },
-    depth: 3,
-    limit: 1,
-  })
-  return result.docs[0]
+  try {
+    const payload = await getPayloadClient()
+    const result = await payload.find({
+      collection: 'pages',
+      where: { slug: { equals: 'home' } },
+      depth: 3,
+      limit: 1,
+    })
+    return result.docs[0]
+  } catch {
+    return null
+  }
 }
 
 export async function generateMetadata(): Promise<Metadata> {

@@ -43,11 +43,18 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function SiteLayout({ children }: { children: React.ReactNode }) {
-  const payload = await getPayloadClient()
-  const [settings, nav] = await Promise.all([
-    payload.findGlobal({ slug: 'siteSettings', depth: 2 }).catch(() => ({})),
-    payload.findGlobal({ slug: 'mainNav', depth: 1 }).catch(() => ({ items: [] })),
-  ])
+  let settings: any = {}
+  let nav: any = { items: [] }
+  try {
+    const payload = await getPayloadClient()
+    ;[settings, nav] = await Promise.all([
+      payload.findGlobal({ slug: 'siteSettings', depth: 2 }).catch(() => ({})),
+      payload.findGlobal({ slug: 'mainNav', depth: 1 }).catch(() => ({ items: [] })),
+    ])
+  } catch {
+    settings = {}
+    nav = { items: [] }
+  }
 
   const ga = (settings as any)?.seo?.googleAnalyticsId
   const jsonLd = organizationJsonLd(settings)
