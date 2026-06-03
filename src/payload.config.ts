@@ -68,7 +68,15 @@ export default buildConfig({
     fallbackLanguage: 'tr',
     supportedLanguages: { tr, en },
   },
-  secret: process.env.PAYLOAD_SECRET || 'dev-secret',
+  // Güvenlik: production'da PAYLOAD_SECRET zorunlu — yoksa herkesçe bilinen 'dev-secret' ile
+  // çalışıp saldırganın admin oturumu taklit etmesine izin verme; hızlı başarısız ol.
+  secret:
+    process.env.PAYLOAD_SECRET ||
+    (process.env.NODE_ENV === 'production'
+      ? (() => {
+          throw new Error('PAYLOAD_SECRET ortam değişkeni production için zorunlu — Plesk > Node.js > Environment Variables içine ekleyin.')
+        })()
+      : 'dev-secret'),
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },

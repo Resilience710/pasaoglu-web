@@ -12,7 +12,11 @@ export const Users: CollectionConfig = {
   },
   auth: true,
   access: {
-    read: () => true,
+    // Güvenlik: admin kullanıcı listesi/e-postaları herkese açık OLMAMALI — sadece giriş yapmış yöneticiler
+    read: ({ req }) => Boolean(req.user),
+    create: ({ req }) => Boolean(req.user),
+    update: ({ req }) => Boolean(req.user),
+    delete: ({ req }) => Boolean(req.user),
   },
   fields: [
     { name: 'name', type: 'text' },
